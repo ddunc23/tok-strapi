@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scanned_relation_matches",
+  "info": {
+    "singularName": "scanned-relation-match",
+    "pluralName": "scanned-relation-matches",
+    "displayName": "Scanned Relation Match",
+    "description": "Automatically scanned potential matches for relations"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "relation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::relation.relation",
+      "inversedBy": "scanned_matches"
+    },
+    "target_maker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker.maker"
+    }
+  }
+}

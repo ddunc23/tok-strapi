@@ -1,0 +1,51 @@
+{
+  "name": "tok-strapi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Strapi application",
+  "scripts": {
+    "build": "strapi build",
+    "console": "strapi console",
+    "deploy": "strapi deploy",
+    "dev": "strapi develop",
+    "develop": "strapi develop",
+    "dedupe:strapi": "node scripts/dedupe-strapi.mjs",
+    "dedupe:strapi:dry": "node scripts/dedupe-strapi.mjs --dry-run",
+    "dedupe:sqlite": "node scripts/dedupe-sqlite.mjs",
+    "dedupe:sqlite:dry": "node scripts/dedupe-sqlite.mjs --dry-run",
+    "relink:disambiguated:sqlite": "node scripts/relink-disambiguated-sqlite.mjs",
+    "sync:csv": "node scripts/sync-csv-to-strapi.mjs",
+    "sync:csv:delete": "node scripts/sync-csv-to-strapi.mjs --delete-existing",
+    "sync:csv:delete-only": "node scripts/sync-csv-to-strapi.mjs --delete-only",
+    "start": "strapi start",
+    "strapi": "strapi",
+    "upgrade": "npx @strapi/upgrade latest",
+    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "5.31.2",
+    "@strapi/plugin-graphql": "^5.31.2",
+    "@strapi/plugin-users-permissions": "5.31.2",
+    "@strapi/strapi": "5.31.2",
+    "better-sqlite3": "12.4.1",
+    "csv-parse": "^5.6.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=24.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "98286fc2-edd4-48c4-a33c-4eafab4de12f",
+    "installId": "234a651bca49d32e3017ebc27df9fac965e0d3c24018a6975b3eb1cc7dd46102"
+  }
+}

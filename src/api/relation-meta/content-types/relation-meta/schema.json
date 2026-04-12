@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "relation_metas",
+  "info": {
+    "singularName": "relation-meta",
+    "pluralName": "relation-metas",
+    "displayName": "Relation Metadata",
+    "description": "Metadata about relations for review tracking"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "relation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::relation.relation",
+      "inversedBy": "relation_meta"
+    },
+    "is_marked_for_review": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 256
+    }
+  }
+}

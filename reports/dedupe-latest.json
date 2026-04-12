@@ -1,0 +1,474 @@
+{
+  "generatedAt": "2026-04-10T13:54:09.475Z",
+  "dryRun": true,
+  "baseUrl": "http://localhost:1337",
+  "collections": [
+    "makers"
+  ],
+  "totals": {
+    "scanned": 6601,
+    "duplicateGroups": 56,
+    "deleted": 56
+  },
+  "summaries": [
+    {
+      "endpoint": "makers",
+      "keyFields": [
+        "maker_id"
+      ],
+      "scanned": 6601,
+      "duplicateGroups": 56,
+      "deleted": 56,
+      "groups": [
+        {
+          "key": "9426",
+          "kept": "w4nc60tzxs0jpipfwlmy6jqh",
+          "removed": [
+            "ectw8bs86w20wayrfemzwshm"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9427",
+          "kept": "s33jvvq3o86sz91kkm5dptdn",
+          "removed": [
+            "u1s5uiuv1yqcic0azg8dfykq"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9428",
+          "kept": "wm4gs7m2m77pmzyj7peh94vu",
+          "removed": [
+            "o8uctk790gxhmyey2jnk9bz7"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9429",
+          "kept": "zbhep1alnhz24bubl7mmhp4p",
+          "removed": [
+            "yeixq0kojzwufbz8eolrp8jq"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9430",
+          "kept": "q8uim4unolo4vyi4s0y0ju08",
+          "removed": [
+            "rsiqt79g00p7dn7arphkky9v"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9431",
+          "kept": "nu6boj292xxygjtkg47yp00w",
+          "removed": [
+            "qqept5j91u7hw659b80acw40"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9432",
+          "kept": "b0v6nwnimjnd1hz9okpq3cdx",
+          "removed": [
+            "livfrm36cfj76v8qbwyqwuz2"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9433",
+          "kept": "bldu69wzspr8ttacdwjdqj8v",
+          "removed": [
+            "sdvtnz7myybg6kxt0wxu6cdb"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9434",
+          "kept": "luq3xf54rg5lniuiyf2s1k85",
+          "removed": [
+            "c74vo04butizlmjdb4dsyd0a"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9435",
+          "kept": "hij728imnsw4r0npfjbhuc3g",
+          "removed": [
+            "vdr11cl6f3b5t1ff7je54h6i"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9436",
+          "kept": "lng2eb0uhoiueq65ht1augz3",
+          "removed": [
+            "rwvv90e2p99k6ouu07ut388b"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9437",
+          "kept": "wp6ugruegsne3r1kjh79crsg",
+          "removed": [
+            "e9a7nrww4aejzn56pokoe63w"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9438",
+          "kept": "hs4a9f7ndwa0ue1ldnnwkvvq",
+          "removed": [
+            "zgbop66n9g2x7eq6gpxz03o7"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9439",
+          "kept": "r1avjskuaverm4lafs6wsrx6",
+          "removed": [
+            "y92fd9rfwuwb68bph4u2z15i"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9440",
+          "kept": "himyotgd5w955cyp7y1pe91d",
+          "removed": [
+            "i3co64cve1djum59wzq7h6go"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9441",
+          "kept": "nltc5c3uflrfm4c03fk3m69f",
+          "removed": [
+            "sevanvgv8walgoo4gdom89d1"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9442",
+          "kept": "ljpdm5glgz50g4zcnphyzeoe",
+          "removed": [
+            "bjzzzy5qdqutevge519mkhtc"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9443",
+          "kept": "dnese1qp4lzkzcmqfcc4jhs2",
+          "removed": [
+            "o291p70rgj3z50zvjxijadpf"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9444",
+          "kept": "hie9rc526yw6ir1utch40vft",
+          "removed": [
+            "sxswler651nvzqt7eyj8ejkn"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9445",
+          "kept": "c1o4293v3bgd726lgxvte9ov",
+          "removed": [
+            "je0yrkq9br0q3yz0gbamplnu"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9446",
+          "kept": "xlbffdic035hl2tcy3u527b9",
+          "removed": [
+            "b1lceeclrvhjuixd8v7nsx47"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9447",
+          "kept": "iq6y3lmg6al6b8vzpt21nr4u",
+          "removed": [
+            "j2s7btb6xvuutgphd00a9na8"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9448",
+          "kept": "gk9unwrl3chp7s2tixpnm1kn",
+          "removed": [
+            "vrecb1p5xpqmx914oyzly3qd"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9449",
+          "kept": "r2uofsg1gwzvdgw2aslwu722",
+          "removed": [
+            "x65lsu770hpm142vupvxsg9q"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9450",
+          "kept": "gqarjxdrc7gtfzb5pep96134",
+          "removed": [
+            "ig7atfjh56eqvzdjbnkg90kf"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9451",
+          "kept": "gn4dceur5urygbk2fiynir5d",
+          "removed": [
+            "df276ut2hp0gtmaqhrogytfd"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9452",
+          "kept": "frf98327n39py7pu2r3h22ct",
+          "removed": [
+            "f4ku5i4j3ai0nsbenhi4wf27"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "9453",
+          "kept": "r7kl0pm3u2vjim2entzy82om",
+          "removed": [
+            "xubfv7lgmx3y9ynv876qw8dd"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10939",
+          "kept": "p0e08bofyfvujsxp4j6yybje",
+          "removed": [
+            "idch17r0p4k4uuxxqslnjyji"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10943",
+          "kept": "hfpje39ig2bdaxs6tieiln82",
+          "removed": [
+            "d3q1l3clshw7edhvc8x50lvh"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10944",
+          "kept": "y4herlaoly96k5z42c0klqgq",
+          "removed": [
+            "pzbnceisxvtmg9zh0tecufnu"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10945",
+          "kept": "rj8ix1viexq9kmce26pcupb4",
+          "removed": [
+            "x4rxwun37t1dftfhz57zp0ci"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10946",
+          "kept": "v025cnl9xfsis29ui1q8jkig",
+          "removed": [
+            "i71nejqmiqt4f5dabhe9tc68"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10947",
+          "kept": "nnmdqdht82l9nhqcjcsfgf9p",
+          "removed": [
+            "yexyzhhn9atol09w4zaxbsjd"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10948",
+          "kept": "iol78r34jnrrc83ay3gjda01",
+          "removed": [
+            "wvl886eqyp91r2ro3fzwimg0"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10949",
+          "kept": "tl6nayeprdjvdysc7j5mvpe5",
+          "removed": [
+            "fz0y27r0bmicnt61l7cr5din"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10950",
+          "kept": "d17658mvgbr91ow8teevlzsd",
+          "removed": [
+            "cr8iopt8x5aqgipm6jvltmx0"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10951",
+          "kept": "r2qrwps90gb3dhboa0784zv0",
+          "removed": [
+            "vs5eky4yfzx83wi1tzb4bkoe"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10952",
+          "kept": "c3j9wjhpyq5hb75tlq7jwsp3",
+          "removed": [
+            "xd01oergg6dthvc9ea0zf5ot"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10953",
+          "kept": "t41u4tjvl3i758w9jupfqaf8",
+          "removed": [
+            "pkyf68e2sar601s5d9mc6hf8"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10954",
+          "kept": "wwhgrqmet82yd0s5i0re3a61",
+          "removed": [
+            "me9e0tzzarg6i6niqoorz19x"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10955",
+          "kept": "v1307lz0ipxtjfz2pmjxdcop",
+          "removed": [
+            "foouluh5wus345qalwb8v6f1"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10956",
+          "kept": "wmchg19dbmfjawz253g0hayh",
+          "removed": [
+            "y1gzx3wu23746bjxfwd410z9"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10957",
+          "kept": "y99t83jdhgs4cbk40fc591nx",
+          "removed": [
+            "gbq3goc2taufbsoww0iiwpx7"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10958",
+          "kept": "zfdtt5frd6fkgjlffcomircw",
+          "removed": [
+            "nbjcw6vwcormifukfzq1r3v6"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10959",
+          "kept": "esvghkmalk1x9cb0u68g0hb4",
+          "removed": [
+            "mll4hat4rxvmnmbqv9sd8pq9"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10960",
+          "kept": "t4eb0y1fhb3jcxgvftx1lrqp",
+          "removed": [
+            "rgcqb2lwr7lh4uca6jlj2r7l"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10961",
+          "kept": "ui4rbyttda84d047yxkrtbiu",
+          "removed": [
+            "ypo0qab0demsh7lzww9kubp5"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10962",
+          "kept": "co95q24aayie335v58lajucd",
+          "removed": [
+            "sfspx0lhkgazip62ff5ahfsv"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10963",
+          "kept": "y4812nepl1z61x3lkxbmbkpu",
+          "removed": [
+            "b3yra9v2d6f8n2mgowiornqj"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10964",
+          "kept": "vj3iyr50fan01w60noecd88p",
+          "removed": [
+            "guy2u2e3038sjuchjtt8bepg"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10965",
+          "kept": "pmjuta09dgr57l4w0qrvvi1y",
+          "removed": [
+            "jl41dr93isu53yxzms5e0hlp"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10966",
+          "kept": "vm5a5xf3larhkp5m20rro0qg",
+          "removed": [
+            "dwxlbkpmuum147qx2psnejvn"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10967",
+          "kept": "ile1l8508a6064zyyu850qsb",
+          "removed": [
+            "tvaah6wu0nprd3so9firmpp4"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11098",
+          "kept": "qeo9ftdzfxjkc9lnrbgnnx5v",
+          "removed": [
+            "lkoczr8363pn4ro65xyrd3cx"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "10968",
+          "kept": "xvc1zhjzjlorgm5txdzttyxy",
+          "removed": [
+            "u1jykvh8urxw3e78ml6xd2lm"
+          ],
+          "removedCount": 1
+        }
+      ]
+    }
+  ]
+}

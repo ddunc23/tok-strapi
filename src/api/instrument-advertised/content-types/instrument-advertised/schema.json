@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instruments_advertised",
+  "info": {
+    "singularName": "instrument-advertised",
+    "pluralName": "instruments-advertised",
+    "displayName": "Instrument Advertised",
+    "description": "Instruments advertised by a maker"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "maker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker.maker",
+      "inversedBy": "instruments_advertised"
+    },
+    "inst_code": {
+      "type": "integer"
+    },
+    "inst_name": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "maker_id": {
+      "type": "integer"
+    }
+  }
+}

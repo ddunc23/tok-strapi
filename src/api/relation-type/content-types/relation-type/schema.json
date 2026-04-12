@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "relation_types",
+  "info": {
+    "singularName": "relation-type",
+    "pluralName": "relation-types",
+    "displayName": "Relation Type",
+    "description": "Types of relationships between makers"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "relation_code": {
+      "type": "integer"
+    },
+    "relation_description": {
+      "type": "string",
+      "required": true,
+      "maxLength": 64
+    },
+    "relations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::relation.relation",
+      "mappedBy": "relation_type"
+    }
+  }
+}

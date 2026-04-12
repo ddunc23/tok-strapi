@@ -1,0 +1,5 @@
+/**
+ * graph service
+ */
+
+export default () => ({});

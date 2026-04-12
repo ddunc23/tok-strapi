@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "relation_type_metas",
+  "info": {
+    "singularName": "relation-type-meta",
+    "pluralName": "relation-type-metas",
+    "displayName": "Relation Type Metadata",
+    "description": "Additional metadata for relation types"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "uncertainty": {
+      "type": "enumeration",
+      "enum": [
+        "PROBABLY",
+        "SAID",
+        "QUERY?",
+        "POSSIBLY",
+        "ASSUMED",
+        "ADDRESS"
+      ]
+    },
+    "gender_anchor": {
+      "type": "enumeration",
+      "enum": [
+        "M",
+        "F"
+      ]
+    },
+    "no_in_sequence": {
+      "type": "integer"
+    },
+    "relation_qualifier": {
+      "type": "enumeration",
+      "enum": [
+        "MARRIAGE",
+        "TAKEN_OVER",
+        "AMALGAMATED",
+        "INCORPORATED",
+        "SOLD",
+        "ASSETS_BOUGHT",
+        "ABSORBED",
+        "BOUGHT",
+        "PARTIAL",
+        "BOUGHT_ASSETS"
+      ]
+    },
+    "activity_for": {
+      "type": "enumeration",
+      "enum": [
+        "MAP_MAKING"
+      ]
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "DIRECTOR",
+        "FOREMAN",
+        "MANAGER",
+        "AGENT"
+      ]
+    },
+    "relations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::relation.relation",
+      "mappedBy": "relation_type_meta"
+    }
+  }
+}

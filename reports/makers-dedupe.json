@@ -1,0 +1,252 @@
+{
+  "generatedAt": "2026-04-10T14:06:58.976Z",
+  "dryRun": false,
+  "baseUrl": "http://localhost:1337",
+  "collections": [
+    "makers"
+  ],
+  "totals": {
+    "scanned": 6589,
+    "duplicateGroups": 28,
+    "deleted": 28
+  },
+  "summaries": [
+    {
+      "endpoint": "makers",
+      "keyFields": [
+        "maker_id"
+      ],
+      "scanned": 6589,
+      "duplicateGroups": 28,
+      "deleted": 28,
+      "skippedMissingKey": 0,
+      "remainingDuplicateGroups": 0,
+      "groups": [
+        {
+          "key": "11371",
+          "kept": "bnwvbpe0lsrzc4lu9livnm0b",
+          "removed": [
+            "ufdogwz1uhkkbcvukklt9vyz"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11372",
+          "kept": "gvgbibw27a89pf9fzusyurj1",
+          "removed": [
+            "qojnwar3fco19ek2c4p86m8i"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11373",
+          "kept": "euf8wj5d69a916d03e3becb2",
+          "removed": [
+            "zoevrzs50lef7szaggxwdwzg"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11374",
+          "kept": "an25w8qit8r97gopyik2ve6c",
+          "removed": [
+            "smbbitv4ak3sux87wmafbquy"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11375",
+          "kept": "x786eqa3uoyjknkc9dm5ynpj",
+          "removed": [
+            "jpt2hso4rbo5uoh8otdy7znf"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11376",
+          "kept": "hx7zqx2ijbjpf1c2q67lh841",
+          "removed": [
+            "feh0esd1cv5pp7ll7d2dvk8t"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11377",
+          "kept": "mn9ojdc4wugvtr5530824bst",
+          "removed": [
+            "tttu83qdmifdwae6uu8d6pj9"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11378",
+          "kept": "wm0ss0v9psmfw1hlj3e9iav6",
+          "removed": [
+            "huht210ilk933wfahu8lr9k3"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11379",
+          "kept": "h3i1kxu0p8slvqiy7ghw0654",
+          "removed": [
+            "hnybjtpbgtqqkd00to7f9ek7"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11380",
+          "kept": "v3e1jslzwewqwyhheykrj0io",
+          "removed": [
+            "iuam6sj12ixq790egpzzrkg7"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11381",
+          "kept": "dn2dajqislqomziz45g2rfq0",
+          "removed": [
+            "gwlr6lk7yno8270n44y8z5lt"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11382",
+          "kept": "mbxswt5q8wp4v1gf8f99r7q2",
+          "removed": [
+            "g1nih8ngt3a2msu9vaqrii58"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11383",
+          "kept": "ryf79d8pl1vn4rwqae49tsif",
+          "removed": [
+            "mckoimyms9v0647o4s0x5fzi"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11384",
+          "kept": "t323v2uicg9qkkros27vtxl0",
+          "removed": [
+            "r6a296ukcpfruh8f8tugqx9q"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11385",
+          "kept": "nolc5iz0qbopglgs4z7g6x59",
+          "removed": [
+            "duyin75afekpo4hsos46a062"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11386",
+          "kept": "ojl6j9xqleyobggq65vu34oy",
+          "removed": [
+            "gwxw05r6cmjytuuhi5egj0in"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11387",
+          "kept": "u4k9yu78llb4xwan62raiftd",
+          "removed": [
+            "dp0jxm4gsqkt8aun5vlgqzcu"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11388",
+          "kept": "rptviyzgkslzzm940vc9l4iv",
+          "removed": [
+            "zn2ovzh3k7b5dqtdgr3i0wha"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11389",
+          "kept": "d2uawm3tiufqo2su3iwz81k1",
+          "removed": [
+            "lgxcujnupc7t4t0o7wwnrpea"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11390",
+          "kept": "b9ycw5t7d5ogbl04bkd48gpx",
+          "removed": [
+            "drnxxhpid809fxe89f9z609i"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11391",
+          "kept": "z2xiynbpb8785xys5iq51ltd",
+          "removed": [
+            "mvzy1ltfdu5ubc9iw88x15z9"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11392",
+          "kept": "ekha6x7arygcqjkrgh42rj9i",
+          "removed": [
+            "ma3gp5qzt5v80uws5zusbqms"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11393",
+          "kept": "gpieapqx3ltl48seik5z9kv2",
+          "removed": [
+            "ulyb7d7kovke7jfg5n126y7f"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11394",
+          "kept": "xnzrrlbbm67k7twoevniya5f",
+          "removed": [
+            "lenj7man0xvpb1oq2e67cgej"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11395",
+          "kept": "e74u7nnfmfcg407oetmylpn1",
+          "removed": [
+            "d7ozhl8apfp6suufvwnzjetv"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11396",
+          "kept": "gqxj2pjfw03hos5i6a0eu0y3",
+          "removed": [
+            "q1dqbutbrirpq8yzsz94a4k8"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11397",
+          "kept": "n7nqewmfxa3otpwncj7kvzab",
+          "removed": [
+            "tz0dq7gp78mz4zjsjchok1lp"
+          ],
+          "removedCount": 1
+        },
+        {
+          "key": "11398",
+          "kept": "h65k4uzhylh325etdhp3ijwn",
+          "removed": [
+            "d60yq0q30snc791pefz9n18z"
+          ],
+          "removedCount": 1
+        }
+      ]
+    }
+  ]
+}

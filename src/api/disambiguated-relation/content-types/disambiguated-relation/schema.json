@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disambiguated_relations",
+  "info": {
+    "singularName": "disambiguated-relation",
+    "pluralName": "disambiguated-relations",
+    "displayName": "Disambiguated Relation",
+    "description": "Disambiguated relationships linking to specific makers"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "target_maker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker.maker",
+      "inversedBy": "disambiguated_relations"
+    },
+    "is_auto_disambiguation": {
+      "type": "boolean",
+      "default": false
+    },
+    "relation_id": {
+      "type": "integer"
+    },
+    "target_maker_id": {
+      "type": "integer"
+    }
+  }
+}

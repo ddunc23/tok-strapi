@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sources",
+  "info": {
+    "singularName": "sources",
+    "pluralName": "sources-info",
+    "displayName": "Sources",
+    "description": "Source information for makers"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "maker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker.maker",
+      "inversedBy": "sources"
+    },
+    "sources_key": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "manuscripts": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "directories": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "other": {
+      "type": "string",
+      "maxLength": 510
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-04-10T14:08:31.250Z",
+  "dryRun": false,
+  "baseUrl": "http://localhost:1337",
+  "collections": [
+    "makers"
+  ],
+  "totals": {
+    "scanned": 6561,
+    "duplicateGroups": 0,
+    "deleted": 0
+  },
+  "summaries": [
+    {
+      "endpoint": "makers",
+      "keyFields": [
+        "maker_id"
+      ],
+      "scanned": 6561,
+      "duplicateGroups": 0,
+      "deleted": 0,
+      "skippedMissingKey": 0,
+      "remainingDuplicateGroups": 0,
+      "groups": []
+    }
+  ]
+}

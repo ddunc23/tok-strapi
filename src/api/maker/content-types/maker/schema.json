@@ -1,0 +1,122 @@
+{
+  "kind": "collectionType",
+  "collectionName": "makers",
+  "info": {
+    "singularName": "maker",
+    "pluralName": "makers",
+    "displayName": "Maker",
+    "description": "Historical instrument makers"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "maker_id": {
+      "type": "integer",
+      "unique": true
+    },
+    "surname": {
+      "type": "string"
+    },
+    "first_name": {
+      "type": "string"
+    },
+    "Alt_name": {
+      "type": "string"
+    },
+    "Date1_qual": {
+      "type": "string"
+    },
+    "date_1": {
+      "type": "string"
+    },
+    "Date2_qual": {
+      "type": "string"
+    },
+    "date_2": {
+      "type": "string"
+    },
+    "misc_info_1": {
+      "type": "text"
+    },
+    "misc_info_2": {
+      "type": "text"
+    },
+    "misc_info_3": {
+      "type": "text"
+    },
+    "misc_info_4": {
+      "type": "text"
+    },
+    "Guild": {
+      "type": "string"
+    },
+    "Mig_town": {
+      "type": "string"
+    },
+    "Count_stat": {
+      "type": "string"
+    },
+    "Adv_trade1": {
+      "type": "text"
+    },
+    "Adv_trade2": {
+      "type": "text"
+    },
+    "addresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::address.address",
+      "mappedBy": "maker"
+    },
+    "guilds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::guild.guild",
+      "mappedBy": "maker"
+    },
+    "memberships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membership.membership",
+      "mappedBy": "maker"
+    },
+    "relations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::relation.relation",
+      "mappedBy": "maker"
+    },
+    "sources": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sources.sources",
+      "mappedBy": "maker"
+    },
+    "disambiguated_relations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::disambiguated-relation.disambiguated-relation",
+      "mappedBy": "target_maker"
+    },
+    "instruments_advertised": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::instrument-advertised.instrument-advertised",
+      "mappedBy": "maker"
+    },
+    "instruments_known": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::instrument-known.instrument-known",
+      "mappedBy": "maker"
+    },
+    "relation_target": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::relation.relation",
+      "inversedBy": "target_maker"
+    }
+  }
+}

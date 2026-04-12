@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guilds",
+  "info": {
+    "singularName": "guild",
+    "pluralName": "guilds",
+    "displayName": "Guild",
+    "description": "A guild"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 64
+    },
+    "members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::maker.maker",
+      "inversedBy": "guilds"
+    },
+    "memberships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membership.membership",
+      "mappedBy": "guild"
+    },
+    "guild_id": {
+      "type": "integer"
+    },
+    "maker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker.maker",
+      "inversedBy": "guilds"
+    }
+  }
+}

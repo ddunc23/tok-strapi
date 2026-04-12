@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "relations",
+  "info": {
+    "singularName": "relation",
+    "pluralName": "relations",
+    "displayName": "Relation",
+    "description": "Relationships between makers"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "maker": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker.maker",
+      "inversedBy": "relations"
+    },
+    "relation_code": {
+      "type": "integer"
+    },
+    "relation_description": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "assigned_name": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "relation_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::relation-type.relation-type",
+      "inversedBy": "relations"
+    },
+    "relation_type_meta": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::relation-type-meta.relation-type-meta",
+      "inversedBy": "relations"
+    },
+    "relation_meta": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::relation-meta.relation-meta",
+      "mappedBy": "relation"
+    },
+    "scanned_matches": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::scanned-relation-match.scanned-relation-match",
+      "mappedBy": "relation"
+    },
+    "relation_id": {
+      "type": "integer",
+      "unique": true
+    },
+    "maker_id": {
+      "type": "integer"
+    },
+    "relation_type_id": {
+      "type": "integer"
+    },
+    "target_maker": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::maker.maker",
+      "mappedBy": "relation_target"
+    },
+    "target_maker_id": {
+      "type": "integer"
+    }
+  }
+}

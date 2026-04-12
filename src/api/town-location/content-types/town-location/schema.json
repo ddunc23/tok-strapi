@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "town_locations",
+  "info": {
+    "singularName": "town-location",
+    "pluralName": "town-locations",
+    "displayName": "Town Location"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "town_location_id": {
+      "type": "integer"
+    },
+    "geom": {
+      "type": "json"
+    },
+    "town": {
+      "type": "string"
+    },
+    "addresses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::address.address",
+      "mappedBy": "town_location"
+    }
+  }
+}
