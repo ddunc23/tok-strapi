@@ -18,6 +18,12 @@
       "target": "api::maker.maker",
       "inversedBy": "sources"
     },
+    "maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "sources"
+    },
     "sources_key": {
       "type": "string",
       "maxLength": 100

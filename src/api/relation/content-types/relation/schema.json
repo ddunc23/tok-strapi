@@ -18,6 +18,12 @@
       "target": "api::maker.maker",
       "inversedBy": "relations"
     },
+    "maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "relations"
+    },
     "relation_code": {
       "type": "integer"
     },
@@ -65,9 +71,15 @@
     },
     "target_maker": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::maker.maker",
-      "mappedBy": "relation_target"
+      "inversedBy": "relation_targets"
+    },
+    "target_maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "relation_targets"
     },
     "target_maker_id": {
       "type": "integer"

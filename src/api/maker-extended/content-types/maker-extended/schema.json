@@ -1,122 +1,137 @@
 {
   "kind": "collectionType",
-  "collectionName": "makers",
+  "collectionName": "makers-extended",
   "info": {
-    "singularName": "maker",
-    "pluralName": "makers",
-    "displayName": "Maker",
-    "description": "Historical instrument makers"
+    "singularName": "maker-extended",
+    "pluralName": "makers-extended",
+    "displayName": "Maker Extended",
+    "description": "Extended information about historical instrument makers"
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "maker_id": {
+    "Maker_ID": {
       "type": "integer",
       "unique": true
     },
-    "surname": {
-      "type": "string"
-    },
-    "first_name": {
-      "type": "string"
-    },
-    "Alt_name": {
-      "type": "string"
-    },
-    "Date1_qual": {
-      "type": "string"
-    },
-    "date_1": {
-      "type": "string"
-    },
-    "Date2_qual": {
-      "type": "string"
-    },
-    "date_2": {
-      "type": "string"
-    },
-    "misc_info_1": {
+    "Original_Data": {
       "type": "text"
     },
-    "misc_info_2": {
-      "type": "text"
-    },
-    "misc_info_3": {
-      "type": "text"
-    },
-    "misc_info_4": {
-      "type": "text"
-    },
-    "Guild": {
+    "Maker_Type": {
       "type": "string"
     },
-    "Mig_town": {
+    "Actor_Type": {
       "type": "string"
     },
-    "Count_stat": {
+    "Organisation_Name": {
       "type": "string"
     },
-    "Adv_trade1": {
-      "type": "text"
+    "Title": {
+      "type": "string"
     },
-    "Adv_trade2": {
+    "Initials": {
+      "type": "string"
+    },
+    "Surname": {
+      "type": "string"
+    },
+    "First_name": {
+      "type": "string"
+    },
+    "Suffix": {
+      "type": "string"
+    },
+    "Disambiguation_Numeral": {
+      "type": "string"
+    },
+    "Label": {
+      "type": "string"
+    },
+    "VIAF_URI": {
+      "type": "string"
+    },
+    "Wikidata_URI": {
+      "type": "string"
+    },
+    "Alt_name1": {
+      "type": "string"
+    },
+    "Alt_name2": {
+      "type": "string"
+    },
+    "Alt_name3": {
+      "type": "string"
+    },
+    "Alt_name4": {
+      "type": "string"
+    },
+    "Alt_name5": {
+      "type": "string"
+    },
+    "Alt_name6": {
+      "type": "string"
+    },
+    "Alt_name7": {
+      "type": "string"
+    },
+    "Misc_Info": {
       "type": "text"
     },
     "addresses": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::address.address",
-      "mappedBy": "maker"
+      "mappedBy": "maker_extended"
     },
     "guilds": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::guild.guild",
-      "mappedBy": "maker"
+      "mappedBy": "maker_extended"
     },
     "memberships": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::membership.membership",
-      "mappedBy": "maker"
+      "mappedBy": "maker_extended"
     },
     "relations": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::relation.relation",
-      "mappedBy": "maker"
+      "mappedBy": "maker_extended"
     },
     "sources": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::sources.sources",
-      "mappedBy": "maker"
+      "mappedBy": "maker_extended"
     },
     "disambiguated_relations": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::disambiguated-relation.disambiguated-relation",
-      "mappedBy": "target_maker"
+      "mappedBy": "target_maker_extended"
     },
     "instruments_advertised": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::instrument-advertised.instrument-advertised",
-      "mappedBy": "maker"
+      "mappedBy": "maker_extended"
     },
     "instruments_known": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::instrument-known.instrument-known",
-      "mappedBy": "maker"
+      "mappedBy": "maker_extended"
     },
     "relation_targets": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::relation.relation",
-      "mappedBy": "target_maker"
+      "mappedBy": "target_maker_extended"
     }
   }
 }

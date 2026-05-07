@@ -37,6 +37,12 @@
       "relation": "manyToOne",
       "target": "api::maker.maker",
       "inversedBy": "guilds"
+    },
+    "maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "guilds"
     }
   }
 }

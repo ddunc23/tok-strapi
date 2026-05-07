@@ -18,6 +18,12 @@
       "target": "api::maker.maker",
       "inversedBy": "disambiguated_relations"
     },
+    "target_maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "disambiguated_relations"
+    },
     "is_auto_disambiguation": {
       "type": "boolean",
       "default": false

@@ -41,6 +41,12 @@
       "target": "api::maker.maker",
       "inversedBy": "addresses"
     },
+    "maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "addresses"
+    },
     "town_location": {
       "type": "relation",
       "relation": "manyToOne",

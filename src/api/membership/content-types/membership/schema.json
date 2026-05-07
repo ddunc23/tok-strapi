@@ -24,6 +24,12 @@
       "target": "api::maker.maker",
       "inversedBy": "memberships"
     },
+    "maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "memberships"
+    },
     "entry_date_1": {
       "type": "date"
     },

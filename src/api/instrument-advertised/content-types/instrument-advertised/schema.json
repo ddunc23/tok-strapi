@@ -18,6 +18,12 @@
       "target": "api::maker.maker",
       "inversedBy": "instruments_advertised"
     },
+    "maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "instruments_advertised"
+    },
     "inst_code": {
       "type": "integer"
     },

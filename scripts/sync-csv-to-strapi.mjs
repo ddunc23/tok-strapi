@@ -81,7 +81,17 @@ const options = {
   deleteOnly: hasFlag('--delete-only'),
   dryRun: hasFlag('--dry-run'),
   relationsOnly: hasFlag('--relations-only'),
+  skipRelations: hasFlag('--skip-relations'),
   csvDir: process.env.CSV_DIR || path.join(process.cwd(), 'data', 'csv'),
+  collections: (() => {
+    const value = getArgValue('--collections');
+    if (!value) return null;
+    const items = String(value)
+      .split(',')
+      .map((item) => item.trim())
+      .filter(Boolean);
+    return items.length ? new Set(items) : null;
+  })(),
   relationBatchSize: parsePositiveInt(
     getArgValue('--relation-batch-size', '--batch-size') ?? process.env.RELATION_BATCH_SIZE,
     500
@@ -99,6 +109,19 @@ const COLLECTIONS = [
     csvFiles: ['maker.csv'],
     integerFields: ['maker_id'],
     keyFields: ['maker_id'],
+  },
+  {
+    name: 'makersExtended',
+    endpoint: 'makers-extended',
+    csvFiles: ['maker-extended.csv', 'maker-extended-extract.csv'],
+    integerFields: ['Maker_ID'],
+    fieldAliases: {
+      Maker_ID: ['ID'],
+    },
+    fieldTransforms: {
+      Maker_ID: coerceMakerId,
+    },
+    keyFields: ['Maker_ID'],
   },
   {
     name: 'addresses',
@@ -172,6 +195,13 @@ const RELATION_LINKS = [
     connectionField: 'addresses',
   },
   {
+    sourceEndpoint: 'addresses',
+    targetEndpoint: 'makers-extended',
+    sourceIdField: 'maker_id',
+    targetIdField: 'Maker_ID',
+    connectionField: 'addresses',
+  },
+  {
     sourceEndpoint: 'town-locations',
     targetEndpoint: 'addresses',
     sourceIdField: 'town_location_id',
@@ -184,6 +214,13 @@ const RELATION_LINKS = [
     sourceIdField: 'maker_id',
     targetIdField: 'maker_id',
     connectionField: 'maker',
+  },
+  {
+    sourceEndpoint: 'makers-extended',
+    targetEndpoint: 'memberships',
+    sourceIdField: 'Maker_ID',
+    targetIdField: 'maker_id',
+    connectionField: 'maker_extended',
   },
   {
     sourceEndpoint: 'guilds',
@@ -200,6 +237,13 @@ const RELATION_LINKS = [
     connectionField: 'relations',
   },
   {
+    sourceEndpoint: 'relations',
+    targetEndpoint: 'makers-extended',
+    sourceIdField: 'maker_id',
+    targetIdField: 'Maker_ID',
+    connectionField: 'relations',
+  },
+  {
     sourceEndpoint: 'instruments-known',
     targetEndpoint: 'makers',
     sourceIdField: 'maker_id',
@@ -207,10 +251,24 @@ const RELATION_LINKS = [
     connectionField: 'instruments_known',
   },
   {
+    sourceEndpoint: 'instruments-known',
+    targetEndpoint: 'makers-extended',
+    sourceIdField: 'maker_id',
+    targetIdField: 'Maker_ID',
+    connectionField: 'instruments_known',
+  },
+  {
     sourceEndpoint: 'instruments-advertised',
     targetEndpoint: 'makers',
     sourceIdField: 'maker_id',
     targetIdField: 'maker_id',
+    connectionField: 'instruments_advertised',
+  },
+  {
+    sourceEndpoint: 'instruments-advertised',
+    targetEndpoint: 'makers-extended',
+    sourceIdField: 'maker_id',
+    targetIdField: 'Maker_ID',
     connectionField: 'instruments_advertised',
   },
 ];
@@ -260,6 +318,25 @@ function rowToRecord(row) {
   return Object.fromEntries(Object.entries(row).map(([key, value]) => [key, rowValueToNullable(value)]));
 }
 
+function coerceMakerId(value) {
+  if (value === undefined || value === null) return value;
+
+  if (typeof value === 'number') return value;
+
+  const text = String(value).trim();
+  if (!text) return null;
+
+  const direct = Number.parseInt(text, 10);
+  if (!Number.isNaN(direct)) return direct;
+
+  const match = text.match(/^(?:M\s*[-_]?\s*)?(\d+)$/i);
+  if (match) {
+    return Number.parseInt(match[1], 10);
+  }
+
+  return value;
+}
+
 function castIntegerFields(record, integerFields = []) {
   const next = { ...record };
 
@@ -286,9 +363,45 @@ function removeExcludedFields(record, excludeFields = []) {
   return next;
 }
 
+function applyFieldAliases(record, fieldAliases = {}) {
+  const next = { ...record };
+
+  for (const [canonicalField, aliasFields] of Object.entries(fieldAliases)) {
+    const aliases = Array.isArray(aliasFields) ? aliasFields : [aliasFields];
+
+    if (next[canonicalField] !== null && next[canonicalField] !== undefined && next[canonicalField] !== '') {
+      continue;
+    }
+
+    for (const alias of aliases) {
+      if (next[alias] !== null && next[alias] !== undefined && next[alias] !== '') {
+        next[canonicalField] = next[alias];
+        break;
+      }
+    }
+  }
+
+  return next;
+}
+
+function applyFieldTransforms(record, fieldTransforms = {}) {
+  const next = { ...record };
+
+  for (const [field, transform] of Object.entries(fieldTransforms)) {
+    if (!(field in next)) continue;
+    if (typeof transform !== 'function') continue;
+
+    next[field] = transform(next[field], next);
+  }
+
+  return next;
+}
+
 function normalizeRecord(row, config) {
   const withNulls = rowToRecord(row);
-  const withIntegers = castIntegerFields(withNulls, config.integerFields);
+  const withAliases = applyFieldAliases(withNulls, config.fieldAliases);
+  const withTransforms = applyFieldTransforms(withAliases, config.fieldTransforms);
+  const withIntegers = castIntegerFields(withTransforms, config.integerFields);
   return removeExcludedFields(withIntegers, config.excludeFields);
 }
 
@@ -603,11 +716,12 @@ async function connectTargetMakers() {
 
   const makerRows = await fetchAll('makers');
   const makerMap = makeMapByField(makerRows, 'maker_id');
+  const makerExtendedRows = await fetchAll('makers-extended');
+  const makerExtendedMap = makeMapByField(makerExtendedRows, 'Maker_ID');
 
   let connected = 0;
   let skipped = 0;
   let failed = 0;
-  const processedMakerDocumentIds = new Set();
 
   for (let start = 0; start < relationSourceRows.length; start += options.relationBatchSize) {
     const batch = relationSourceRows.slice(start, start + options.relationBatchSize);
@@ -628,23 +742,26 @@ async function connectTargetMakers() {
       }
 
       const makerDocumentId = makerDocumentIds[0];
-
-      if (processedMakerDocumentIds.has(makerDocumentId)) {
-        skipped += 1;
-        continue;
-      }
+      const makerExtendedDocumentIds = makerExtendedMap.get(String(targetMakerId));
+      const makerExtendedDocumentId = makerExtendedDocumentIds?.[0] ?? null;
 
       try {
-        await updateEntry('makers', makerDocumentId, {
-          relation_target: {
-            connect: [relationDocumentId],
+        await updateEntry('relations', relationDocumentId, {
+          target_maker: {
+            connect: [makerDocumentId],
           },
+          ...(makerExtendedDocumentId
+            ? {
+                target_maker_extended: {
+                  connect: [makerExtendedDocumentId],
+                },
+              }
+            : {}),
         });
-        processedMakerDocumentIds.add(makerDocumentId);
         connected += 1;
       } catch (error) {
         failed += 1;
-        console.error(`[connect] relations.target_maker_id -> makers.relation_target failed: ${error.message}`);
+        console.error(`[connect] relations.target_maker_id -> relations.target_maker failed: ${error.message}`);
       }
     }
 
@@ -671,6 +788,12 @@ async function run() {
   console.log(`Base URL: ${BASE_URL}`);
   console.log(`CSV dir: ${options.csvDir}`);
   console.log(`Mode: ${mode}`);
+  if (options.skipRelations) {
+    console.log('Relation linking: skipped');
+  }
+  if (options.collections?.size) {
+    console.log(`Collections filter: ${[...options.collections].join(', ')}`);
+  }
   console.log(`Relation batch size: ${options.relationBatchSize}`);
   if (options.relationLimit) {
     console.log(`Relation source limit: ${options.relationLimit}`);
@@ -679,19 +802,31 @@ async function run() {
     console.log('Dry run enabled: no write operations will be sent.');
   }
 
+  const selectedCollections = options.collections
+    ? COLLECTIONS.filter(
+        (config) => options.collections.has(config.name) || options.collections.has(config.endpoint)
+      )
+    : COLLECTIONS;
+
+  if (options.collections?.size && !selectedCollections.length) {
+    throw new Error(
+      `No matching collections for --collections=${[...options.collections].join(',')}`
+    );
+  }
+
   if (!options.relationsOnly && (options.deleteExisting || options.deleteOnly)) {
-    for (const config of COLLECTIONS) {
+    for (const config of selectedCollections) {
       await deleteCsvRepresentedRecords(config);
     }
   }
 
   if (!options.relationsOnly && !options.deleteOnly) {
-    for (const config of COLLECTIONS) {
+    for (const config of selectedCollections) {
       await uploadCollection(config);
     }
   }
 
-  if (!options.deleteOnly) {
+  if (!options.deleteOnly && !options.skipRelations) {
     for (const linkConfig of RELATION_LINKS) {
       await connectRelation(linkConfig);
     }

@@ -454,6 +454,10 @@ export interface ApiAddressAddress extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     maker_id: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     street_1: Schema.Attribute.String;
@@ -497,6 +501,10 @@ export interface ApiDisambiguatedRelationDisambiguatedRelation
     publishedAt: Schema.Attribute.DateTime;
     relation_id: Schema.Attribute.Integer;
     target_maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    target_maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     target_maker_id: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -524,6 +532,10 @@ export interface ApiGuildGuild extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::guild.guild'> &
       Schema.Attribute.Private;
     maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     members: Schema.Attribute.Relation<'manyToMany', 'api::maker.maker'>;
     memberships: Schema.Attribute.Relation<
       'oneToMany',
@@ -569,6 +581,10 @@ export interface ApiInstrumentAdvertisedInstrumentAdvertised
     > &
       Schema.Attribute.Private;
     maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     maker_id: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -605,11 +621,90 @@ export interface ApiInstrumentKnownInstrumentKnown
     > &
       Schema.Attribute.Private;
     maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     maker_id: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMakerExtendedMakerExtended
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'makers-extended';
+  info: {
+    description: 'Extended information about historical instrument makers';
+    displayName: 'Maker Extended';
+    pluralName: 'makers-extended';
+    singularName: 'maker-extended';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    Actor_Type: Schema.Attribute.String;
+    addresses: Schema.Attribute.Relation<'oneToMany', 'api::address.address'>;
+    Alt_name1: Schema.Attribute.String;
+    Alt_name2: Schema.Attribute.String;
+    Alt_name3: Schema.Attribute.String;
+    Alt_name4: Schema.Attribute.String;
+    Alt_name5: Schema.Attribute.String;
+    Alt_name6: Schema.Attribute.String;
+    Alt_name7: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    disambiguated_relations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::disambiguated-relation.disambiguated-relation'
+    >;
+    Disambiguation_Numeral: Schema.Attribute.String;
+    First_name: Schema.Attribute.String;
+    guilds: Schema.Attribute.Relation<'oneToMany', 'api::guild.guild'>;
+    Initials: Schema.Attribute.String;
+    instruments_advertised: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::instrument-advertised.instrument-advertised'
+    >;
+    instruments_known: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::instrument-known.instrument-known'
+    >;
+    Label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::maker-extended.maker-extended'
+    > &
+      Schema.Attribute.Private;
+    Maker_ID: Schema.Attribute.Integer & Schema.Attribute.Unique;
+    Maker_Type: Schema.Attribute.String;
+    memberships: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::membership.membership'
+    >;
+    Misc_Info: Schema.Attribute.Text;
+    Organisation_Name: Schema.Attribute.String;
+    Original_Data: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    relation_targets: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::relation.relation'
+    >;
+    relations: Schema.Attribute.Relation<'oneToMany', 'api::relation.relation'>;
+    sources: Schema.Attribute.Relation<'oneToMany', 'api::sources.sources'>;
+    Suffix: Schema.Attribute.String;
+    Surname: Schema.Attribute.String;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    VIAF_URI: Schema.Attribute.String;
+    Wikidata_URI: Schema.Attribute.String;
   };
 }
 
@@ -666,8 +761,8 @@ export interface ApiMakerMaker extends Struct.CollectionTypeSchema {
     misc_info_3: Schema.Attribute.Text;
     misc_info_4: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
-    relation_target: Schema.Attribute.Relation<
-      'oneToOne',
+    relation_targets: Schema.Attribute.Relation<
+      'oneToMany',
       'api::relation.relation'
     >;
     relations: Schema.Attribute.Relation<'oneToMany', 'api::relation.relation'>;
@@ -705,6 +800,10 @@ export interface ApiMembershipMembership extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     maker_id: Schema.Attribute.Integer;
     membership_id: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
@@ -865,6 +964,10 @@ export interface ApiRelationRelation extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     maker_id: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     relation_code: Schema.Attribute.Integer;
@@ -890,7 +993,11 @@ export interface ApiRelationRelation extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::scanned-relation-match.scanned-relation-match'
     >;
-    target_maker: Schema.Attribute.Relation<'oneToOne', 'api::maker.maker'>;
+    target_maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    target_maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     target_maker_id: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -955,6 +1062,10 @@ export interface ApiSourcesSources extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     maker: Schema.Attribute.Relation<'manyToOne', 'api::maker.maker'>;
+    maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    >;
     manuscripts: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 510;
@@ -1521,6 +1632,7 @@ declare module '@strapi/strapi' {
       'api::guild.guild': ApiGuildGuild;
       'api::instrument-advertised.instrument-advertised': ApiInstrumentAdvertisedInstrumentAdvertised;
       'api::instrument-known.instrument-known': ApiInstrumentKnownInstrumentKnown;
+      'api::maker-extended.maker-extended': ApiMakerExtendedMakerExtended;
       'api::maker.maker': ApiMakerMaker;
       'api::membership.membership': ApiMembershipMembership;
       'api::relation-meta.relation-meta': ApiRelationMetaRelationMeta;

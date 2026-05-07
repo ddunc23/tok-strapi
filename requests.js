@@ -123,7 +123,7 @@ export const requestExamples = {
 	listMakersWithPagination: () => requests.makers.listPage({}, { page: 1, pageSize: 25 }),
 	listMakersWithPopulate: () =>
 		requests.makers.list({
-			populate: ['addresses', 'guilds', 'relation_target'],
+			populate: ['addresses', 'guilds', 'relation_targets'],
 			pagination: { page: 1, pageSize: 10 },
 		}),
 	filterMakersByName: (name = 'Stradivari') =>
