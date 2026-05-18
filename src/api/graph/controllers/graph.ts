@@ -2,39 +2,72 @@
  * A set of functions called "actions" for `graph`
  */
 
+/** BFS up to `maxDepth` hops; returns the count of unique reachable neighbours (excluding the seed). */
+function egoNetworkSize(
+  seed: string,
+  adjacency: Map<string, Set<string>>,
+  maxDepth: number,
+): number {
+  const visited = new Set<string>([seed]);
+  let frontier = [seed];
+  for (let depth = 0; depth < maxDepth; depth++) {
+    const next: string[] = [];
+    for (const node of frontier) {
+      for (const neighbour of adjacency.get(node) ?? []) {
+        if (!visited.has(neighbour)) {
+          visited.add(neighbour);
+          next.push(neighbour);
+        }
+      }
+    }
+    frontier = next;
+    if (frontier.length === 0) break;
+  }
+  return visited.size - 1; // exclude seed itself
+}
+
 export default {
   topNodes: async (ctx) => {
     try {
       const requestedLimit = Number.parseInt(String(ctx.query.limit ?? '100'), 10);
       const limit = Number.isFinite(requestedLimit) && requestedLimit > 0 ? requestedLimit : 100;
 
+      const egoDepth = 3;
+
       const relations = await strapi.db.query('api::relation.relation').findMany({
         where: {
-          maker: {
+          maker_extended: {
             id: {
               $notNull: true,
             },
           },
-          target_maker: {
+          target_maker_extended: {
             id: {
               $notNull: true,
             },
           },
         },
         populate: {
-          maker: true,
-          target_maker: true,
+          maker_extended: true,
+          target_maker_extended: true,
           relation_type: true,
         },
       });
 
-      const degreeByMakerDocumentId = new Map<string, number>();
       const makersByDocumentId = new Map<string, any>();
+      const adjacency = new Map<string, Set<string>>();
       const validRelations = [];
 
+      const addEdge = (a: string, b: string) => {
+        if (!adjacency.has(a)) adjacency.set(a, new Set());
+        if (!adjacency.has(b)) adjacency.set(b, new Set());
+        adjacency.get(a)!.add(b);
+        adjacency.get(b)!.add(a);
+      };
+
       for (const relation of relations) {
-        const sourceMaker = relation.maker;
-        const targetMaker = relation.target_maker;
+        const sourceMaker = relation.maker_extended;
+        const targetMaker = relation.target_maker_extended;
 
         if (!sourceMaker?.documentId || !targetMaker?.documentId) continue;
         if (sourceMaker.documentId === targetMaker.documentId) continue;
@@ -42,48 +75,44 @@ export default {
         makersByDocumentId.set(sourceMaker.documentId, sourceMaker);
         makersByDocumentId.set(targetMaker.documentId, targetMaker);
 
-        degreeByMakerDocumentId.set(
-          sourceMaker.documentId,
-          (degreeByMakerDocumentId.get(sourceMaker.documentId) ?? 0) + 1
-        );
-        degreeByMakerDocumentId.set(
-          targetMaker.documentId,
-          (degreeByMakerDocumentId.get(targetMaker.documentId) ?? 0) + 1
-        );
-
+        addEdge(sourceMaker.documentId, targetMaker.documentId);
         validRelations.push(relation);
       }
 
-      const topMakers = [...degreeByMakerDocumentId.entries()]
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, limit);
+      // Score every maker by their 3-degree ego network size, then take the top N.
+      const scored = [...makersByDocumentId.keys()].map((documentId) => ({
+        documentId,
+        egoSize: egoNetworkSize(documentId, adjacency, egoDepth),
+      }));
 
-      const topMakerIds = new Set(topMakers.map(([documentId]) => documentId));
+      scored.sort((a, b) => b.egoSize - a.egoSize);
+      const topEntries = scored.slice(0, limit);
+      const topMakerIds = new Set(topEntries.map((e) => e.documentId));
 
-      const nodes = topMakers.map(([documentId, degree]) => {
+      const nodes = topEntries.map(({ documentId, egoSize }) => {
         const maker = makersByDocumentId.get(documentId);
         return {
           id: documentId,
           documentId,
-          maker_id: maker?.maker_id ?? null,
-          surname: maker?.surname ?? null,
-          first_name: maker?.first_name ?? null,
-          label: [maker?.first_name, maker?.surname].filter(Boolean).join(' ').trim() || maker?.surname || String(documentId),
-          degree,
+          maker_id: maker?.Maker_ID ?? null,
+          surname: maker?.Surname ?? null,
+          first_name: maker?.First_name ?? null,
+          label: maker?.Label || [maker?.First_name, maker?.Surname].filter(Boolean).join(' ').trim() || String(documentId),
+          ego_network_size: egoSize,
         };
       });
 
       const edges = validRelations
         .filter((relation) => {
-          const sourceId = relation.maker?.documentId;
-          const targetId = relation.target_maker?.documentId;
+          const sourceId = relation.maker_extended?.documentId;
+          const targetId = relation.target_maker_extended?.documentId;
           return !!sourceId && !!targetId && topMakerIds.has(sourceId) && topMakerIds.has(targetId);
         })
         .map((relation) => ({
           id: relation.documentId ?? relation.id ?? String(relation.relation_id),
           relation_id: relation.relation_id,
-          source: relation.maker.documentId,
-          target: relation.target_maker.documentId,
+          source: relation.maker_extended.documentId,
+          target: relation.target_maker_extended.documentId,
           relation_code: relation.relation_code ?? null,
           relation_type_id: relation.relation_type_id ?? null,
           relation_type: relation.relation_type
@@ -102,6 +131,7 @@ export default {
         edges,
         meta: {
           limit,
+          egoDepth,
           totalNodes: nodes.length,
           totalEdges: edges.length,
         },
