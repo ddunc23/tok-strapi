@@ -1,0 +1,619 @@
+﻿town_location_id,geom,town
+1,"{""type"":""Point"",""coordinates"":[-0.1037671,51.5115854]}",Blackfriars
+2,"{""type"":""Point"",""coordinates"":[0.3198453,51.692046]}",Blackmore
+3,"{""type"":""Point"",""coordinates"":[-3.0564845,53.8182212]}",Blackpool
+4,"{""type"":""Point"",""coordinates"":[4.8936041,52.3727598]}",Amsterdam
+5,"{""type"":""Point"",""coordinates"":[-3.2607383,54.9881816]}",Annan
+6,"{""type"":""Point"",""coordinates"":[-1.5883874,53.7976907]}",Armley
+7,"{""type"":""Point"",""coordinates"":[-1.4712148,52.7471344]}",Ashby-de-la-Zouch
+8,"{""type"":""Point"",""coordinates"":[-2.0937689,53.4911289]}",Ashton under Lyne
+9,"{""type"":""Point"",""coordinates"":[-2.0811403,54.3149081]}",Askrigg
+10,"{""type"":""Point"",""coordinates"":[-1.5433954,52.5772439]}",Atherstone
+11,"{""type"":""Point"",""coordinates"":[-2.001098094,51.43889085]}",Calne
+12,"{""type"":""Point"",""coordinates"":[-3.2328277,56.2920848]}",Auchtermuchty
+13,"{""type"":""Point"",""coordinates"":[-0.7460981,51.3392845]}",Camberley
+14,"{""type"":""Point"",""coordinates"":[-1.479975334,51.207716827]}",Andover
+15,"{""type"":""Point"",""coordinates"":[-1.5099726,55.1270903]}",Blyth
+16,"{""type"":""Point"",""coordinates"":[-0.8130383,51.8161412]}",Aylesbury
+17,"{""type"":""Point"",""coordinates"":[-3.0425569,53.7915518]}",Bamton
+18,"{""type"":""Point"",""coordinates"":[-4.7243205,50.470725]}",Bodmin
+19,"{""type"":""Point"",""coordinates"":[-4.3115907,51.8591257]}",Carmarthen
+20,"{""type"":""Point"",""coordinates"":[-2.3596963,51.3813864]}",Bath
+21,"{""type"":""Point"",""coordinates"":[-3.6414828,55.9009224]}",Bathgate
+22,"{""type"":""Point"",""coordinates"":[-1.340216626,52.06176405]}",Banbury
+23,"{""type"":""Point"",""coordinates"":[-3.229386003,54.127265813]}",Barrow
+24,"{""type"":""Point"",""coordinates"":[-2.518847287,57.666033511]}",Banff
+25,"{""type"":""Point"",""coordinates"":[-1.6060486,52.2454247]}",Barford
+26,"{""type"":""Point"",""coordinates"":[0.0804245,51.5389922]}",Barking
+27,"{""type"":""Point"",""coordinates"":[-1.918158118,54.54310225]}",Barnard Castle
+28,"{""type"":""Point"",""coordinates"":[-0.2002261,51.65309]}",Barnet
+29,"{""type"":""Point"",""coordinates"":[-1.8767712,50.7194784]}",Bournemouth
+30,"{""type"":""Point"",""coordinates"":[-1.4827755,53.5527719]}",Barnsley
+31,"{""type"":""Point"",""coordinates"":[-3.2289494,54.1113351]}",Barrow in Furness
+33,"{""type"":""Point"",""coordinates"":[-0.0303183,51.4070938]}",Beckenham
+34,"{""type"":""Point"",""coordinates"":[-3.266909543,51.39789555]}",Barry Dock
+35,"{""type"":""Point"",""coordinates"":[-1.4166408,52.6537167]}",Barton in the Beans
+36,"{""type"":""Point"",""coordinates"":[-0.4675041,52.1363806]}",Bedford
+37,"{""type"":""Point"",""coordinates"":[-1.0861976,51.262826]}",Basingstoke
+38,"{""type"":""Point"",""coordinates"":[-3.1791934,51.4816546]}",Cardiff
+39,"{""type"":""Point"",""coordinates"":[-5.2990347,50.2138828]}",Camborne
+40,"{""type"":""Point"",""coordinates"":[-0.1610857,51.3657883]}",Carshalton  
+41,"{""type"":""Point"",""coordinates"":[-3.9305352,54.9401001]}",Castle Douglas
+42,"{""type"":""Point"",""coordinates"":[1.0802533,51.2800275]}",Canterbury
+43,"{""type"":""Point"",""coordinates"":[-0.1400561,50.8214626]}",Brighton
+44,"{""type"":""Point"",""coordinates"":[-5.9301829,54.596391]}",Belfast
+45,"{""type"":""Point"",""coordinates"":[-2.0026472,55.7692442]}",Berwick on Tweed
+46,"{""type"":""Point"",""coordinates"":[-2.3162408,52.3754763]}",Bewdley 
+47,"{""type"":""Point"",""coordinates"":[0.1480552,51.4634854]}",BexleyHeath
+48,"{""type"":""Point"",""coordinates"":[-1.1518287,51.8988832]}",Bicester
+49,"{""type"":""Point"",""coordinates"":[-4.199478523,51.0107646]}",Bideford
+50,"{""type"":""Point"",""coordinates"":[-0.3409855,52.8938586]}",Billingborough
+51,"{""type"":""Point"",""coordinates"":[-2.5972985,51.4538022]}",Bristol
+52,"{""type"":""Point"",""coordinates"":[1.4407855,51.3586758]}",Broadstairs
+53,"{""type"":""Point"",""coordinates"":[-2.053201799,52.3390519]}",Bromsgrove
+54,"{""type"":""Point"",""coordinates"":[-2.8727725,56.4666461]}",Broughty Ferry
+55,"{""type"":""Point"",""coordinates"":[4.351697,50.8465573]}",Brussels
+56,"{""type"":""Point"",""coordinates"":[-2.0928095,57.1482429]}",Aberdeen
+57,"{""type"":""Point"",""coordinates"":[-2.27814,52.6353685]}",Albrighton
+58,"{""type"":""Point"",""coordinates"":[4.817099446,52.6008538]}",Alkmaar
+59,"{""type"":""Point"",""coordinates"":[-3.2302627,56.6225542]}",Alyth 
+60,"{""type"":""Point"",""coordinates"":[0.0468161,51.6259439]}",Buckhurst Hill
+61,"{""type"":""Point"",""coordinates"":[-0.624285834,51.66688635]}",Amersham
+62,"{""type"":""Point"",""coordinates"":[-2.9648973,57.6762821]}",Buckie
+63,"{""type"":""Point"",""coordinates"":[-1.7519186,53.7944229]}",Bradford
+64,"{""type"":""Point"",""coordinates"":[-2.0822333,52.5700229]}",Bilston
+65,"{""type"":""Point"",""coordinates"":[-3.4237023,50.8264662]}",Bradninch
+66,"{""type"":""Point"",""coordinates"":[0.628988445,51.87691925]}",Bradwell
+67,"{""type"":""Point"",""coordinates"":[-4.276232161,53.140104419]}",Carnarvon
+68,"{""type"":""Point"",""coordinates"":[-1.6568455,54.736376]}",Brancepeth
+69,"{""type"":""Point"",""coordinates"":[6.2123361,46.5839591]}",Brassus
+70,"{""type"":""Point"",""coordinates"":[-0.3216623,51.4863958]}",Brentford
+71,"{""type"":""Point"",""coordinates"":[-0.1964511,54.0871383]}",Bridlington
+72,"{""type"":""Point"",""coordinates"":[-2.1237803,52.4823185]}",Brierley Hill
+73,"{""type"":""Point"",""coordinates"":[-1.9026911,52.4796992]}",Birmingham
+74,"{""type"":""Point"",""coordinates"":[-1.419563337,54.90046175]}",Bishopwearmouth
+75,"{""type"":""Point"",""coordinates"":[-2.4840566,53.749326]}",Blackburn
+76,"{""type"":""Point"",""coordinates"":[0.1186637,52.2055314]}",Cambridge
+77,"{""type"":""Point"",""coordinates"":[-0.9786725,51.9983175]}",Buckingham
+78,"{""type"":""Point"",""coordinates"":[-2.6531343,53.1236341]}",Bunbury near Chester
+79,"{""type"":""Point"",""coordinates"":[-2.959932067,50.873651227]}",Chard
+80,"{""type"":""Point"",""coordinates"":[-1.401268,53.0633087]}",Butterley
+81,"{""type"":""Point"",""coordinates"":[-0.0197534,51.4453215]}",Catford
+82,"{""type"":""Point"",""coordinates"":[-0.6033186,53.0250422]}",Caythorpe
+83,"{""type"":""Point"",""coordinates"":[-2.9362311,54.8948478]}",Carlisle
+84,"{""type"":""Point"",""coordinates"":[0.0365359,51.4826053]}",Charlton
+85,"{""type"":""Point"",""coordinates"":[0.5292758,51.3804845]}",Chatham
+86,"{""type"":""Point"",""coordinates"":[0.4724553,51.7345398]}",Chelmsford
+87,"{""type"":""Point"",""coordinates"":[0.1272878,51.3579434]}",Chelsfield
+88,"{""type"":""Point"",""coordinates"":[-0.0335908,51.702052]}",Cheshunt
+89,"{""type"":""Point"",""coordinates"":[-2.0711559,51.8995685]}",Cheltenham
+90,"{""type"":""Point"",""coordinates"":[-2.8908955,53.1908873]}",Chester
+91,"{""type"":""Point"",""coordinates"":[-1.5750431,54.8543237]}",Chester le Street
+92,"{""type"":""Point"",""coordinates"":[0.1445917,52.2222881]}",Chesterton
+93,"{""type"":""Point"",""coordinates"":[-2.297934003,53.59300894]}",Bury
+94,"{""type"":""Point"",""coordinates"":[-4.114615433,53.234556143]}",Bangor
+95,"{""type"":""Point"",""coordinates"":[-3.014824266,53.394646972]}",Birkenhead
+96,"{""type"":""Point"",""coordinates"":[-2.16501514,50.857938259]}",Blandford
+97,"{""type"":""Point"",""coordinates"":[-3.409083776,51.945834324]}",Brecknock
+98,"{""type"":""Point"",""coordinates"":[-0.657797754,51.536262281]}",Burnham
+99,"{""type"":""Point"",""coordinates"":[-2.6089889,51.3660251]}",Chew Magna
+101,"{""type"":""Point"",""coordinates"":[-0.783114432,50.84467705]}",Chichester
+102,"{""type"":""Point"",""coordinates"":[-0.2430129,52.1462041]}",Everton
+103,"{""type"":""Point"",""coordinates"":[-1.5555812,54.5242081]}",Darlington
+104,"{""type"":""Point"",""coordinates"":[0.21807,51.4443059]}",Dartford
+105,"{""type"":""Point"",""coordinates"":[0.089833697,51.6286009]}",Chigwell
+106,"{""type"":""Point"",""coordinates"":[-2.51218336,51.2618429]}",Chilcompton
+107,"{""type"":""Point"",""coordinates"":[-1.7813927,52.0496652]}",Chipping Campden
+108,"{""type"":""Point"",""coordinates"":[0.0769545,51.4115718]}",Chislehurst
+100,"{""type"":""Point"",""coordinates"":[-2.764484969,53.567267028]}",Dalton 
+109,"{""type"":""Point"",""coordinates"":[-1.5924184,51.2082919]}",Church
+110,"{""type"":""Point"",""coordinates"":[0.8779245,52.32678855]}",Church Stanton
+111,"{""type"":""Point"",""coordinates"":[-1.9661616,51.7171029]}",Cirencester
+112,"{""type"":""Point"",""coordinates"":[0.8994651,51.8896903]}",Colchester
+114,"{""type"":""Point"",""coordinates"":[-2.194970171,53.1630875]}",Congleton
+115,"{""type"":""Point"",""coordinates"":[-1.9483083,52.0940158]}",Evesham
+116,"{""type"":""Point"",""coordinates"":[-3.583844,50.3514839]}",Dartmouth
+117,"{""type"":""Point"",""coordinates"":[1.4027344,51.2239544]}",Deal
+118,"{""type"":""Point"",""coordinates"":[-3.4444571,54.7094672]}",Dearham
+119,"{""type"":""Point"",""coordinates"":[-0.0215164,51.4758453]}",Deptford
+120,"{""type"":""Point"",""coordinates"":[-1.9499173,53.4433552]}",Glossop
+121,"{""type"":""Point"",""coordinates"":[-5.0688262,50.1552197]}",Falmouth
+122,"{""type"":""Point"",""coordinates"":[-0.7984854,51.2151749]}",Farnham
+123,"{""type"":""Point"",""coordinates"":[-2.7319827,53.3838964]}",Farnworth
+124,"{""type"":""Point"",""coordinates"":[0.8911894,51.3144088]}",Faversham
+125,"{""type"":""Point"",""coordinates"":[-0.611219797,51.1888841]}",Godalming
+126,"{""type"":""Point"",""coordinates"":[-0.1805587,51.5973246]}",Finchley
+127,"{""type"":""Point"",""coordinates"":[-3.613215,57.609864]}",Forres
+128,"{""type"":""Point"",""coordinates"":[1.0043386,52.7776939]}",Foulsham
+129,"{""type"":""Point"",""coordinates"":[-2.0051497,57.6935974]}",Fraserburgh
+130,"{""type"":""Point"",""coordinates"":[-2.319846671,51.2294852]}",Frome
+133,"{""type"":""Point"",""coordinates"":[-2.3342665,55.1943577]}",Gatehouse 
+134,"{""type"":""Point"",""coordinates"":[-1.6019294,54.9625789]}",Gateshead
+135,"{""type"":""Point"",""coordinates"":[-2.97019,56.4605938]}",Dundee
+136,"{""type"":""Point"",""coordinates"":[6.1466014,46.2017559]}",Geneva
+137,"{""type"":""Point"",""coordinates"":[-3.4616183,56.0713724]}",Dunfermline
+138,"{""type"":""Point"",""coordinates"":[-4.924916,55.9470831]}",Dunoon
+139,"{""type"":""Point"",""coordinates"":[-6.2602732,53.3497645]}",Dublin
+140,"{""type"":""Point"",""coordinates"":[-1.4761491,52.9212617]}",Derby
+141,"{""type"":""Point"",""coordinates"":[-7.3213056,54.9978678]}",Derry
+142,"{""type"":""Point"",""coordinates"":[-2.3438476,55.777842]}",Dunse 
+143,"{""type"":""Point"",""coordinates"":[-1.9958302,51.3525027]}",Devizes
+144,"{""type"":""Point"",""coordinates"":[-1.1210853,50.7952074]}",Gosport
+145,"{""type"":""Point"",""coordinates"":[-3.005830105,56.317159393]}",Cupar
+146,"{""type"":""Point"",""coordinates"":[-8.4654674,51.897077]}",Cork
+147,"{""type"":""Point"",""coordinates"":[-2.353186338,51.68138845]}",Dursley
+148,"{""type"":""Point"",""coordinates"":[-0.3051952,51.5126553]}",Ealing
+149,"{""type"":""Point"",""coordinates"":[-2.0816813,52.5110832]}",Dudley
+150,"{""type"":""Point"",""coordinates"":[-1.4888648,52.9861026]}",Duffield
+151,"{""type"":""Point"",""coordinates"":[1.116931724,52.38117845]}",Diss
+152,"{""type"":""Point"",""coordinates"":[-0.0117661,51.1322179]}",East Grinstead
+153,"{""type"":""Point"",""coordinates"":[-1.510477,52.4081812]}",Coventry
+154,"{""type"":""Point"",""coordinates"":[-3.6092292,55.069836]}",Dumfries
+155,"{""type"":""Point"",""coordinates"":[-1.2985186,50.7633176]}",Cowes
+156,"{""type"":""Point"",""coordinates"":[-3.6542691,50.7879937]}",Crediton
+157,"{""type"":""Point"",""coordinates"":[-1.860311336,51.63448645]}",Cricklade
+158,"{""type"":""Point"",""coordinates"":[-1.1335312,53.5227681]}",Doncaster
+159,"{""type"":""Point"",""coordinates"":[1.3134228,51.1251275]}",Dover
+160,"{""type"":""Point"",""coordinates"":[0.0064566,51.426111]}",Downham
+161,"{""type"":""Point"",""coordinates"":[0.2781546,50.7664372]}",Eastbourne
+162,"{""type"":""Point"",""coordinates"":[-0.101957,51.3713049]}",Croydon
+163,"{""type"":""Point"",""coordinates"":[-4.175140573,50.371126506]}",Devonport
+164,"{""type"":""Point"",""coordinates"":[-3.0700445,55.8943361]}",Dalkeith
+165,"{""type"":""Point"",""coordinates"":[0.072979029,51.1907598]}",Edenbridge
+166,"{""type"":""Point"",""coordinates"":[-0.2749555,51.6136623]}",Edgware
+167,"{""type"":""Point"",""coordinates"":[-4.8178728,55.9620009]}",Gourock
+168,"{""type"":""Point"",""coordinates"":[-0.153823389,51.76222736]}",Essendon
+169,"{""type"":""Point"",""coordinates"":[-3.1883749,55.9533456]}",Edinburgh
+170,"{""type"":""Point"",""coordinates"":[-0.5473085,51.4312585]}",Egham
+171,"{""type"":""Point"",""coordinates"":[-4.4905294,55.8354647]}",Elderslie
+172,"{""type"":""Point"",""coordinates"":[-1.8394265,53.6905487]}",Elland
+173,"{""type"":""Point"",""coordinates"":[-0.0416048,51.3994675]}",Elmers End
+174,"{""type"":""Point"",""coordinates"":[0.0541253,51.4505687]}",Eltham
+175,"{""type"":""Point"",""coordinates"":[0.262039,52.3990199]}",Ely
+176,"{""type"":""Point"",""coordinates"":[-0.0810175,51.6520851]}",Enfield
+177,"{""type"":""Point"",""coordinates"":[-0.0908639,51.6526384]}",Enfield Chase
+178,"{""type"":""Point"",""coordinates"":[-6.1703572,53.1927323]}",Enniskerry
+179,"{""type"":""Point"",""coordinates"":[0.054801129,51.6676884]}",Epping Forest
+180,"{""type"":""Point"",""coordinates"":[0.1792322,51.480819]}",Erith
+181,"{""type"":""Point"",""coordinates"":[0.464669774,51.77046785]}",Essex 
+182,"{""type"":""Point"",""coordinates"":[-3.5269497,50.7255794]}",Exeter
+183,"{""type"":""Point"",""coordinates"":[-3.784376,55.9991959]}",Falkirk
+184,"{""type"":""Point"",""coordinates"":[-4.2488787,55.8609825]}",Glasgow
+185,"{""type"":""Point"",""coordinates"":[-3.7230303,56.0189027]}",Grangemouth
+186,"{""type"":""Point"",""coordinates"":[-2.2458192,51.8653705]}",Gloucester
+187,"{""type"":""Point"",""coordinates"":[-0.6430066,52.9065217]}",Grantham
+188,"{""type"":""Point"",""coordinates"":[-2.3285836,52.1109798]}",Great Malvern
+189,"{""type"":""Point"",""coordinates"":[0.3694468,51.4424747]}",Gravesend
+190,"{""type"":""Point"",""coordinates"":[1.7314845,52.6071742]}",Great Yarmouth
+191,"{""type"":""Point"",""coordinates"":[-0.0045417,51.4820845]}",Greenwich
+192,"{""type"":""Point"",""coordinates"":[-4.7564721,55.9473423]}",Greenock
+193,"{""type"":""Point"",""coordinates"":[-0.0736289,53.5677371]}",Grimsby
+194,"{""type"":""Point"",""coordinates"":[-2.5822348,49.4566233]}",Guernsey
+195,"{""type"":""Point"",""coordinates"":[-0.5732063,51.2356068]}",Guildford
+196,"{""type"":""Point"",""coordinates"":[-2.779317,55.9556144]}",Haddington
+197,"{""type"":""Point"",""coordinates"":[0.9542292,52.0441822]}",Hadleigh
+198,"{""type"":""Point"",""coordinates"":[0.993789825,51.958206722]}",Dedham
+199,"{""type"":""Point"",""coordinates"":[0.2730609,50.86282295]}",Hailsham
+200,"{""type"":""Point"",""coordinates"":[0.0933827,51.6033138]}",Hainault
+201,"{""type"":""Point"",""coordinates"":[1.5001649,52.3418147]}",Halesworth
+202,"{""type"":""Point"",""coordinates"":[-1.539318251,53.991206444]}",Harrogate
+203,"{""type"":""Point"",""coordinates"":[-5.075877977,56.230334452]}",Inverary
+204,"{""type"":""Point"",""coordinates"":[-0.3394758,53.7435722]}",Hull
+205,"{""type"":""Point"",""coordinates"":[-2.0161045,52.2012131]}",Kington
+206,"{""type"":""Point"",""coordinates"":[-0.181753275,52.34244415]}",Huntingdon
+207,"{""type"":""Point"",""coordinates"":[-2.9102756,50.9267192]}",Ilminster
+208,"{""type"":""Point"",""coordinates"":[-2.97513869,53.387016144]}",Liverpool SW
+209,"{""type"":""Point"",""coordinates"":[-79.8728583,43.2560802]}",Hamilton
+210,"{""type"":""Point"",""coordinates"":[-1.24340936,51.04483545]}",Hampshire
+211,"{""type"":""Point"",""coordinates"":[-2.1753695,53.0259916]}",Hanley
+212,"{""type"":""Point"",""coordinates"":[0.0974893,51.7676194]}",Harlow
+213,"{""type"":""Point"",""coordinates"":[-2.433541843,55.598168991]}",Kelso
+214,"{""type"":""Point"",""coordinates"":[-1.2093696,54.6857276]}",Hartlepool
+215,"{""type"":""Point"",""coordinates"":[1.2898522,51.9445801]}",Harwich
+216,"{""type"":""Point"",""coordinates"":[-2.898906,53.4851525]}",Kirkby
+217,"{""type"":""Point"",""coordinates"":[-4.225739,57.4790124]}",Inverness
+218,"{""type"":""Point"",""coordinates"":[-2.3742165,57.2838703]}",Inverurie
+113,"{""type"":""Point"",""coordinates"":[-6.668423905,55.133864121]}",Coleraine
+132,"{""type"":""Point"",""coordinates"":[-0.773698632,53.397148243]}",Gainsborough
+219,"{""type"":""Point"",""coordinates"":[0.5824703,50.8553888]}",Hastings
+220,"{""type"":""Point"",""coordinates"":[-4.9651074,51.8023297]}",Haverfordwest
+221,"{""type"":""Point"",""coordinates"":[-2.235751602,54.3012408]}",Hawes 
+222,"{""type"":""Point"",""coordinates"":[0.2517025,50.9717443]}",Heathfield
+223,"{""type"":""Point"",""coordinates"":[-0.9050287,51.5375786]}",Henley
+224,"{""type"":""Point"",""coordinates"":[-3.1582296,56.1110218]}",Kirkcaldy
+225,"{""type"":""Point"",""coordinates"":[-2.876519326,53.7801594]}",Kirkham
+226,"{""type"":""Point"",""coordinates"":[-2.7151735,52.0553813]}",Hereford
+227,"{""type"":""Point"",""coordinates"":[-0.078521,51.7957409]}",Hertford 
+228,"{""type"":""Point"",""coordinates"":[-2.1017927,54.971478]}",Hexham
+229,"{""type"":""Point"",""coordinates"":[-0.1938826,51.650399]}",High Barnet
+230,"{""type"":""Point"",""coordinates"":[-1.5437941,53.7974185]}",Leeds
+231,"{""type"":""Point"",""coordinates"":[-2.960369,58.9816049]}",Kirkwall
+232,"{""type"":""Point"",""coordinates"":[-1.465127931,54.0101765]}",Knaresborough
+233,"{""type"":""Point"",""coordinates"":[-0.7484153,51.627422]}",High Wycombe
+234,"{""type"":""Point"",""coordinates"":[-0.2791646,51.9464129]}",Hitchin
+235,"{""type"":""Point"",""coordinates"":[-0.0112898,51.7616709]}",Hoddesdon
+236,"{""type"":""Point"",""coordinates"":[-0.3295028,51.0630273]}",Horsham
+237,"{""type"":""Point"",""coordinates"":[-2.5667465,51.4337828]}",Knowle
+238,"{""type"":""Point"",""coordinates"":[-0.117287,51.5013012]}",Lambeth
+239,"{""type"":""Point"",""coordinates"":[-2.9184596,54.7145487]}",Lamonby
+240,"{""type"":""Point"",""coordinates"":[-3.7780361,55.6736271]}",Lanark
+241,"{""type"":""Point"",""coordinates"":[-1.7822482,53.6466645]}",Huddersfield
+243,"{""type"":""Point"",""coordinates"":[-1.581739165,52.345016514]}",Kenilworth
+244,"{""type"":""Point"",""coordinates"":[1.1526345,52.0579495]}",Ipswich
+245,"{""type"":""Point"",""coordinates"":[-7.9794599,52.865196]}",Ireland
+246,"{""type"":""Point"",""coordinates"":[-4.5591148,54.1936805]}",Isle of Man
+247,"{""type"":""Point"",""coordinates"":[-0.0999051,51.5384287]}",Islington
+248,"{""type"":""Point"",""coordinates"":[139.2394179,36.5748441]}",Japan
+249,"{""type"":""Point"",""coordinates"":[-2.5553768,55.4776435]}",Jedburgh
+250,"{""type"":""Point"",""coordinates"":[-2.0242837,53.1057636]}",Leek
+251,"{""type"":""Point"",""coordinates"":[-1.536404,52.2913394]}",Leamington
+252,"{""type"":""Point"",""coordinates"":[-2.1358386,49.2214561]}",Jersey
+253,"{""type"":""Point"",""coordinates"":[-1.938708596,53.86764515]}",Keighley
+254,"{""type"":""Point"",""coordinates"":[-2.747183,54.3289795]}",Kendal
+255,"{""type"":""Point"",""coordinates"":[-0.1058829,51.4882861]}",Kennington
+256,"{""type"":""Point"",""coordinates"":[-3.137609,54.6009281]}",Keswick
+257,"{""type"":""Point"",""coordinates"":[-0.097053543,51.520485249]}",London EC2
+258,"{""type"":""Point"",""coordinates"":[-1.9308887,52.0914249]}",Kickwall
+259,"{""type"":""Point"",""coordinates"":[-2.2478582,52.3880787]}",Kidderminster
+260,"{""type"":""Point"",""coordinates"":[-2.507144963,53.24091095]}",Leftwich 
+261,"{""type"":""Point"",""coordinates"":[-2.99168,53.4071991]}",Liverpool W
+262,"{""type"":""Point"",""coordinates"":[-4.4964652,55.6100589]}",Kilmarnock
+263,"{""type"":""Point"",""coordinates"":[-4.5269606,55.6383988]}",Kilmaurs
+264,"{""type"":""Point"",""coordinates"":[-0.38139867,52.30345885]}",Kimbolton
+265,"{""type"":""Point"",""coordinates"":[-0.728267468,52.399475573]}",Kettering
+266,"{""type"":""Point"",""coordinates"":[-0.203120854,53.1823034]}",Lincolnshire
+267,"{""type"":""Point"",""coordinates"":[-4.466525144,50.45835615]}",Liskeard
+268,"{""type"":""Point"",""coordinates"":[-2.99168,53.4071991]}",Liverpool
+269,"{""type"":""Point"",""coordinates"":[-3.1709492,55.9725499]}",Leith
+270,"{""type"":""Point"",""coordinates"":[-0.2305199,51.9767243]}",Letchworth
+271,"{""type"":""Point"",""coordinates"":[-1.8270091,54.3105988]}",Leyburn
+272,"{""type"":""Point"",""coordinates"":[-1.1330789,52.6361398]}",Leicester
+273,"{""type"":""Point"",""coordinates"":[-0.259581344,51.534667856]}",London  NW10
+274,"{""type"":""Point"",""coordinates"":[-8.6301239,52.661252]}",Limerick
+275,"{""type"":""Point"",""coordinates"":[0.394982696,52.754602628]}",King's Lynn
+276,"{""type"":""Point"",""coordinates"":[-0.1276474,51.5073219]}",London
+277,"{""type"":""Point"",""coordinates"":[0.023034881,51.518013889]}",London E16
+278,"{""type"":""Point"",""coordinates"":[-3.420766913,56.203446511]}",Kinross
+279,"{""type"":""Point"",""coordinates"":[-0.02121398,51.586523757]}",London E17
+280,"{""type"":""Point"",""coordinates"":[-0.1234335,51.5161885]}",London EC
+281,"{""type"":""Point"",""coordinates"":[-0.1106583,51.5298763]}",London EC1
+282,"{""type"":""Point"",""coordinates"":[-1.861068133,53.723016176]}",Halifax
+283,"{""type"":""Point"",""coordinates"":[-0.020510451,51.512003196]}",London E
+284,"{""type"":""Point"",""coordinates"":[-0.305634626,51.410210992]}",Kingston
+285,"{""type"":""Point"",""coordinates"":[-3.3786183,51.7490624]}",Merthyr Tydfil
+286,"{""type"":""Point"",""coordinates"":[-3.4568129,55.8829378]}",Midcalder
+287,"{""type"":""Point"",""coordinates"":[-0.1276474,51.5073219]}",London N
+288,"{""type"":""Point"",""coordinates"":[-0.082123675,51.511352465]}",London EC3
+289,"{""type"":""Point"",""coordinates"":[-0.4876472,51.4660634]}",London N11
+290,"{""type"":""Point"",""coordinates"":[-0.474918415,51.4808232]}",London N5
+291,"{""type"":""Point"",""coordinates"":[-0.4747018,51.4664673]}",London N7
+292,"{""type"":""Point"",""coordinates"":[-0.120987111,51.519789343]}",London WC1
+293,"{""type"":""Point"",""coordinates"":[-0.122355313,51.51176212]}",London WC2
+294,"{""type"":""Point"",""coordinates"":[-1.6131572,54.9738474]}",Newcastle upon Tyne
+295,"{""type"":""Point"",""coordinates"":[0.0483875,50.7945315]}",Newhaven
+296,"{""type"":""Point"",""coordinates"":[-1.2344047,54.5760419]}",Middlesbrough
+297,"{""type"":""Point"",""coordinates"":[-1.58557442,50.72505115]}",Milford on Sea
+298,"{""type"":""Point"",""coordinates"":[-7.3213056,54.9978678]}",Londonderry
+299,"{""type"":""Point"",""coordinates"":[-0.213838551,52.592736447]}",Newark
+300,"{""type"":""Point"",""coordinates"":[-0.169834951,51.54364275]}",London NW3
+301,"{""type"":""Point"",""coordinates"":[-2.7193114,52.3679896]}",Ludlow
+302,"{""type"":""Point"",""coordinates"":[-0.4152837,51.8784385]}",Luton
+303,"{""type"":""Point"",""coordinates"":[-1.197169242,53.144637294]}",Mansfield
+304,"{""type"":""Point"",""coordinates"":[0.9065381,50.950968]}",Lydd
+305,"{""type"":""Point"",""coordinates"":[-2.525486829,51.72127595]}",Lydney 
+306,"{""type"":""Point"",""coordinates"":[-0.151398802,51.5205149]}",London W1
+307,"{""type"":""Point"",""coordinates"":[-0.21091511,51.510377654]}",London W11
+308,"{""type"":""Point"",""coordinates"":[-0.183610752,51.536810196]}",London NW
+309,"{""type"":""Point"",""coordinates"":[-0.106603285,51.49752144]}",London SE1
+310,"{""type"":""Point"",""coordinates"":[-0.144055085,51.4893335]}",London SE17
+311,"{""type"":""Point"",""coordinates"":[-0.144055085,51.4893335]}",London SE25
+312,"{""type"":""Point"",""coordinates"":[0.0213131,51.4767516]}",London SE3
+313,"{""type"":""Point"",""coordinates"":[-0.087929974,51.475553824]}",London SE5
+314,"{""type"":""Point"",""coordinates"":[0.0331403,51.4313129]}",London SE9
+315,"{""type"":""Point"",""coordinates"":[-0.176476504,51.514700941]}",London W2
+316,"{""type"":""Point"",""coordinates"":[-0.298434392,51.51940792]}",London W5
+317,"{""type"":""Point"",""coordinates"":[-0.1243397,51.4742479]}",London SW
+318,"{""type"":""Point"",""coordinates"":[-0.13041088,51.46257066]}",London SW4
+319,"{""type"":""Point"",""coordinates"":[-0.177316479,51.493436083]}",London SW7
+320,"{""type"":""Point"",""coordinates"":[-2.7160441,51.8098882]}",Monmouth
+321,"{""type"":""Point"",""coordinates"":[-0.1756922,51.6124905]}",North Finchley
+322,"{""type"":""Point"",""coordinates"":[-0.086622171,51.435420215]}",London S
+323,"{""type"":""Point"",""coordinates"":[-1.6907444,55.1675437]}",Morpeth
+324,"{""type"":""Point"",""coordinates"":[-0.2685226,51.4698873]}",Mortlake
+325,"{""type"":""Point"",""coordinates"":[-3.9920902,55.7901843]}",Motherwell
+326,"{""type"":""Point"",""coordinates"":[-7.166667,54.65]}",Mountfield
+327,"{""type"":""Point"",""coordinates"":[-2.1255158,53.2606635]}",Macclesfield
+328,"{""type"":""Point"",""coordinates"":[-2.5221184,53.0671376]}",Nantwich
+329,"{""type"":""Point"",""coordinates"":[14.2487679,40.8358846]}",Naples
+330,"{""type"":""Point"",""coordinates"":[0.0685289,51.4362297]}",New Eltham
+331,"{""type"":""Point"",""coordinates"":[0.5231646,51.2748258]}",Maidstone
+333,"{""type"":""Point"",""coordinates"":[-0.7965915,54.1349419]}",Malton
+334,"{""type"":""Point"",""coordinates"":[-0.2634066,51.4053347]}",New Malden
+335,"{""type"":""Point"",""coordinates"":[-1.3242212,51.4020243]}",Newbury
+336,"{""type"":""Point"",""coordinates"":[0.004617565,51.463619552]}",London SE 15
+337,"{""type"":""Point"",""coordinates"":[-2.8810819,53.5694489]}",Ormskirk
+338,"{""type"":""Point"",""coordinates"":[-1.1496461,52.9534193]}",Nottingham
+339,"{""type"":""Point"",""coordinates"":[-1.4684488,52.5246182]}",Nuneaton
+340,"{""type"":""Point"",""coordinates"":[1.29227,52.628606]}",Norwich
+341,"{""type"":""Point"",""coordinates"":[-0.116664523,51.571056245]}",London N 10
+342,"{""type"":""Point"",""coordinates"":[-2.2273919,53.0117627]}",Newcastle under Lyme
+343,"{""type"":""Point"",""coordinates"":[-2.2451148,53.4794892]}",Manchester
+344,"{""type"":""Point"",""coordinates"":[1.3819699,51.3878174]}",Margate
+345,"{""type"":""Point"",""coordinates"":[-3.433377283,56.395756947]}",Perth
+346,"{""type"":""Point"",""coordinates"":[-0.9208575,52.4777114]}",Market Harborough
+347,"{""type"":""Point"",""coordinates"":[-0.197148355,51.517658073]}",London W
+348,"{""type"":""Point"",""coordinates"":[-0.902807277,52.23433665]}",Northampton
+349,"{""type"":""Point"",""coordinates"":[-0.042764046,51.568289845]}",London NE
+350,"{""type"":""Point"",""coordinates"":[-76.9382069,39.5162234]}",Maryland
+351,"{""type"":""Point"",""coordinates"":[-1.5557234,53.1381728]}",Matlock Bridge
+352,"{""type"":""Point"",""coordinates"":[-4.3790696,55.5159992]}",Mauchline 
+353,"{""type"":""Point"",""coordinates"":[-2.131463309,51.3759342]}",Melksham
+354,"{""type"":""Point"",""coordinates"":[-0.887587,52.7649964]}",Melton Mowbray
+355,"{""type"":""Point"",""coordinates"":[-2.7570542,50.9417827]}",Norton sub Hamdon
+356,"{""type"":""Point"",""coordinates"":[-0.074660864,51.464428292]}",London SE
+357,"{""type"":""Point"",""coordinates"":[-2.1443209,53.536122]}",Newport Pagnall
+358,"{""type"":""Point"",""coordinates"":[-6.337506,54.1775283]}",Newry
+359,"{""type"":""Point"",""coordinates"":[-93.740504,30.8118989]}",Newton
+360,"{""type"":""Point"",""coordinates"":[-3.63634995,50.53791245]}",Newton Abbot
+361,"{""type"":""Point"",""coordinates"":[-4.4836737,54.959045]}",Newton Stewart
+362,"{""type"":""Point"",""coordinates"":[-2.9721543,51.0230711]}",North Curry
+363,"{""type"":""Point"",""coordinates"":[-1.4471035,55.0087655]}",North Shields
+364,"{""type"":""Point"",""coordinates"":[-1.6938874,53.9055083]}",Otley
+365,"{""type"":""Point"",""coordinates"":[-3.0548201,52.8603096]}",Oswestry
+366,"{""type"":""Point"",""coordinates"":[-75.6900574,45.4211435]}",Ottawa
+367,"{""type"":""Point"",""coordinates"":[-1.5980569,54.8853274]}",Ouston 
+368,"{""type"":""Point"",""coordinates"":[-1.2578499,51.7520131]}",Oxford
+369,"{""type"":""Point"",""coordinates"":[-4.4239646,55.8455828]}",Paisley
+371,"{""type"":""Point"",""coordinates"":[-2.7522047,54.6639133]}",Penrith
+372,"{""type"":""Point"",""coordinates"":[0.176626741,51.1612732]}",Penshurst
+373,"{""type"":""Point"",""coordinates"":[0.0166833,51.5311544]}",Plaistow 
+374,"{""type"":""Point"",""coordinates"":[-0.2427336,52.5725769]}",Peterborough
+375,"{""type"":""Point"",""coordinates"":[-1.727732015,51.421198372]}",Marlborough
+376,"{""type"":""Point"",""coordinates"":[0.0392744,51.5400084]}",Plashet
+377,"{""type"":""Point"",""coordinates"":[-1.1779031,50.6288132]}",Shanklin
+378,"{""type"":""Point"",""coordinates"":[0.7585715,51.4391704]}",Sheerness
+379,"{""type"":""Point"",""coordinates"":[-0.4094529,52.9984193]}",Sleaford
+380,"{""type"":""Point"",""coordinates"":[-0.5940682,51.5111014]}",Slough
+381,"{""type"":""Point"",""coordinates"":[-2.6992717,53.7593363]}",Preston
+382,"{""type"":""Point"",""coordinates"":[168.661,-45.0321923]}",Queenstown
+383,"{""type"":""Point"",""coordinates"":[0.687315159,51.15122795]}",Smarden
+384,"{""type"":""Point"",""coordinates"":[1.4196476,51.3334726]}",Ramsgate
+385,"{""type"":""Point"",""coordinates"":[-2.1163818,52.8063157]}",Stafford
+386,"{""type"":""Point"",""coordinates"":[-3.0041751,53.6475988]}",Southport
+387,"{""type"":""Point"",""coordinates"":[-1.0886623,50.7888796]}",Southsea
+388,"{""type"":""Point"",""coordinates"":[-0.959891656,53.08161435]}",Southwell
+389,"{""type"":""Point"",""coordinates"":[-4.2403593,55.8562456]}",Spoutmouth
+390,"{""type"":""Point"",""coordinates"":[-2.735982079,53.4486075]}",St Helens
+391,"{""type"":""Point"",""coordinates"":[-4.1425658,50.3712659]}",Plymouth
+392,"{""type"":""Point"",""coordinates"":[-0.9696512,51.456659]}",Reading
+393,"{""type"":""Point"",""coordinates"":[-5.227134721,50.2385651]}",Redruth
+394,"{""type"":""Point"",""coordinates"":[-1.102846456,50.797956506]}",Portsea
+395,"{""type"":""Point"",""coordinates"":[-3.3449362,51.6001047]}",Pontypridd
+396,"{""type"":""Point"",""coordinates"":[-1.953751254,50.74020055]}",Poole
+397,"{""type"":""Point"",""coordinates"":[-3.782199,51.5952119]}",Port Talbot
+398,"{""type"":""Point"",""coordinates"":[-0.2059492,51.237387]}",Reigate
+399,"{""type"":""Point"",""coordinates"":[-0.9463982,53.3187417]}",Retford
+400,"{""type"":""Point"",""coordinates"":[30.380619357,59.91785735]}",St Petersburg
+401,"{""type"":""Point"",""coordinates"":[-1.7063668,52.1927885]}",Stratford upon Avon
+402,"{""type"":""Point"",""coordinates"":[-0.00085311,51.540876101]}",Stratford Essex
+403,"{""type"":""Point"",""coordinates"":[-1.771128091,50.8292623]}",Ringwood
+404,"{""type"":""Point"",""coordinates"":[1.3751578,51.1841585]}",Ringwould
+406,"{""type"":""Point"",""coordinates"":[-4.0658238,55.676514]}",Strathaven
+407,"{""type"":""Point"",""coordinates"":[-1.5213194,54.1368788]}",Ripon
+408,"{""type"":""Point"",""coordinates"":[-1.4321848,54.9987414]}",South Shields
+409,"{""type"":""Point"",""coordinates"":[-2.1557561,53.6153659]}",Rochdale
+410,"{""type"":""Point"",""coordinates"":[-0.301462077,51.456340243]}",Richmond
+411,"{""type"":""Point"",""coordinates"":[-0.5495898,51.2371889]}",Rosetrees 
+412,"{""type"":""Point"",""coordinates"":[-2.5838357,51.9140804]}",Ross on Wye
+413,"{""type"":""Point"",""coordinates"":[-1.355187,53.4310417]}",Rotherham
+414,"{""type"":""Point"",""coordinates"":[-78.0833466,39.5760804]}",Rotterham
+415,"{""type"":""Point"",""coordinates"":[-4.2116533,55.8283888]}",Rutherglen 
+416,"{""type"":""Point"",""coordinates"":[-1.1603699,50.7299865]}",Ryde
+417,"{""type"":""Point"",""coordinates"":[0.2411256,52.021569]}",Saffron Walden
+418,"{""type"":""Point"",""coordinates"":[-0.3755169,51.5111461]}",Southall
+419,"{""type"":""Point"",""coordinates"":[-2.2891921,53.4877463]}",Salford
+420,"{""type"":""Point"",""coordinates"":[-1.075614,50.8036831]}",Portsmouth
+421,"{""type"":""Point"",""coordinates"":[-2.7955844,56.3403902]}",St. Andrews
+422,"{""type"":""Point"",""coordinates"":[-1.7954134,51.0690613]}",Salisbury
+423,"{""type"":""Point"",""coordinates"":[1.3408309,51.2752527]}",Sandwich
+424,"{""type"":""Point"",""coordinates"":[-5.1848837,50.2392986]}",St. Day
+425,"{""type"":""Point"",""coordinates"":[-2.803365463,53.42479645]}",Prescot
+427,"{""type"":""Point"",""coordinates"":[-0.470867563,52.650321327]}",Stamford
+428,"{""type"":""Point"",""coordinates"":[-2.5461298,51.1909451]}",Shepton Mallet
+429,"{""type"":""Point"",""coordinates"":[-0.4011868,54.2820009]}",Scarborough
+430,"{""type"":""Point"",""coordinates"":[-1.09904072,53.785097]}",Selby
+431,"{""type"":""Point"",""coordinates"":[0.196116556,51.27452185]}",Sevenoaks
+432,"{""type"":""Point"",""coordinates"":[-2.200461729,51.00745765]}",Shaftesbury
+433,"{""type"":""Point"",""coordinates"":[-2.375144061,52.65902505]}",Shifnal
+434,"{""type"":""Point"",""coordinates"":[-3.4867983,52.3443102]}",St. Harmons
+435,"{""type"":""Point"",""coordinates"":[-5.4795083,50.2149064]}",St. Ives
+405,"{""type"":""Point"",""coordinates"":[-0.493135307,51.300107059]}",Ripley
+370,"{""type"":""Point"",""coordinates"":[-2.284029393,53.489278057]}",Pendleton
+426,"{""type"":""Point"",""coordinates"":[-1.4702278,53.3806626]}",Sheffield
+436,"{""type"":""Point"",""coordinates"":[-72.0153096,44.419464]}",St. Johnsbury
+437,"{""type"":""Point"",""coordinates"":[-2.7540658,52.707755]}",Shrewsbury
+438,"{""type"":""Point"",""coordinates"":[0.101044,51.4264002]}",Sidcup
+439,"{""type"":""Point"",""coordinates"":[-3.216432163,50.71721725]}",Sidmouth
+440,"{""type"":""Point"",""coordinates"":[-0.2703789,52.22758]}",St. Neots
+441,"{""type"":""Point"",""coordinates"":[-122.170292584,37.4265407]}",Stanford
+442,"{""type"":""Point"",""coordinates"":[-2.007206304,53.96050325]}",Skipton
+443,"{""type"":""Point"",""coordinates"":[0.244192902,51.88696515]}",Stansted
+444,"{""type"":""Point"",""coordinates"":[-1.937673296,54.5360347]}",Startforth
+445,"{""type"":""Point"",""coordinates"":[-1.404189,50.9025349]}",Southampton
+447,"{""type"":""Point"",""coordinates"":[-3.9360012,56.1181242]}",Stirling
+448,"{""type"":""Point"",""coordinates"":[-2.160243,53.407901]}",Stockport
+450,"{""type"":""Point"",""coordinates"":[-2.2087993,56.9640234]}",Stonehaven
+451,"{""type"":""Point"",""coordinates"":[-2.1474345,52.4577615]}",Stourbridge
+452,"{""type"":""Point"",""coordinates"":[0.9973428,52.1878147]}",Stowmarket
+453,"{""type"":""Point"",""coordinates"":[-2.326394875,50.92900155]}",Sturminster Newton
+454,"{""type"":""Point"",""coordinates"":[-2.2198605,51.745424]}",Stroud
+455,"{""type"":""Point"",""coordinates"":[-1.3828727,54.9058512]}",Sunderland
+456,"{""type"":""Point"",""coordinates"":[-3.9459248,51.6195955]}",Swansea
+457,"{""type"":""Point"",""coordinates"":[-3.2323446,51.9964038]}",Talgarth
+458,"{""type"":""Point"",""coordinates"":[-1.8383326,52.333736]}",Tanworth-in-Arden
+459,"{""type"":""Point"",""coordinates"":[-2.673672473,53.1600059]}",Tarporley
+460,"{""type"":""Point"",""coordinates"":[-4.1446358,50.5496154]}",Tavistock
+461,"{""type"":""Point"",""coordinates"":[-3.1029086,51.0147895]}",Taunton
+462,"{""type"":""Point"",""coordinates"":[-6.103504,54.7007241]}",Templepatrick
+463,"{""type"":""Point"",""coordinates"":[-4.7050443,51.6726128]}",Tenby
+464,"{""type"":""Point"",""coordinates"":[0.699198877,51.06372145]}",Tenterden
+465,"{""type"":""Point"",""coordinates"":[-94.9718267,43.3054683]}",Terril
+466,"{""type"":""Point"",""coordinates"":[-2.519589073,50.948806991]}",Sherborn
+467,"{""type"":""Point"",""coordinates"":[-0.301183908,51.462002028]}",Richmond Surrey
+468,"{""type"":""Point"",""coordinates"":[-0.162265289,51.8193379]}",Tewin
+469,"{""type"":""Point"",""coordinates"":[-0.3290769,51.389182]}",Thames Ditton
+470,"{""type"":""Point"",""coordinates"":[0.7619363,51.5376596]}",Thorpe Bay
+471,"{""type"":""Point"",""coordinates"":[-0.528048164,52.3966484]}",Thrapston
+472,"{""type"":""Point"",""coordinates"":[0.414891978,51.0465738]}",Ticehurst
+473,"{""type"":""Point"",""coordinates"":[-7.89808041,52.68477435]}",Tipperary
+474,"{""type"":""Point"",""coordinates"":[0.2735876,51.1889529]}",Tonbridge
+475,"{""type"":""Point"",""coordinates"":[-79.3839347,43.6534817]}",Toronto
+476,"{""type"":""Point"",""coordinates"":[-1.0815361,53.9590555]}",York
+477,"{""type"":""Point"",""coordinates"":[-7.8506647,51.9501476]}",Youghal
+478,"{""type"":""Point"",""coordinates"":[-6.746195664,54.643348171]}",Cookstown
+479,"{""type"":""Point"",""coordinates"":[-3.5211361,50.4652392]}",Torquay
+480,"{""type"":""Point"",""coordinates"":[0.4115451,51.2984477]}",Town Malling 
+481,"{""type"":""Point"",""coordinates"":[-4.9125621,50.2682766]}",Tregony
+482,"{""type"":""Point"",""coordinates"":[-3.5885335,54.5474199]}",Whitehaven
+483,"{""type"":""Point"",""coordinates"":[-2.202432313,51.31614545]}",Trowbridge
+484,"{""type"":""Point"",""coordinates"":[-5.0520467,50.2627515]}",Truro
+485,"{""type"":""Point"",""coordinates"":[0.2673446,51.1371483]}",Tunbridge Wells
+486,"{""type"":""Point"",""coordinates"":[-77.361955985,25.029422]}",Unknown
+487,"{""type"":""Point"",""coordinates"":[0.2516815,51.5589708]}",Upminster
+488,"{""type"":""Point"",""coordinates"":[-2.9026437,51.7045076]}",Usk 
+489,"{""type"":""Point"",""coordinates"":[16.3725042,48.2083537]}",Vienna
+490,"{""type"":""Point"",""coordinates"":[-0.3579759,51.4511693]}",Whitton
+491,"{""type"":""Point"",""coordinates"":[-2.7283328,53.3646888]}",Widnes
+492,"{""type"":""Point"",""coordinates"":[-1.4967286,53.6829541]}",Wakefield
+493,"{""type"":""Point"",""coordinates"":[-3.0394101,53.4241208]}",Wallasey
+494,"{""type"":""Point"",""coordinates"":[-1.579003828,54.778014856]}",Durham
+495,"{""type"":""Point"",""coordinates"":[-2.6264624,53.5457188]}",Wigan
+496,"{""type"":""Point"",""coordinates"":[-3.1583101,54.8250263]}",Wigton
+497,"{""type"":""Point"",""coordinates"":[-1.9822687,52.5847949]}",Walsall
+498,"{""type"":""Point"",""coordinates"":[-0.0009449,51.6892068]}",Waltham Abbey
+499,"{""type"":""Point"",""coordinates"":[-0.0330001,51.6857829]}",Waltham Cross
+500,"{""type"":""Point"",""coordinates"":[-0.0188186,51.5844701]}",Walthamstow
+501,"{""type"":""Point"",""coordinates"":[-0.419814,51.3856837]}",Walton on Thames
+502,"{""type"":""Point"",""coordinates"":[0.0277989,51.5756739]}",Wanstead
+503,"{""type"":""Point"",""coordinates"":[-2.1098377,50.6868972]}",Wareham
+504,"{""type"":""Point"",""coordinates"":[-2.172166438,51.21507655]}",Warminster
+505,"{""type"":""Point"",""coordinates"":[-108.74577756,47.48279005]}",Willmore
+506,"{""type"":""Point"",""coordinates"":[-2.4112309,51.0560417]}",Wincanton Somerset
+507,"{""type"":""Point"",""coordinates"":[-0.4741522,51.5128661]}",Yiewsley
+508,"{""type"":""Point"",""coordinates"":[-2.5943178,53.3899497]}",Warrington
+509,"{""type"":""Point"",""coordinates"":[-2.266593525,51.090310735]}",Mere
+510,"{""type"":""Point"",""coordinates"":[-7.1119081,52.2609997]}",Waterford
+511,"{""type"":""Point"",""coordinates"":[0.412922596,51.25361975]}",Wateringbury
+512,"{""type"":""Point"",""coordinates"":[-0.604096404,51.48375775]}",Windsor
+514,"{""type"":""Point"",""coordinates"":[-0.3957425,51.6553875]}",Watford
+515,"{""type"":""Point"",""coordinates"":[-2.0224441,52.5521806]}",Wednesbury
+516,"{""type"":""Point"",""coordinates"":[174.7772114,-41.2887953]}",Wellington
+517,"{""type"":""Point"",""coordinates"":[-2.6451203,51.2094511]}",Wells
+518,"{""type"":""Point"",""coordinates"":[0.1606824,52.6651733]}",Wisbech
+519,"{""type"":""Point"",""coordinates"":[-1.4852861,51.7838848]}",Witney
+520,"{""type"":""Point"",""coordinates"":[-1.79764539,51.07155397]}",Sarum
+521,"{""type"":""Point"",""coordinates"":[0.551963258,51.877424581]}",Braintree
+522,"{""type"":""Point"",""coordinates"":[-3.00175028,51.128383369]}",Bridgewater
+523,"{""type"":""Point"",""coordinates"":[-1.9923114,52.5186579]}",West Bromwich
+524,"{""type"":""Point"",""coordinates"":[-1.2983434,50.7587988]}",West Cowes
+525,"{""type"":""Point"",""coordinates"":[0.43123751,52.086101919]}",Haverhill
+526,"{""type"":""Point"",""coordinates"":[-1.207832,54.6868261]}",West Hartlepool
+527,"{""type"":""Point"",""coordinates"":[-0.1265398,51.5004439]}",Westminster
+528,"{""type"":""Point"",""coordinates"":[-2.959283004,53.414657571]}",Liverpool E
+529,"{""type"":""Point"",""coordinates"":[-2.9778916,51.3471927]}",Weston super Mare
+530,"{""type"":""Point"",""coordinates"":[-1.377634211,53.9259798]}",Wetherby
+531,"{""type"":""Point"",""coordinates"":[-2.984874637,51.558490825]}",Newport
+532,"{""type"":""Point"",""coordinates"":[-0.340962207,51.750626139]}",St. Alban's
+533,"{""type"":""Point"",""coordinates"":[-2.4543424,50.6096257]}",Weymouth
+534,"{""type"":""Point"",""coordinates"":[-0.624256197,54.47997505]}",Whitby
+535,"{""type"":""Point"",""coordinates"":[-2.127567,52.5847651]}",Wolverhampton
+537,"{""type"":""Point"",""coordinates"":[0.5989448,51.6695923]}",Woodham Ferrers
+538,"{""type"":""Point"",""coordinates"":[-1.8972078,51.5441829]}",Wootton Bassett
+539,"{""type"":""Point"",""coordinates"":[-0.618390347,51.988223449]}",Woburn 
+540,"{""type"":""Point"",""coordinates"":[-2.224358058,52.191952047]}",Worcester
+541,"{""type"":""Point"",""coordinates"":[-1.501301695,50.705039067]}",Yarmouth
+542,"{""type"":""Point"",""coordinates"":[-4.258429285,55.86222802]}",Glasgow C2
+543,"{""type"":""Point"",""coordinates"":[-3.544907139,54.6337737]}",Workington
+513,"{""type"":""Point"",""coordinates"":[0.16767692,52.665601399]}",Wisbeach
+536,"{""type"":""Point"",""coordinates"":[0.04060863,51.604970641]}",Woodford
+449,"{""type"":""Point"",""coordinates"":[-1.312660615,54.564791422]}",Stockton
+544,"{""type"":""Point"",""coordinates"":[-0.3699697,50.8115402]}",Worthing
+545,"{""type"":""Point"",""coordinates"":[-2.9937869,53.0465084]}",Wrexham
+546,"{""type"":""Point"",""coordinates"":[-2.465438661,56.711863352]}",Montrose
+547,"{""type"":""Point"",""coordinates"":[-2.299000321,49.427622587]}",Channel Islands
+548,"{""type"":""Point"",""coordinates"":[-2.798408063,54.048405664]}",Lancaster
+549,"{""type"":""Point"",""coordinates"":[-0.538184685,53.23011602]}",Lincoln
+550,"{""type"":""Point"",""coordinates"":[-2.983854681,53.41664706]}",Liverppol
+551,"{""type"":""Point"",""coordinates"":[0.502356288,51.387302491]}",Rochester
+552,"{""type"":""Point"",""coordinates"":[1.321103105,52.094077888]}",Woodbridge
+554,"{""type"":""Point"",""coordinates"":[-1.350255425,51.847190458]}",Woodstock
+555,"{""type"":""Point"",""coordinates"":[-0.111796549,51.519792896]}",London WC
+556,"{""type"":""Point"",""coordinates"":[-0.801495702,54.072779931]}",Yorks
+553,"{""type"":""Point"",""coordinates"":[-1.48043895,53.39453639]}",Sheffield
+557,"{""type"":""Point"",""coordinates"":[-1.911621094,54.023906623]}",Pateley Bridge
+32,"{""type"":""Point"",""coordinates"":[-3.273627411,51.402722825]}",Barry
+332,"{""type"":""Point"",""coordinates"":[0.404296292,51.294028089]}",Malling
+446,"{""type"":""Point"",""coordinates"":[-2.23316556,51.743705497]}",Stroudwater
+131,"{""type"":""Point"",""coordinates"":[10.989657748,49.477268985]}",Fuerth 
+242,"{""type"":""Point"",""coordinates"":[-0.751648806,51.663141729]}",Hughenden 
+559,"{""type"":""Point"",""coordinates"":[13.3888599,52.5170365]}",Berlin
+560,"{""type"":""Point"",""coordinates"":[9.7385532,52.3744779]}",Hanover
+561,"{""type"":""Point"",""coordinates"":[14.5208584,59.6749712]}",Sweden
+562,"{""type"":""Point"",""coordinates"":[-74.0060152,40.7127281]}",New York
+563,"{""type"":""Point"",""coordinates"":[2.320041022,48.8588897]}","Paris, France"
+564,"{""type"":""Point"",""coordinates"":[10.3333283,55.670249]}",Denmark
+565,"{""type"":""Point"",""coordinates"":[-1.2649062,52.5310214]}",England
+566,"{""type"":""Point"",""coordinates"":[0.2847376,51.2044588]}",Tonbridge Wells
+594,"{""type"":""Point"",""coordinates"":[-3.0108212,53.3728002]}",Rock Ferry
+595,"{""type"":""Point"",""coordinates"":[0.547200151,52.7160827]}","Kings Lynn, Norfolk"
+596,"{""type"":""Point"",""coordinates"":[6.0248643,46.5308859]}","Morez Du Jura, France"
+569,"{""type"":""Point"",""coordinates"":[-107.991707,61.0666922]}",Canada
+570,"{""type"":""Point"",""coordinates"":[2.320041022,48.8588897]}",Paris
+571,"{""type"":""Point"",""coordinates"":[-4.6302502,55.4628044]}",Ayr
+572,"{""type"":""Point"",""coordinates"":[-2.8650938,54.0721085]}",Morecambe
+573,"{""type"":""Point"",""coordinates"":[37.6174943,55.7504461]}",Moscow
+574,"{""type"":""Point"",""coordinates"":[-4.1140518,56.7861112]}",Scotland
+575,"{""type"":""Point"",""coordinates"":[-4.8,54.06]}",British Isles
+576,"{""type"":""Point"",""coordinates"":[10.000654,53.550341]}",Hamburg
+577,"{""type"":""Point"",""coordinates"":[-0.253779139,51.5460558]}",Middlesex
+578,"{""type"":""Point"",""coordinates"":[-71.1908924,42.7262016]}","Methuen, USA"
+579,"{""type"":""Point"",""coordinates"":[-71.060511,42.3554334]}","Boston, USA"
+580,"{""type"":""Point"",""coordinates"":[10.6926437,50.6086518]}","Suhl, Thuringia"
+581,"{""type"":""Point"",""coordinates"":[13.7381437,51.0493286]}","Dresden, Germany"
+582,"{""type"":""Point"",""coordinates"":[-4.183724694,50.36984855]}",Plymouth Dock
+583,"{""type"":""Point"",""coordinates"":[-0.341452351,51.2715316]}",Surrey
+584,"{""type"":""Point"",""coordinates"":[14.446459273,50.0596288]}",Prague
+585,"{""type"":""Point"",""coordinates"":[-0.91931333,54.26209695]}",Kirkbymoorside
+602,"{""type"":""Point"",""coordinates"":[144.9631608,-37.8142176]}","Melbourne, Australia"
+587,"{""type"":""Point"",""coordinates"":[-0.3691409,51.4150272]}","Hampton, London"
+588,"{""type"":""Point"",""coordinates"":[24.991639,-28.8166236]}",South Africa
+589,"{""type"":""Point"",""coordinates"":[5.6343227,52.2434979]}",Holland
+590,"{""type"":""Point"",""coordinates"":[5.2568,48.7298343]}","Guerpont, France"
+591,"{""type"":""Point"",""coordinates"":[-2.7105501,53.76908]}","Bolton, Lancashire"
+612,"{""type"":""Point"",""coordinates"":[0.9098846,52.1069481]}","Bildeston, Suffolk"
+592,"{""type"":""Point"",""coordinates"":[-0.0022381,53.3675163]}","Louth, Lincolnshire"
+593,"{""type"":""Point"",""coordinates"":[0.5425477,51.3973115]}","New Brompton, Kent"
+597,"{""type"":""Point"",""coordinates"":[-74.0060152,40.7127281]}",New York City
+598,"{""type"":""Point"",""coordinates"":[0.3138532,49.0677708]}",Normandy
+599,"{""type"":""Point"",""coordinates"":[-113.46268,53.5318502]}",Strathearn
+600,"{""type"":""Point"",""coordinates"":[-0.08767155,51.50804895]}",London Bridge
+601,"{""type"":""Point"",""coordinates"":[-2.7392749,50.8097736]}","Beaminster, Dorset"
+603,"{""type"":""Point"",""coordinates"":[-100.445882,39.7837304]}",USA
+604,"{""type"":""Point"",""coordinates"":[9.149410145,45.9394759]}","Como, Italy"
+605,"{""type"":""Point"",""coordinates"":[-1.7140939,53.7264346]}","Cleckheaton, Yorkshire"
+606,"{""type"":""Point"",""coordinates"":[-0.8092339,53.0761693]}",Newark on Trent
+607,"{""type"":""Point"",""coordinates"":[12.9252977,50.8322608]}","Chemnitz, Germany"
+608,"{""type"":""Point"",""coordinates"":[172.6366455,-43.530955]}","Christchurch, New Zealand"
+568,"{""type"":""Point"",""coordinates"":[-75.1635262,39.9527237]}","Philadelphia, USA"
+609,"{""type"":""Point"",""coordinates"":[-2.1666674,51.8333313]}",Gloucestershire
+610,"{""type"":""Point"",""coordinates"":[78.6677428,22.3511148]}",India
+611,"{""type"":""Point"",""coordinates"":[-4.305792958,51.93801135]}",Llanpumpsaint
+613,"{""type"":""Point"",""coordinates"":[-1.70634,52.1927803]}","Stratford-upon-Avon, Warwickshire"
+567,"{""type"":""Point"",""coordinates"":[-0.0239836,52.9770408]}","Boston, Lincolnshire"
+614,"{""type"":""Point"",""coordinates"":[79.8541134,6.9387469]}","Colombo, Sri Lanka"
+586,"{""type"":""Point"",""coordinates"":[151.2082848,-33.8698439]}","Sydney, Australia"
+615,"{""type"":""Point"",""coordinates"":[-0.0798926,51.5266694]}","Shoreditch, London"
+616,"{""type"":""Point"",""coordinates"":[-2.4414627,53.0996153]}",Crewe
+617,"{""type"":""Point"",""coordinates"":[12.5834128,49.4374026]}","Tiefenbach, Bavaria"
+618,"{""type"":""Point"",""coordinates"":[0.0540693,51.3280619]}","Downe, Kent"
+619,"{""type"":""Point"",""coordinates"":[-2.1102277,49.1856637]}","St. Helier, Jersey"

@@ -1,0 +1,6210 @@
+maker_id,inst_code,inst_name,id
+411,128,"thermometer, attributed to John but probably by Matthew Berge",1
+4769,20,barometer,2
+4773,20,barometer,3
+795,179,weather recorder,4
+8643,169,"",5
+8644,20,barometer,6
+566,101,longitude scale,7
+566,15,coin balance,8
+566,111,sundial,9
+566,66,microscope,10
+2237,29,compass,11
+8654,,"",12
+8654,,"",13
+328,,"",14
+6039,99,binocular eyepiece for microscope,15
+8673,40,barograph,16
+4250,123,"octant,",17
+8676,20,barometer,18
+8677,20,barometer,19
+8678,20,barometer,20
+8679,20,barometer,21
+8680,111,sundial,22
+6570,40,"barograph,",23
+935,29,"compasses (marine),",24
+935,105,sextant,25
+935,111,"dipleidoscope,",26
+1321,128,thermometer,27
+8684,39,compasses (drawing),28
+4275,125,"telescope,",29
+8688,20,barometer,30
+8689,15,balance,31
+566,85,orrery,32
+6994,66,microscope,33
+7032,20,barometer,34
+442,80,pantograph,35
+8696,29,compass,36
+8697,26,chronometers,37
+8699,42,induction coil,38
+8699,225,Kymograph,39
+8699,226,dotting instrument,40
+8699,227,ergograph,41
+286,51,Gunners level,42
+286,41,mechanical equireoctial dial,43
+286,39,drawing instruments,44
+286,15,balance,45
+286,175,steelyard,46
+286,134,weights,47
+8700,20,barometer,48
+8700,128,thermometer,49
+8701,20,barometer,50
+1417,60,"level,",51
+4268,20,barometer (aneroid),52
+1537,,"",53
+8705,20,barometer (aneroid),54
+5783,20,barometer,55
+8706,20,barometer,56
+8707,20,barometer,57
+894,20,"barometer,",58
+894,128,"thermometer,",59
+894,56,"hygrometer,",60
+8708,45,moon globe,61
+4114,26,"chronometer,",62
+8709,105,sextant,63
+8710,20,barometer,64
+1926,80,"pantograph,",65
+1926,20,"barometer,",66
+1,20,"barometer,",67
+1,29,"compass (magnetic),",68
+1,32,"chondrometer,",69
+1,39,"drawing instruments,",70
+1,66,"microscope,",71
+1,104,"sector,",72
+1,128,"thermometer,",73
+3,66,microscope,74
+4,20,"barometer,",75
+4,66,"microscope,",76
+4,42,"electrical machine,",77
+5,66,"microscope,",78
+5,125,telescope,79
+6,96,quadrant,80
+7,125,telescope,81
+9,27,circumferentor,82
+10,14,back-staff,83
+12,15,"balance,",84
+12,56,"hygrometer,",85
+12,128,thermometer,86
+14,66,microscope,87
+15,105,"sextant,",88
+15,128,thermometer,89
+16,66,microscope,90
+17,29,"compass (magnetic),",91
+17,43,"ellipsograph,",92
+17,67,"marine astrolabe,",93
+17,68,"mural quadrant,",94
+17,101,"rule,",95
+17,104,"sector,",96
+17,111,"sundial,",97
+17,205,armillary dial,98
+18,22,"calculating machine,",99
+18,96,quadrant,100
+19,14,back staff,101
+21,20,barometer,102
+28,20,barometer,103
+28,128,thermometer,104
+29,15,balance,105
+30,63,lens,106
+34,105,sextant - surveying,107
+37,27,circumferentor,108
+38,20,barometer,109
+39,20,barometer,110
+41,20,barometer (marine),111
+43,20,"barometer,",112
+43,128,thermometer,113
+45,2,"alidade,",114
+45,28,"clinometer,",115
+45,60,"level,",116
+45,86,"plane table,",117
+45,96,"quadrant,",118
+45,101,"rule,",119
+45,104,"sector,",120
+45,111,"sundial,",121
+45,147,protractor,122
+46,18,burning glass,123
+47,32,chondrometer,124
+48,92,perpetual calendar,125
+49,14,"back-staff,",126
+49,72,Napier's bones,127
+50,20,"barometer,",128
+50,45,"globe,",129
+50,66,"microscope,",130
+50,128,thermometer,131
+51,20,barometer,132
+55,55,hydrostatic bubbles,133
+56,101,rule,134
+57,73,nocturnal,135
+58,14,back-staff,136
+60,20,"barometer,",137
+60,60,"level,",138
+60,112,"surveyor's chain,",139
+60,125,"telescope,",140
+60,127,"theodolite,",141
+60,128,thermometer,142
+61,104,sector (signed 'W.Burton fecit' prob same maker),143
+63,6,astrolabe,144
+64,96,quadrant,145
+65,2,"alidade,",146
+65,4,"armillary sphere,",147
+65,6,"astrolabe,",148
+65,31,"compendium,",149
+65,62,"log,",150
+65,73,"nocturnal,",151
+65,111,quadrant-dial,152
+65,101,"rule,",153
+65,111,"sundial,",154
+65,127,"theodolite,",155
+65,136,gunner's callipers,156
+566,,"",157
+69,36,dipping needle,158
+70,39,"drawing instruments,",159
+70,111,sundial,160
+71,127,theodolite,161
+72,101,rule,162
+74,2,alidade,163
+75,2,"alidade,",164
+75,29,"compass,",165
+75,49,"geometric square,",166
+75,86,"plane table,",167
+75,101,rule,168
+76,6,"astrolabe,",169
+76,27,"circumferentor,",170
+76,29,"compass,",171
+76,104,"sector,",172
+76,111,sundial,173
+81,29,compass (surveying),174
+82,29,"compass,",175
+82,45,"globe,",176
+82,103,sandglass,177
+83,111,sundial,178
+84,44,cross-staff,179
+85,112,surveyor's chain,180
+86,39,"drawing instruments,",181
+86,86,"plane table,",182
+86,101,rule,183
+87,6,"astrolabe,",184
+87,29,"compass,",185
+87,31,"astronomical compendium,",186
+87,45,"globr,",187
+87,73,"nocturnal,",188
+87,92,"perpetual calendar,",189
+87,96,"quadrant,",190
+87,104,"sector,",191
+87,111,sundial,192
+88,39,drawing instruments,193
+89,66,microscope,194
+91,101,"rule,",195
+91,126,Gunter's scale,196
+92,15,balance,197
+98,52,gauge,198
+99,107,slide rule,199
+100,6,astrolabe,200
+105,97,bow quadrant,201
+106,6,"astrolabe,",202
+106,104,sector,203
+107,96,quadrant,204
+110,6,"astrolabe,",205
+110,22,"calculating machine,",206
+110,29,"compass (magnetic),",207
+110,83,"planisphere,",208
+110,86,plane table frame,209
+110,96,"quadrant,",210
+110,107,"slide rule,",211
+110,111,"day/night dial,",212
+110,147,protractor,213
+111,96,"quadrant,",214
+111,111,sundial,215
+114,29,compass (magnetic),216
+115,20,"barometer,",217
+115,25,"camera obscura,",218
+115,73,"nocturnal,",219
+115,96,"quadrant,",220
+115,104,"sector,",221
+115,111,sundial,222
+116,1,"air pump,",223
+116,20,"barometer,",224
+116,111,sundial,225
+118,87,"perspectograph,",226
+118,96,quadrant,227
+119,101,scales,228
+120,96,quadrant,229
+122,29,"compass (magnetic),",230
+122,73,"nocturnal,",231
+122,96,"quadrant,",232
+122,107,"slide rule,",233
+122,111,sundial,234
+123,96,quadrant,235
+125,107,slide rule,236
+127,45,globe,237
+129,45,"globe,",238
+129,200,math inst,239
+130,104,sector,240
+133,104,sector,241
+135,20,"barometer,",242
+135,29,"compass,",243
+135,36,"dip circle,",244
+135,39,"drawing instruments,",245
+135,66,"miroscope,",246
+135,96,"quadrant,",247
+135,104,"sector,",248
+135,111,"sundial,",249
+135,128,thermometer,250
+136,29,compass,251
+138,20,barometer,252
+139,107,"slide rule,",253
+139,144,dip stick,254
+140,29,"compass (magnetic),",255
+140,101,rule,256
+141,20,"barometer,",257
+141,22,"calculating machine,",258
+141,60,"level,",259
+141,128,thermometer,260
+143,101,rule,261
+144,7,"astronomical clock,",262
+144,20,"barometer,",263
+144,68,"mural quadrant,",264
+144,85,"planetarium,",265
+144,111,"sundial,",266
+144,125,telescope,267
+145,85,"orrery,",268
+146,96,"quarant,",269
+146,101,rule (dialing),270
+146,111,"sundial,",271
+147,63,lens,272
+150,66,"microscope,",273
+150,69,"magic lantern,",274
+150,125,telescope,275
+153,125,telescope,276
+155,111,sundial,277
+158,27,"circumferentor,",278
+158,29,"compass,",279
+158,111,"sundial,",280
+158,136,gunners callipers,281
+159,52,"gauge,",282
+159,111,sundial,283
+160,45,globe,284
+161,107,slide rule,285
+162,104,"sector,",286
+162,107,slide rule,287
+163,31,compendium (astronomical),288
+164,1,"air pump,",289
+164,85,"planetarium,",290
+164,98,"gunner,s quadrant",291
+165,27,circumferentor,292
+166,45,"globe,",293
+166,123,"octant,",294
+166,125,"telescope,",295
+166,127,theodolite,296
+168,20,stick barometer,297
+168,174,Bull's eye illuminator,298
+168,66,"microscope screw,",299
+168,29,"surveyor's compass,",300
+168,104,sector,301
+168,111,garden (horizontal) sundial,302
+169,15,"balance,",303
+169,26,"chronometer,",304
+171,111,sundial,305
+172,125,telescope,306
+174,45,globe,307
+175,14,"back-staff,",308
+175,39,"drawing instruments,",309
+175,111,sundial,310
+176,52,"gauge,",311
+176,97,"bow quadrant,",312
+176,107,"slide rule,",313
+176,155,gunner's scales,314
+177,72,Napier's bones,315
+178,6,"astrolabe,",316
+178,101,"rule,",317
+178,111,sundial,318
+180,29,"compass,",319
+180,39,"drawing instruments,",320
+180,52,"gauge,",321
+180,96,"quadrant,",322
+180,111,"sundial,",323
+180,133,"waywise,",324
+180,136,gunner's callipers,325
+181,93,prism,326
+182,20,"barometer,",327
+182,56,"hygrometer,",328
+182,66,"microscope,",329
+182,96,"quadrant,",330
+182,105,"sextant,",331
+182,123,"octant,",332
+182,128,"thermometer,",333
+182,147,"protractor,",334
+183,28,"clinometer,",335
+183,60,"level,",336
+183,66,microscope,337
+185,105,sextant,338
+186,111,sundial,339
+187,101,"rule,",340
+187,104,"sector,",341
+187,147,protractor,342
+188,29,"miners compass,",343
+188,45,"globe,",344
+188,66,"microscope,",345
+188,80,"pantograph,",346
+188,85,"planetarium,",347
+188,107,"slide rule,",348
+188,127,theodolite,349
+191,101,rule,350
+192,4,"armillary sphere,",351
+192,29,"compass,",352
+192,111,sundial,353
+194,125,telescope,354
+196,22,"calculating machine,",355
+196,159,micrometer,356
+198,6,"astrolabe,",357
+198,96,quadrant,358
+199,97,horary quadrant,359
+200,66,"microscope,",360
+200,125,telescope,361
+202,29,compass,362
+204,20,barometer,363
+207,7,"astronomical clock,",364
+207,20,"barometer,",365
+207,56,"hygrometer,",366
+207,68,"mural quadrant,",367
+207,128,"thermometer,",368
+207,131,"transit instruments,",369
+207,135,"zenith instrument,",370
+207,148,pyrometer,371
+208,20,barometer,372
+209,96,quadrant,373
+210,7,astronomical clock,374
+211,20,"barometer,",375
+211,63,lens,376
+212,29,compass,377
+213,111,sundial,378
+214,39,drawing instruments,379
+215,96,quadrant,380
+216,7,"astronomical clock,",381
+216,85,planetarium,382
+217,97,horary quadrant,383
+218,29,"compass,",384
+218,45,globe,385
+220,20,barometer,386
+221,111,sundial,387
+225,97,horary quadrant,388
+226,66,"microscope,",389
+226,125,telescope,390
+228,29,compass,391
+230,73,nocturnal,392
+231,73,nocturnal,393
+232,66,microscope (compound),394
+232,125,telescope,395
+233,101,rule,396
+234,29,"compass,",397
+234,72,"Napier's bones,",398
+234,104,"sector,",399
+234,111,sundial,400
+236,2,"alidade,",401
+236,27,"circumferentor,",402
+236,29,"compass (magnetic),",403
+236,86,"plane table,",404
+236,96,"quadrant,",405
+236,104,sector,406
+237,20,"barometer,",407
+237,42,"electrostatic generator,",408
+237,125,"telescope,",409
+237,128,thermometer,410
+238,66,"microscope,",411
+238,125,telescope,412
+239,18,burning glass,413
+240,168,eudiometer,414
+241,18,burning glass,415
+242,111,sundial,416
+244,73,nocturnal,417
+245,123,octant,418
+248,123,octant,419
+250,105,octant,420
+253,125,telescope,421
+254,45,"globe, pocket,",422
+258,15,"balance,",423
+258,111,"sundial,",424
+258,134,weights,425
+259,111,sundial (ring dial type),426
+262,97,horary quadrant,427
+266,123,octant,428
+269,85,planetarium,429
+271,7,"astronomical clock,",430
+271,20,"barometer,",431
+271,27,"circumferentor,",432
+271,29,"compass (magnectic),",433
+271,39,"drawing instruments,",434
+271,96,"quadrant,",435
+271,104,"sector,",436
+271,111,"horizontal dial,",437
+271,127,"theodolite,",438
+271,136,"gunner's callipers,",439
+271,147,protractor,440
+272,66,"microscope,",441
+272,114,"spectacles,",442
+272,125,telescope,443
+273,12,"astroscope,",444
+273,66,"microscope,",445
+273,125,telescope,446
+275,20,barometer,447
+276,107,slide rule,448
+277,92,"perpetual calendar,",449
+277,111,sundial,450
+278,27,circumferentor,451
+279,14,"Davis quadrant,",452
+279,44,"fore staff,",453
+279,45,"globe,",454
+279,103,"Marine sandglass,",455
+279,104,"sector,",456
+279,107,"slide rule,",457
+279,111,Analemmatic sundial,458
+283,14,"back-staff,",459
+283,101,rule,460
+285,29,compass,461
+286,38,"dividing engine,",462
+286,60,"level,",463
+286,85,"planetarium,",464
+286,101,"rule,",465
+286,104,"sector,",466
+286,107,"slide rule,",467
+286,111,"sundial,",468
+286,105,"sextant,",469
+286,125,"telescope,",470
+286,159,micrometer,471
+289,1,"air pump,",472
+289,20,barometer,473
+292,73,nocturnal,474
+293,27,"circumferentor,",475
+293,39,"drawing instruments,",476
+293,85,"planetarium,",477
+293,101,"rule,",478
+293,107,"slide rule,",479
+293,133,waywiser,480
+294,105,sextant,481
+295,45,globe,482
+296,45,globe,483
+298,45,globe,484
+300,20,"barometer,",485
+300,128,thermometer,486
+302,14,back-staff,487
+303,125,telescope,488
+304,,"",489
+308,45,globe,490
+309,29,"compass,",491
+309,54,hydrometer,492
+310,29,"compass,",493
+310,111,sundial,494
+312,14,"back-staff,",495
+312,14,Elton' quadrant,496
+312,20,"barometer,",497
+312,68,"mural quadrant,",498
+312,101,"rule,",499
+312,104,"sector,",500
+312,123,"Hadley's quadrant,",501
+312,127,"theodolite,",502
+312,131,transit instruments,503
+313,29,compass (magnetic),504
+314,66,"microscope,",505
+314,125,telescope,506
+315,2,"alidade,",507
+315,111,sundial,508
+316,15,"balance,",509
+316,20,"barometer,",510
+316,29,"compass (magnetic),",511
+316,45,"globe,",512
+316,62,"log,",513
+316,80,"pantograph,",514
+316,85,"planetarium,",515
+316,96,"quadrant,",516
+316,107,"slide rule,",517
+316,111,"sundial,",518
+316,125,"telescope,",519
+316,128,thermometer,520
+317,111,sundial,521
+318,7,"astronomical clock,",522
+318,20,"barometer,",523
+318,133,waywiser,524
+319,133,waywiser,525
+321,101,rule,526
+323,45,"globe,",527
+323,60,level,528
+324,15,"balance,",529
+324,134,weights,530
+325,104,"sector,",531
+325,66,"microscope,",532
+325,107,"slide rule,",533
+325,111,compass dial,534
+326,20,barometer,535
+327,107,slide rule (dated 1713),536
+329,7,astronomical clock,537
+330,73,nocturnal,538
+332,20,"barometer,",539
+332,27,"circumfentor,",540
+332,56,"hygrometer,",541
+332,66,"microscope,",542
+332,125,"telescope,",543
+332,128,thermometer,544
+333,126,gunter's scale,545
+334,66,microscope,546
+335,66,microscope,547
+336,96,"quadrant,",548
+336,111,"sundial,",549
+336,125,telescope,550
+339,32,"chondrometer,",551
+339,111,"compass dial,",552
+339,133,waywiser,553
+340,32,"chondrometer,",554
+340,80,pantograph,555
+343,39,"drawing instruments,",556
+343,125,telescope,557
+345,66,"microscope,",558
+345,105,"sextant,",559
+345,125,telescope,560
+346,125,telescope,561
+347,20,"barometer,",562
+347,111,"sundial,",563
+347,133,"waywiser,",564
+347,147,protractor,565
+348,111,sundial,566
+350,66,microscope,567
+352,63,lens,568
+354,29,"compass, Azimuth",569
+355,7,"astronomical clock,",570
+355,20,barometer,571
+356,66,"microscope,",572
+356,70,"micrometer,",573
+356,125,telescope,574
+357,125,telescope,575
+359,51,gunners level,576
+365,14,back-staff,577
+376,15,balance,578
+388,14,back-staff,579
+389,29,"compass (magnetic),",580
+389,66,"microscope,",581
+389,111,sundial,582
+393,14,back-staff,583
+395,66,"microscope,",584
+395,125,telescope,585
+398,111,sundial,586
+399,111,sundial,587
+400,107,slide rule,588
+401,66,microscope,589
+403,62,"logs,",590
+403,141,sounding machines,591
+404,45,globe,592
+406,20,"barometer,",593
+406,128,thermometer,594
+408,38,"dividing engine,",595
+408,105,"sextant,",596
+408,109,"station pointer,",597
+408,147,protractor,598
+411,105,"sextant, attribted to John but probably by Matthew Berge",599
+417,125,telescope,600
+421,123,octant,601
+422,29,"compass (magnetic),",602
+422,123,octant,603
+424,20,"barometer,",604
+424,123,"octant,",605
+424,128,thermometer,606
+426,20,"barometer,",607
+426,111,"sundial,",608
+426,128,thermometer,609
+427,111,sundial,610
+430,20,"barometer,",611
+430,39,"drawing Instruments,",612
+430,66,"microscope,",613
+430,96,"quadrant,",614
+430,104,"sector,",615
+430,125,"telescope,",616
+430,127,"theodolite,",617
+430,128,"thermometer,",618
+430,151,lightning demonstrator,619
+431,20,"barometer,",620
+431,32,"chondrometer,",621
+431,102,"repeating circle,",622
+431,104,"sector,",623
+431,105,"sextant,",624
+431,125,"telescope,",625
+431,136,gunner's callipers,626
+432,45,globes,627
+433,45,globe celestial,628
+435,66,"microscope,",629
+435,127,theodolite,630
+437,20,"barometer,",631
+438,20,"barometer,",632
+438,56,"hygrometer,",633
+438,66,"microscope,",634
+438,92,"perpetual calendar,",635
+438,104,"sector,",636
+438,125,"telescope,",637
+438,128,thermometer,638
+439,39,"drawing instruments,",639
+439,66,"microscope,",640
+439,123,"octant,",641
+439,125,"telescope,",642
+439,133,waywiser,643
+440,1,"air pump,",644
+440,15,"hydro balance,",645
+440,20,"barometer (stick),",646
+440,32,"chondrometer,",647
+440,39,"drawing instruments,",648
+440,66,"microscope,",649
+440,111,"sundial,",650
+440,125,"telescope,",651
+440,128,thermometer,652
+441,20,"barometer,",653
+441,136,"callipers,",654
+441,56,"hugrometers,",655
+441,92,"perpetual calendar,",656
+441,125,"telescope,",657
+441,127,"theodolite,",658
+442,15,"balance precision,",659
+442,20,"barometer,",660
+442,29,"compass,",661
+442,56,"hygrometer,",662
+442,96,"quadrant,",663
+442,102,"reflecting circle,",664
+442,105,"sextant,",665
+442,125,"telescope,",666
+442,127,"theodolite,",667
+442,128,"thermometer,",668
+442,131,transit circle,669
+443,114,spectacles,670
+446,15,"balance,",671
+446,32,"chondrometer,",672
+446,54,"hydrometer,",673
+446,101,"rule,",674
+446,105,"octant,",675
+446,107,"slide rule,",676
+446,128,"thermometer,",677
+446,144,dip stick,678
+449,20,"barometer,",679
+449,128,thermometer,680
+451,228,stigmograph,681
+451,15,"balance (coin),",682
+451,15,"balance (precision),",683
+451,20,"barometer,",684
+451,29,"compass,",685
+451,42,"electrosatic generator,",686
+451,43,"ellipsograph,",687
+451,45,"globe,",688
+451,54,"hydrometer,",689
+451,60,"level,",690
+451,66,"microscope (solar),",691
+451,80,"pantograph,",692
+451,85,"planetarium,",693
+451,107,"slide-rule,",694
+451,111,"sundial,",695
+451,125,"telescope,",696
+451,127,"theodolite,",697
+451,128,"thermometer,",698
+451,133,"waywiser,",699
+451,142,"model-philosophical,",700
+452,62,"log,",701
+452,123,octant,702
+453,20,"barometer,",703
+453,56,"hygrometer,",704
+453,115,"spirit level,",705
+453,128,thermometer,706
+454,134,weights,707
+455,20,"barometer,",708
+455,28,"clinometer,",709
+455,45,"globe,",710
+455,66,"microscope,",711
+455,70,"micrometer,",712
+455,85,"planetarium,",713
+455,127,theodolite,714
+456,20,barometer,715
+457,20,barometer,716
+459,20,"barometer,",717
+459,128,thermometer,718
+460,20,"barometer,",719
+460,56,"hygrometer,",720
+460,128,thermometer,721
+461,15,balance,722
+462,54,hydrometer,723
+463,125,telescope,724
+464,6,"astrolabe,",725
+464,83,planisphere,726
+465,111,sundial,727
+466,14,back-staff,728
+468,29,"compass (magnetic),",729
+468,111,sundial,730
+469,101,rule,731
+470,20,barometer,732
+471,101,rule,733
+473,133,waywiser,734
+474,123,octant,735
+475,20,"barometer,",736
+475,29,"compass (magnetic),",737
+475,105,"sextant,",738
+475,123,"octant,",739
+475,125,telescope,740
+476,93,"prism train,",741
+476,123,"octant,",742
+476,125,telescope,743
+477,20,"barometer,",744
+477,56,hygrometer,745
+479,7,astronomical clock,746
+480,111,sundial,747
+482,105,sextant,748
+483,128,thermometer,749
+484,39,dividers,750
+485,,"",751
+486,15,"balance,",752
+486,29,"compass,",753
+486,54,"hydrometer,",754
+486,107,slide rule,755
+487,54,hydrometer weight,756
+489,54,"hydrometer,",757
+489,125,telescope,758
+491,26,"chondrometer,",759
+492,102,repeating circle,760
+494,20,barometer,761
+495,15,"balance coin,",762
+495,75,octant,763
+496,123,octant,764
+497,111,sundial,765
+499,7,"astronomical clock,",766
+499,128,thermometer,767
+500,7,"astronomical clock,",768
+500,20,"barometer,",769
+500,43,ellipsograph,770
+504,96,quadrant,771
+505,39,drawing instruments,772
+506,125,telescope,773
+507,51,"gunner's level, (perpendicular)",774
+507,125,telescope (perspective glass),775
+508,26,chronometer,776
+509,20,"barometer,",777
+509,32,"chondrometer,",778
+509,66,"microscope,",779
+509,105,"sextant,",780
+509,111,"sundial,",781
+510,7,astronomical clock,782
+511,29,"compass,",783
+511,45,"globe,",784
+511,100,full range of instruments,785
+511,125,telescope,786
+513,54,"hydrometer,",787
+513,107,slide rule,788
+514,28,"clinometer,",789
+514,60,"level,",790
+514,66,"microscope,",791
+514,104,"sector,",792
+514,111,"sundial,",793
+514,123,"octant,",794
+514,127,"theodoite,",795
+514,147,protractor,796
+515,14,"back-staff,",797
+515,123,octant? [see Taylor ref.],798
+516,14,back-staff,799
+517,7,astral clock,800
+518,45,globe,801
+519,7,"astronomical clock,",802
+519,20,"barometer,",803
+519,38,"dividing engine,",804
+519,68,"mural quadrant,",805
+519,96,"quadrant,",806
+519,101,"rule,",807
+519,102,"repeating circle,",808
+519,128,"thermometer,",809
+519,135,zenith sector,810
+520,18,"burning glass,",811
+520,168,eudiometer,812
+522,111,astronomical dial with,813
+524,101,rule,814
+525,105,sextant [probably],815
+531,7,"astronomical clock,",816
+531,20,"barometer,",817
+531,148,pyrometer,818
+532,85,planetarium,819
+533,20,barometer,820
+533,56,"hygrometer,",821
+534,20,"barometer,",822
+534,125,"telescope,",823
+534,128,thermometer,824
+538,27,circumferentor,825
+542,20,"barometer,",826
+542,128,thermometer,827
+545,45,globes (pocket),828
+547,32,"chondrometer,",829
+547,66,"microscope,",830
+547,125,telescope,831
+550,20,"barometer,",832
+550,45,"globe,",833
+550,66,"microscope,",834
+550,100,full range of instruments,835
+551,45,"globe,",836
+551,105,"sextant,",837
+551,111,sundial,838
+552,105,octant marked SBR,839
+553,7,astronomical clock,840
+554,102,"repeating circle,",841
+554,105,sextant,842
+555,29,compass,843
+556,26,chronometer,844
+557,26,"chronometer,",845
+557,138,tide gauge,846
+559,39,drawing instruments,847
+561,45,globe,848
+562,45,globe,849
+563,126,gunter's rule,850
+566,134,weights standard,851
+566,54,saccharometer,852
+568,66,"microscope,",853
+568,125,"telescope,",854
+568,163,mechanical apparatus,855
+571,20,"barometer,",856
+571,56,"hygrometer,",857
+571,125,telescope,858
+572,127,theodolite,859
+574,66,microscope,860
+575,26,chronometer,861
+579,125,telescope,862
+580,29,"compass,",863
+580,123,"octant,",864
+580,125,telescope,865
+584,22,calculating machine,866
+586,27,circumferentor,867
+588,125,telescope,868
+589,105,"sextant,",869
+589,125,telescope,870
+590,123,octant,871
+597,133,pedometer,872
+598,111,sundial,873
+601,42,"electrostatic generator,",874
+601,66,"microscope,",875
+601,125,telescope,876
+602,20,"barometer,",877
+602,99,microtome,878
+604,125,telescope,879
+609,20,"barometer,",880
+609,66,"microscope,",881
+609,104,sector,882
+610,25,"camera obscura,",883
+610,29,"compass (magnetic),",884
+610,66,"microscope,",885
+610,106,"scioptic ball,",886
+610,111,"sundial,",887
+610,125,telescope,888
+612,26,chronometer,889
+613,125,telescope,890
+618,125,telescope,891
+619,26,chronometer,892
+623,29,compass,893
+625,,pyrometer,894
+626,,"",895
+627,111,sundial,896
+631,96,quadrant,897
+632,29,"compass,",898
+632,104,"sector,",899
+632,105,"sextant,",900
+632,155,gunner's scales,901
+634,114,spectacles,902
+636,123,octant,903
+637,123,quadrant Hadley's,904
+638,29,compass (magnetic),905
+639,133,pedometer,906
+640,104,sector,907
+641,20,"barometer,",908
+641,29,"compass,",909
+641,125,"telescope,",910
+641,128,"thermometer,",911
+641,136,gunner's callipers,912
+643,,"",913
+644,15,balance,914
+644,20,barometer,915
+645,101,rule,916
+646,111,sundial,917
+647,111,sundial,918
+648,111,sundial,919
+650,123,octant,920
+652,38,dividing engine,921
+655,101,"rule,",922
+655,111,sundial,923
+656,20,barometer,924
+657,1,"air pump,",925
+657,15,"balance,",926
+657,20,"barometer,",927
+661,66,"microscope,",928
+661,125,telescope,929
+662,66,microscope,930
+663,70,"micrometer,",931
+663,85,planetarium,932
+664,85,"planetarium,",933
+664,111,sundial,934
+666,26,chronometer,935
+668,104,"sector,",936
+668,147,protractor,937
+669,123,octant,938
+670,45,globe,939
+672,20,"barometer,",940
+672,50,"hygrometer,",941
+672,66,"microscope,",942
+672,123,"octant,",943
+672,128,thermometer,944
+673,107,slide rule,945
+674,4,"armillery sphere,",946
+674,29,"compass,",947
+674,66,"microscope,",948
+676,54,hydrometer,949
+677,20,"barometer,",950
+677,66,"microscope,",951
+677,125,telescope,952
+678,54,"glucometer,",953
+678,54,"hydrometer,",954
+678,82,"saccharometer,",955
+678,107,"slide-rule,",956
+678,128,"thermometer,",957
+678,144,dip-stick,958
+679,125,telescope,959
+680,39,drawing instruments,960
+682,42,"electrical machine,",961
+682,111,"sundial,",962
+682,203,philosophical instruments,963
+683,66,microscope,964
+684,7,"astronomical clock,",965
+684,22,"calculating machine,",966
+684,26,"chronometer,",967
+684,107,slide rule,968
+686,14,back-staff,969
+687,29,"compass,",970
+687,85,planetarium,971
+689,7,"regulator,",972
+689,148,pyrometer,973
+691,14,back-staff,974
+692,29,"azimuth circle,",975
+692,101,"rule,",976
+692,123,octant,977
+694,39,drawing instruments,978
+696,20,"barometer,",979
+696,36,"dip circle,",980
+696,48,"magnet,",981
+696,56,"hygrometer,",982
+696,66,"microscope,",983
+696,67,"marine astrolabe,",984
+696,101,"rule,",985
+696,104,"sector,",986
+696,125,"telescope,",987
+696,128,thermometer,988
+697,20,"barometer,",989
+697,60,"level,",990
+697,66,"microscope,",991
+697,104,"sector,",992
+697,105,"sextant,",993
+697,111,"sundial,",994
+697,125,"telescope,",995
+697,128,thermometer,996
+698,85,planetarium,997
+698,133,waywiser,998
+699,45,globe,999
+700,54,"hydrometer,",1000
+700,107,slide rule,1001
+702,111,sundial,1002
+705,107,slide rule,1003
+706,15,balance,1004
+710,101,rule,1005
+711,7,"astronomical clock,",1006
+711,26,chronometer,1007
+714,20,"barometer,",1008
+714,56,"hygrometer,",1009
+714,125,"telescope,",1010
+714,128,thermometer,1011
+716,38,dividing engine,1012
+719,147,protractor,1013
+722,125,telescope,1014
+723,96,"quadrant,",1015
+723,111,sundial,1016
+725,107,slide rule,1017
+728,14,"back-staff,",1018
+728,96,"quadrant,",1019
+728,101,"rule,",1020
+728,123,"octant,",1021
+728,147,protractor,1022
+729,29,compass,1023
+730,123,octant,1024
+733,29,compass (magnetic),1025
+734,27,"circumferentor,",1026
+734,39,"drawing instruments,",1027
+734,125,telescope,1028
+735,107,slide rule,1029
+736,123,octant,1030
+737,66,microscope,1031
+738,66,microscope,1032
+741,20,"barometer,",1033
+741,68,"mural quadrant,",1034
+741,70,micrometer,1035
+744,29,"compass,",1036
+744,66,"microscope,",1037
+744,111,sundial,1038
+746,133,pedometer,1039
+748,105,sextant,1040
+749,15,coin scales,1041
+752,107,"slide rule,",1042
+752,144,gauging rod,1043
+753,97,"bow quadrant,",1044
+753,107,"slide rule,",1045
+753,111,sundial,1046
+754,105,sextant,1047
+755,66,microscope,1048
+756,29,"compass,",1049
+756,123,quadrant (Hadley's),1050
+761,63,lenses,1051
+762,20,"barometer,",1052
+762,80,pantograph,1053
+764,66,"microscope,",1054
+764,125,telescope,1055
+765,26,"chronometer,",1056
+765,123,octant,1057
+766,20,"barometer,",1058
+766,27,"circumferentor,",1059
+766,96,"bow quadrant,",1060
+766,105,sextant,1061
+767,66,microscope,1062
+768,5,"artificial horizon,",1063
+768,105,"sextant,",1064
+768,127,theodolite,1065
+770,80,pantograph,1066
+773,96,quadrant,1067
+775,105,"sextant,",1068
+775,107,slide rule,1069
+778,73,"nocturnal,",1070
+778,155,Gunter's scale,1071
+779,66,"microscope,",1072
+779,125,"telescope,",1073
+779,127,"theodolite,",1074
+779,133,waywiser,1075
+780,105,sextant,1076
+781,105,sextant,1077
+782,103,sandglass,1078
+783,29,"compass (magnetic),",1079
+784,41,"equinoctial ring dial,",1080
+784,45,"globe,",1081
+784,101,"rule,",1082
+784,105,sextant,1083
+785,125,telescope,1084
+787,26,"chronometer,",1085
+789,208,wheel-cutting engine,1086
+791,123,octant,1087
+792,99,"microscope lamp,",1088
+792,125,telescope,1089
+794,125,telescope,1090
+795,24,camera lucida,1091
+795,125,telescope,1092
+798,15,balance,1093
+802,27,"circumferentor,",1094
+802,73,nocturnal,1095
+803,101,rule,1096
+807,85,planetarium,1097
+811,5,artificial horizon,1098
+812,29,"compass,",1099
+812,30,[barometer]could be by Wm,1100
+814,123,octant,1101
+816,105,"sextant,",1102
+816,125,telescope,1103
+817,32,chondrometer,1104
+819,48,magnet,1105
+820,204,navigational instrument,1106
+823,15,balance,1107
+824,101,rule,1108
+825,80,"pantograph,",1109
+825,102,"repeating circle,",1110
+825,105,"sextant,",1111
+825,135,zenith instrument,1112
+826,15,"balance,",1113
+826,20,"barometer,",1114
+826,102,"repeating circle,",1115
+826,105,"sextant,",1116
+826,127,"theodolite,",1117
+826,131,transit instruments,1118
+827,,"",1119
+827,66,microscope,1120
+828,29,"compass,",1121
+828,123,octant,1122
+829,52,gauge,1123
+832,45,globe,1124
+833,54,"hydrometer,",1125
+833,85,"planetarium,",1126
+833,102,"repeating circle,",1127
+833,105,"sextant,",1128
+833,107,slide rule,1129
+834,107,slide rule,1130
+835,62,log,1131
+837,107,slide rule,1132
+838,20,barometer,1133
+840,105,sextant (pocket),1134
+841,,"",1135
+842,20,barometer,1136
+843,20,barometer,1137
+849,128,thermometer,1138
+853,20,barometer,1139
+855,29,"compass (magnetic),",1140
+855,104,sector,1141
+856,133,waywiser,1142
+863,107,slide rule,1143
+865,20,"barometer,",1144
+865,101,rule,1145
+866,20,barometer,1146
+867,92,coin calendar,1147
+868,20,barometer,1148
+870,114,spectacles,1149
+874,20,"barometer,",1150
+874,103,"sandglass,",1151
+874,128,thermometer,1152
+875,20,barometer,1153
+889,114,spectacles,1154
+890,114,spectacles,1155
+894,26,chronometer,1156
+895,20,"barometer,",1157
+895,56,hygrometer,1158
+896,20,barometer,1159
+897,20,"barometer,",1160
+897,56,"hygrometer,",1161
+897,115,"spirit level,",1162
+897,128,thermometer,1163
+899,20,"barometer,",1164
+899,56,"hygrometer,",1165
+899,128,thermometer,1166
+901,20,barometer,1167
+902,20,"barometer,",1168
+902,111,"sundial,",1169
+902,128,thermometer,1170
+904,20,barometer,1171
+905,20,"aneroid barometer,",1172
+908,20,barometer,1173
+909,20,"barometer,",1174
+909,128,thermometer,1175
+910,20,"barometer,",1176
+910,56,"hygrometer,",1177
+910,128,thermometer,1178
+911,20,barometer,1179
+914,15,"balance,",1180
+914,20,"barometer,",1181
+914,54,"hydrometer,",1182
+914,128,thermometer,1183
+915,15,"balance,",1184
+915,54,hydrometer,1185
+917,20,barometer,1186
+918,20,"barometer,",1187
+918,29,"compass (magnectic),",1188
+918,92,"perpetual calendar,",1189
+918,133,waywiser,1190
+919,29,compass,1191
+923,96,quadrant,1192
+925,73,nocturnal,1193
+926,2,alidade,1194
+927,125,telescope,1195
+928,66,microscope,1196
+929,66,microscope,1197
+933,29,compass (magnetic),1198
+934,114,spectacles,1199
+935,17,"binnacles,",1200
+935,26,"chronometers,",1201
+938,111,sundial,1202
+942,20,"barometer,",1203
+942,56,"hygrometer,",1204
+942,115,"spirit level,",1205
+942,128,thermometer,1206
+943,20,barometer,1207
+944,66,microscope,1208
+945,45,"globe,",1209
+945,85,"planetarium,",1210
+945,111,sundial Azimuth,1211
+946,,"",1212
+946,,"",1213
+947,7,"astronomical clock,",1214
+947,45,"globe,",1215
+947,111,sundial,1216
+950,20,"barometer,",1217
+950,56,"hygrometer,",1218
+950,128,thermometer,1219
+951,66,"microscope,",1220
+951,128,thermometer,1221
+952,15,"balance,",1222
+952,20,"barometer,",1223
+952,167,cometarium,1224
+957,101,rule signed 'H & D',1225
+958,52,"gauge,",1226
+958,101,rule,1227
+960,20,"barometer,",1228
+960,39,"drawing instruments,",1229
+960,63,lens,1230
+962,20,barometer,1231
+969,55,hydrostatic bubbles,1232
+970,128,thermometer,1233
+972,20,"barometer,",1234
+972,56,"hygrometer,",1235
+972,115,"spirit level,",1236
+972,128,thermometer,1237
+973,20,"barometer,",1238
+973,56,"hygrometer,",1239
+973,128,thermometer,1240
+974,125,telescope,1241
+976,111,sundial,1242
+977,7,"astronomical clock,",1243
+977,79,observatory regulator,1244
+980,66,microscope,1245
+982,20,"barometer,",1246
+982,128,thermometer,1247
+983,20,barometer,1248
+986,20,"barometer,",1249
+986,128,thermometer,1250
+988,39,drawing instruments,1251
+992,125,telescope,1252
+995,45,globe,1253
+996,20,"barometer,",1254
+996,128,thermometer,1255
+997,111,sundial,1256
+998,125,telescope,1257
+999,123,octant,1258
+1000,15,"balance,",1259
+1000,134,weights,1260
+1002,20,barometer,1261
+1006,105,sextant,1262
+1007,107,slide rule,1263
+1008,107,slide rule,1264
+1009,20,barometer,1265
+1011,20,barometer,1266
+1012,20,"barometer,",1267
+1023,20,"barometer,",1268
+1023,128,thermometer,1269
+1028,20,barometer,1270
+1041,29,compass (magnetic),1271
+1042,101,rule,1272
+1044,29,"compass,",1273
+1044,123,octant,1274
+1046,54,hydrometer,1275
+1049,101,folding rule,1276
+1055,101,"rule,",1277
+1055,107,slide rule,1278
+1064,20,barometer,1279
+1067,20,barometer,1280
+1079,20,barometer,1281
+1079,128,thermometer,1282
+1080,20,barometer,1283
+1080,128,thermometer,1284
+1084,39,"drawing instrument,",1285
+1084,114,spectacles,1286
+1085,114,spectacles,1287
+1090,128,thermometer,1288
+1096,27,circumferentor,1289
+1105,27,circumferentor,1290
+1108,111,sundial,1291
+1109,39,"drawing instruments,",1292
+1109,111,sundial,1293
+1110,66,microscope,1294
+1111,111,sundial,1295
+1112,20,barometer,1296
+1113,20,barometer,1297
+1115,39,dividers,1298
+1117,101,rule,1299
+1118,26,chronometer,1300
+1121,107,slide rule,1301
+1127,127,theodolite,1302
+1128,111,sundial,1303
+1128,128,thermometer,1304
+1131,101,rule,1305
+1132,15,hydrostatic balance,1306
+1132,56,hygrometer,1307
+1134,29,compass,1308
+1141,105,octant,1309
+1142,104,sector,1310
+1142,147,protractor,1311
+1143,101,rule,1312
+1146,101,rule,1313
+1151,107,slide rule,1314
+1153,14,back-staff,1315
+1155,27,"circumferentor,",1316
+1155,29,compass,1317
+1156,111,"sundial,",1318
+1156,123,"octant,",1319
+1156,147,protractor,1320
+1164,29,compass,1321
+1167,96,quadrant,1322
+1169,29,"compass (magnetic),",1323
+1169,107,"slide rule,",1324
+1169,111,sundial,1325
+1171,123,octant,1326
+1173,27,"circumferentor,",1327
+1173,29,"compass,",1328
+1173,39,drawing instruments,1329
+1174,27,"circumferentor,",1330
+1174,29,"compass,",1331
+1174,111,sundial,1332
+1178,14,back-staff,1333
+1179,29,"compass,",1334
+1179,94,miner's dial,1335
+1182,80,"pantograph,",1336
+1185,27,circumferentor,1337
+1186,20,barometer,1338
+1187,111,sundial ring,1339
+1188,114,spectacles,1340
+1191,111,sundial,1341
+1193,107,slide rule,1342
+1195,128,thermometer,1343
+1196,20,barometer,1344
+1208,114,spectacles,1345
+1214,101,"slide rule,",1346
+1214,136,gunner's callipers,1347
+1215,66,microscope,1348
+1238,107,slide rule,1349
+1239,123,"octant,",1350
+1239,125,telescope,1351
+1240,29,"compass,",1352
+1240,107,slide rule,1353
+1241,15,balance,1354
+1242,105,sextant,1355
+1243,27,circumferentor,1356
+1244,105,"sextant,",1357
+1244,123,octant,1358
+1245,15,"balance,",1359
+1245,80,pantograph,1360
+1246,39,drawing instruments,1361
+1247,27,circumferentor,1362
+1248,73,nocturnal,1363
+1249,14,back-staff,1364
+1250,14,back-staff,1365
+1251,96,quadrant,1366
+1252,101,rule,1367
+1253,101,sule,1368
+1254,111,sundial,1369
+1255,101,rule,1370
+1256,111,sundial,1371
+1257,111,sundial,1372
+1258,111,sundial,1373
+1259,111,sundial ring,1374
+1260,14,back-staff,1375
+1261,66,"microscope,",1376
+1261,111,"compass sundial,",1377
+1262,101,rule,1378
+1263,101,rule,1379
+1264,111,sundial,1380
+1266,111,sundial,1381
+1269,104,"Sector,",1382
+1270,111,sundial,1383
+1272,101,rule,1384
+1275,111,sundial,1385
+1276,45,"globe,",1386
+1276,85,orrery,1387
+1278,101,rule,1388
+1279,101,rule,1389
+1280,101,rule,1390
+1281,101,rule,1391
+1283,111,sundial,1392
+1284,111,sundial,1393
+1285,101,rule,1394
+1287,101,rule,1395
+1288,101,"rule,",1396
+1288,114,spectacles,1397
+1289,101,rule,1398
+1290,111,sundial,1399
+1296,105,"sextant,",1400
+1296,123,octant,1401
+1318,101,rule,1402
+1321,20,barometer,1403
+1327,111,sundial,1404
+1328,101,rule,1405
+1329,101,rule,1406
+1331,111,sundial,1407
+1332,101,rule,1408
+1334,111,sundial,1409
+1335,111,sundial,1410
+1336,111,sundial,1411
+1337,103,sandglass,1412
+1346,107,slide rule,1413
+1360,79,orrery,1414
+1361,20,barometer,1415
+1363,14,back-staff,1416
+1364,29,"compass (magnetic),",1417
+1364,111,sundial,1418
+1365,29,compass,1419
+1383,125,telescope,1420
+1387,111,diptych dial,1421
+1388,105,sextant,1422
+1391,123,octant,1423
+1395,60,level,1424
+1396,127,theodolite,1425
+1401,20,barometer,1426
+1403,133,waywiser,1427
+1404,105,sextant,1428
+1405,105,sextant,1429
+1406,20,"barometer,",1430
+1406,39,"drawing instruments,",1431
+1406,56,"hygrometer,",1432
+1406,115,"spirit level,",1433
+1406,128,thermometer,1434
+1407,104,sector,1435
+1408,20,barometer,1436
+1409,111,sundial,1437
+1410,85,planetarium,1438
+1411,80,pantograph,1439
+1434,111,sundial,1440
+1436,54,hydrometer,1441
+1437,39,drawing instruments,1442
+1440,111,sundial,1443
+1446,66,microscope,1444
+1453,20,"barometer,",1445
+1453,52,"gauge,",1446
+1453,54,hydrometer,1447
+1455,125,telescope,1448
+1457,123,octant,1449
+1458,60,"level,",1450
+1458,122,surveyor's staff,1451
+1460,20,"barometer,",1452
+1460,128,thermometer,1453
+1462,20,barometer,1454
+1464,20,"barometer,",1455
+1464,32,"chondrometer,",1456
+1464,45,"globe,",1457
+1464,66,"microscope,",1458
+1464,80,"pantograph,",1459
+1464,101,"rule,",1460
+1464,127,theodolite,1461
+1465,20,"barometer,",1462
+1465,128,thermometer,1463
+1466,20,"barometer,",1464
+1466,128,thermometer,1465
+1467,111,sundial,1466
+1468,111,sundial,1467
+1469,20,"barometer,",1468
+1469,128,thermometer,1469
+1470,20,"barometer,",1470
+1470,56,"hygrometer,",1471
+1470,128,thermometer,1472
+1471,20,barometer,1473
+1472,20,"barometer,",1474
+1472,56,"hygrometer,",1475
+1472,115,"spirit level,",1476
+1472,128,thermometers,1477
+1473,20,"baromete,",1478
+1473,128,thermometer,1479
+1474,20,"barometer,",1480
+1474,123,octant,1481
+1475,20,barometer,1482
+1476,20,barometer,1483
+1477,20,barometer,1484
+1478,20,"barometer,",1485
+1478,128,thermometer,1486
+1479,20,barometer,1487
+1480,56,hygrometer,1488
+1481,20,"barometer,",1489
+1481,29,compass,1490
+1482,20,barometer,1491
+1483,20,"barometer,",1492
+1483,128,thermometer,1493
+1484,20,barometer,1494
+1485,20,"barometer,",1495
+1485,128,thermometer,1496
+1486,66,"microscope,",1497
+1489,111,equinoctial dial,1498
+1491,20,barometer,1499
+1492,60,level,1500
+1493,20,"barometer,",1501
+1493,111,sundial,1502
+1508,111,sundial,1503
+1523,20,"barometer,",1504
+1523,29,"compass,",1505
+1525,54,hydrometer,1506
+1527,20,barometer,1507
+1535,20,"barometer,",1508
+1535,55,"hydrostatic bubbles;",1509
+1535,128,thermometer,1510
+1536,105,sextant (survey),1511
+1542,134,weights  for coins,1512
+1548,66,microscope,1513
+1557,20,"barometer,",1514
+1557,27,"circumferentor,",1515
+1557,29,compass (magnectic),1516
+1560,123,octant,1517
+1561,1,"air pump,",1518
+1561,4,"armillary sphere,",1519
+1561,45,"globe,",1520
+1561,66,"microscope,",1521
+1561,111,sundial,1522
+1562,125,telescope,1523
+1563,60,level,1524
+1566,20,"barometer,",1525
+1566,128,thermometer,1526
+1571,101,"rule,",1527
+1571,107,slide rule,1528
+1577,20,barometer,1529
+1578,111,sundial,1530
+1580,111,sundial,1531
+1581,105,"sextant,",1532
+1581,123,octant,1533
+1584,28,"clinometer,",1534
+1584,54,"hydrometer,",1535
+1584,105,"sextant,",1536
+1584,111,sundial,1537
+1590,15,balance,1538
+1591,111,"sundial,",1539
+1598,20,"barometer,",1540
+1598,54,"hydrometer,",1541
+1598,66,microscope,1542
+1599,54,hydrometer,1543
+1601,7,astronomical clock,1544
+1602,55,hydrostatic bubbles,1545
+1603,20,barometer,1546
+1604,20,"barometer,",1547
+1604,128,thermometer,1548
+1611,111,sundial,1549
+1612,20,"barometer,",1550
+1612,56,"hygrometer,",1551
+1612,115,"spirit level,",1552
+1612,128,thermometer,1553
+1616,20,"barometer,",1554
+1616,128,thermometer,1555
+1617,20,barometer,1556
+1618,20,"barometer,",1557
+1618,128,thermometer,1558
+1619,20,"barometer,",1559
+1619,60,"level, surveyors",1560
+1619,74,"miner's dial,",1561
+1619,123,"octant,",1562
+1619,128,thermometer,1563
+1621,20,"barometer,",1564
+1621,128,thermometer,1565
+1622,20,barometer,1566
+1623,20,"barometer,",1567
+1623,128,thermometer,1568
+1624,20,"barometer,",1569
+1624,56,"hygrometer,",1570
+1624,115,"spirit level,",1571
+1624,128,thermometer,1572
+1625,15,"balance,",1573
+1625,29,"compass,",1574
+1625,45,"globe,",1575
+1625,66,microscope,1576
+1626,111,sundial,1577
+1627,20,"barometer,",1578
+1627,56,hygrometer,1579
+1628,20,barometer,1580
+1629,20,barometer,1581
+1630,20,barometer,1582
+1631,20,barometer,1583
+1632,20,barometer,1584
+1633,20,"barometer,",1585
+1633,29,"compass (magnetic),",1586
+1633,128,thermometer,1587
+1634,20,barometer,1588
+1635,20,"Barometer,",1589
+1637,128,"Thermometer,",1590
+1638,20,barometer,1591
+1639,108,parallel rule,1592
+1640,20,barometer,1593
+1641,20,barometer,1594
+1642,20,"barometer,",1595
+1642,56,"hygrometer,",1596
+1642,115,"spirit level,",1597
+1642,128,thermometer,1598
+1643,20,"Barometer,",1599
+1644,20,"barometer,",1600
+1644,56,"hygrometer,",1601
+1644,115,"spirit level,",1602
+1644,128,thermometer,1603
+1645,20,"barometer,",1604
+1645,128,thermometer,1605
+1646,20,"barometer,",1606
+1646,128,thermometer,1607
+1647,20,"barometer,",1608
+1647,128,thermometer,1609
+1648,20,"barometer,",1610
+1648,56,"hygrometer,",1611
+1648,115,"spirit level,",1612
+1648,128,thermometer,1613
+1649,66,microscope,1614
+1650,20,"barometer,",1615
+1650,56,"hygrometer,",1616
+1650,128,thermometer,1617
+1652,20,"barometer,",1618
+1652,128,thermometer,1619
+1653,20,barometer,1620
+1654,105,sextant,1621
+1655,20,barometer,1622
+1656,20,barometer,1623
+1657,20,"barometer,",1624
+1657,56,"hygrometer,",1625
+1657,115,"level,",1626
+1657,128,thermometer,1627
+1658,20,barometer,1628
+1659,20,barometer,1629
+1660,20,"barometer,",1630
+1660,128,thermometer,1631
+1661,20,"barometer,",1632
+1661,128,thermometer,1633
+1663,45,globe,1634
+1664,45,globe,1635
+1665,111,sundial,1636
+1666,111,sundial (ring dial),1637
+1667,56,hygrometer,1638
+1668,7,astronomical clock,1639
+1669,125,telescope,1640
+1672,7,astronomical clock,1641
+1673,101,rule,1642
+1674,7,"astronomical clock,",1643
+1674,20,barometer,1644
+1675,7,astronomical clock,1645
+1676,7,"astronomical clock,",1646
+1676,26,chronometer,1647
+1677,7,astronomical clock,1648
+1678,14,back-staff,1649
+1682,147,protractor,1650
+1683,85,planetarium,1651
+1684,7,astronomical clock,1652
+1715,20,"barometer,",1653
+1716,20,"barometer,",1654
+1716,28,"clinometer,",1655
+1716,29,"compass (magnetic),",1656
+1716,123,"octant,",1657
+1718,15,"balance,",1658
+1718,20,"barometer,",1659
+1718,60,"level,",1660
+1718,66,"microscope,",1661
+1718,125,"telescope,",1662
+1718,127,"theodolite,",1663
+1723,175,steelyard,1664
+1724,175,steelyard,1665
+1725,15,"balance,",1666
+1725,134,weights,1667
+1726,15,balance,1668
+1727,15,balance,1669
+1729,15,"balance,",1670
+1729,134,weights,1671
+1730,15,balance,1672
+1732,134,weights,1673
+1733,15,balance,1674
+1734,15,balance,1675
+1735,15,"balance,",1676
+1735,134,weights,1677
+1736,15,balance,1678
+1737,15,balance,1679
+1740,15,balance,1680
+1742,15,balance,1681
+1744,15,balance,1682
+1745,15,balance,1683
+1749,15,balance,1684
+1750,15,balance,1685
+1751,15,balance,1686
+1752,15,balance,1687
+1753,15,balance,1688
+1754,15,balance,1689
+1756,15,balance,1690
+1758,15,"balance,",1691
+1758,101,rule,1692
+1760,15,balance,1693
+1761,15,balance,1694
+1762,134,weights,1695
+1769,15,balance,1696
+1772,15,balance,1697
+1777,134,"Weights,",1698
+1778,134,weights,1699
+1780,134,weights,1700
+1782,15,balance,1701
+1784,134,weights,1702
+1785,15,balance,1703
+1786,134,weights,1704
+1787,15,balance,1705
+1788,111,"sundial,",1706
+1788,134,weights,1707
+1789,15,balance,1708
+1790,134,weights,1709
+1792,15,balance,1710
+1793,15,balance,1711
+1793,134,weights,1712
+1794,134,weights,1713
+1795,15,balance,1714
+1796,134,weights,1715
+1797,134,weights,1716
+1801,15,balance,1717
+1803,15,balance,1718
+1804,15,balance,1719
+1805,15,balance,1720
+1807,15,balance,1721
+1808,134,weights,1722
+1810,15,balance,1723
+1821,15,balance,1724
+1822,15,balance,1725
+1823,15,balance,1726
+1827,15,scales,1727
+1828,15,balance,1728
+1830,15,balance,1729
+1832,175,steelyard,1730
+1833,134,weights,1731
+1834,134,weights,1732
+1835,134,weights,1733
+1836,175,steelyard,1734
+1838,134,weights,1735
+1840,134,"Weights,",1736
+1841,134,weights,1737
+1850,70,micrometer,1738
+1851,105,sextant,1739
+1853,125,telescope,1740
+1868,15,"balance,",1741
+1868,20,"barometer,",1742
+1868,56,"hygrometer,",1743
+1868,128,"thermometer,",1744
+1868,146,"electrometer,",1745
+1868,163,mechanical apparatus,1746
+1874,123,octant,1747
+1884,125,telescope,1748
+1903,15,balance,1749
+1905,15,balance,1750
+1907,104,sector,1751
+1914,54,hydrometer,1752
+1922,147,protractor,1753
+1926,45,"globe,",1754
+1926,66,"microscope,",1755
+1926,111,sundial,1756
+1948,66,"microscope,",1757
+1948,125,telescope,1758
+1951,101,rule,1759
+1953,169,gunner's mouthpiece,1760
+1957,66,microscope,1761
+1958,66,microscope,1762
+1959,66,microscope,1763
+1974,92,volvelle,1764
+1975,39,drawing instruments,1765
+1976,133,waywiser,1766
+1979,20,"barometer,",1767
+1979,56,"hygrometer,",1768
+1979,115,"spirit level,",1769
+1979,128,thermometer,1770
+1986,15,balance,1771
+1987,,"",1772
+1992,125,telescope,1773
+1995,20,"barometer,",1774
+1995,26,chronometer,1775
+1997,20,barometer,1776
+2000,20,"barometer,",1777
+2000,27,"circumferntor,",1778
+2000,28,"clinometer,",1779
+2000,54,"hydrometer,",1780
+2000,60,"level,",1781
+2000,74,"miner's dial,",1782
+2000,80,"pantograph,",1783
+2000,105,"sextant,",1784
+2000,114,"spectacles,",1785
+2000,123,"octant,",1786
+2003,15,scales,1787
+2007,111,"sundial,",1788
+2011,15,balance,1789
+2016,29,"compass (magnetic),",1790
+2016,105,"sextant,",1791
+2016,123,"octant,",1792
+2017,28,"clinometer,",1793
+2028,59,"kaleidoscope,",1794
+2028,66,"microscope & accessories,",1795
+2030,125,telescope,1796
+2032,20,barometer,1797
+2033,20,barometer,1798
+2034,125,"telescope,",1799
+2040,107,slide rule,1800
+2041,32,chondrometer,1801
+2046,29,compass (magnetic),1802
+2046,123,octant,1803
+2048,66,"microscope,",1804
+2048,125,telescope,1805
+2062,66,"microscope,",1806
+2062,105,sextant,1807
+2072,20,"Barometer,",1808
+2081,45,globe,1809
+2084,66,microscope,1810
+2085,178,course corrector,1811
+2086,108,"parallel rule,",1812
+2092,20,"barometer,",1813
+2092,26,"chronometer,",1814
+2092,115,"spirit level,",1815
+2092,128,thermometer,1816
+2096,125,telescope,1817
+2114,66,"microscope,",1818
+2114,79,"orrery,",1819
+2114,125,telescope,1820
+2115,26,chronometer,1821
+2116,26,chronometer,1822
+2127,52,gauge,1823
+2137,20,"sympiesometer,",1824
+2137,101,"rule,",1825
+2141,66,microscope,1826
+2150,128,thermometer,1827
+2164,111,sundial,1828
+2168,20,"barometer,",1829
+2168,38,"dividing engine,",1830
+2168,128,thermometer,1831
+2170,29,compass,1832
+2171,20,"barometer,",1833
+2171,56,"hygrometer,",1834
+2171,115,"spirit level,",1835
+2171,128,thermometer,1836
+2172,20,"barometer,",1837
+2172,56,"hygrometer,",1838
+2172,128,"thermometer,",1839
+2177,29,"compass (magnetic),",1840
+2177,66,microscope,1841
+2179,105,sextant,1842
+2181,115,spirit level,1843
+2184,20,barometer,1844
+2188,,"",1845
+2196,20,"barometer, stick",1846
+2196,128,thermometer,1847
+2201,26,chronometers,1848
+2204,1,"air pump,",1849
+2204,3,"anemometer,",1850
+2204,20,"barometer,",1851
+2204,125,"telescope,",1852
+2204,128,"thermometer,",1853
+2204,143,"galvanic apparatus,",1854
+2204,183,blow pipe,1855
+2207,45,globe,1856
+2209,45,"globe,",1857
+2209,123,"octant,",1858
+2209,125,telescope,1859
+2210,,"",1860
+2212,20,"barometer,",1861
+2212,128,thermometer,1862
+2213,20,barometer,1863
+2216,105,sextant,1864
+2222,105,sextant,1865
+2227,20,barometer,1866
+2232,29,compass,1867
+2235,111,"sundial,",1868
+2235,128,thermometer,1869
+2240,20,barometer,1870
+2241,20,"barometer,",1871
+2241,66,"microscope,",1872
+2248,147,protractor,1873
+2256,15,"balance,",1874
+2256,20,"barometer,",1875
+2256,36,"dip circle,",1876
+2256,131,transit instruments,1877
+2259,20,"barometer,",1878
+2259,63,lens,1879
+2259,1,air pump,1880
+2259,66,microscope,1881
+2259,99,microscope accessories,1882
+2259,125,telescope,1883
+2259,139,photographic apparatus,1884
+2259,,"",1885
+2259,,"",1886
+2259,,"",1887
+2259,,"",1888
+2259,,"",1889
+2268,15,"balance,",1890
+2268,20,"barometer,",1891
+2268,29,"compass magnetic,",1892
+2268,37,"gyroscope,",1893
+2268,54,"hydrometer,",1894
+2268,66,"microscope,",1895
+2268,110,"stereoscopic camera,",1896
+2268,118,"galvanometer,",1897
+2268,125,"telescope,",1898
+2270,45,globe,1899
+2273,111,"compass-sundial,",1900
+2273,128,thermometer,1901
+2274,20,barometer,1902
+2275,45,globe,1903
+2279,15,balance,1904
+2285,60,surveyor's level,1905
+2293,20,"barometer,",1906
+2293,128,thermometer,1907
+2294,20,"barometer,",1908
+2294,128,thermometer,1909
+2305,52,"gauge,",1910
+2305,101,rule,1911
+2306,20,"barometer,",1912
+2306,29,"compass (magnetic),",1913
+2306,101,"rule,",1914
+2306,105,"sextant,",1915
+2306,127,"theodolite,",1916
+2306,128,"thermometer,",1917
+2306,131,transit instruments,1918
+2311,15,"hydro balance,",1919
+2311,66,"microscope,",1920
+2316,125,telescope,1921
+2326,24,"camera lucida,",1922
+2326,66,"microscope,",1923
+2326,80,pantograph,1924
+2335,5,"artificial horizon,",1925
+2335,123,octant,1926
+2340,105,"sextant,",1927
+2340,125,"telescope,",1928
+2340,127,theodolite,1929
+2341,80,pantograph,1930
+2344,60,"level,",1931
+2344,127,"theodolite,",1932
+2345,15,balance,1933
+2346,15,balance,1934
+2347,15,coin balance,1935
+2349,15,balance,1936
+2352,15,balance,1937
+2353,134,weights,1938
+2354,15,balance,1939
+2356,15,balance,1940
+2357,15,balance,1941
+2361,15,balance,1942
+2362,134,weights,1943
+2363,15,balance,1944
+2364,134,weights,1945
+2365,15,balance,1946
+2366,15,balance,1947
+2368,15,"balance,",1948
+2368,134,weights,1949
+2369,134,weights (coins),1950
+2370,15,"balance,",1951
+2370,134,weights,1952
+2373,15,"balance,",1953
+2373,134,weights,1954
+2375,15,"balance,",1955
+2375,134,weights,1956
+2378,15,scales,1957
+2383,15,balance,1958
+2384,15,balance,1959
+2385,15,balance,1960
+2389,15,balance,1961
+2390,15,"Balance,",1962
+2391,15,balance,1963
+2393,15,balance,1964
+2395,15,balance,1965
+2396,15,balance,1966
+2397,15,balance,1967
+2398,15,balance,1968
+2399,134,weights,1969
+2400,15,balance,1970
+2403,15,balance,1971
+2405,15,balance,1972
+2407,134,weights,1973
+2408,7,"astronomical clock,",1974
+2408,15,balance,1975
+2409,134,weights,1976
+2411,15,"balance,",1977
+2411,134,weights,1978
+2413,15,balance,1979
+2414,15,"balance,",1980
+2414,20,barometer,1981
+2415,15,balance,1982
+2416,15,balance,1983
+2417,15,balance,1984
+2420,15,balance,1985
+2425,15,balance,1986
+2428,15,balance,1987
+2433,15,balance,1988
+2435,134,weights,1989
+2436,134,weights,1990
+2440,15,balance,1991
+2441,15,balance,1992
+2442,15,balance,1993
+2444,134,weights,1994
+2445,134,"Weights,",1995
+2446,134,weights,1996
+2451,15,balance,1997
+2454,134,weights,1998
+2456,20,barometer,1999
+2457,15,balance,2000
+2458,15,coin balance,2001
+2459,15,balance,2002
+2460,15,balance,2003
+2461,134,weights,2004
+2464,15,balance,2005
+2465,,"",2006
+2466,15,balance,2007
+2467,15,"balance,",2008
+2467,134,Weights,2009
+2469,15,balance,2010
+2470,15,balance,2011
+2473,15,balance,2012
+2474,15,balance,2013
+2475,15,balance,2014
+2477,15,balance,2015
+2478,15,balance,2016
+2479,15,balance,2017
+2481,15,"balance,",2018
+2481,134,weights,2019
+2482,15,balance,2020
+2484,15,balance,2021
+2487,15,balance,2022
+2490,15,balance,2023
+2491,15,balance,2024
+2493,15,balance,2025
+2494,15,"balance,",2026
+2494,134,weights,2027
+2495,15,"balance,",2028
+2495,20,barometer,2029
+2498,15,balance,2030
+2499,134,weights,2031
+2500,15,balance,2032
+2538,15,balance,2033
+2540,20,"sympiesometer,",2034
+2540,80,"pantograph,",2035
+2540,105,sextant,2036
+2549,15,"balance,",2037
+2549,134,weights,2038
+2551,15,balance,2039
+2553,15,balance,2040
+2554,15,balance,2041
+2556,15,"balance,",2042
+2556,134,weights,2043
+2557,15,balance,2044
+2558,15,balance,2045
+2562,15,balance,2046
+2563,15,balance,2047
+2564,15,balance,2048
+2565,15,scales,2049
+2566,134,weights,2050
+2568,15,balance,2051
+2572,15,balance,2052
+2573,15,balance,2053
+2574,15,balance,2054
+2575,134,weights,2055
+2576,15,"balance,",2056
+2576,134,weights,2057
+2577,15,"balance,",2058
+2577,134,weights,2059
+2578,15,balance,2060
+2581,134,weights,2061
+2582,15,balance,2062
+2583,15,"balance,",2063
+2583,134,weights,2064
+2584,15,balance,2065
+2585,105,"sextant,",2066
+2585,125,telescope,2067
+2586,15,"balance,",2068
+2586,134,weights,2069
+2589,134,weights,2070
+2590,15,balance,2071
+2591,15,balance,2072
+2592,15,"balance,",2073
+2592,175,steelyard,2074
+2593,15,balance,2075
+2595,15,balance,2076
+2596,15,balance,2077
+2599,15,"balance,",2078
+2599,134,weights,2079
+2601,143,mariner's journalet,2080
+2602,39,"drawing instruments,",2081
+2602,66,"microscope,",2082
+2602,111,"sundial,",2083
+2602,125,telescope,2084
+2603,45,globe,2085
+2604,20,barometer,2086
+2608,107,slide rule,2087
+2610,5,"artificial horizon,",2088
+2610,20,"barometer,",2089
+2610,29,"compass (magnetic),",2090
+2610,39,"drawing instruments,",2091
+2610,66,"microscope,",2092
+2610,101,"rule,",2093
+2610,105,"sextant,",2094
+2610,125,"telescope,",2095
+2610,128,thermometer,2096
+2612,54,hydrometer,2097
+2618,66,microscope,2098
+2619,66,"microscope,",2099
+2619,105,"sextant,",2100
+2619,133,waywiser,2101
+2626,105,octant,2102
+2627,20,barometer,2103
+2628,123,octant,2104
+2629,123,octant,2105
+2632,5,"artifical horizon,",2106
+2632,20,"barometer,",2107
+2632,39,"drawing instruments,",2108
+2632,125,telescope,2109
+2633,1,"air pump,",2110
+2633,20,"barometer,",2111
+2633,42,"electrostatic generator,",2112
+2633,85,planetarium,2113
+2634,15,"balance,",2114
+2634,20,"barometer,",2115
+2634,56,"hygrometer,",2116
+2634,60,"level,",2117
+2634,105,"sextant,",2118
+2634,128,thermometer,2119
+2637,128,thermometer,2120
+2638,20,barometer,2121
+2640,111,sundial,2122
+2646,54,hydrometer,2123
+2659,20,"barometer,",2124
+2659,128,thermometer,2125
+2663,20,"barometer,",2126
+2663,128,thermometer,2127
+2681,104,"Sector,",2128
+2682,125,telescope,2129
+2684,45,globe,2130
+2685,133,waywiser,2131
+2686,45,globe,2132
+2688,105,sextant,2133
+2691,,"",2134
+2696,123,octant,2135
+2703,20,"Barometer,",2136
+2704,20,"Barometer,",2137
+2708,15,balance,2138
+2709,66,"microscope,",2139
+2710,20,"barometer,",2140
+2710,56,"hygrometer,",2141
+2710,128,thermometer,2142
+2729,39,drawing instruments,2143
+2744,66,microscope,2144
+2745,123,octants,2145
+2745,,"",2146
+2748,39,"drawing instruments,",2147
+2748,111,sundial,2148
+2749,20,"barometer,",2149
+2749,55,hydrostatic bubbles,2150
+2751,,"",2151
+2757,29,compass,2152
+2760,105,sextant,2153
+2763,15,"balance,",2154
+2763,20,"barometer,",2155
+2763,66,"microscope,",2156
+2763,134,weights,2157
+2765,20,"barometer,",2158
+2765,56,"hygrometer,",2159
+2765,128,thermometer,2160
+2766,20,barometer,2161
+2767,123,"octant,",2162
+2767,125,"telescope,",2163
+2767,127,theodolite,2164
+2768,29,"compass,",2165
+2768,60,level,2166
+2774,80,"pantograph,",2167
+2774,125,telescope,2168
+2775,29,compass,2169
+2780,80,pantograph,2170
+2781,105,sextant,2171
+2782,29,"compass (magnetic),",2172
+2782,178,course corrector,2173
+2791,123,octant,2174
+2794,15,"balance,",2175
+2794,134,weights,2176
+2803,123,octant,2177
+2809,20,"barometer,",2178
+2810,20,"Barometer,",2179
+2816,20,"barometer,",2180
+2816,125,"telescope,",2181
+2816,66,microscope,2182
+2818,20,"Barometer,",2183
+2821,123,octant,2184
+2824,111,sundial,2185
+2825,42,"electrical machine,",2186
+2832,20,barometer,2187
+2833,20,"barometer,",2188
+2834,60,"level,",2189
+2834,66,"microscope,",2190
+2834,80,"pantograph,",2191
+2834,125,telescope,2192
+2835,114,"spectacles,",2193
+2838,66,"microscope,",2194
+2838,111,sundial,2195
+2839,101,"rule,",2196
+2840,101,rule,2197
+2841,20,"barometer,",2198
+2841,27,"circumferntor,",2199
+2841,105,"sextant,",2200
+2841,125,"telescope,",2201
+2841,146,electrometer,2202
+2843,66,microscope,2203
+2847,,"",2204
+2848,101,rule,2205
+2849,101,rule,2206
+2853,20,"barometer,",2207
+2853,78,"opera glasses,",2208
+2853,114,spectacles,2209
+2857,111,sundial,2210
+2865,20,barometer,2211
+2874,15,balance,2212
+2878,66,microscope,2213
+2880,3,"anemometer,",2214
+2880,29,"compass,",2215
+2880,66,"microscope,",2216
+2880,74,"miner's dial,",2217
+2880,127,theodolite,2218
+2882,15,balance,2219
+2883,20,barometer,2220
+2885,147,"protractor,",2221
+2885,148,pyrometer,2222
+2890,66,microscope,2223
+2891,20,"barometer,",2224
+2897,66,microscope,2225
+2902,20,barometer,2226
+2903,20,"barometer,",2227
+2903,128,thermometer,2228
+2912,107,slide rule,2229
+2914,66,microscope,2230
+2936,26,chronometer,2231
+2939,26,"chronometer,",2232
+2939,55,hydrostatic bubbles,2233
+2942,43,ellipsograph,2234
+2954,15,"balance,",2235
+2954,52,"odontograph,",2236
+2954,107,slide rule,2237
+2961,97,horary quadrant,2238
+2963,26,chronometer,2239
+2965,26,chronometer,2240
+2966,20,barometer,2241
+2973,20,barometer,2242
+2975,66,"microscope,",2243
+2975,125,telescope,2244
+2976,105,sextant,2245
+2977,26,chronometer,2246
+2992,29,miner's dial,2247
+2993,20,"barometer,",2248
+2993,105,"sextant,",2249
+2993,127,theodolite,2250
+2997,66,"microscope,",2251
+2997,125,telescope,2252
+3000,15,balance,2253
+3007,114,"spectacles,",2254
+3007,63,"lens,",2255
+3007,,"",2256
+3017,15,"balance,",2257
+3017,134,weights,2258
+3020,15,"balance,",2259
+3020,134,weights,2260
+3021,20,"barometer,",2261
+3021,128,thermometer,2262
+3026,20,"barometer,",2263
+3026,26,"chronometers,",2264
+3026,128,thermometer,2265
+3028,20,barometer,2266
+3038,20,"barometer,",2267
+3038,128,thermomter,2268
+3046,20,barometer,2269
+3049,45,"globe,",2270
+3049,104,sector,2271
+3050,20,"barometer,",2272
+3050,128,thermometer,2273
+3058,107,slide rule,2274
+3062,125,telescope,2275
+3063,111,sundial,2276
+3068,20,"barometer,",2277
+3068,55,"hydrostatic bubbles,",2278
+3068,128,thermometer,2279
+3072,104,"sector,",2280
+3076,27,"circumferentor,",2281
+3076,39,"drawing inst,",2282
+3076,111,sundial,2283
+3077,20,"barometer,",2284
+3077,56,"hygrometer,",2285
+3077,128,thermometer,2286
+3085,20,"barometer,",2287
+3085,128,thermometer,2288
+3093,15,"chemical balance,",2289
+3093,52,"depth gauge,",2290
+3093,54,hydrometer,2291
+3094,20,barometer,2292
+3096,15,scales,2293
+3110,15,balance,2294
+3111,26,chronometers,2295
+3114,55,hydrostatic bubbles,2296
+3115,20,"barometer,",2297
+3115,125,"telescope,",2298
+3115,128,themometer,2299
+3117,66,microscope,2300
+3125,15,"balance,",2301
+3125,134,weights,2302
+3131,125,telescope,2303
+3141,20,barometer,2304
+3142,20,"barometer,",2305
+3142,125,telescope,2306
+3143,20,barometer,2307
+3152,20,barometer,2308
+3161,123,octant,2309
+3168,20,sympiesometer,2310
+3170,45,globe,2311
+3175,107,slide rule,2312
+3176,55,hydrostatic bubbles,2313
+3178,42,"electrostatic generator,",2314
+3178,45,globe,2315
+3181,105,sextant,2316
+3187,20,barometer,2317
+3191,,"",2318
+3192,20,barometer,2319
+3197,15,balance,2320
+3197,134,weights,2321
+3210,20,barometer,2322
+3218,66,"microscope,",2323
+3218,125,telescope,2324
+3219,20,"barometer,",2325
+3219,123,"octant,",2326
+3222,20,barometer,2327
+3248,60,"level,",2328
+3248,101,rule,2329
+3252,20,"barometer,",2330
+3252,56,"hygrometer,",2331
+3252,105,"sextant,",2332
+3252,115,"spirit level,",2333
+3252,128,thermometer,2334
+3257,26,chronometer,2335
+3269,29,"compass (magnetic),",2336
+3269,36,"dip circles,",2337
+3269,127,theodolite,2338
+3281,20,"barometer,",2339
+3281,56,"hygrometer,",2340
+3281,128,thermometer,2341
+3282,20,barometer,2342
+3294,20,"barometer,",2343
+3294,29,"compass (magnetic),",2344
+3294,105,"sextant,",2345
+3294,128,thermometer,2346
+3295,26,chronometers,2347
+3300,26,chronometer,2348
+3310,85,planetarium,2349
+3315,125,telescope,2350
+3324,60,drainage level,2351
+3325,28,chronometer,2352
+3326,66,microscope,2353
+3328,26,"chronometers,",2354
+3331,26,chronometer,2355
+3340,26,chronometer,2356
+3344,133,pedometer,2357
+3345,20,barometer,2358
+3349,111,sundial,2359
+3350,23,callipers,2360
+3351,55,hydrostatic bubbles,2361
+3352,20,"barometer,",2362
+3352,128,thermometer,2363
+3353,20,barometer,2364
+3354,20,barometer,2365
+3355,20,barometer,2366
+3358,20,"barometer,",2367
+3365,20,"barometer,",2368
+3366,20,barometer,2369
+3397,101,rule,2370
+3405,105,"sextant,",2371
+3405,123,"octant,",2372
+3405,125,telescope,2373
+3406,1,"air pump,",2374
+3406,20,"barometer,",2375
+3406,29,"compass (magnetic),",2376
+3406,66,"microscope,",2377
+3406,113,"surveyor's cross,",2378
+3406,114,"spectacles,",2379
+3406,127,theodolite,2380
+3423,15,"balance,",2381
+3423,32,chrondrometer,2382
+3427,15,balance,2383
+3429,15,"balance,",2384
+3429,26,chondrometer,2385
+3435,15,balance,2386
+3442,15,balance,2387
+3449,20,"barometer,",2388
+3449,128,thermometer,2389
+3453,15,"balance,",2390
+3453,32,chondrometer,2391
+3461,15,"balance,",2392
+3461,134,weights,2393
+3466,32,chondrometer,2394
+3471,15,balance,2395
+3472,15,balance,2396
+3474,15,"balance,",2397
+3476,15,balance,2398
+3490,134,weights,2399
+3491,111,sundial,2400
+3492,125,telescope,2401
+3493,20,barometer,2402
+3493,66,microscope,2403
+3493,114,spectacles,2404
+3494,66,microscope,2405
+3495,66,microscope,2406
+3498,66,"microscope,",2407
+3499,66,"microscope,",2408
+3499,105,sextant,2409
+3500,66,"microscope,",2410
+3500,93,prism,2411
+3501,66,microscope,2412
+3504,60,"level,",2413
+3504,66,microscope,2414
+3505,104,"sector,",2415
+3506,55,hydrostatic bubbles,2416
+3507,45,globe,2417
+3508,64,measure - capacity,2418
+3509,15,balance,2419
+3511,20,barometer,2420
+3513,101,rule,2421
+3517,125,telescope,2422
+3518,20,"barometer,",2423
+3518,32,"chondrometer,",2424
+3518,128,thermometer,2425
+3519,101,rule,2426
+3521,27,circumferentor,2427
+3534,64,measure - capacity,2428
+3561,20,barometer,2429
+3581,101,rule,2430
+3585,127,theodolite,2431
+3586,123,octant,2432
+3590,64,measure - capacity,2433
+3595,125,"telescope,",2434
+3597,29,compass (magnetic),2435
+3599,20,barometer,2436
+3602,125,telescope,2437
+3603,20,barometer,2438
+3604,20,barometer,2439
+3606,20,barometer,2440
+3610,20,"barometer,",2441
+3610,66,"microscope,",2442
+3610,128,thermometer,2443
+3611,7,"sidereal clock,",2444
+3613,115,"Spirit level,",2445
+3614,20,barometer,2446
+3619,29,"Compass,",2447
+3624,20,barometer,2448
+3626,100,full range of instruments,2449
+3627,20,barometer,2450
+3628,20,barometer,2451
+3629,55,hydrostatic bubbles,2452
+3630,20,barometer,2453
+3634,20,"barometer,",2454
+3634,56,"hygrometer,",2455
+3634,115,"spirit level,",2456
+3634,128,thermometer,2457
+3636,20,"barometer,",2458
+3636,105,sextant,2459
+3637,20,barometer,2460
+3640,20,"barometer,",2461
+3640,46,"steam engine indicator,",2462
+3641,20,barometer,2463
+3643,,"",2464
+3645,26,"chronometer,",2465
+3645,105,sextant,2466
+3646,123,octant,2467
+3651,20,"barometer,",2468
+3651,128,themometer,2469
+3652,20,barometer,2470
+3654,20,"barometer,",2471
+3654,147,protractor,2472
+3655,20,"barometer,",2473
+3655,60,"level,",2474
+3655,123,"octant,",2475
+3655,128,thermometer,2476
+3658,128,thermometer,2477
+3659,20,"barometer,",2478
+3659,56,"hygrometer,",2479
+3659,115,"spirit-level,",2480
+3659,128,thermometer,2481
+3661,125,telescope,2482
+3662,20,"barometer,",2483
+3662,115,"spirit level,",2484
+3662,128,thermometer,2485
+3665,20,"barometer,",2486
+3665,128,thermometer,2487
+3672,29,"compass,",2488
+3672,105,sextant,2489
+3676,54,"hydrometer,",2490
+3676,107,slide rule,2491
+3677,20,barometer,2492
+3680,60,"level,",2493
+3680,101,"rule,",2494
+3680,105,"sextant,",2495
+3680,127,theodolite,2496
+3683,54,"hydrometer,",2497
+3683,55,hydrostatic bubbles,2498
+3688,20,"barograph,",2499
+3688,20,"barometer,",2500
+3688,66,"microscope,",2501
+3688,113,"surveyor's cross,",2502
+3688,125,telescope,2503
+3689,20,barometer,2504
+3690,60,level,2505
+3692,20,barometer,2506
+3694,66,"microscope,",2507
+3694,125,"telescope,",2508
+3694,202,projector,2509
+3695,105,sextant,2510
+3696,15,"balance,",2511
+3696,66,"microscope,",2512
+3696,128,thermometer,2513
+3697,15,balance,2514
+3698,20,barometer,2515
+3699,64,measure (capacity),2516
+3701,20,barometer,2517
+3702,55,hydrostatic bubbles,2518
+3708,20,barometer,2519
+3709,54,hydrometer,2520
+3710,20,"barometer,",2521
+3710,128,thermometer,2522
+3712,115,spirit level,2523
+3717,20,"sympiesometer,",2524
+3717,105,"sextant,",2525
+3717,123,"octant,",2526
+3717,125,telescope,2527
+3718,17,"binnacle,",2528
+3718,20,"barometer,",2529
+3718,26,"chronometer,",2530
+3718,29,"compass (magnetic),",2531
+3718,105,"sextant,",2532
+3718,123,"octant,",2533
+3718,125,"telescope,",2534
+3718,178,course corrector,2535
+3721,29,compass (magnetic),2536
+3723,155,gunner's scales,2537
+3727,25,"camera obscura,",2538
+3727,125,telescope,2539
+3729,54,hydrometer,2540
+3736,20,barometer,2541
+3740,20,"barometer,",2542
+3740,111,sundial,2543
+3742,20,"barometer,",2544
+3742,125,"telescope,",2545
+3742,128,thermometer,2546
+3744,20,barometer,2547
+3745,20,"barometer,",2548
+3745,128,thermometer,2549
+3747,20,barometer,2550
+3748,20,"barometer,",2551
+3748,55,hydrostatic bubbles,2552
+3748,128,thermometer,2553
+3749,20,barometer,2554
+3750,20,barometer,2555
+3751,59,kaliedoscope,2556
+3754,29,compass (magnetic),2557
+3755,20,barometer,2558
+3757,29,"compass (magnetic),",2559
+3758,20,"barometer,",2560
+3758,128,thermometer,2561
+3760,82,saccharometer,2562
+3762,20,barometer,2563
+3775,125,telescope,2564
+3777,17,"binnacle,",2565
+3777,20,"barometer,",2566
+3777,29,"compass,",2567
+3777,63,"lens,",2568
+3777,101,"rule,",2569
+3777,146,electrometer,2570
+3781,101,"rule,",2571
+3782,66,microscope,2572
+3784,20,"barometer,",2573
+3784,128,thermometer,2574
+3785,20,barometer,2575
+3786,20,barometer,2576
+3788,20,barometer,2577
+3789,20,"barometer,",2578
+3789,128,thermometer,2579
+3790,20,"barometer,",2580
+3790,128,thermometer,2581
+3792,20,barometer,2582
+3794,15,balance,2583
+3797,20,barometer,2584
+3798,20,barometer,2585
+3800,20,barometer,2586
+3807,111,sundial,2587
+3808,20,barometer,2588
+3813,55,hydrostatic bubbles,2589
+3818,20,"barometer,",2590
+3818,125,telescope,2591
+3819,20,"barometer,",2592
+3819,66,microscope,2593
+3820,105,sextant,2594
+3821,20,"barometer,",2595
+3822,60,"level,",2596
+3825,20,"barometer,",2597
+3825,128,thermometer,2598
+3826,20,barometer,2599
+3827,20,barometer,2600
+3828,20,barometer,2601
+3829,20,barometer,2602
+3831,20,"barometer,",2603
+3831,66,microscope,2604
+3832,20,barometer,2605
+3833,20,barometer,2606
+3834,20,barometer,2607
+3835,20,barometer,2608
+3836,20,barometer,2609
+3837,20,barometer,2610
+3838,20,"barometer,",2611
+3838,56,"hygrometer,",2612
+3838,128,thermometer,2613
+3839,20,barometer,2614
+3843,20,barometer,2615
+3844,20,barometer,2616
+3845,128,thermometer,2617
+3847,20,"barometer,",2618
+3847,128,thermometer,2619
+3848,20,barometer,2620
+3849,20,"Barometer,",2621
+3855,101,rule,2622
+3859,15,scales,2623
+3867,134,weights,2624
+3868,15,scalebeam,2625
+3871,15,balance,2626
+3874,15,balance,2627
+3876,64,measure (capacity),2628
+3877,64,measure (capacity),2629
+3880,15,balance,2630
+3883,134,weights,2631
+3889,15,balance,2632
+3895,64,measure (capacity),2633
+3896,15,balance,2634
+3903,133,waywiser,2635
+3905,64,measure (capacity),2636
+3906,15,balance,2637
+3909,64,measure (capacity),2638
+3913,15,balance,2639
+3916,15,"balance,",2640
+3916,101,rule,2641
+3917,15,balance,2642
+3923,15,balance,2643
+3927,15,balance,2644
+3928,111,sundial,2645
+3930,15,balance,2646
+3931,64,measure (capacity),2647
+3933,15,balance,2648
+3934,15,balance,2649
+3935,15,"balance,",2650
+3935,134,weights,2651
+3937,134,weights,2652
+3938,15,balance,2653
+3939,15,balance,2654
+3940,15,scales,2655
+3941,64,measure (capacity),2656
+3960,15,balance,2657
+4015,29,compass,2658
+4017,111,sundial,2659
+4018,96,quadrant,2660
+4019,7,astronomical clock,2661
+4020,147,drafting protractor,2662
+4021,80,pantograph,2663
+4022,97,"horary quadrant,",2664
+4022,111,sundial,2665
+4024,92,perpetual calendar,2666
+4025,123,Hadley's quadrant,2667
+4026,111,sundial,2668
+4027,111,sundial,2669
+4028,111,sundial,2670
+4029,111,sundial,2671
+4030,144,optical machine,2672
+4031,20,barometer,2673
+4032,146,electrometer,2674
+4033,7,astronomical clock,2675
+4034,92,perpetual calendar,2676
+4035,105,sextant,2677
+4036,45,globe,2678
+4040,140,geometric solids,2679
+4043,125,telescope,2680
+4049,20,barometer,2681
+4056,105,sextant,2682
+4070,20,barometer,2683
+4073,20,barometer,2684
+4073,128,thermometer,2685
+4076,29,compass (magnetic),2686
+4079,133,waywiser,2687
+4081,20,"barometer,",2688
+4081,56,"hygrometer,",2689
+4081,115,"spirit level,",2690
+4081,128,thermometer,2691
+4085,102,repeating circle,2692
+4086,105,sextant,2693
+4087,15,"balance,",2694
+4087,64,measure (capacity),2695
+4088,15,"balance,",2696
+4088,32,"chondrometer,",2697
+4088,64,"measure,",2698
+4088,134,weights,2699
+4090,20,"barometer,",2700
+4091,20,barometer,2701
+4094,20,"barometer,",2702
+4094,29,"compass (magnetic),",2703
+4094,105,"sextant,",2704
+4094,123,"octant,",2705
+4094,204,nautical instruments,2706
+4101,20,"barometer,",2707
+4101,56,"hygrometer,",2708
+4101,115,"spirit level,",2709
+4101,128,thermometer,2710
+4114,20,"barometer,",2711
+4114,123,octant,2712
+4118,20,"barometer,",2713
+4118,27,"circumferentor,",2714
+4118,29,"compass (magnetic),",2715
+4118,101,"rule,",2716
+4118,105,"sextant,",2717
+4118,128,thermometer,2718
+4132,66,"microscope, compound",2719
+4132,127,theodolite,2720
+4135,20,barometer,2721
+4139,20,barometer,2722
+4154,104,"sector,",2723
+4155,15,balance,2724
+4164,20,"barometer,",2725
+4164,66,"microscope,",2726
+4164,108,rule (parallel),2727
+4164,105,sextant,2728
+4164,178,"course corrector,",2729
+4180,123,octant,2730
+4181,105,"sextant,",2731
+4181,123,octant,2732
+4182,20,"barometer,",2733
+4182,128,thermometer,2734
+4184,29,compass (magnetic),2735
+4196,101,"rule,",2736
+4196,108,sextant,2737
+4217,20,barometer,2738
+4218,20,barometer,2739
+4221,20,barometer,2740
+4223,20,barometer,2741
+4243,20,"barometer,",2742
+4243,101,"rule,",2743
+4243,107,"slide rule,",2744
+4244,20,"barometer,",2745
+4244,39,"parallel rule,",2746
+4244,39,"rolling rule,",2747
+4244,66,"microscope,",2748
+4244,99,"microscope lamp,",2749
+4244,101,"scale rule,",2750
+4244,128,thermometer,2751
+4245,20,"aeronoid barometer,",2752
+4245,54,"hydroscope,",2753
+4245,66,"binocular microscope,",2754
+4245,110,"stereoscope,",2755
+4245,125,"telescope,",2756
+4245,128,thermometer,2757
+4250,178,"course corrector,",2758
+4251,54,hydrometer,2759
+4252,125,telescope,2760
+4253,107,"slide rule,",2761
+4254,20,"barometer,",2762
+4254,39,"dividers,",2763
+4254,175,steelyard,2764
+4254,54,"hydrometer,",2765
+4254,85,"orrery,",2766
+4254,111,sundial,2767
+4255,15,"balance,",2768
+4255,20,"barometer,",2769
+4255,128,thermometer,2770
+4256,63,microscope objective,2771
+4258,20,"barometer,",2772
+4258,39,"drawing instruments,",2773
+4258,56,"hygrometer,",2774
+4258,115,"spirit level,",2775
+4258,125,"telescope,",2776
+4258,128,thermometer,2777
+4259,47,"rev. counter,",2778
+4261,54,hydrometer,2779
+4263,114,spectacles,2780
+4264,101,rule,2781
+4265,39,drawing instruments,2782
+4265,101,rule,2783
+4266,42,Cuthbertson-,2784
+4266,42,electrostatic generator,2785
+4266,42,"Wimshurst machine,",2786
+4266,66,"microscope,",2787
+4267,105,sextant,2788
+4268,111,"sundial,",2789
+4268,125,telescope,2790
+4273,15,balance,2791
+4274,20,barometer,2792
+4275,20,"barometer,",2793
+4275,29,"compass (magnetic),",2794
+4275,32,"chondrometer,",2795
+4275,39,"drawing instruments,",2796
+4275,54,"hydrometer,",2797
+4275,66,"microscope,",2798
+4275,128,"thermometer,",2799
+4275,133,waywiser,2800
+4276,39,"drawing instruments,",2801
+4276,42,"Wimshurst machine,",2802
+4276,66,microscope,2803
+4277,74,miners dial,2804
+4278,19,"binoculars,",2805
+4278,20,"barometer,",2806
+4278,66,"microscope botanical,",2807
+4280,118,galvanometer,2808
+4282,39,"beam compass,",2809
+4282,80,pantograph,2810
+4287,128,"thermometer,",2811
+4288,66,microscope,2812
+4289,63,microscope objective,2813
+4289,66,"microscope,",2814
+4290,2,"alidade,",2815
+4290,39,"drawing instruments,",2816
+4290,66,"microscope,",2817
+4290,99,"microscope lamp,",2818
+4290,105,sextant,2819
+4303,123,octant,2820
+4306,45,globe,2821
+4307,29,"compass (magnetic),",2822
+4307,66,"microscope,",2823
+4307,80,"pantograph,",2824
+4307,111,sundial,2825
+4308,66,microscope,2826
+4309,20,"barometer,",2827
+4309,29,"compass (magnetic),",2828
+4309,39,"drawing instruments,",2829
+4309,66,"microscope,",2830
+4309,105,"sextant,",2831
+4309,116,"spectroscope,",2832
+4309,125,telescope,2833
+4310,84,planimeter,2834
+4311,15,balance,2835
+4312,15,"balance,",2836
+4312,32,"chondrometer,",2837
+4312,134,weights,2838
+4313,15,balance,2839
+4315,39,drawing instruments,2840
+4316,107,slide rule,2841
+4317,111,sundial,2842
+4318,105,"sextant,",2843
+4318,123,octant,2844
+4321,7,"astronomical clock,",2845
+4321,85,planetarium,2846
+4323,20,barometer,2847
+4324,111,sundial,2848
+4325,20,"barometer, sympiesometer",2849
+4326,20,barometer,2850
+4327,20,barometer,2851
+4328,111,sundial,2852
+4329,40,barograph,2853
+4330,54,hydrometer,2854
+4331,125,telescope,2855
+4332,29,compass,2856
+4333,20,barometer,2857
+4334,45,globe,2858
+4335,20,"barometer,",2859
+4335,128,thermometer,2860
+4336,20,"barometer,",2861
+4336,60,level,2862
+4337,20,"barometer,",2863
+4337,56,"hygrometer,",2864
+4337,60,"level,",2865
+4337,128,thermometer,2866
+4338,20,"barometer,",2867
+4338,128,thermometer,2868
+4339,20,"barometer,",2869
+4339,60,"level,",2870
+4339,128,thermometer,2871
+4340,20,barometer,2872
+4341,20,barometer,2873
+4342,20,"barometer,",2874
+4342,56,"hygrometer,",2875
+4342,128,thermometer,2876
+4344,20,barometer,2877
+4345,20,barometer,2878
+4346,20,barometer,2879
+4347,20,barometer,2880
+4348,20,barometer,2881
+4349,20,barometer,2882
+4351,20,barometer,2883
+4351,128,thermometer,2884
+4352,20,"barometer,",2885
+4352,56,"hygrometer,",2886
+4352,128,thermometer,2887
+4353,20,barometer,2888
+4355,15,"balance,",2889
+4355,29,"compass (magnetic),",2890
+4355,36,"dip circle,",2891
+4355,51,"gunner's level,",2892
+4355,125,"telescope,",2893
+4355,127,theodolite,2894
+4356,20,barometer,2895
+4357,20,barometer,2896
+4358,111,sundial,2897
+4359,29,compass (magnetic),2898
+4360,60,level,2899
+4360,112,surveyers chain,2900
+4361,111,sundial,2901
+4362,85,"planetarium,",2902
+4362,123,octant,2903
+4363,54,hydrometer,2904
+4364,123,octant,2905
+4365,125,telescope,2906
+4366,45,globe,2907
+4367,20,barometer,2908
+4368,20,barometer,2909
+4369,105,"Sextant/Octant,",2910
+4371,20,barometer,2911
+4372,45,globe,2912
+4373,20,barometer,2913
+4374,20,barometer,2914
+4375,34,"blowpipe,",2915
+4375,152,battery,2916
+4376,20,barometer,2917
+4377,45,"globe, celestial,",2918
+4379,175,steelyard/bismar,2919
+4381,29,"compass (magnetic),",2920
+4381,105,"sextant,",2921
+4381,125,"telescope,",2922
+4381,128,"thermometer,",2923
+4381,147,protractor,2924
+4382,104,sector,2925
+4383,111,sundial,2926
+4384,20,barometer,2927
+4385,20,barometer,2928
+4386,20,barometer,2929
+4387,20,"barometer,",2930
+4387,60,"level,",2931
+4387,66,"microscope,",2932
+4387,125,telescope,2933
+4394,85,planetarium,2934
+4395,22,calculating machine,2935
+4396,7,astronomical clock,2936
+4397,111,sundial,2937
+4398,20,"barometer,",2938
+4398,56,"hygrometer,",2939
+4398,115,"spirit level,",2940
+4398,128,thermometer,2941
+4400,20,barometer,2942
+4401,7,astronomical clock,2943
+4406,20,"Barometer,",2944
+4407,20,barometer,2945
+4414,123,octant,2946
+4415,147,protractor,2947
+4416,39,"drawing instruments [possibly by this maker but there was also a Richard Marsh, stationed in Fleet Sr. in 1790/7",2948
+4436,121,magnetic apparatus,2949
+4437,29,compass (magnetic),2950
+4442,20,barometer,2951
+4443,20,barometer,2952
+4447,104,sector,2953
+4448,59,kaliedoscope,2954
+4449,20,"barometer,",2955
+4449,115,"spirit level,",2956
+4449,128,thermometer,2957
+4450,20,barometer,2958
+4451,20,barometer,2959
+4454,20,"barometer,",2960
+4454,128,thermometer,2961
+4456,123,octant,2962
+4458,66,microscope,2963
+4459,123,octant,2964
+4469,20,"barometer,",2965
+4469,128,thermometer,2966
+4470,20,barometer,2967
+4499,45,globe,2968
+4503,123,octant,2969
+4514,60,level,2970
+4519,45,globe,2971
+4522,20,"barometer,",2972
+4522,66,"microscope,",2973
+4522,128,thermometer,2974
+4534,20,barometer,2975
+4536,20,"barometer,",2976
+4536,56,"hygrometer,",2977
+4536,115,"spirit level,",2978
+4536,125,"telescope,",2979
+4536,128,thermometer,2980
+4537,20,"barometer,",2981
+4537,56,"hygrometer,",2982
+4537,128,thermometer,2983
+4538,20,barometer,2984
+4539,26,chronometer,2985
+4545,20,barometer,2986
+4546,26,chronometer,2987
+4551,20,"barometer,",2988
+4551,56,"hygrometer,",2989
+4551,120,thermometer,2990
+4555,20,barometer,2991
+4557,54,hydrometer,2992
+4563,20,barometer,2993
+4581,20,barometer,2994
+4587,101,scale rule,2995
+4591,105,sextant,2996
+4592,,"",2997
+4594,29,"compass (magnetic),",2998
+4594,42,"electrostatic generator,",2999
+4594,66,"microscope,",3000
+4594,147,protractor,3001
+4602,20,barometer,3002
+4603,54,hydrometer,3003
+4604,20,barometer,3004
+4608,123,octant,3005
+4610,39,drawing instruments,3006
+4614,20,barometer,3007
+4619,39,"drawing instruments,beam compass (invented by W & A Smith)",3008
+4623,20,"barometer,",3009
+4623,56,"hygrometer,",3010
+4623,128,thermometer,3011
+4628,26,chronometers,3012
+4629,42,electrostatic generator,3013
+4637,29,"compass (magnetic),",3014
+4640,123,octant by CRICHTON John*,3015
+4642,99,Mechanical Finger for Microscope,3016
+4642,105,sextant,3017
+4644,,"",3018
+4646,45,globe,3019
+4653,20,barometer,3020
+4656,,"",3021
+4657,26,chronometer,3022
+4665,26,"chronometer,",3023
+4665,79,regulator,3024
+4682,111,sundial (ring dial),3025
+4688,20,barometer,3026
+4691,105,octant,3027
+4693,45,globe (folding),3028
+4697,20,"barometer (marine),",3029
+4701,123,Octant,3030
+4713,101,rule,3031
+4721,123,octant,3032
+4722,105,"drum sextant,",3033
+4722,111,universal equinoctial dial,3034
+4727,20,barometer,3035
+4729,92,perpetual calendar,3036
+4742,15,balance,3037
+4744,123,quadrant Hadley's,3038
+4744,125,telescope,3039
+4748,26,"chronometer,",3040
+4748,29,"compass, magnetic,",3041
+4748,105,sextant,3042
+4749,20,barometer,3043
+4750,20,"barometer,",3044
+4750,56,"hygrometer,",3045
+4750,115,"spirit level,",3046
+4750,128,thermometer,3047
+4753,20,barometer,3048
+4756,56,hygrometer,3049
+4765,20,"barometer,",3050
+4765,54,"hydrometer,",3051
+4765,128,thermometer,3052
+4767,3,"anermometer,",3053
+4767,15,"balance,",3054
+4767,40,"barograph,",3055
+4767,60,"level,",3056
+4767,74,"miner's dial,",3057
+4767,139,"photographic (camera},",3058
+4767,201,"optical inst,",3059
+4767,206,surveying inst,3060
+4770,20,barometer,3061
+4782,79,observatory regulator,3062
+4784,50,surveyor's measuring tape,3063
+4823,120,"Leyden jar,",3064
+4823,146,"electrometer,",3065
+4823,154,electromagnetic generator,3066
+4824,26,chronometer,3067
+4825,20,barometer,3068
+4835,45,globe,3069
+4843,105,sextant,3070
+4847,26,chronometer,3071
+4848,111,sundial,3072
+4853,26,chronometer,3073
+4856,99,"microscope accessory,",3074
+4864,66,microscope,3075
+4866,27,circumferentor,3076
+4867,125,telescope,3077
+4880,66,"microscope,",3078
+4880,104,sector,3079
+4883,123,octant,3080
+4884,66,"microscope,",3081
+4884,101,"rule,",3082
+4884,125,telescope,3083
+4886,15,"balance,",3084
+4895,123,octant,3085
+4907,45,globe,3086
+4911,33,chemical apparatus,3087
+4913,26,chronometers,3088
+4916,114,spectacles,3089
+4922,26,chronometer,3090
+4923,104,"sector,",3091
+4923,105,"setant,",3092
+4923,124,"quintant,",3093
+4923,125,telescope,3094
+4938,85,planetarium,3095
+4953,60,surveying level,3096
+4956,26,chronometers,3097
+4960,20,barometer,3098
+4964,92,perpetual calendar,3099
+4972,85,orrery,3100
+4998,66,microscope,3101
+5001,20,"barometer,",3102
+5001,105,"sextant,",3103
+5001,123,octant,3104
+5009,15,balance,3105
+5038,114,spectacles,3106
+5039,66,microscope,3107
+5049,125,telescope,3108
+5058,26,marine chronometer,3109
+5070,105,sextant,3110
+5071,20,barometer,3111
+5083,60,"level,",3112
+5083,138,tide gauge,3113
+5087,101,rule,3114
+5094,125,telescope,3115
+5101,79,observatory regulator,3116
+5105,105,sextant,3117
+5114,107,slide rule,3118
+5115,26,"chronometer,",3119
+5115,105,sextant,3120
+5127,101,rule,3121
+5144,26,"chronometers,",3122
+5144,105,sextant,3123
+5146,15,"balance,",3124
+5146,63,lens,3125
+5148,66,microscope,3126
+5149,123,octant,3127
+5156,66,"microscope,",3128
+5156,105,"sextant,",3129
+5156,125,telescope,3130
+5158,29,"compass (magnetic),",3131
+5158,105,"sextant,",3132
+5158,123,"octant,",3133
+5158,125,telescope,3134
+5159,88,mirror,3135
+5170,20,"barometer,",3136
+5170,128,thermometer,3137
+5177,20,barometer,3138
+5191,36,dip circle,3139
+5201,66,"microscope,",3140
+5228,7,astronomical clock,3141
+5258,60,"level,",3142
+5258,66,"microscope,",3143
+5258,125,telescope,3144
+5261,59,kaliedoscope,3145
+5268,29,compass (magnetic),3146
+5312,63,"lenses,",3147
+5312,123,octant,3148
+5314,20,"barometer,",3149
+5314,56,"hygrometer,",3150
+5314,115,"spirit level,",3151
+5314,128,thermometer,3152
+5316,54,hydrometer,3153
+5325,20,barometer,3154
+5327,20,barometer,3155
+5341,20,"barometer,",3156
+5341,125,telescope,3157
+5345,123,octant,3158
+5354,82,saccharometer,3159
+5416,134,weights,3160
+5417,134,weights,3161
+5456,105,sextant,3162
+5461,20,barometer,3163
+5464,66,microscope,3164
+5465,66,"microscope,",3165
+5465,125,telescope,3166
+5466,101,"scales,",3167
+5466,107,"slide rule,",3168
+5466,108,"parallel rule,",3169
+5466,147,protractor,3170
+5467,1,"air pump,",3171
+5467,39,"drawing instruments,",3172
+5467,66,"microscope,",3173
+5467,125,"telescope,",3174
+5467,143,electrical apparatus,3175
+5469,54,hydrometer,3176
+5471,125,telescope,3177
+5479,20,barometer,3178
+5480,18,"burning glass,",3179
+5480,66,"microscope,",3180
+5480,125,telescope,3181
+5490,26,chronometer,3182
+5521,45,globe,3183
+5542,114,spectacles,3184
+5548,,"",3185
+5567,123,octant,3186
+5575,66,microscope,3187
+5593,114,spectacles,3188
+5598,114,spectacles,3189
+5604,114,spectacles,3190
+5624,20,barometer,3191
+5627,29,compass (magnetic),3192
+5628,104,sector,3193
+5629,147,protractor,3194
+5631,105,sextant,3195
+5634,123,octant,3196
+5651,20,"barometer,",3197
+5667,1,"air pump,",3198
+5667,20,barometer,3199
+5699,105,"sextant,",3200
+5699,123,octant,3201
+5703,20,"barometer,",3202
+5703,128,thermometer,3203
+5709,26,"chronometer,",3204
+5711,26,chronometer,3205
+5714,26,chronometer,3206
+5727,111,"sundial, as test piece",3207
+5728,15,balance,3208
+5742,,"",3209
+5746,97,Gunter's quadrant,3210
+5747,20,barometer,3211
+5753,92,perpetual calendar,3212
+5759,96,quadrant,3213
+5760,125,telescope,3214
+5764,28,"clinometer,",3215
+5764,111,sundial,3216
+5771,45,globe,3217
+5775,1,air pump,3218
+5788,26,chronometer,3219
+5794,26,chronometer,3220
+5809,20,"barometer,",3221
+5809,128,thermometer,3222
+5814,20,"barometer,",3223
+5814,123,"octant,",3224
+5814,125,telescope,3225
+5816,125,"telescope,",3226
+5816,139,wet plate camera,3227
+5825,107,slide rule,3228
+5833,156,rain gauge,3229
+5853,59,kaleidoscope,3230
+5855,20,"barometer,",3231
+5855,56,"hygrometer,",3232
+5855,115,"spirit level,",3233
+5855,128,thermometer,3234
+5865,20,"barometer,",3235
+5865,26,"chronometer,",3236
+5865,105,"sextant,",3237
+5865,125,telescope,3238
+5866,63,lenses,3239
+5867,20,"barometer,",3240
+5867,128,thermometer,3241
+5869,26,chronometer,3242
+5896,20,barometer,3243
+5906,20,barometer,3244
+5907,20,barometer,3245
+5911,45,"globe,",3246
+5911,181,time-zone clock,3247
+5921,20,"barometer,",3248
+5921,29,"compass,",3249
+5921,39,parallel rule,3250
+5935,15,coin balance (probably),3251
+5948,39,compass,3252
+5958,20,"barometer (marine),",3253
+5958,128,thermometer,3254
+5975,20,"barometer,",3255
+5975,127,theodolite,3256
+5990,20,Barometer,3257
+5993,123,octant,3258
+6001,42,electrostatic app,3259
+6002,96,quadrant,3260
+6010,20,barometer,3261
+6019,125,telescope,3262
+6022,26,chronometer,3263
+6031,2,alidade,3264
+6031,29,surveyor's compass,3265
+6033,20,"barometer,",3266
+6033,128,thermometer,3267
+6034,29,compass,3268
+6037,20,barometer,3269
+6039,93,prism,3270
+6041,20,"barometer,",3271
+6041,128,thermometer,3272
+6043,123,octant,3273
+6045,20,barometer,3274
+6047,101,rule,3275
+6049,115,spirit level,3276
+6050,78,opera glasses,3277
+6056,92,peretual calendar,3278
+6063,128,thermometer,3279
+6064,99,microscope accessories,3280
+6066,20,barometer,3281
+6068,128,thermometer,3282
+6069,207,telescope mount,3283
+6071,20,"barometer,",3284
+6071,56,"hygrometer,",3285
+6071,115,"spirit level,",3286
+6071,128,thermometer,3287
+6075,15,coin balance,3288
+6077,60,"dumpy level,",3289
+6077,101,"scale rule,",3290
+6077,104,"sector,",3291
+6077,113,surveyor's cross,3292
+6078,66,microscope (binocular),3293
+6079,20,"barometer,",3294
+6079,101,"rule,",3295
+6079,114,spectacles,3296
+6080,20,barometer,3297
+6083,54,hydrometer,3298
+6084,66,"microscope,",3299
+6084,125,telescope,3300
+6085,20,wheel barometer,3301
+6086,29,miners dial,3302
+6086,66,microscope,3303
+6086,113,surveyor's cross,3304
+6086,147,protractor,3305
+6087,29,"miners dial,",3306
+6087,41,eidograph,3307
+6089,64,capacity measure,3308
+6095,49,tailors folding square,3309
+6095,104,"sector,",3310
+6095,107,"slide rule,",3311
+6096,104,sector,3312
+6098,17,binnacle,3313
+6099,20,barometer (stick),3314
+6109,26,chondrometer,3315
+6110,125,telescope,3316
+6111,114,spectacles,3317
+6115,20,"barometer,",3318
+6115,115,"spirit level,",3319
+6115,128,thermometer,3320
+6118,45,globe,3321
+6123,20,barometer,3322
+6127,111,"sundial,",3323
+6127,128,thermometer,3324
+6128,20,barometer,3325
+6131,66,microscope,3326
+6132,20,"barometer,",3327
+6132,128,thermometer,3328
+6133,20,barometer,3329
+6134,20,"barometer,",3330
+6134,128,thermometer,3331
+6135,20,"barometer,",3332
+6135,56,"hygrometer,",3333
+6135,115,"spirit level,",3334
+6135,128,thermometer,3335
+6141,20,barometer,3336
+6142,101,rule,3337
+6150,29,compass (marine),3338
+6151,,"",3339
+6156,20,barometer,3340
+6161,111,sundial,3341
+6162,64,measure (capacity),3342
+6163,20,barometer,3343
+6174,101,rule,3344
+6175,20,barometer,3345
+6185,20,barometer,3346
+6188,20,barometer,3347
+6190,15,"scales,",3348
+6190,20,barometer,3349
+6197,20,"barometer,",3350
+6197,128,thermometer,3351
+6198,20,barometer,3352
+6199,20,barometer (probably),3353
+6208,111,ring dial,3354
+6209,123,octant,3355
+6212,,"",3356
+6219,26,chronometer,3357
+6225,107,slide rule,3358
+6226,20,"barometer,",3359
+6226,56,"hygrometer,",3360
+6226,115,"spirit level,",3361
+6226,128,thermometer,3362
+6233,29,compass,3363
+6234,20,barometer,3364
+6234,56,hygrometer,3365
+6234,60,level,3366
+6234,128,thermometer,3367
+6236,111,dial (garden),3368
+6237,139,photographic apparatus,3369
+6242,20,"barmometer,",3370
+6242,56,"hygrometer,",3371
+6242,115,"spirit level,",3372
+6242,128,thermometer,3373
+6243,20,barometer,3374
+6253,114,spectacles,3375
+6259,101,rule,3376
+6261,101,rule,3377
+6278,20,barometer,3378
+6279,,"",3379
+6282,20,"barometer,",3380
+6286,29,surveying compass,3381
+6290,20,barometer,3382
+6290,56,hygrometer,3383
+6290,115,spirit level,3384
+6290,128,thermometer,3385
+6293,20,"barometer,",3386
+6293,56,"hygrometer,",3387
+6293,115,"spirit level,",3388
+6293,128,thermometer,3389
+6294,10,barometer,3390
+6295,20,barometer,3391
+6296,54,hydrometer,3392
+6297,39,drawing inst,3393
+6313,29,compass,3394
+6318,105,"sextant,",3395
+6318,123,octant,3396
+6319,26,"chronometer,",3397
+6319,29,"compass,",3398
+6319,105,sextant,3399
+6324,115,spirit level,3400
+6325,107,slide rule,3401
+6327,20,barometer,3402
+6329,111,sundial,3403
+6331,54,hydrometer,3404
+6332,20,barometer,3405
+6333,101,rule,3406
+6334,49,square,3407
+6338,20,"barometer,",3408
+6338,128,thermometer,3409
+6339,20,barometer,3410
+6340,7,regulator clocks,3411
+6341,110,sterescope,3412
+6342,125,telescope,3413
+6345,54,hydrometer,3414
+6353,64,measure,3415
+6359,123,octant,3416
+6362,20,"barometer,",3417
+6362,20,sympiesometer,3418
+6363,20,barometer,3419
+6364,20,"barometer,",3420
+6364,29,"compass,",3421
+6364,125,"telescope,",3422
+6364,128,thermometer,3423
+6365,96,quadrant,3424
+6369,20,"barometer,",3425
+6369,56,"hygrometer,",3426
+6369,125,thermometer,3427
+6370,20,"barometer,",3428
+6370,56,"hygrometer,",3429
+6370,60,"level,",3430
+6370,128,thermometer,3431
+6372,125,telescope,3432
+6373,105,"sextant,",3433
+6374,20,barometer,3434
+6376,20,barometer,3435
+6382,20,barometer,3436
+6386,20,barometer,3437
+6387,66,microscope,3438
+6390,20,barometer,3439
+6392,15,yarn balance,3440
+6393,20,"barometer,",3441
+6393,56,"hygrometer,",3442
+6393,128,thermometer,3443
+6397,66,microscope,3444
+6398,20,"barometer,",3445
+6398,56,"hygrometer,",3446
+6398,115,"spirit level,",3447
+6398,128,thermometer,3448
+6399,20,"barometer,",3449
+6399,56,"hygrometer,",3450
+6399,115,"spirit level,",3451
+6399,128,thermometer,3452
+6400,20,barometer,3453
+6402,101,rule,3454
+6406,20,"barometer,",3455
+6406,56,"hygrometer,",3456
+6406,88,"mirror,",3457
+6406,128,thermometer,3458
+6407,20,barometer,3459
+6408,20,barometer,3460
+6409,20,"barometer,",3461
+6409,56,"hygrometer,",3462
+6409,115,"spirit level,",3463
+6409,128,thermometer,3464
+6410,20,barometer,3465
+6411,20,barometer,3466
+6413,20,barometer,3467
+6413,40,barograph,3468
+6413,209,ship's telegraph,3469
+6414,20,"barometer,",3470
+6414,128,thermometer,3471
+6417,66,microscope,3472
+6425,20,"barometer,",3473
+6425,56,"hygrometer,",3474
+6425,115,"spirit level,",3475
+6425,128,thermometer,3476
+6427,20,barometer,3477
+6429,42,electrical machine,3478
+6431,20,barometer,3479
+6431,128,thermometer,3480
+6433,20,"barometer,",3481
+6433,56,"hygrometer,",3482
+6433,115,"spirit level,",3483
+6433,128,thermometer,3484
+6434,20,"barometer,",3485
+6434,128,thermometer,3486
+6436,115,spirit level,3487
+6439,39,"beam compass,",3488
+6439,101,rule,3489
+6444,125,telescope,3490
+6450,64,measure capacity,3491
+6452,15,"letter scales (balance),",3492
+6452,101,rule,3493
+6464,52,gauge,3494
+6465,60,"surveyors level,",3495
+6465,134,weights,3496
+6466,66,"microscope,",3497
+6466,99,microscope accessories,3498
+6472,20,"barometer,",3499
+6472,128,thermometer,3500
+6473,20,barometer,3501
+6474,20,barometer,3502
+6474,128,thermometer,3503
+6475,20,"barometer,",3504
+6475,56,"hygrometer,",3505
+6475,115,"spirit level,",3506
+6475,128,thermometer,3507
+6480,20,"barometer,",3508
+6480,210,psychrometer,3509
+6481,125,telescope,3510
+6482,,"",3511
+6483,125,"telescopes,",3512
+6483,127,theodolites,3513
+6485,15,balance,3514
+6485,66,microscope,3515
+6486,107,ullage rule,3516
+6487,101,rule,3517
+6491,155,gunnery scale,3518
+6493,20,barometer,3519
+6497,32,chondrometer,3520
+6498,20,"barometer,",3521
+6498,128,thermometer,3522
+6499,133,"waywiser,",3523
+6499,211,dynamometer,3524
+6500,26,chronometers,3525
+6505,20,"barometer,",3526
+6505,128,thermometer,3527
+6510,105,sextant,3528
+6514,212,pitch indicator,3529
+6518,20,barometer,3530
+6521,20,"barometer,",3531
+6521,128,thermometer,3532
+6522,114,spectacles,3533
+6528,45,globe,3534
+6535,111,sundial,3535
+6540,66,"microscope,",3536
+6540,123,octant,3537
+6543,54,"hydrometer,",3538
+6543,74,"miners dial,",3539
+6554,99,light defractor,3540
+6555,59,kaleidscope,3541
+6557,45,globe,3542
+6559,64,capacity measure,3543
+6560,142,model (eye),3544
+6561,20,"thunderglass,",3545
+6561,66,"microscope,",3546
+6561,125,telescope,3547
+6568,20,"barometer,",3548
+6568,29,"compass,",3549
+6568,128,thermometer,3550
+6569,20,"barometer, (mine)",3551
+6569,27,"circumferentor,",3552
+6569,74,"miners dial,",3553
+6569,108,"rule (parallel),",3554
+6569,128,"thermometer,",3555
+6569,147,protractor,3556
+6570,29,"miners dial,",3557
+6570,60,level,3558
+6575,20,"barometer,",3559
+6575,56,"hygrometer,",3560
+6575,115,"spirit level,",3561
+6575,128,thermometer,3562
+6581,20,"barometer,",3563
+6581,56,"hygrometer,",3564
+6581,115,"spirit level,",3565
+6581,128,thermometer,3566
+6584,20,barometer,3567
+6585,49,folding square,3568
+6595,29,compass rose,3569
+6601,20,barometer,3570
+6601,29,compass,3571
+6601,39,drawing instruments,3572
+6601,40,barograph,3573
+6601,42,induction coil,3574
+6601,60,level,3575
+6601,80,pantograph,3576
+6601,84,planimeter,3577
+6601,101,engineer's scale,3578
+6601,105,sextant,3579
+6601,122,surveyor's staff,3580
+6601,125,telescope,3581
+6601,142,mechanical model,3582
+6601,147,protractor,3583
+6601,213,altimeter,3584
+6604,123,"quadrant (Hadley's?),",3585
+6604,125,telescope,3586
+6605,,ammeter,3587
+6606,107,Coggeshall rule,3588
+6612,20,"barometer,",3589
+6612,128,thermometer,3590
+6613,20,"barometer,",3591
+6613,128,thermometer,3592
+6616,54,"hydrometer,",3593
+6618,20,barometer,3594
+6623,49,tailor's square,3595
+6625,,"",3596
+6627,20,barometer,3597
+6628,105,sextant,3598
+6631,20,"barometer,",3599
+6631,56,"hygrometer,",3600
+6631,115,"spirit level,",3601
+6631,128,thermometer,3602
+6632,20,barometer,3603
+6634,125,telescope,3604
+6635,105,sextant,3605
+6648,20,"barometer,",3606
+6656,105,sextant,3607
+6661,29,compass,3608
+6668,99,microscope lamp,3609
+6671,20,barometer,3610
+6673,125,spyglass,3611
+6678,107,slide rule,3612
+6681,20,barometer,3613
+6683,63,lens (yarn testing),3614
+6684,54,"hydrometer,",3615
+6684,128,thermometer,3616
+6685,54,hydrometer,3617
+6686,52,"gauge,",3618
+6686,101,rule,3619
+6687,29,compass,3620
+6693,20,barometer,3621
+6694,66,microscope,3622
+6702,60,level,3623
+6703,20,"barometer,",3624
+6703,128,thermometer,3625
+6704,20,"barometer,",3626
+6704,128,thermometer,3627
+6708,111,sundial,3628
+6709,125,telescope,3629
+6713,20,barometer,3630
+6714,66,microscope,3631
+6720,66,microscope,3632
+6722,66,"microscope,",3633
+6722,107,slide rule,3634
+6723,66,microscope,3635
+6729,20,barometer,3636
+6735,66,microscope,3637
+6736,60,level,3638
+6737,20,sympiesometer,3639
+6738,20,barometer,3640
+6738,128,thermometer,3641
+6741,20,barometer,3642
+6741,128,thermometer,3643
+6747,29,miners dial,3644
+6751,20,"barometer,",3645
+6751,128,thermometer,3646
+6759,15,"balance,",3647
+6759,125,telescope,3648
+6760,105,"sextant,",3649
+6762,71,reading glass,3650
+6764,20,"barometer,",3651
+6764,128,thermometer,3652
+6768,20,"barometer,",3653
+6768,56,"hygrometer,",3654
+6768,115,"spirit-level,",3655
+6768,128,thermometer,3656
+6770,64,measure capacity,3657
+6771,85,orrey,3658
+6774,66,microscope,3659
+6776,20,"barometer,",3660
+6776,128,thermometer,3661
+6777,20,barometer,3662
+6778,20,barometer,3663
+6782,20,barometer,3664
+6783,20,marine barometer,3665
+6784,,"",3666
+6791,125,telescope,3667
+6795,105,"sextant,",3668
+6797,20,barometer,3669
+6798,123,octant,3670
+6802,26,chronometers,3671
+6802,105,"sextant,",3672
+6804,20,barometer,3673
+6808,20,"barometer,",3674
+6808,128,telescope,3675
+6809,20,"barometer,",3676
+6809,128,thermometer,3677
+6825,39,drawing instruments,3678
+6827,15,balance,3679
+6828,42,electromagnetic induction,3680
+6828,42,machine,3681
+6829,20,barometer,3682
+6839,26,chronograph,3683
+6839,125,telescope (refractor),3684
+6842,20,barometer,3685
+6844,85,planetarium,3686
+6845,20,barometer,3687
+6848,20,"barometer,",3688
+6848,56,"hygrometer,",3689
+6848,128,thermometer,3690
+6849,20,"barometer,",3691
+6849,128,thermometer,3692
+6850,66,microscope,3693
+6852,101,rule,3694
+6853,105,sextant,3695
+6855,20,"barometer,",3696
+6855,56,"hygrometer,",3697
+6855,115,"spirit level,",3698
+6855,128,thermometer,3699
+6856,125,telescope,3700
+6859,125,telescope,3701
+6863,20,"barometer,",3702
+6863,128,thermometer,3703
+6865,20,"barometer signed 'Hanson, Windsor', prob by this man;",3704
+6865,128,thermometer,3705
+6869,128,thermometer,3706
+6870,54,hydrometer,3707
+6872,125,telescope,3708
+6874,111,sundial,3709
+6877,123,octant,3710
+6878,54,hydrometer,3711
+6879,15,balance,3712
+6879,20,barometer,3713
+6880,20,"barometer,",3714
+6880,128,thermometer,3715
+6885,20,"barometer,",3716
+6885,56,"hygrometer,",3717
+6885,115,"spirit level,",3718
+6885,128,thermometer,3719
+6886,20,"barometer,",3720
+6886,128,thermometer,3721
+6887,29,compass,3722
+6889,128,thermometer,3723
+6891,52,gauge,3724
+6892,101,rule,3725
+6897,123,octant,3726
+6903,111,horizontal sundial,3727
+6904,105,sextant,3728
+6905,20,barometer,3729
+6905,56,hygrometer,3730
+6905,128,thermometer,3731
+6907,66,microscope,3732
+6908,20,barometer,3733
+6910,105,"sextant,",3734
+6911,20,"barometer,",3735
+6911,56,"hygrometer,",3736
+6911,128,thermometer,3737
+6913,105,sextant,3738
+6916,20,barometer,3739
+6919,20,"barometer,",3740
+6919,128,thermometer,3741
+6920,29,miners compass,3742
+6927,66,microscope,3743
+6927,99,"microscope objective,",3744
+6930,20,barometer,3745
+6933,20,"barometer,",3746
+6933,56,"hygrometer,",3747
+6933,128,thermometer,3748
+6940,45,globe,3749
+6942,,"",3750
+6943,20,"barometer,",3751
+6943,128,thermometer,3752
+6944,101,rule,3753
+6953,105,sextant,3754
+6954,29,compass,3755
+6955,54,"hydrometer,",3756
+6955,128,"thermometer,",3757
+6957,39,drawing instruments,3758
+6959,15,"balance,",3759
+6959,20,barometer,3760
+6961,,"",3761
+6963,66,microscope,3762
+6964,15,"scales,",3763
+6964,20,"barometer,",3764
+6964,128,thermometer,3765
+6965,26,chronometer,3766
+6968,20,"barometer,",3767
+6968,128,thermometer,3768
+6969,20,"barometer,",3769
+6969,56,"hygrometer,",3770
+6969,115,"spirit level,",3771
+6969,128,thermometer,3772
+6975,101,rule,3773
+6976,20,"barometer,",3774
+6976,20,storm glass,3775
+6976,54,"hydrometer,",3776
+6976,56,hygrometer,3777
+6979,123,"octant,",3778
+6979,108,parallel rule,3779
+6980,20,"barometer,",3780
+6980,20,storm glass,3781
+6988,123,octant,3782
+6991,66,microscope,3783
+6994,15,"balance,",3784
+6994,39,"parallel rule,",3785
+6994,60,"surveying level,",3786
+6994,125,"telescope,",3787
+6995,15,balance,3788
+6995,125,telescope,3789
+6996,60,"level,",3790
+6996,127,theodolite,3791
+6998,20,"barometer,",3792
+6998,56,"hygrometer,",3793
+6998,60,"level,",3794
+6998,115,"spirit level,",3795
+6998,128,thermometer,3796
+6999,105,sextant,3797
+6999,123,"octant,",3798
+7004,20,barometer,3799
+7006,20,"barometer,",3800
+7006,128,thermometer,3801
+7007,20,barometer,3802
+7008,20,"barometer,",3803
+7008,128,thermometer,3804
+7011,125,telescope,3805
+7012,64,liquid measure,3806
+7018,54,hydrometer,3807
+7022,20,barometer,3808
+7026,29,lean dial,3809
+7026,147,protractor,3810
+7032,123,octant,3811
+7034,105,sextant,3812
+7036,20,"barometer,",3813
+7036,56,"hygrometer,",3814
+7036,115,"spirit level,",3815
+7036,128,thermometer,3816
+7047,105,sextant,3817
+7056,54,hydrometer,3818
+7058,54,"hydrometer,",3819
+7058,128,thermometer,3820
+7059,54,"hydrometer,",3821
+7059,128,thermometer,3822
+7070,105,sextant,3823
+7071,45,globes,3824
+7074,17,"binnacle,",3825
+7074,29,compass,3826
+7077,115,spirit level,3827
+7079,214,siren,3828
+7081,147,"protractor,",3829
+7087,20,"barometer,",3830
+7087,115,"spirit level,",3831
+7087,128,thermometer,3832
+7088,20,barometer,3833
+7093,26,chronometer,3834
+7106,20,"barometer,",3835
+7106,56,"hygrometer,",3836
+7106,115,"spirit level,",3837
+7106,128,thermometer,3838
+7107,20,barometer,3839
+7113,204,nautical instruments,3840
+7113,204,position finder [Macombie,3841
+7114,20,"barometer,",3842
+7114,128,thermometer,3843
+7117,66,microscope,3844
+7118,125,telescope,3845
+7120,29,"compass,",3846
+7120,123,octant,3847
+7121,29,"compass,",3848
+7121,105,sextant,3849
+7122,29,compass,3850
+7123,32,"chondrometer,",3851
+7123,54,hydrometer,3852
+7125,20,"barometer,",3853
+7125,128,thermometer,3854
+7136,111,sundial,3855
+7137,125,telescope,3856
+7151,52,gauge,3857
+7153,20,barometer,3858
+7160,20,"barometer,",3859
+7160,128,thermometer,3860
+7162,123,octant,3861
+7163,20,barometer,3862
+7169,20,"barometer,",3863
+7169,56,"hygrometer,",3864
+7169,115,"spirit level,",3865
+7169,128,thermometer,3866
+7175,20,"sympiesometer,",3867
+7179,20,barometer,3868
+7180,20,barometer,3869
+7184,125,telescope,3870
+7186,107,slide rule,3871
+7186,144,dip stick,3872
+7187,59,kaleidoscope,3873
+7188,128,thermometer,3874
+7189,20,"barometer,",3875
+7189,54,"hydrometer,",3876
+7189,115,"spirit level,",3877
+7189,128,thermometer,3878
+7192,15,scales,3879
+7195,125,prospect glass,3880
+7197,20,barometer,3881
+7197,128,thermometer,3882
+7201,66,microscope,3883
+7202,101,rule,3884
+7202,115,spirit level,3885
+7204,54,"hydrometer,",3886
+7204,107,"slide rule,",3887
+7204,128,thermometer,3888
+7205,54,"glucometer,",3889
+7205,128,thermometer,3890
+7206,101,"rule [probably by this maker, signed 'Lund of 57 Cornhill, London']",3891
+7208,123,octant,3892
+7210,20,barometer,3893
+7214,101,rule,3894
+7216,111,moondial,3895
+7224,15,scale,3896
+7225,101,rule,3897
+7228,20,"barometer,",3898
+7228,128,thermometer,3899
+7230,20,barometer,3900
+7232,20,"barometer,",3901
+7232,128,thermometer,3902
+7235,20,"barometer,",3903
+7235,128,thermometer,3904
+7236,20,"barometer,",3905
+7236,56,"hygrometer,",3906
+7236,115,"spirit level,",3907
+7236,128,thermometer,3908
+7237,45,globes,3909
+7238,40,barograph,3910
+7240,60,"level,",3911
+7240,101,rule,3912
+7241,20,barometer,3913
+7242,45,globe,3914
+7243,45,globe,3915
+7246,20,"barometer,",3916
+7246,56,"hygrometer,",3917
+7246,115,"spirit level,",3918
+7246,128,thermometer,3919
+7247,20,"barometer,",3920
+7247,128,thermometer,3921
+7255,20,barometer,3922
+7259,101,"rule,",3923
+7259,115,spirit level,3924
+7263,101,rule,3925
+7265,20,"barometer,",3926
+7265,128,thermometer,3927
+7274,20,barometer,3928
+7276,20,barometer,3929
+7277,20,"barometer,",3930
+7277,128,thermometer,3931
+7278,20,"barometer,",3932
+7278,128,thermometer,3933
+7279,20,"barometer,",3934
+7279,128,thermometer,3935
+7281,66,microscope,3936
+7282,125,telescope,3937
+7285,20,barometer,3938
+7286,20,barometer,3939
+7287,20,barometer,3940
+7288,20,barometer,3941
+7290,20,"barometer,",3942
+7290,56,"hygrometer,",3943
+7290,115,"spirit level,",3944
+7290,128,thermometer,3945
+7294,66,microscope,3946
+7297,66,microscope,3947
+7301,114,spectacles,3948
+7304,20,"barometer,",3949
+7304,128,thermometer,3950
+7308,66,microscope,3951
+7318,46,"pressure gauge,",3952
+7318,46,steam engine indicator,3953
+7318,216,"calorimeter,",3954
+7322,105,sextant,3955
+7323,97,Gunter's quadrant,3956
+7331,29,compass,3957
+7337,66,microscope,3958
+7349,39,drawing instruments,3959
+7352,54,hydrometer,3960
+7356,66,microscope,3961
+7357,105,sextant,3962
+7358,20,"barometer,",3963
+7358,56,"hygrometer,",3964
+7358,128,thermometer,3965
+7359,20,barometer,3966
+7361,78,"opera glasses,",3967
+7361,114,"spectacles,",3968
+7361,125,telescopes,3969
+7362,20,barometer,3970
+7368,60,"level,",3971
+7368,105,sextant,3972
+7368,123,"octant,",3973
+7373,20,"barometer,",3974
+7373,60,"dumpy level,",3975
+7373,128,thermometer,3976
+7377,20,barometer,3977
+7380,20,barometer,3978
+7380,128,thermometer,3979
+7388,105,sextant,3980
+7392,42,"induction coil,",3981
+7392,54,hydrometer,3982
+7401,15,spring balance,3983
+7404,20,"barometer,",3984
+7404,128,thermometer,3985
+7406,15,scales,3986
+7407,,scale,3987
+7410,66,microscope,3988
+7415,20,"barometer,",3989
+7415,29,compass,3990
+7416,20,"barometer,",3991
+7416,29,compass,3992
+7420,20,barometer,3993
+7421,20,"barometer,",3994
+7421,56,"hygrometer,",3995
+7421,60,"level,",3996
+7421,128,thermometer,3997
+7429,20,"barometer,",3998
+7429,128,thermometer,3999
+7430,114,spectacles,4000
+7438,105,drum sextant,4001
+7440,125,telescope,4002
+7442,101,folding rule,4003
+7444,20,barometer,4004
+7447,29,compass,4005
+7451,101,rule,4006
+7453,20,"barometer,",4007
+7453,128,thermometer,4008
+7454,105,sextant,4009
+7461,111,sundial,4010
+7463,20,"barometer,",4011
+7463,128,thermometer,4012
+7474,64,measure (capacity),4013
+7479,29,compass,4014
+7486,20,barometer,4015
+7487,20,barometer,4016
+7489,20,barometer,4017
+7489,128,thermometer,4018
+7492,20,barometer,4019
+7493,20,barometer,4020
+7494,20,barometer,4021
+7495,20,barometer,4022
+7495,128,thermometer,4023
+7503,20,"barometer,",4024
+7503,56,"hygrometer,",4025
+7503,115,"spirit level,",4026
+7503,128,thermometer,4027
+7505,29,compass,4028
+7508,20,barometer,4029
+7509,125,telescope,4030
+7510,105,sextant,4031
+7511,29,"compass,",4032
+7511,102,"Borda circle,",4033
+7511,105,"sextant,",4034
+7511,125,telescope,4035
+7512,15,"scales,",4036
+7512,101,"rule,",4037
+7514,107,Coggeshall rule,4038
+7518,20,"barometer,",4039
+7518,128,thermometer,4040
+7523,54,hydrometer,4041
+7534,20,barometer,4042
+7535,20,"barometer,",4043
+7535,128,thermometer,4044
+7545,101,rule,4045
+7552,20,barometer (farmer's),4046
+7554,66,microscope,4047
+7558,20,"barometer,",4048
+7558,128,thermometer,4049
+7560,20,barometer,4050
+7561,20,barometer,4051
+7565,45,"globe,",4052
+7566,45,"globe,",4053
+7566,85,orrery,4054
+7574,15,"balance,",4055
+7574,20,aneroid barometer,4056
+7577,111,heliochronometer,4057
+7579,20,"barometer,",4058
+7579,128,thermometer,4059
+7588,20,barometer,4060
+7590,125,telescope,4061
+7591,20,"barometer,",4062
+7591,56,"hygrometer,",4063
+7591,128,thermometer,4064
+7598,5,artificial horizon,4065
+7601,105,sextant,4066
+7606,20,"barometer,",4067
+7606,56,"hygrometer,",4068
+7606,115,"spirit level,",4069
+7606,128,thermometer,4070
+7607,20,barometer,4071
+7608,20,"barometer,",4072
+7608,56,"hygrometer,",4073
+7608,115,"spirit level,",4074
+7608,128,thermometer,4075
+7613,54,hydrometer,4076
+7615,52,"depth gauge,",4077
+7615,107,"Coggeshall rule,",4078
+7615,115,spirit level,4079
+7617,49,square,4080
+7623,20,barometer,4081
+7624,20,barometer,4082
+7625,123,octant,4083
+7627,20,"barometer,",4084
+7627,40,"banograph,",4085
+7627,128,thermometer,4086
+7629,66,microscope,4087
+7631,111,sundial,4088
+7638,105,sextant,4089
+7643,20,"barometer,",4090
+7643,56,"hygrometer,",4091
+7643,115,"spirit level,",4092
+7643,128,thermometer,4093
+7644,52,gauge,4094
+7645,101,"rule,",4095
+7645,107,Coggeshall rule,4096
+7646,101,"rule,",4097
+7646,107,"Routledge rule,",4098
+7646,144,dip stick,4099
+7647,115,coin balance,4100
+7658,45,lunar globe,4101
+7666,20,"barometer,",4102
+7666,54,"hydrometer,",4103
+7666,128,thermometer,4104
+7667,128,thermometer,4105
+7668,128,thermometer,4106
+7679,39,rolling rule,4107
+7682,39,drawing instruments,4108
+7683,150,azimuth instrument,4109
+7684,105,sextant,4110
+7686,80,pantograph,4111
+7688,20,barometer,4112
+7689,45,globe,4113
+7696,147,protractor,4114
+7702,20,barometer,4115
+7703,20,barometer,4116
+7704,20,barometer,4117
+7705,20,barometer,4118
+7706,20,"barometer,",4119
+7706,128,thermometer,4120
+7707,20,barometer,4121
+7708,20,barometer,4122
+7709,20,barometer,4123
+7710,20,"barometer,",4124
+7710,128,thermometer,4125
+7711,20,barometer,4126
+7716,66,microscope,4127
+7720,123,octant,4128
+7721,101,scale rules,4129
+7722,66,microscope,4130
+7731,20,"barometer,",4131
+7731,29,"compass,",4132
+7731,128,thermometer,4133
+7732,3,"air-flow meter,",4134
+7732,54,"hydrometer,",4135
+7732,111,"solar chronometer,",4136
+7732,128,thermometer,4137
+7732,147,"protractor,",4138
+7734,74,miner's dial,4139
+7736,20,"barometer,",4140
+7736,128,thermometer,4141
+7737,20,barometer,4142
+7738,20,barometer,4143
+7739,20,barometer,4144
+7741,20,barometer,4145
+7742,20,barometer,4146
+7742,128,thermometer,4147
+7753,,"",4148
+7757,101,rule,4149
+7762,114,spectacles,4150
+7766,104,sector,4151
+7767,29,compass,4152
+7773,20,barometer,4153
+7777,20,"barometer,",4154
+7777,56,"hygrometer,",4155
+7777,128,thermometer,4156
+7778,20,"barometer,",4157
+7778,128,thermometer,4158
+7779,20,barometer,4159
+7779,128,thermometer,4160
+7780,20,barometer,4161
+7787,101,rule,4162
+7788,54,hydrometer,4163
+7789,26,chronometer,4164
+7792,20,barometer,4165
+7792,128,thermometer,4166
+7794,26,chronometer,4167
+7806,39,"drawing instruments,",4168
+7806,39,"proportional dividers,",4169
+7806,45,"globe,",4170
+7806,104,sector,4171
+7813,39,drawing instruments,4172
+7818,125,telescope,4173
+7821,20,barometer,4174
+7822,111,sundial,4175
+7826,85,tellurium,4176
+7831,107,slide rule,4177
+7835,125,telescope,4178
+7837,54,hydrometer,4179
+7841,20,"barometer,",4180
+7841,40,"barograph,",4181
+7841,128,thermometer,4182
+7842,20,"barometer,",4183
+7842,29,"prismatic compass,",4184
+7842,40,"barograph,",4185
+7842,218,sunshine recorder,4186
+7845,105,"sextant,",4187
+7846,220,heliostat,4188
+7855,105,sextant,4189
+7858,123,octant,4190
+7859,125,telescope,4191
+7861,111,polyhedral dial,4192
+7865,20,"barometer,",4193
+7865,128,telescope,4194
+7866,29,compass (ship's),4195
+7877,66,microscope,4196
+7878,49,"square & rule,",4197
+7878,101,"rule,",4198
+7878,115,spirit level,4199
+7883,105,"sextant,",4200
+7883,178,course corrector,4201
+7888,66,microscope,4202
+7896,78,opera glasses,4203
+7899,105,sextant,4204
+7901,123,octant,4205
+7903,20,"barometer,",4206
+7903,56,"hygrometer,",4207
+7903,60,"level,",4208
+7903,128,thermometer,4209
+7906,20,"barometer,",4210
+7906,115,spirit level,4211
+7908,20,barometer,4212
+7914,20,"barometer,",4213
+7914,56,"hygrometer,",4214
+7914,115,"spirit level,",4215
+7914,128,thermometer,4216
+7918,20,barometer,4217
+7919,20,"barometer,",4218
+7919,128,thermometer,4219
+7921,20,"barometer,",4220
+7921,56,"hygrometer,",4221
+7921,128,thermometer,4222
+7922,115,spirit level,4223
+7929,105,sextant,4224
+7930,60,"level,",4225
+7930,94,"polarimeter,",4226
+7930,220,heliostat,4227
+7931,105,sextant,4228
+7932,20,barometer,4229
+7941,45,globe,4230
+7946,15,"balance,",4231
+7948,163,model paddlewheel,4232
+7956,123,octant,4233
+7962,125,telescope,4234
+7966,39,drawing instruments,4235
+7969,127,theodolite,4236
+7971,60,level,4237
+7972,60,surveyors level,4238
+7973,79,"Wheatstone clock,",4239
+7973,259,telegraph instruments,4240
+7981,118,galvanometer,4241
+7985,20,barometer,4242
+7993,101,horse measure,4243
+7994,105,sextant (box),4244
+7995,63,lens,4245
+7997,20,barometer,4246
+7997,128,thermometer,4247
+8001,125,telescope,4248
+8002,28,"barometer,",4249
+8002,128,thermometer,4250
+8003,20,"barometer,",4251
+8003,128,thermometer,4252
+8004,20,"barometer,",4253
+8004,56,"hygrometer,",4254
+8004,115,"spirit level,",4255
+8004,128,thermometer,4256
+8005,20,"barometer,",4257
+8005,128,thermometer,4258
+8007,54,hydrometer,4259
+8011,55,hydro bubbles,4260
+8014,140,geometric solids,4261
+8021,20,barometer,4262
+8026,29,"compass,",4263
+8026,103,hour glass,4264
+8033,60,"level,",4265
+8033,115,spirit level,4266
+8035,20,barometer,4267
+8038,66,microscope,4268
+8039,20,"barometer,",4269
+8039,128,thermometer,4270
+8040,20,"barometer,",4271
+8040,128,thermometer,4272
+8042,20,"barometer,",4273
+8042,128,thermometer,4274
+8046,20,barometer,4275
+8047,27,"circumferentor,",4276
+8047,105,sextant,4277
+8049,20,"barometer,",4278
+8049,128,thermometer,4279
+8050,20,"barometer,",4280
+8050,128,thermometer,4281
+8055,39,dividers,4282
+8057,20,"barometer,",4283
+8057,128,thermometer,4284
+8061,66,microscope,4285
+8063,99,microscope stage,4286
+8070,20,stick barometer,4287
+8074,101,rule (for shoes),4288
+8079,29,compass + sights,4289
+8080,179,weather prognosticator,4290
+8083,64,measure,4291
+8084,20,"barometer,",4292
+8084,128,thermometer,4293
+8087,20,"barometer,",4294
+8087,56,"hygrometer,",4295
+8087,128,thermometer,4296
+8089,20,barometer,4297
+8100,20,"barometer,",4298
+8100,128,thermometer,4299
+8102,29,compass,4300
+8104,20,"barometer,",4301
+8104,114,"spectacles,",4302
+8104,128,thermometer,4303
+8105,64,milk measure,4304
+8107,105,sextant,4305
+8109,101,rule,4306
+8111,62,log,4307
+8119,125,telescope,4308
+8120,201,optical instruments,4309
+8122,105,sextant,4310
+8124,124,quintant,4311
+8125,15,balance,4312
+8126,29,compass,4313
+8131,66,microscope,4314
+8133,60,surveyors level,4315
+8142,60,"level,",4316
+8143,23,caliper gauge,4317
+8149,20,barometer,4318
+8154,20,"barometer,",4319
+8154,128,thermometer,4320
+8156,101,rule (hatter's),4321
+8167,60,level,4322
+8169,123,octant,4323
+8173,101,rule,4324
+8181,66,microscope,4325
+8186,20,barometer,4326
+8198,20,"barometer,",4327
+8198,56,"hygrometer,",4328
+8198,115,"spirit level,",4329
+8198,128,thermometer,4330
+8199,20,"barometer,",4331
+8199,56,"hygrometer,",4332
+8199,128,thermometer,4333
+8204,52,gauge,4334
+8205,12,telescope,4335
+8206,,"",4336
+8225,75,octant,4337
+8229,110,stereoscope,4338
+8233,39,drawing instruments,4339
+8236,105,sextant,4340
+8246,36,"dip circle,",4341
+8251,54,hydrometer,4342
+8252,105,sextant,4343
+8253,105,sextant,4344
+8257,15,balance,4345
+8260,66,microscope,4346
+8262,3,"anemometer,",4347
+8262,27,"circumferentor,",4348
+8262,29,"miners compass,",4349
+8262,52,"cattle gauge,",4350
+8262,69,"magic lantern,",4351
+8262,212,pitchometer,4352
+8263,60,"level,",4353
+8263,108,"parallel rule,",4354
+8263,114,spectacles,4355
+8268,20,barometer,4356
+8273,101,parallel rule,4357
+8274,20,barometer,4358
+8275,15,precision balance,4359
+8279,47,"rev. counter,",4360
+8279,125,telescope,4361
+8282,110,stereoscope,4362
+8291,101,rule,4363
+8294,54,hydrometer,4364
+8302,66,microscope,4365
+8305,114,spectacles,4366
+8308,39,wing compasses,4367
+8312,64,measure (capacity),4368
+8314,20,barometer,4369
+8315,42,"induction coil,",4370
+8315,66,"microscope,",4371
+8315,127,theodolite,4372
+8315,174,"bull's eye lens,",4373
+8317,222,telephone,4374
+8320,20,"barometer,",4375
+8320,42,"induction coil,",4376
+8320,66,"microscope,",4377
+8320,111,"sundial,",4378
+8320,118,galvanometer,4379
+8322,111,sundial,4380
+8323,20,barometer (wheel),4381
+8329,20,barometer,4382
+8333,26,chronometer,4383
+8337,219,telegraph apparatus,4384
+8339,178,course corrector,4385
+8342,125,telescope,4386
+8344,20,barometer,4387
+8349,39,dividers,4388
+8362,85,orrery,4389
+8371,20,"barometer,",4390
+8371,128,thermometer,4391
+8387,223,force pump,4392
+8395,45,globe (folding),4393
+8396,45,globe (paper),4394
+8397,45,globe (dissected),4395
+8402,20,"barometer,",4396
+8402,128,thermometer,4397
+8403,29,compass,4398
+8426,20,barometer,4399
+8427,20,barometer,4400
+8430,20,"barometer,",4401
+8430,128,thermometer,4402
+8486,15,balance (apothecaries'),4403
+8574,20,"barometer,",4404
+8574,128,thermometer,4405
+8575,20,"barometer,",4406
+8575,56,"hygrometer,",4407
+8575,115,"level (spirit),",4408
+8575,128,thermometer,4409
+8577,29,"compass cards,",4410
+8577,147,protractor,4411
+3513,,"",4412
+8595,15,scale beams,4413
+8595,175,steelyards,4414
+2770,101,rules,4415
+2835,105,"sextants,",4416
+2835,101,"rules,",4417
+2835,125,"telescopes,",4418
+2835,20,"barograph,",4419
+2839,107,slide rule,4420
+4144,,"",4421
+8601,176,Atwwod's machine,4422
+146,80,pantograph,4423
+491,101,standard yard,4424
+6495,32,chondrometer,4425
+1856,123,octant,4426
+8605,13,thermometer,4427
+490,125,telescope,4428
+490,20,"barometer,",4429
+4184,20,"barometer,",4430
+3097,125,telescope,4431
+3598,105,sextant,4432
+7697,20,barometer,4433
+8614,15,weighing machine,4434
+8615,,"",4435
+8617,20,"barometer,",4436
+8617,128,thermometer,4437
+734,20,"barometer,",4438
+2244,20,barometer,4439
+8624,125,telescope,4440
+2793,26,chronometers,4441
+3595,105,"sextant,",4442
+3595,20,"barometer,",4443
+3595,26,"chronometers,",4444
+3595,114,"spectacles,",4445
+3595,128,"thermometer,",4446
+3595,200,cases of math inst.,4447
+3595,50,"measuring tapes,",4448
+3595,101,"rules,",4449
+3595,29,"compass,",4450
+3595,60,"level,,",4451
+3595,139,"camera,",4452
+3595,66,"microscope,",4453
+3595,123,"quadrant (Hadley),",4454
+3595,39,"dividers,",4455
+3595,127,"theodolites,",4456
+3595,45,"globes,",4457
+3595,20,"sympiesometer,",4458
+3595,78,"opera glasses,",4459
+3595,71,"reading glasses,",4460
+3595,110,"stereoscope,",4461
+3595,48,"magnet,",4462
+3595,111,"sundial (pocket),",4463
+3595,17,"binnacle,",4464
+8637,66,microscope,4465
+1,60,"level,",4466
+2602,29,"compass,",4467
+2602,20,"barometer,",4468
+4607,63,lens,4469
+620,,"",4470
+3016,20,barometer,4471
+1645,56,"hygrometer,",4472
+1645,60,"level,",4473
+5541,20,"barometer,",4474
+5541,128,thermometer,4475
+8641,20,"barometer,",4476
+8641,128,thermometer,4477
+1013,,"",4478
+4637,127,"theodolite,",4479
+4637,39,"proportional compass,",4480
+4637,123,"octant,",4481
+4637,22,"calculating machine,",4482
+4637,133,"pedometer,",4483
+5473,66,solar microscope,4484
+603,42,electrostatic m/c,4485
+63,96,"quadrant,",4486
+63,39,compass (drawing inst),4487
+63,136,compass (calliper Gunter's),4488
+63,111,"sundial,",4489
+8800,26,chronometer,4490
+8801,62,ship's log,4491
+632,104,"sector,",4492
+632,75,"octant,",4493
+632,105,"sextant,",4494
+1,105,"sextant (box),",4495
+1,29,"miners dial,",4496
+3591,123,"octant,",4497
+5061,26,chronometers,4498
+403,26,"chronometers,",4499
+5826,26,chronometers,4500
+6533,20,"barometer,",4501
+6533,128,thermometer,4502
+10000,147,protractor,4503
+10001,20,"barometer,",4504
+10001,128,thermometer,4505
+5621,20,barometer,4506
+10010,26,chronometers,4507
+10013,26,chronometers,4508
+10014,20,"barometer,",4509
+10014,128,thermometer,4510
+10015,26,chronometers,4511
+4110,125,telescope,4512
+5656,26,chronometers,4513
+10016,26,chronometer,4514
+10017,26,chronometer,4515
+4518,26,chronometers,4516
+10019,26,chronometer,4517
+5870,26,chronometers,4518
+9258,26,chronometer,4519
+10021,26,chronometer,4520
+9132,26,chronometers,4521
+5060,26,chronometer,4522
+8880,26,"chronometers,",4523
+10022,26,chronometer,4524
+10023,26,chronometers,4525
+8207,26,chronometer,4526
+442,111,sundial (horizontal),4527
+442,39,"drawing inst,",4528
+4632,107,slide rule,4529
+10028,306,wireless (radio) instrument,4530
+10031,20,barometer,4531
+10031,128,thermometer,4532
+3219,125,telescope,4533
+3365,128,thermometer,4534
+10032,20,barometer,4535
+10032,128,thermometer,4536
+10033,20,barometer,4537
+10033,128,thermometer,4538
+4259,146,"Earth inductor (Delezenne's circle),",4539
+10040,20,barometer,4540
+10041,111,"sundial (slate, horizontal)",4541
+3093,15,"assay balance,",4542
+3093,15,yarn balance,4543
+4510,105,sextant,4544
+5647,29,recording compass (used in Great Western paddle steamer),4545
+10043,118,galvanometers,4546
+10046,111,sundial,4547
+3669,29,"marine compass,",4548
+3669,123,"octant,",4549
+3669,125,telescope,4550
+4557,20,pocket barometer,4551
+9086,123,octant,4552
+3781,20,"barometer,",4553
+3781,128,thermometer,4554
+3781,29,"compass (magnetic),",4555
+3781,125,"telescope (refacting),",4556
+10049,29,"mariner's compass,",4557
+10049,17,"binnacle,",4558
+10049,62,"ship's log,",4559
+10049,241,sounding machine,4560
+10049,251,"bearing inst,",4561
+437,128,thermometer,4562
+10075,15,weighing machines,4563
+10076,26,chronometer,4564
+10077,26,chronometers,4565
+10078,26,chronometers,4566
+10079,26,chronometer,4567
+3105,26,chronometers,4568
+9086,26,"chronometers,",4569
+10080,26,chronometers,4570
+4245,20,"pocket barometer,",4571
+10106,259,telegraph inst,4572
+10108,118,galvanometers,4573
+10146,26,chronometers,4574
+10146,,"",4575
+10155,99,microscope objective,4576
+5279,26,chronometers,4577
+7746,26,chronometers,4578
+10168,26,chronometers,4579
+5098,26,chronometers,4580
+6583,26,chronometer,4581
+10176,26,chronometers,4582
+10177,26,chronometer,4583
+10178,26,chronometer,4584
+9252,26,chronometer,4585
+8165,26,chronometers,4586
+10207,26,chronometer,4587
+10208,26,chronometer,4588
+10209,26,chronometer,4589
+10210,26,chronometer,4590
+8231,26,"chronometers,",4591
+7621,54,hydrometer,4592
+8169,26,"chronometers,",4593
+10263,,"",4594
+10273,26,chronometers,4595
+9245,26,chronometers,4596
+7638,26,"chronometers,",4597
+10287,,"",4598
+10288,,"",4599
+3328,20,"barometer,",4600
+3328,128,thermometer,4601
+10309,40,barograph,4602
+10014,115,"spirit level,",4603
+3757,105,sextant,4604
+10338,26,chronometers,4605
+10339,26,chronometers,4606
+10340,26,chronometer,4607
+10341,26,chronometer,4608
+10342,26,chronometer,4609
+10343,26,chronometer,4610
+10344,26,chronometers,4611
+10359,15,"scales,",4612
+10359,15,"weighing machines,",4613
+10359,134,weights,4614
+7681,,"",4615
+3358,128,thermometer,4616
+4278,66,"microscope, compound",4617
+10373,26,chronometer,4618
+10374,26,chronometers,4619
+10375,16,chronometer,4620
+10376,26,chronometers,4621
+10377,26,chronometers,4622
+7681,,"",4623
+10416,26,chronometers,4624
+10245,26,chronometers,4625
+10417,26,chronometers,4626
+10429,20,"barometer,",4627
+10429,123,octant,4628
+2835,39,"drawing instruments,",4629
+6994,20,"barometer,",4630
+6994,128,thermometer,4631
+7081,20,"barometer,",4632
+7081,128,thermometer,4633
+8356,125,telescope,4634
+3405,26,"chronometers,",4635
+3587,69,magic lantern,4636
+9589,26,chronometers,4637
+10442,125,telescope,4638
+1980,20,"barometer,",4639
+1980,56,"hygrometer,",4640
+1980,115,"spirit level,",4641
+1980,128,thermometer,4642
+2086,101,"rule, 6-inch ivory, with protractor,",4643
+2086,147,"protractor (on rule),",4644
+2088,104,"sector, ivory,",4645
+2088,20,"barometer,",4646
+2088,127,theodolite,4647
+2088,101,"rule,",4648
+4259,147,"protractor,",4649
+4259,60,"surveying level,",4650
+4259,101,"Marquois scales,",4651
+4259,29,"prismatic compass,",4652
+4259,39,"cavalry sketch board,",4653
+4259,213,"altimeter,",4654
+4259,98,"gunner's quadrant,",4655
+4259,19,"binoculars,",4656
+4259,107,"Pollit's pipe calculator = slide rule,",4657
+4259,101,"architect's scale,",4658
+4259,101,"rules,",4659
+4259,28,"Abney level,",4660
+4259,279,voltmeter,4661
+10473,,"",4662
+7866,26,"chronometers,",4663
+8736,26,chronometers,4664
+10489,20,barometer,4665
+10489,128,thermometer,4666
+10508,,"",4667
+6660,28,Abney level,4668
+10526,111,sundial (horizontal),4669
+10527,209,ship's telegraph,4670
+10528,29,compass (magnetic),4671
+10528,128,thermometer (desk),4672
+8123,123,octant,4673
+6466,66,"binocular microscope,",4674
+10532,334,water meter,4675
+3591,124,telescope,4676
+3594,99,microscope accessory,4677
+8807,105,sextant,4678
+8808,45,"globes,",4679
+8808,83,planisphere,4680
+8231,105,sextant,4681
+8810,52,mill gear gauge,4682
+4300,123,oxtant,4683
+3640,150,azimuth sight,4684
+8811,123,octant,4685
+8812,20,barometer,4686
+8813,20,barometer ?,4687
+8814,20,barometer,4688
+4288,66,"binocular microscope,",4689
+8816,63,lens,4690
+8819,125,telescope,4691
+8825,,"",4692
+2721,14,backstaff,4693
+4131,20,barometer,4694
+8838,,"",4695
+8838,,"",4696
+2944,,"",4697
+4159,111,"sundial,",4698
+4159,29,"compass,",4699
+4159,128,thermometer,4700
+430,105,sextants,4701
+430,15,"balance, precision,",4702
+430,15,"balance, coin,",4703
+430,65,"manometer,",4704
+430,29,compass (ship's),4705
+430,39,drawing instruments,4706
+430,239,microtome,4707
+4243,178,course corrector,4708
+8843,20,barometer,4709
+8844,26,chronometer,4710
+433,45,globe pocket,4711
+433,45,globe terrestrial,4712
+8845,134,weights,4713
+6648,26,chronometer,4714
+8847,26,chronometer,4715
+15,109,"station pointer,",4716
+8851,20,barometer,4717
+8852,46,steam engine indicator,4718
+7379,26,chronometer,4719
+8853,20,barometer,4720
+8854,109,station pointer,4721
+5865,56,"hygrometer,",4722
+5865,128,thermometer,4723
+441,133,waywiser,4724
+139,101,"rule,",4725
+8857,26,chronometers,4726
+8858,26,chronometer,4727
+8859,,"",4728
+8860,108,sextants,4729
+8860,,"",4730
+8860,,"",4731
+8860,,"",4732
+8860,,"",4733
+8860,,"",4734
+8860,,"",4735
+8860,,"",4736
+8860,,"",4737
+8861,20,barometer,4738
+8862,26,chronometer,4739
+1440,20,"barmometer,",4740
+1440,128,thermometer,4741
+8863,20,barometer,4742
+1626,20,"barometer,",4743
+1625,51,"Gunner's level,",4744
+1625,20,"barometer (stick),",4745
+1625,128,thermometer,4746
+2172,245,clock,4747
+8867,20,barometer,4748
+5540,20,barometer (marine),4749
+1435,105,sextant,4750
+1435,20,sympiesometer,4751
+1435,125,"telescope,",4752
+1435,20,barometer (stick),4753
+1435,128,thermometer,4754
+1435,123,octant,4755
+8870,20,barometer (probably),4756
+8871,20,barometer,4757
+8872,20,barometer,4758
+8874,,"",4759
+8874,,"",4760
+8874,,"",4761
+8874,,"",4762
+8873,20,"barometer,",4763
+8873,56,"hygrometer,",4764
+8873,60,"level,",4765
+8873,128,thermometer,4766
+2825,81,"polariscope,",4767
+2825,152,battery,4768
+2825,125,"telescope,",4769
+2825,66,microscope,4770
+8709,20,"Fitzroy barometer,",4771
+8709,128,thermometer,4772
+8875,20,"barometer,stick,",4773
+8875,128,thermometer,4774
+4268,20,barometer (coastal),4775
+4268,128,thermometer,4776
+7210,56,"hygrometer,",4777
+7210,60,"level,",4778
+7210,128,thermometer,4779
+1019,20,"barometer,",4780
+1019,56,"hygrometer,",4781
+1019,60,"level,",4782
+1019,128,thermometer,4783
+3115,66,"microscope,",4784
+8879,40,barograph,4785
+8880,29,"compass, mariner's",4786
+446,20,barometer,4787
+8883,26,chronometers,4788
+8884,133,waywiser,4789
+4259,107,"slide rule,",4790
+4259,251,"course indicator,",4791
+514,105,sextant,4792
+678,54,Field's patent alcoholometer,4793
+678,111,universal equinoctial ring dial,4794
+4281,66,"microscope,",4795
+4281,99,microscope accessories,4796
+326,128,thermometer,4797
+8887,101,rule,4798
+3311,26,chronometers,4799
+293,39,parallel rule,4800
+72,39,compasses,4801
+65,111,"horizontal dial,",4802
+65,111,"ring dial,",4803
+65,111,compass dial,4804
+4257,99,microscope objectives,4805
+4257,125,telescope,4806
+5909,15,chemical balance,4807
+110,27,"circumferentor,",4808
+110,104,"sector,",4809
+110,107,"log scales,",4810
+110,111,dyptich,4811
+144,92,perpetual calendar,4812
+144,125,sextant equator,4813
+145,126,tellurium,4814
+1850,56,"hygrometer,",4815
+1850,15,"balance,",4816
+8892,13,"balance,",4817
+8892,134,weights,4818
+1825,15,"scales,",4819
+1825,134,weights,4820
+3,66,solar microscope,4821
+6887,20,"barometer,",4822
+8894,101,rules,4823
+8895,,"",4824
+4278,99,microscope accessory,4825
+8896,15,"balance,",4826
+8896,134,weights,4827
+168,111,"Butterfield sundial,",4828
+168,111,"Armillary dial,",4829
+168,111,"universal dial,",4830
+168,66,Culpeper microscope.,4831
+633,147,protractor,4832
+1156,45,"pocket globe,",4833
+554,102,box sextant,4834
+168,97,Gunters quadrant,4835
+168,136,"gunner's callipers,",4836
+168,14,"backstaff,",4837
+3517,96,"quadrants,",4838
+3517,125,telescope (Gregorian),4839
+3517,,"",4840
+3517,,"",4841
+3517,,"",4842
+3517,,"",4843
+3517,,"",4844
+2137,144,gauging rods,4845
+1023,20,"barometer (angle),",4846
+8897,123,octant,4847
+8898,20,barometer,4848
+1718,128,thermometer,4849
+3032,26,chronometers,4850
+8902,66,"microscope,",4851
+8902,99,microscope accessories,4852
+8904,26,chronometer,4853
+6039,66,"microscope,",4854
+6039,19,"binoclars,",4855
+8905,125,telescpoe,4856
+2981,26,chronometers,4857
+3168,111,sundial (portable universal equatorial),4858
+3168,125,telescope,4859
+3168,27,circumferentor,4860
+3168,128,thermometer,4861
+8908,,model of computing machine,4862
+8909,20,barometer (probably),4863
+8910,20,barometer,4864
+8911,20,barometer plates,4865
+8912,26,chronometer,4866
+8906,258,model of computing machine,4867
+8914,259,eleetric telegraph,4868
+4770,128,thermometer,4869
+8920,20,barometer,4870
+800,20,"barometer,",4871
+800,125,telescope,4872
+7368,102,"reflecting circle,",4873
+8926,26,chronometer,4874
+8928,20,barometer,4875
+8929,20,barometer (aneroid),4876
+8930,20,"barometer,",4877
+8930,128,thermometer,4878
+8931,49,set square,4879
+1464,131,transit telescope,4880
+5724,123,octant,4881
+766,66,"microscopes,",4882
+766,29,sea compasses,4883
+8957,20,"barometer,",4884
+8957,128,thermometer,4885
+3648,17,binnacle,4886
+1215,5,"artificial horizon,",4887
+1215,29,"compass,",4888
+1215,105,sextant (box),4889
+2181,20,barometer,4890
+2181,128,thermometer,4891
+8958,26,chronometer,4892
+8960,260,electric time distribution system,4893
+8962,26,chronometers,4894
+115,21,baroscope,4895
+629,66,microscope,4896
+1205,54,hydrometer,4897
+4975,20,? Barometer,4898
+8964,64,bushel measure,4899
+6795,123,"octant,",4900
+641,5,"artificial horizon,",4901
+1867,29,compass (?) [probably by Henry (I)],4902
+642,123,"octant,",4903
+642,125,telescope,4904
+1486,133,waywiser,4905
+5014,7,"Astro clock,",4906
+5014,26,chronometers,4907
+3821,128,thermometer,4908
+2973,128,thermometer,4909
+1523,123,octant,4910
+1214,125,"telescope (refracting),",4911
+1213,85,"orrery,",4912
+1213,125,telescope (equatorial),4913
+5484,20,"barometer,",4914
+5484,128,thermometer,4915
+1929,20,"baometer,",4916
+1929,128,thermometer,4917
+431,60,"level,",4918
+4775,20,"barometer,",4919
+4775,128,thermometer,4920
+6511,77,ophthalmascope,4921
+6533,77,"ophthalmoscopes,",4922
+6616,77,ophthalmoscope,4923
+8965,42,"induction coil,",4924
+8965,77,"ophthalmoscope,",4925
+8965,128,"thermometer,",4926
+8965,154,magneto electronic machine,4927
+339,66,microscope,4928
+8966,20,barometer (Fortin),4929
+8902,77,opthalmoscope,4930
+8967,20,"barometer,",4931
+8967,128,thermometer,4932
+702,108,parallel rule,4933
+702,125,telescope (reflecting),4934
+7184,66,microscope,4935
+7184,69,lantern slide projector,4936
+7184,77,ophthalmoscope,4937
+1909,20,"barometer,",4938
+1909,128,thermometer,4939
+550,99,"microscope accessories,",4940
+550,128,"thermometers,",4941
+550,125,telescopes (reflecting),4942
+550,29,compass (magnetic),4943
+550,115,"spirit level,",4944
+550,98,"gunner,s quadrant,",4945
+550,78,"oprea glasses,",4946
+550,60,"surveyor's level,",4947
+550,66,solar microscope,4948
+2816,63,"lanses,",4949
+2816,114,"spectacles,",4950
+2816,69,"magic lantern,",4951
+2816,48,"magnets,",4952
+2816,42,electrical machine (Galvano),4953
+2816,25,"camera obscura,",4954
+2816,78,"opera glasses,",4955
+2816,60,"levels,",4956
+2816,45,"vacuum gauge,",4957
+2816,142,"model steam engine,",4958
+3500,99,microscope accessories,4959
+4278,77,"ophthalmoscope,",4960
+4287,20,barometer (diagonal),4961
+4287,127,"theodolite,",4962
+4287,69,"magic lantern,",4963
+4287,39,"drawing instruments,",4964
+4287,101,"rules,",4965
+4287,104,"sector,",4966
+4287,147,"protractor,",4967
+4287,125,telescope,4968
+4287,108,"parallel rule,",4969
+4287,20,"barometer (pocket aneroid),",4970
+4287,77,ophthalmoscope,4971
+440,37,"gyroscope,",4972
+440,42,cylinder electrical machine,4973
+440,147,"protractor,",4974
+440,118,galvanometer,4975
+440,28,"clinometer,",4976
+440,163,pulleys (mechanical demonstration apparaus0,4977
+440,263,siren,4978
+5469,77,ophthalmoscope,4979
+8294,77,ophthalmoscope,4980
+8974,20,barometer,4981
+4634,63,lens board,4982
+8976,26,chronometer,4983
+8977,125,telescope,4984
+4114,20,"sympiesometer,",4985
+8978,29,compass,4986
+254,45,"globe, terrestrial",4987
+2206,45,globe,4988
+279,111,double horizontal sundial,4989
+279,126,Gunter's scale,4990
+4623,115,spirit level,4991
+2808,20,"barometer,",4992
+2808,128,thermometer,4993
+8980,20,"barometer,",4994
+8980,128,thermometer,4995
+8980,56,"hygrometer,",4996
+8980,60,level,4997
+2096,20,barometer,4998
+3500,1,"air pump,",4999
+4522,125,"telescope,",5000
+8982,20,"barometer,",5001
+8982,128,thermometer,5002
+8983,20,"barometer,",5003
+8983,56,"hygrometer,",5004
+8983,128,thermometer,5005
+8984,154,magneto electrical machine,5006
+475,56,"hygrometer,",5007
+475,115,"spirit level,",5008
+475,128,thermometer,5009
+8985,63,"lenses,",5010
+8985,125,telescopes,5011
+8133,66,"microscope,",5012
+47,66,"microscope,",5013
+47,105,"sextant,",5014
+47,128,"thermometer,",5015
+47,101,"rule,",5016
+47,123,"octant,",5017
+47,45,"globe,",5018
+47,103,"miniature sextant,",5019
+47,104,"sector,",5020
+8986,20,"barometer,",5021
+8986,128,thermometer,5022
+4775,60,"level,",5023
+8987,111,sundial (horizontal),5024
+642,20,barometer (stick),5025
+232,66,"microscope (simple),",5026
+8988,20,"barometer,",5027
+8988,128,thermometer,5028
+8989,85,orrrery,5029
+1021,111,sundial (inclining),5030
+770,125,telescope (reflecting),5031
+6077,101,"folding rule,",5032
+37,125,telescpoe,5033
+8991,20,"barometer,",5034
+8991,128,thermometer,5035
+8992,123,octant,5036
+8993,66,microscope,5037
+3518,111,"sundial,",5038
+8995,111,sundial (horizontal),5039
+5,20,"barometer, (probably but could be by his son)",5040
+5,128,thermometer (or could be by his son),5041
+37,80,"pantograph,",5042
+37,105,sextant,5043
+37,127,theodolite,5044
+519,111,sundial,5045
+205,98,"quadrants (gunners),",5046
+205,136,callipers (gunners),5047
+205,52,shot grapes,5048
+205,39,"drawing instruments,",5049
+205,39,"compasses (drawing),",5050
+205,127,"theodolites,",5051
+205,86,"plane tables,",5052
+205,112,"chains,",5053
+205,101,"joint rules,",5054
+205,125,telescopes,5055
+205,103,"sand glasses,",5056
+205,29,"steering compasses,",5057
+205,29,"miner's compasses,",5058
+205,29,"pocket compasses,",5059
+205,2,"alidader,",5060
+205,101,"scale rules,",5061
+286,85,"orrery,",5062
+286,111,"universal dial,",5063
+286,111,analemmatic dial,5064
+9007,15,coin balance,5065
+45,111,equinoctral ring dial,5066
+4697,123,octant,5067
+6222,20,"marine barometer,",5068
+6222,20,sympies barometer,5069
+4114,128,thermometer,5070
+9011,266,paper gauge,5071
+5651,128,"thermometer,",5072
+5651,56,"hygrometer,",5073
+5651,60,level,5074
+1598,1,"air pump,",5075
+1598,29,surveyor's compass,5076
+1598,107,"slide-rule,",5077
+1598,128,thermometer,5078
+9013,20,barometer (aneroid),5079
+9013,128,thermometer,5080
+4286,60,engineer's level,5081
+4886,36,dip circle.,5082
+4886,29,compass prismatic,5083
+4308,125,"telescope,",5084
+4308,99,microscope accessories,5085
+8076,26,chrmometers,5086
+4243,20,"pocket barometer,",5087
+9017,20,barometer (aneroid),5088
+2016,125,telescope,5089
+1704,101,slide rule,5090
+4744,20,pocket barometer,5091
+9018,36,dip circle,5092
+3645,123,octant,5093
+9021,20,barometer,5094
+4132,125,telescope (refactor),5095
+4132,70,micrometer,5096
+4132,15,balance (pricision),5097
+4132,63,lenes,5098
+4132,268,magnetometer,5099
+9022,116,spectroscope,5100
+1360,7,Astro clock,5101
+545,45,globes (table),5102
+9023,20,barometer,5103
+9023,128,thermometer,5104
+7121,26,"chronometer,",5105
+5268,3,"wind gauge,",5106
+5268,19,"binnacle,",5107
+5268,5,"artificial horizon,",5108
+5268,105,sextant,5109
+5268,251,course indicator,5110
+9024,52,"depth record,",5111
+9026,45,globe (inflatable),5112
+9027,20,"barometer,",5113
+9027,128,thermometer,5114
+741,68,"astro sector,",5115
+826,104,sector (probably),5116
+9028,20,"barometer,",5117
+9028,56,"hygrometer,",5118
+9028,60,"level,",5119
+9028,128,thermometer,5120
+3248,20,"barometer,",5121
+9029,20,"barometer,",5122
+9029,128,thermometer,5123
+9031,20,barometer,5124
+783,111,sundial,5125
+9032,123,octant,5126
+7388,29,"compass (dry-card),",5127
+9033,29,compass,5128
+2326,20,"barometer,",5129
+2326,125,telescope,5130
+2326,128,thermometer,5131
+9034,37,gyroscope,5132
+8251,29,compass (magnetic),5133
+9035,20,barometer,5134
+4259,39,"dividers,",5135
+4259,108,"parallel rule,",5136
+4259,80,"eidograph,",5137
+508,26,chronometer,5138
+9036,24,chronometers,5139
+695,26,chronometers,5140
+9037,123,octant,5141
+344,66,microscope,5142
+7856,1,vacuum pump,5143
+9038,20,"barometer,",5144
+9038,128,thermometer,5145
+9039,20,"barometer,",5146
+9039,128,thermometer,5147
+2809,128,thermometer,5148
+4090,128,thermometer,5149
+4090,115,"spirit level,",5150
+122,97,Gunter's quadrant,5151
+9040,20,barometer,5152
+4049,128,thermometer,5153
+4049,56,"hygrometer,",5154
+9042,20,"barometer,",5155
+9042,56,"hygrometer,",5156
+9042,128,thermometer,5157
+9042,115,"spirit level,",5158
+9043,20,"barometer,",5159
+9043,128,thermometer,5160
+9045,20,"barometer,",5161
+9045,128,thermometer,5162
+6111,125,telescope,5163
+9046,20,"barometer,",5164
+9046,128,thermometer,5165
+9047,125,telescope,5166
+9048,20,"barometer,",5167
+9048,128,thermpmeter,5168
+9049,20,barometer,5169
+4377,45,"globe, terrestrial",5170
+9050,45,globes terristrial,5171
+3449,125,telescope,5172
+9051,20,"barometer,",5173
+9051,128,thremometer,5174
+9052,125,telescope,5175
+3757,123,"octant,",5176
+9053,20,"barometer,",5177
+9053,128,thermometer,5178
+2835,128,thermometers,5179
+2841,20,"marine barometer,",5180
+2841,125,"octant,",5181
+2841,20,sympiesometer,5182
+2841,39,beam compass,5183
+1824,15,scales,5184
+1825,175,steelyards,5185
+9070,20,"barometer,",5186
+9070,128,thermometer,5187
+6127,20,"barometer,",5188
+5752,20,barometer,5189
+9071,20,"barometer, wheel,",5190
+9071,128,thermometer,5191
+9072,20,"barometer,",5192
+9072,56,"hygrometer,",5193
+9072,60,"level,",5194
+9072,128,thermometer,5195
+2196,20,"barometer, wheel",5196
+9073,20,barometer,5197
+4246,66,microscope,5198
+4246,139,camera for microphotography,5199
+4246,99,microscope accessories,5200
+9076,37,gyroscope,5201
+9077,125,telescope (refracting),5202
+9078,20,barometers,5203
+9078,128,thermometer,5204
+4252,69,magic lantern,5205
+4252,116,microspectroscope,5206
+3960,134,weights,5207
+4290,99,microscope objective,5208
+312,111,inclining sundial,5209
+4094,105,box sectant,5210
+4257,63,photographic lenses,5211
+4257,57,photoheliograph,5212
+6616,15,balance,5213
+6616,134,weights,5214
+6739,,"",5215
+6739,,"",5216
+6739,,"",5217
+6739,,"",5218
+6739,,"",5219
+6739,,"",5220
+9085,7,astre clock,5221
+12,20,barometer,5222
+8142,105,sextant,5223
+9088,20,barometer,5224
+9089,20,"barometer,",5225
+9089,56,"hygrometer,",5226
+9089,60,"spirit level,",5227
+9089,128,thermometer,5228
+7497,273,coclostat,5229
+7497,125,telescope (reflecting),5230
+9091,125,telescope,5231
+4596,20,barometer (pocket aneroid),5232
+4287,20,"barometer (wheel),",5233
+9092,20,"barometer,",5234
+9092,128,thermometer,5235
+9092,56,"hygrometer,",5236
+9092,60,"spirit level,",5237
+9093,26,chronometer,5238
+949,2,barometer,5239
+9094,20,barometer,5240
+9095,20,barometer,5241
+6359,123,"Hadley's quadrant,",5242
+6359,29,compass.,5243
+4767,245,clock,5244
+4767,46,steam pressure gauge,5245
+4767,148,pyrometer,5246
+9100,125,telescope (refractor),5247
+6802,123,octant,5248
+9102,20,barometer,5249
+9103,20,barometer (aneroid),5250
+9104,20,barometer,5251
+7318,46,"vacuum gauge,",5252
+7318,47,"rev, counter",5253
+7497,125,telescope (refracting),5254
+5681,20,marine barometers,5255
+9105,20,barometer,5256
+4913,7,"astronomical regulator,",5257
+2085,147,protractor,5258
+2085,39,"drawing instrument set,",5259
+2085,80,"pantograph,",5260
+2085,101,scale rule,5261
+2085,1,vacuum pump,5262
+2085,43,helicograph,5263
+2085,112,chain scales,5264
+2087,123,octant,5265
+9107,123,octant,5266
+4263,84,planimeter,5267
+4277,60,surveyor's level,5268
+9108,20,barometer,5269
+9109,20,barometer,5270
+9111,20,"barometer,",5271
+9111,56,"hygrometer,",5272
+9111,60,spirit level,5273
+9111,128,thermometer,5274
+9112,278,"ammeter,",5275
+9112,279,voltmeter,5276
+9113,20,barometer,5277
+3269,147,protractor,5278
+21,66,"microscope,",5279
+21,123,"Hadleys quadrant,",5280
+21,125,"telescope,",5281
+21,128,thermometer,5282
+9114,280,echo sounder,5283
+4923,123,octant,5284
+3645,125,telescope,5285
+4246,287,field periscope,5286
+9119,49,carpenters' square,5287
+9120,105,sextant,5288
+9121,20,barometer,5289
+9121,128,thermometer,5290
+9122,,"",5291
+945,107,"astronomical rotula,",5292
+945,288,lunarium,5293
+945,111,universal equinoctial sundial,5294
+3,123,octant,5295
+2616,20,"barometer,",5296
+2616,128,thermometer,5297
+271,111,"equinoct, ring dial",5298
+271,128,thermometer,5299
+9125,40,barograph,5300
+9126,20,barometer,5301
+1895,66,microscope (probably by this maker),5302
+9127,26,chronometers,5303
+9128,111,sundial (Butterfield),5304
+9128,111,ring dial,5305
+273,,"",5306
+273,,"",5307
+273,,"",5308
+273,,"",5309
+273,,"",5310
+273,,"",5311
+9129,105,sextant,5312
+4465,7,regulator,5313
+9130,123,octant,5314
+980,125,telescope,5315
+71,111,"sundial,",5316
+71,31,compendium,5317
+9131,14,backstaff,5318
+8323,20,barometer (stick),5319
+9134,20,"barometer,",5320
+9134,56,"hygrometer,",5321
+9134,60,"level,",5322
+9134,128,thermometer,5323
+5247,26,chronometers,5324
+9137,26,chronometer,5325
+4094,125,telescope,5326
+9140,26,chronometers,5327
+7671,26,chronometer,5328
+9141,26,chronometer,5329
+531,43,elliptical trammel,5330
+2891,128,thermometer,5331
+3402,20,barometer,5332
+3402,20,"sympiesometer,",5333
+3402,128,thermometer,5334
+3402,105,"sextant,",5335
+5477,26,chronometers,5336
+5477,241,sounding log,5337
+687,96,quadrant,5338
+3717,26,"chronometer,",5339
+787,105,sextant,5340
+9143,26,chronometers,5341
+4250,105,"sextant,",5342
+6543,123,telescope,5343
+339,133,"pedometer,",5344
+339,1,"air pump, (probably by this W.Fraser)",5345
+340,20,"barometer,",5346
+9145,26,chronometer,5347
+9146,26,chronometer,5348
+555,74,miner's dial,5349
+555,113,surveyor's cross,5350
+2700,101,standard yard,5351
+3288,20,barometer,5352
+7845,125,telescope,5353
+909,123,"octant,",5354
+4856,148,pyrometer,5355
+9151,62,nautical log,5356
+1821,134,weights,5357
+1626,107,circular slide rule,5358
+1626,123,octant,5359
+1626,289,cipher dial,5360
+6925,105,"sextant,",5361
+6925,123,"octant,",5362
+5108,114,spectacles,5363
+678,20,barometer,5364
+5070,123,quadrant (Hadley?),5365
+4267,290,"Lenthall course delineator,",5366
+4267,291,Lenthall tide indicator,5367
+6979,178,deviatometer,5368
+6979,103,"sextant,",5369
+6980,280,echo sounder,5370
+8251,178,pelorus,5371
+8241,20,"barometer,",5372
+8241,20,sympresometer,5373
+9171,125,telescope,5374
+5865,20,sympiesometer,5375
+9175,7,regulator clock,5376
+2008,20,barometer (stick),5377
+9176,26,chronometer,5378
+7102,26,chronometers,5379
+9178,20,barometer (stick),5380
+9178,128,thermometer,5381
+738,20,"barometer,",5382
+657,163,double windmill,5383
+657,56,"hygrometer (whale bone),",5384
+644,56,hygrometer (hair),5385
+1716,105,"sextant,",5386
+5317,26,chronometers,5387
+1716,125,telescope,5388
+282,66,microscope,5389
+282,114,spectacles,5390
+6362,128,thermometer,5391
+6362,123,"octant,",5392
+509,125,spyglass,5393
+1654,123,oxtant,5394
+507,29,"compass,",5395
+507,293,jealousy glass,5396
+9186,20,barometer,5397
+9187,20,barometer,5398
+9187,128,thermometer,5399
+9188,20,barometer,5400
+9188,128,thermometer,5401
+9189,20,"barometer,",5402
+9189,56,"hygrometer,",5403
+9189,60,"spirirt level,",5404
+9189,128,thermometer,5405
+8477,29,"compass,",5406
+8477,20,"barometer (pocket),",5407
+8477,128,thermometer,5408
+9190,20,"barometer,",5409
+9190,128,thermometer,5410
+7512,143,"electrical apparatus,",5411
+7512,294,geissler tubes,5412
+2344,20,"barometer,",5413
+2344,128,thermometer,5414
+9192,20,"barometer,",5415
+9192,128,thermometer,5416
+1261,20,"barometer (stick),",5417
+1261,128,thermometer,5418
+1261,105,"sextant,",5419
+2709,20,"barometer,",5420
+9193,74,miner's dial,5421
+9194,40,barograph,5422
+9195,20,barometer (pocket aneroid),5423
+4880,20,"barometer,",5424
+4880,56,"hygrometer,",5425
+4880,60,"level,",5426
+4880,128,thermometer,5427
+4259,125,"telescope [marine],",5428
+6760,123,oxtant,5429
+6979,124,quintant,5430
+451,74,"miner's lamp,",5431
+9200,133,waywiser,5432
+5459,123,"octant,",5433
+3822,125,telescope,5434
+9201,20,"barometer,",5435
+9201,128,thermometer,5436
+1182,111,portable sundial,5437
+1182,20,"barometer,",5438
+5952,7,clock,5439
+8240,105,sextant,5440
+3518,125,"telescope (refractor),",5441
+3518,123,"octant,",5442
+3518,133,waywiser,5443
+9203,107,preinting plape for paper slide rule,5444
+1446,1,"air pump,",5445
+1446,125,telescope,5446
+2978,39,"drawing inst set,",5447
+2978,104," sector,",5448
+2978,147,protractor,5449
+2114,125,walking stick telescope,5450
+1626,85,"planetarium,",5451
+1626,29,"azimuth compass,",5452
+1626,125,telescope (reflrcting),5453
+1626,15,"hydrostatic balance,",5454
+9205,20,barometer (aneroid),5455
+2311,42,cylinder electrical machine,5456
+2311,20,"barometer,",5457
+2311,128,thermometer,5458
+4600,66,"microscope,",5459
+4600,125,telescope,5460
+3657,125,telescope,5461
+1625,123,"octant,",5462
+1625,125,telescope (refacting),5463
+1625,39,"proportional dividers,",5464
+1625,133,"waywiser,",5465
+1625,125,telescope (reflecting),5466
+1625,124,"quintant,",5467
+1625,85,orrey,5468
+9207,20,"barometer (marine),",5469
+9207,128,thermometer,5470
+716,20,"barometer,",5471
+9214,111,sundial (probably),5472
+7638,123,"octant,",5473
+4424,105,box sextant,5474
+431,128,"thermometer,",5475
+431,101,"ruler,",5476
+431,147,protractor,5477
+2012,125,telescope,5478
+2585,20,"barometer,",5479
+2585,128,themometer,5480
+2340,20,"barometer,",5481
+2340,128,"thermometer,",5482
+2340,39,proportional dividers,5483
+5353,68,"astro.quadrant,",5484
+5353,127,"theodolite,",5485
+5353,125,"equatorial inst,",5486
+5353,299,Polar sector,5487
+5353,131,transit instrument,5488
+410,38,"dividing engine,",5489
+410,20,"barometers,",5490
+410,102,"repeating circle,",5491
+410,125,telescope,5492
+410,66,"microscope,",5493
+442,123,"octant,",5494
+442,56,"hygrometer,",5495
+442,300,lactometer,5496
+442,146,"electrometer,",5497
+442,150,"azimuth instrument,",5498
+442,70,"eyepiece micrometer,",5499
+442,51,"gunner's level,",5500
+442,132,gunner's calliper,5501
+442,118,"galvanometer,",5502
+3777,229,azimuth mirror,5503
+816,20,barometer,5504
+165,127,"theodolite,",5505
+165,133,waywiser,5506
+166,75,Hadley's quadrant,5507
+164,123,"Hadley's quadrant,",5508
+164,144,gauging rod,5509
+164,71,"reading glass,",5510
+164,120,"Leyden jars,",5511
+164,163,mechanical model,5512
+1964,125,telescope,5513
+234,111,analematic dial,5514
+2000,124,"quintant,",5515
+2000,107,"slide rule,",5516
+2000,80,"pentograph,",5517
+2000,125,telescope,5518
+332,66,"solar microscope,",5519
+332,56,"hygrometer,",5520
+522,107,slide rule,5521
+9228,20,barometer,5522
+6361,105,sextant,5523
+2803,20,sympiesometer,5524
+1204,54,hydrometer,5525
+1487,125,telescope,5526
+1926,105,"sextant,",5527
+5120,,"",5528
+6913,29,"overhead compass,",5529
+9305,17,binnacle,5530
+3633,25,camers obscura,5531
+3633,66,"microscope,",5532
+3633,81,"polariscope,",5533
+3633,24,"camera lucida,",5534
+3633,139,photographic apparatus,5535
+7994,29,compass,5536
+7994,125,telescope,5537
+9306,303,oscillograph,5538
+9307,125,telescope,5539
+8709,20,marine barometer,5540
+169,29,compass,5541
+7395,118,galvanometer,5542
+7554,66,stereomicroscope,5543
+9315,143,electrical apparatus,5544
+4914,259,telegraphic apparatus,5545
+6925,125,telescope,5546
+4268,28,"clinometer,",5547
+4268,29,"prismatic compass,",5548
+4268,56,hygrometer,5549
+949,24,camera lucida,5550
+9323,45,globe,5551
+9324,20,barometer,5552
+1388,125,transit telescope,5553
+2993,66,"microscope,",5554
+2992,127,theodolite,5555
+2991,101,rule,5556
+5201,99,microscope accessories,5557
+9328,20,barometer,5558
+9328,128,thermometer,5559
+2141,20,"barometer,",5560
+2141,128,thermometer,5561
+2141,99,"microscope accessories,",5562
+4468,20,"barometer,",5563
+4468,128,thermometer,5564
+4468,56,"hygrometer,",5565
+4468,115,"spirit level,",5566
+9334,20,"barometer,",5567
+9334,128,thermometer,5568
+9335,101,"rule,",5569
+9335,147,protractor,5570
+1012,128,thermometer,5571
+1012,115,"spirit level,",5572
+1068,26,"marine chronometer,",5573
+1068,26,pocket chronometer,5574
+4664,63,lens,5575
+115,101,"rules,",5576
+115,87,perspectograph,5577
+6754,20,"barometer,",5578
+6754,20,"sympiesometer,",5579
+6754,128,thermometer,5580
+6113,138,tide gauge,5581
+9340,20,"barometer,",5582
+9340,128,thermometer,5583
+9341,20,"barometer,",5584
+9341,56,"hygrometer,",5585
+9341,115,"spirit level,",5586
+9341,128,thermometer,5587
+7207,308,plane tool,5588
+5288,26,chronometer,5589
+9342,20,"barometer,",5590
+9342,128,thermometer,5591
+9343,52,wrap real (for measuring cotton thread),5592
+9343,15,yarn balance,5593
+9344,125,telescope,5594
+3043,20,barometer.,5595
+3043,128,thermometer,5596
+4564,20,barometer,5597
+4564,128,"thermometer,",5598
+4564,115,"spirit level,",5599
+4564,56,hygrometer,5600
+895,128,hygrometer,5601
+9347,20,barometer,5602
+9348,128,thermometer,5603
+7946,66,microscope,5604
+4290,99,microscope slides,5605
+9349,3,anemometer,5606
+8262,20,"barometer,",5607
+8262,128,thermometer,5608
+9350,20,"barmometer,",5609
+9350,128,thermometer,5610
+38,128,thermometer,5611
+9351,20,barometer,5612
+9351,128,thermometer,5613
+6319,109,position indicator,5614
+9352,17,"binnacle,",5615
+9352,26,"chronometer,",5616
+9352,29,compass,5617
+4766,20,barometer,5618
+4766,128,thermometer,5619
+9353,20,"barometer,",5620
+9353,56,"hygrometer,",5621
+9353,115,"spirit level,",5622
+9353,128,thermometer,5623
+9353,88,"mirror,",5624
+8911,20,stick barometer,5625
+9354,52,water depth recorder,5626
+5069,42,"induction coil,",5627
+5069,48,"horseshoe magnets,",5628
+5069,268,"magnetometer,",5629
+5069,311,thermoelectrometer,5630
+4269,312,"microspectroscope,",5631
+4269,116,spectroscope,5632
+4269,70,"micrometer eyepiece,",5633
+4269,221,"spectrometer,",5634
+6929,116,spectroscope,5635
+9356,29,compass,5636
+1105,20,"barometer,",5637
+1105,29,compass,5638
+4281,63,lenses,5639
+4281,93,prisms,5640
+4281,174,bull's eye illuminator,5641
+431,127,"theodolite,",5642
+4281,24,camera lucida,5643
+9358,33,"laboratory apparatus,",5644
+1296,99,"quintant,",5645
+1296,123,telescope,5646
+9359,20,barometer,5647
+509,29,"prismatic compass,",5648
+509,128,thermometer,5649
+2767,29,compass,5650
+2254,45,globe,5651
+476,29,compass (dry-card),5652
+476,105,sextant,5653
+9361,221,"spectrometer,",5654
+9361,314,interfermeter,5655
+5987,20,"barometer [signed 'Webster, London', probably by this maker]",5656
+4284,78,opera glasses,5657
+5156,20,"barometer,",5658
+5156,111,"sundial,",5659
+5156,128,"thermometer,",5660
+9230,123,octant,5661
+1454,66,microscope,5662
+974,20,barometer,5663
+9231,26,chronometers,5664
+4994,5,"artificial horizon,",5665
+4994,105,sextant,5666
+9242,26,chronometers,5667
+9246,26,"chronometers,",5668
+9246,105,sextant,5669
+9246,125,telescope,5670
+2015,114,spectacles,5671
+9149,26,chronometers nos.772 & 956,5672
+9260,26,chronometers,5673
+4,63,"lenses,",5674
+4,69,"magic lantern,",5675
+4,125,reflecting telescope,5676
+8891,26,chronometer,5677
+310,39,proportional compasses,5678
+6016,29,"prismatic compass,",5679
+6016,126,"Gunter's rule,",5680
+6016,131,transit theodolite,5681
+5090,123,octant,5682
+6012,125,telescope,5683
+9264,20,barometer,5684
+5776,15,scales,5685
+5778,20,barometer,5686
+6722,143,"electrical apparatus,",5687
+6722,139,"photographic camara,",5688
+9272,108,parallel rule,5689
+2763,114,spectacles.,5690
+2763,63,"lenses,",5691
+2763,34,"blow pipe,",5692
+6795,20,"barometer,",5693
+6795,128,thermometer,5694
+2086,104,sector,5695
+5495,45,globes,5696
+2634,108,parallel rule,5697
+2634,74,miner's dial,5698
+2634,127,theodolites,5699
+2634,80,eidograph,5700
+2634,125,telescope,5701
+2634,20,"sympiesoketer,",5702
+2634,70,micrometer eye-piece,5703
+2634,101,"standard inch,",5704
+6228,63,lens,5705
+3492,20,"barometer,",5706
+1852,125,telescope,5707
+9279,45,globe,5708
+4154,7,"astronomical regulator (clock),",5709
+4154,125,telescope,5710
+4155,134,"weights,",5711
+5921,128,thermometer,5712
+9284,107,slide rule,5713
+9284,39,"pen,",5714
+9284,47,"tachometer,",5715
+8203,52,"gauges,",5716
+8203,101,standard measures,5717
+2306,74,"miner's dial,",5718
+2306,101,"standard measures,",5719
+2306,60,"level,",5720
+2306,109,"station pointer,",5721
+2306,134,standard weights,5722
+1417,127,theodlote,5723
+3610,125,telescope,5724
+3610,37,gyroscope,5725
+3610,318,Foucault's pendulum,5726
+3610,70,microscope micrometer,5727
+9291,180,"range finders,",5728
+9291,131,"transit circles,",5729
+9291,127,"theodolites,",5730
+9291,101,"standard of length,",5731
+9291,105,"sextants,",5732
+9291,70,"micrometer,",5733
+9291,319,tacheometer,5734
+5961,20,barometer,5735
+5981,,"",5736
+3611,20,barometer,5737
+9293,20,barometer,5738
+9294,20,"barometer,",5739
+9294,128,thermometer,5740
+3320,20,barometer,5741
+5128,,"",5742
+2326,63,"lenses,",5743
+4820,,"",5744
+4257,69,magic lanterns,5745
+5145,,"",5746
+5181,,"",5747
+5449,26,chronometer,5748
+5970,,"",5749
+2204,56,"hygrometer,",5750
+2204,156,rain gauge,5751
+2341,20,barometer,5752
+2834,127,theodolite,5753
+9376,45,globes,5754
+9378,3,anemometers,5755
+9378,138,tide gauges,5756
+9378,320,"seismograph,",5757
+9378,211,dynamometers,5758
+9378,321,air speed meter,5759
+4355,11,actinometer,5760
+4355,20,barometer,5761
+4355,128,thermometer,5762
+9194,29,air compasses,5763
+9380,128,thermometer,5764
+5132,,"",5765
+5132,,"",5766
+5354,54,hydrometer,5767
+4414,5,artificial horizon,5768
+4414,101,"ruler,",5769
+4414,105,"sextant,",5770
+4414,109,station pointer,5771
+4414,220,heliostat,5772
+7877,125,telescope,5773
+5127,39,drawing instruments,5774
+944,1,air pump,5775
+5072,127,"theodolite,",5776
+5072,180,stadimeter,5777
+5072,66,"microscope (binocular),",5778
+5072,105,"sextant,",5779
+1364,20,"barometer,",5780
+325,123,octant,5781
+3777,60,"level,",5782
+3777,74,"mining dial,",5783
+3777,127,theodolite,5784
+3777,108,"parallel rule,",5785
+3777,147,protractor,5786
+3777,66,microscope,5787
+9391,131,portable transit instrument,5788
+9392,131,portable transit instrument,5789
+4159,20,"barometer,",5790
+4159,115,"level,",5791
+4154,139,photographic camera,5792
+9394,123,octant,5793
+3738,125,telescope (refractor),5794
+4164,128,thermometer,5795
+4164,5,aetificial horizon,5796
+4164,29,compass (ship's),5797
+9421,111,sundial (horizontal),5798
+9422,111,"? Possibly the maker of a sundial signed 'Rayment, Stamford'",5799
+9423,111,"?possibly the maker of a sundial siganed 'Rayment, Stamford'",5800
+2197,66,microscope,5801
+746,7,"astro clock,",5802
+768,123,octant,5803
+2632,156,rain gauge,5804
+2632,107,"slide rules,",5805
+2632,105,"box sextants,",5806
+2632,127,"theodolites,",5807
+2632,128,"thermometers,",5808
+9428,29,pocket compass,5809
+6255,125,telescope,5810
+2610,123,"octant,",5811
+2610,108,"parallel rule,",5812
+2610,124,quintant,5813
+2088,324,"current meter,",5814
+2088,105,"box sextant,",5815
+2088,29,"prismatic compass,",5816
+2101,80,pantograph,5817
+6910,178,compass corrector,5818
+2137,29,"overhead compass,",5819
+2137,123,"octant,",5820
+5459,125,telescope,5821
+3500,28,"clinometer,",5822
+3500,116,"spectroscope,",5823
+3500,66,solar microscope,5824
+3500,23,"callipers,",5825
+3500,231,vibration apparatus,5826
+3500,263,"siren,",5827
+3500,326,electric bell,5828
+4686,26,chronometer,5829
+446,82,saccharometer,5830
+2241,99,microscope accessories,5831
+2975,63,"lenses,",5832
+2180,20,"barometer,",5833
+2180,56,"hygrometer,",5834
+2180,128,thermometer,5835
+4905,,"",5836
+5679,127,theodolite,5837
+9515,20,barometer,5838
+2619,125,"telescope,",5839
+7964,66,microscope,5840
+6899,66,microscope,5841
+4312,15,person weighing machine,5842
+1049,107,slide rule,5843
+1049,54,hydrometer,5844
+1049,82,saccharometer,5845
+9623,,"",5846
+6282,20,sympiesometer,5847
+9661,20,"barometer,",5848
+9661,115,"spirit level,",5849
+9661,128,thermometer,5850
+6373,123,octant,5851
+9663,20,"barometer,",5852
+9663,128,thermometer,5853
+7796,219,telegraph apparatus,5854
+7796,16,contact goniometer,5855
+3093,128,"thermometer,",5856
+3093,134,"weights,",5857
+4283,66,"microscopes,",5858
+4283,99,microscope accessories,5859
+5984,114,spectacles,5860
+6955,110,"stereoscope,",5861
+6955,139,daguerrotype apparatus,5862
+6955,42,"induction coil,",5863
+9761,20,barometer,5864
+9762,20,barometer,5865
+8323,20,angle barometer,5866
+9783,26,chronometers,5867
+4265,147,protractor,5868
+7032,178,compass corrector,5869
+9804,20,"aneriod barometer,",5870
+9804,128,thermometer,5871
+4309,60,"level,",5872
+2633,20,sympiesometer,5873
+2812,66,microscope,5874
+6083,20,pocket barometer,5875
+4767,54,hydrometer,5876
+9812,20,barometer,5877
+9813,20,"barometer,",5878
+9813,60,"level (spirit),",5879
+9813,128,thermometer,5880
+5177,56,"hygrometer,",5881
+5177,60,"level,",5882
+5177,128,thermometer,5883
+4536,111,"sundial,",5884
+5699,26,"chronometer,",5885
+9824,26,chronometers,5886
+7541,26,chronometer,5887
+7745,26,chronometer,5888
+7769,26,chronometer,5889
+2633,124,quintant,5890
+4744,20,stick barometer,5891
+4744,128,thermometer,5892
+4749,26,chronometers,5893
+2816,128,thermometer,5894
+9828,26,chronometer,5895
+2268,128,"thermometer,",5896
+2268,139,camera (photographic),5897
+2268,115,"spirit level,",5898
+2268,99,"microscope accessories,",5899
+2268,69,"magic lantern,",5900
+2268,1,air pump,5901
+2268,29,"surveying compass,",5902
+2268,101,"rule,",5903
+2268,66,binocular microscope,5904
+5086,26,chronometers,5905
+7175,20,"stick barometer,",5906
+7175,128,thermometer,5907
+9838,20,barometer,5908
+9838,115,spirit level,5909
+9838,128,thermometer,5910
+7855,26,chronometers,5911
+1180,20,barometer,5912
+1180,128,thermometer,5913
+1180,133,waywiser,5914
+1180,136,gunner's callipers,5915
+1180,27,circumferentor,5916
+1180,28,clinometer,5917
+4259,20,"barometer,",5918
+1180,105,sextant,5919
+1180,127,theodolite,5920
+9841,125,telescope,5921
+9842,26,chronometers,5922
+9187,125,telescope,5923
+9845,66,microscopes,5924
+9845,71,reading glasses,5925
+9845,114,spectacles,5926
+9845,125,telescopes,5927
+9867,20,aneroid barometer,5928
+9881,69,magic lantern slides,5929
+9881,139,photographic camera,5930
+9358,143,electrical apparatus,5931
+9884,,gunsights,5932
+4253,54,"hydrometer,",5933
+4253,32,"chondrometer,",5934
+4253,101,"rule,",5935
+4253,128,thermometer,5936
+4256,66,microscope,5937
+6854,60,level,5938
+9906,110,stereoscopes,5939
+9915,,"",5940
+905,20,"storm glass,",5941
+905,125,"telescope,",5942
+905,128,thermometer,5943
+6245,105,sextant,5944
+7521,,film projector,5945
+7521,,radio equipment,5946
+7521,,kinetoscope,5947
+7521,118,'Unipivot' galvanometer,5948
+5158,20,aneroid barometer,5949
+5158,20,sympiesometer,5950
+5158,128,thermometer,5951
+6754,125,telescope,5952
+3717,20,"barometer (marine),",5953
+7427,29,marine compass,5954
+4385,128,thermometer,5955
+6520,123,octant,5956
+9929,123,octant,5957
+8133,69,"magic lantern,",5958
+9935,5,artificial horizon,5959
+9166,5,artificial horizon,5960
+9936,5,"artificial horizon,",5961
+9936,105,sextant,5962
+7388,5,"artificial horizon,",5963
+4521,5,artificial horizon,5964
+1584,99,quintant,5965
+1584,123,octant,5966
+1584,42,electrical machine,5967
+1584,5,artificial horizon,5968
+1584,146,electrometer,5969
+1584,332,sonometer,5970
+1584,20,sympiesometer,5971
+1584,56,hygrometer,5972
+1584,20,barometer (stick),5973
+1584,29,sighting compass,5974
+1584,54,hydrometer,5975
+1584,128,thermometer,5976
+538,20,barometer,5977
+8187,20,barometer,5978
+9954,26,chronometers,5979
+4849,26,chronometers,5980
+5055,26,chronometers,5981
+4827,32,chondrometer,5982
+9799,26,chronometer,5983
+9976,26,chronometers,5984
+9977,26,chronometers,5985
+5085,26,chronometers,5986
+9978,26,chronometers,5987
+9978,,"",5988
+9979,26,chronometers,5989
+7368,26,"chronometers,",5990
+9980,26,chronometers,5991
+9981,26,chronometers,5992
+6795,26,"chronometer,",5993
+9983,26,chronometer,5994
+9150,26,chronometers,5995
+6213,26,chronometers,5996
+9984,26,chronometer,5997
+9985,26,chronometers,5998
+6913,26,chronometers,5999
+9986,26,chronometers,6000
+9987,26,chronometers,6001
+9988,26,chronometers,6002
+9744,26,chronometers,6003
+8903,26,chronometers,6004
+9555,26,chronometers,6005
+9641,26,chronometers,6006
+9160,178,course indicator,6007
+9558,26,chronometers,6008
+6589,26,chronometers,6009
+9626,26,chronometers,6010
+3636,123,"octant,",6011
+3636,17,"binnacle,",6012
+3636,26,"chronometers,",6013
+9497,26,chronometers,6014
+3693,20,aneroid barometer,6015
+9989,26,chronometers,6016
+9990,26,chronometers,6017
+9991,26,chronometers,6018
+9993,26,chronometers,6019
+9994,26,chronometer,6020
+9995,26,chronometer,6021
+9996,26,chronometers,6022
+6999,26,"chronometer,",6023
+4259,105,"sextant,",6024
+4259,127,"theodolite,",6025
+4259,118,"galvanometer,",6026
+8722,,"",6027
+4259,29,"compass,",6028
+4259,39,"drawing instruments,",6029
+4259,111,"universal dial,",6030
+4259,124,"quintant,",6031
+4259,178,"course corrector,",6032
+4259,3,"air-meter,",6033
+4514,27,"circumferentor,",6034
+6759,117,"saccharimeter,",6035
+8711,15,balance,6036
+8712,15,"balance,",6037
+8712,134,weights,6038
+8714,,"",6039
+8714,,"",6040
+8726,,"",6041
+8726,,"",6042
+8726,,"",6043
+8737,26,pocket chronometer,6044
+8741,64,measures,6045
+8742,64,measures,6046
+8743,64,measures,6047
+4968,26,chronometers,6048
+3474,64,half bushel measure,6049
+8755,,"",6050
+8764,20,barometer,6051
+8765,20,barometer,6052
+3112,20,barometer,6053
+8769,20,barometer,6054
+1715,128,thermometer,6055
+714,111,"sundial,",6056
+3114,20,"barometer,",6057
+439,20,barometer,6058
+439,80,"pantograph,",6059
+551,125,"telescope,",6060
+551,90,"philo table,",6061
+551,8,hydraulic screw,6062
+551,1,"airpump,",6063
+551,133,waywiser,6064
+551,20,"barometer,",6065
+551,15,"balance,",6066
+551,39,"drawing instruments,",6067
+551,127,"theodolite,",6068
+551,125,"equatorial instruments,",6069
+551,29,"compass,",6070
+551,66,"solar microscope,",6071
+551,85,"orrery,",6072
+551,66,"microscope,",6073
+8776,138,tide calculator,6074
+8776,126,navigation scale,6075
+347,111,"universal ring dial,",6076
+347,96,"quadrant,",6077
+347,85,"orrery,",6078
+674,111,sundial,6079
+696,66,"solar microscope,",6080
+696,36,"dipping needles,",6081
+316,66,"microscope, Cutt,",6082
+316,66,"microscope, Martin,",6083
+316,66,"microscope, solar,",6084
+316,79,"orrery,",6085
+438,42,"electrical machine,",6086
+438,99,"microscope accessories,",6087
+441,128,"thermometer,",6088
+2537,125,telescope,6089
+4307,20,"barometer,",6090
+2028,24,"camera lucida,",6091
+2028,99,microscope accessories,6092
+8786,235,clock tidal,6093
+2853,128,thermometer,6094
+19,107,coggeshall rules,6095
+50,125,"monocular,",6096
+2709,125,telescope,6097
+8792,114,spectacles,6098
+4086,20,"barometer,",6099
+4086,128,thermometer,6100
+89,125,"telescope,",6101
+89,128,thermometer,6102
+89,236,perpetuum mobile,6103
+2532,20,barometer,6104
+6030,101,rule,6105
+8246,116,"spectroscope,",6106
+8246,125,telescope,6107
+2207,29,"compass (magnetic),",6108
+2877,26,chronometers,6109
+10551,26,chronometers,6110
+10552,26,chronometer,6111
+10559,26,chronometer,6112
+10560,26,chronometers,6113
+9511,26,chronometers,6114
+10246,26,chronometers,6115
+10561,26,chronometers,6116
+10562,26,chronometers,6117
+7732,20,"barometer,",6118
+10576,335,tintometer,6119
+10577,99,microscopists compendium,6120
+4381,60,"level,",6121
+6836,317,Stroh's vowel sounder,6122
+10579,78,opera glasses,6123
+10580,85,orrery (patent),6124
+7565,85,tellurium,6125
+10581,55,hydrostatic bubbles,6126
+526,1,"air pump,",6127
+526,42,"electrical machine,",6128
+526,125,"telescope,",6129
+526,133,waywisers,6130
+663,111,sundial (universal equinoctial ring dial),6131
+8915,259,"telegraph instruments
+h instruments",6132
+203,29,"compass (magnetic) (NMM NAV0267, neg. A5793)",6133
+5495,83,planisphere,6134
+222,63,telescope objective lens,6135
+4289,99,"microscope accessory,",6136
+1464,29,"compass (magnetic, prismatic),",6137
+8246,101,"measuring bar,",6138
+8246,221,"spectrometer,",6139
+8246,94,"polarimeter,",6140
+3050,111,"sundial,",6141
+3050,26,"chronometers [made by Mercer],",6142
+8919,26,chronometers,6143
+7332,26,chronometers,6144
+550,125,"telescope (portable, refractor)",6145
+9024,138,tidal index,6146
+6836,143,"induction balance,",6147
+7565,85,"orrery,",6148
+526,29,"compass, azimuth,",6149
+526,29,"compass, steering,",6150
+10595,128,thermometer,6152
+10596,26,"chronometer,",6154
+10608,26,chronometers,6155
+10609,26,chronometers,6156
+10611,26,chronometers,6157
+10613,26,chronometers,6158
+10629,125,telescopes,6159
+10694,26,chronometer,6160
+10696,26,chronometers,6161
+10715,26,chronometers,6162
+10716,26,chronometers,6163
+10717,26,chronometers,6164
+10750,26,chronometer,6165
+10751,26,chronometer,6166
+10752,26,chronometer,6167
+10795,125,telescope tube,6168
+10746,26,chronometers,6169
+10701,26,chronometers,6170
+10837,26,chronometers,6171
+10886,26,chronometer,6172
+10887,26,chronometers,6173
+10888,26,chronometers,6174
+10889,26,chronometer,6175
+10917,26,chronometer,6176
+10918,26,chronometers,6177
+10919,26,chronometers,6178
+10920,26,chronometers,6179
+10951,26,chronometers,6180
+10952,26,chronometers,6181
+10953,26,chronometer,6182
+10954,26,chronometers,6183
+10838,26,chronometers,6184
+10955,26,chronometers,6185
+11043,26,chronometers,6186
+11044,26,chronometers,6187
+11113,26,chronometer,6188
+11114,26,chronometers,6189
+11115,26,chronometer,6190
+11116,26,chronometers,6191
+11117,26,chronometer,6192
+10697,26,chronometer,6193
+11179,26,chronometer,6194
+11180,26,chronometer,6195
+11181,26,chronometers,6196
+11182,26,chronometers,6197
+11246,26,chronometer,6198
+11247,26,chronometers,6199
+11248,26,chronometers,6200
+11249,26,chronometers,6201
+11265,29,compass,6202
+11345,26,pocket chronometers,6203
+11346,26,chronometer,6204
+10748,26,chronometer,6205
+11347,26,pocket chronometers,6206
+11348,26,chronometers,6207
+11349,26,pocket chronometers,6208
+11385,20,barometer [probably by this firm],6209
+11410,125,telescopes,6211
