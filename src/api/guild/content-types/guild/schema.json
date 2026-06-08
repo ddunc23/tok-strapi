@@ -17,12 +17,6 @@
       "required": true,
       "maxLength": 64
     },
-    "members": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::maker.maker",
-      "inversedBy": "guilds"
-    },
     "memberships": {
       "type": "relation",
       "relation": "oneToMany",
@@ -31,12 +25,6 @@
     },
     "guild_id": {
       "type": "integer"
-    },
-    "maker": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::maker.maker",
-      "inversedBy": "guilds"
     },
     "maker_extended": {
       "type": "relation",

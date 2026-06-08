@@ -82,6 +82,7 @@ const options = {
   dryRun: hasFlag('--dry-run'),
   relationsOnly: hasFlag('--relations-only'),
   skipRelations: hasFlag('--skip-relations'),
+  verboseSkips: hasFlag('--verbose-skips'),
   csvDir: process.env.CSV_DIR || path.join(process.cwd(), 'data', 'csv'),
   collections: (() => {
     const value = getArgValue('--collections');
@@ -103,13 +104,6 @@ const options = {
 };
 
 const COLLECTIONS = [
-  {
-    name: 'makers',
-    endpoint: 'makers',
-    csvFiles: ['maker.csv'],
-    integerFields: ['maker_id'],
-    keyFields: ['maker_id'],
-  },
   {
     name: 'makersExtended',
     endpoint: 'makers-extended',
@@ -189,87 +183,59 @@ const COLLECTIONS = [
 const RELATION_LINKS = [
   {
     sourceEndpoint: 'addresses',
-    targetEndpoint: 'makers',
+    targetEndpoint: 'addresses',
     sourceIdField: 'maker_id',
-    targetIdField: 'maker_id',
-    connectionField: 'addresses',
+    targetIdField: 'Maker_ID',
+    connectionField: 'maker_extended',
+    targetLookupEndpoint: 'makers-extended',
   },
   {
     sourceEndpoint: 'addresses',
-    targetEndpoint: 'makers-extended',
-    sourceIdField: 'maker_id',
-    targetIdField: 'Maker_ID',
-    connectionField: 'addresses',
-  },
-  {
-    sourceEndpoint: 'town-locations',
     targetEndpoint: 'addresses',
     sourceIdField: 'town_location_id',
     targetIdField: 'town_location_id',
     connectionField: 'town_location',
+    targetLookupEndpoint: 'town-locations',
   },
   {
-    sourceEndpoint: 'makers',
+    sourceEndpoint: 'memberships',
     targetEndpoint: 'memberships',
     sourceIdField: 'maker_id',
-    targetIdField: 'maker_id',
-    connectionField: 'maker',
-  },
-  {
-    sourceEndpoint: 'makers-extended',
-    targetEndpoint: 'memberships',
-    sourceIdField: 'Maker_ID',
-    targetIdField: 'maker_id',
+    targetIdField: 'Maker_ID',
     connectionField: 'maker_extended',
+    targetLookupEndpoint: 'makers-extended',
   },
   {
-    sourceEndpoint: 'guilds',
+    sourceEndpoint: 'memberships',
     targetEndpoint: 'memberships',
     sourceIdField: 'guild_id',
     targetIdField: 'guild_id',
     connectionField: 'guild',
+    targetLookupEndpoint: 'guilds',
   },
   {
     sourceEndpoint: 'relations',
-    targetEndpoint: 'makers',
-    sourceIdField: 'maker_id',
-    targetIdField: 'maker_id',
-    connectionField: 'relations',
-  },
-  {
-    sourceEndpoint: 'relations',
-    targetEndpoint: 'makers-extended',
+    targetEndpoint: 'relations',
     sourceIdField: 'maker_id',
     targetIdField: 'Maker_ID',
-    connectionField: 'relations',
+    connectionField: 'maker_extended',
+    targetLookupEndpoint: 'makers-extended',
   },
   {
     sourceEndpoint: 'instruments-known',
-    targetEndpoint: 'makers',
-    sourceIdField: 'maker_id',
-    targetIdField: 'maker_id',
-    connectionField: 'instruments_known',
-  },
-  {
-    sourceEndpoint: 'instruments-known',
-    targetEndpoint: 'makers-extended',
+    targetEndpoint: 'instruments-known',
     sourceIdField: 'maker_id',
     targetIdField: 'Maker_ID',
-    connectionField: 'instruments_known',
+    connectionField: 'maker_extended',
+    targetLookupEndpoint: 'makers-extended',
   },
   {
     sourceEndpoint: 'instruments-advertised',
-    targetEndpoint: 'makers',
-    sourceIdField: 'maker_id',
-    targetIdField: 'maker_id',
-    connectionField: 'instruments_advertised',
-  },
-  {
-    sourceEndpoint: 'instruments-advertised',
-    targetEndpoint: 'makers-extended',
+    targetEndpoint: 'instruments-advertised',
     sourceIdField: 'maker_id',
     targetIdField: 'Maker_ID',
-    connectionField: 'instruments_advertised',
+    connectionField: 'maker_extended',
+    targetLookupEndpoint: 'makers-extended',
   },
 ];
 
@@ -430,7 +396,11 @@ function readCsvRecords(config, csvDir) {
     relax_column_count: true,
   });
 
-  return parsed.map((row) => normalizeRecord(row, config));
+  return parsed.map((row, index) => ({
+    ...normalizeRecord(row, config),
+    __csvFile: path.basename(csvPath),
+    __csvRowNumber: index + 2,
+  }));
 }
 
 function getFieldValue(record, fieldName) {
@@ -448,6 +418,41 @@ function makeRecordKey(record, fields) {
     const value = getFieldValue(record, field);
     return value === null || value === undefined ? '' : String(value);
   }).join('::');
+}
+
+function stripInternalFields(record) {
+  return Object.fromEntries(
+    Object.entries(record).filter(([key]) => !key.startsWith('__'))
+  );
+}
+
+function formatRecordContext(record, fields = []) {
+  const context = {};
+
+  if (record?.__csvFile) {
+    context.csvFile = record.__csvFile;
+  }
+
+  if (record?.__csvRowNumber) {
+    context.csvRowNumber = record.__csvRowNumber;
+  }
+
+  const documentId = getDocumentId(record);
+  if (documentId) {
+    context.documentId = documentId;
+  }
+
+  if (fields.length) {
+    context.fields = Object.fromEntries(fields.map((field) => [field, getFieldValue(record, field)]));
+  }
+
+  return JSON.stringify(context);
+}
+
+function logSkip(message) {
+  if (options.verboseSkips) {
+    console.warn(message);
+  }
 }
 
 function collectDuplicateKeys(records, fields) {
@@ -474,6 +479,15 @@ async function fetchAll(endpoint, params = {}) {
     query.set('pagination[pageSize]', String(requestedPageSize));
 
     for (const [key, value] of Object.entries(params)) {
+      if (value === undefined || value === null) continue;
+
+      if (Array.isArray(value)) {
+        value.forEach((item, index) => {
+          query.append(`${key}[${index}]`, String(item));
+        });
+        continue;
+      }
+
       query.set(key, String(value));
     }
 
@@ -596,23 +610,30 @@ async function uploadCollection(config) {
     try {
       const rowKey = makeRecordKey(row, config.keyFields);
       if (!rowKey) {
+        logSkip(
+          `[skip] ${config.endpoint}: missing key fields [${config.keyFields.join(', ')}] ${formatRecordContext(row, config.keyFields)}`
+        );
         skipped += 1;
         continue;
       }
 
       if (processedInputKeys.has(rowKey)) {
+        logSkip(
+          `[skip] ${config.endpoint}: duplicate input key ${JSON.stringify(rowKey)} ${formatRecordContext(row, config.keyFields)}`
+        );
         skippedDuplicateInput += 1;
         continue;
       }
       processedInputKeys.add(rowKey);
 
       const existingDocumentId = existingKeyToDocumentId.get(rowKey);
+      const payload = stripInternalFields(row);
 
       if (existingDocumentId) {
-        await updateEntry(config.endpoint, existingDocumentId, row);
+        await updateEntry(config.endpoint, existingDocumentId, payload);
         updated += 1;
       } else {
-        const createdPayload = await createEntry(config.endpoint, row);
+        const createdPayload = await createEntry(config.endpoint, payload);
         const createdDocumentId = getDocumentId(createdPayload?.data);
         if (createdDocumentId) {
           existingKeyToDocumentId.set(rowKey, createdDocumentId);
@@ -650,12 +671,28 @@ function makeMapByField(records, fieldName) {
 }
 
 async function connectRelation(linkConfig) {
-  const sourceRows = await fetchAll(linkConfig.sourceEndpoint);
-  const targetRows = await fetchAll(linkConfig.targetEndpoint);
+  const sourceRows = await fetchAll(linkConfig.sourceEndpoint, {
+    fields: [linkConfig.sourceIdField],
+  });
+  const lookupEndpoint = linkConfig.targetLookupEndpoint || linkConfig.targetEndpoint;
+  const targetRows = await fetchAll(lookupEndpoint, {
+    fields: [linkConfig.targetIdField],
+  });
   const targetMap = makeMapByField(targetRows, linkConfig.targetIdField);
   const relationSourceRows = options.relationLimit
     ? sourceRows.slice(0, options.relationLimit)
     : sourceRows;
+
+  const targetRowsMissingField = targetRows.filter((row) => getFieldValue(row, linkConfig.targetIdField) === null).length;
+  if (targetRows.length && !targetMap.size) {
+    console.warn(
+      `[debug] ${lookupEndpoint}: fetched ${targetRows.length} rows but none exposed ${JSON.stringify(linkConfig.targetIdField)}. Relation matching will skip until that field is returned by the API.`
+    );
+  } else if (targetRowsMissingField > 0) {
+    console.warn(
+      `[debug] ${lookupEndpoint}: ${targetRowsMissingField}/${targetRows.length} rows are missing ${JSON.stringify(linkConfig.targetIdField)} in API responses.`
+    );
+  }
 
   let connected = 0;
   let skipped = 0;
@@ -669,21 +706,27 @@ async function connectRelation(linkConfig) {
       const sourceForeignKey = getFieldValue(sourceRow, linkConfig.sourceIdField);
 
       if (!sourceDocumentId || sourceForeignKey === null || sourceForeignKey === undefined) {
+        logSkip(
+          `[skip] ${linkConfig.sourceEndpoint} -> ${linkConfig.targetEndpoint}: missing source documentId or foreign key ${formatRecordContext(sourceRow, [linkConfig.sourceIdField])}`
+        );
         skipped += 1;
         continue;
       }
 
       const targetDocumentIds = targetMap.get(String(sourceForeignKey));
       if (!targetDocumentIds || !targetDocumentIds.length) {
+        logSkip(
+          `[skip] ${linkConfig.sourceEndpoint} -> ${linkConfig.targetEndpoint}: no target found for ${JSON.stringify(linkConfig.sourceIdField)}=${JSON.stringify(sourceForeignKey)} ${formatRecordContext(sourceRow, [linkConfig.sourceIdField])}`
+        );
         skipped += 1;
         continue;
       }
 
       for (const targetDocumentId of targetDocumentIds) {
         try {
-          await updateEntry(linkConfig.targetEndpoint, targetDocumentId, {
+          await updateEntry(linkConfig.targetEndpoint, sourceDocumentId, {
             [linkConfig.connectionField]: {
-              connect: [sourceDocumentId],
+              connect: [targetDocumentId],
             },
           });
           connected += 1;
@@ -709,15 +752,23 @@ async function connectRelation(linkConfig) {
 async function connectTargetMakers() {
   // target_maker_id is now a stored field on relation records, so we can drive
   // this pass entirely from the API without re-reading the CSV.
-  const allRelationRows = await fetchAll('relations');
+  const allRelationRows = await fetchAll('relations', {
+    fields: ['relation_id', 'target_maker_id'],
+  });
   const relationSourceRows = options.relationLimit
     ? allRelationRows.slice(0, options.relationLimit)
     : allRelationRows;
 
-  const makerRows = await fetchAll('makers');
-  const makerMap = makeMapByField(makerRows, 'maker_id');
-  const makerExtendedRows = await fetchAll('makers-extended');
+  const makerExtendedRows = await fetchAll('makers-extended', {
+    fields: ['Maker_ID'],
+  });
   const makerExtendedMap = makeMapByField(makerExtendedRows, 'Maker_ID');
+
+  if (makerExtendedRows.length && !makerExtendedMap.size) {
+    console.warn(
+      '[debug] makers-extended: fetched rows but none exposed "Maker_ID". target_maker_extended matching will skip until that field is returned by the API.'
+    );
+  }
 
   let connected = 0;
   let skipped = 0;
@@ -731,47 +782,100 @@ async function connectTargetMakers() {
       const relationDocumentId = getDocumentId(relationRow);
 
       if (targetMakerId === null || targetMakerId === undefined || !relationDocumentId) {
+        logSkip(
+          `[skip] relations -> makers-extended (target_maker_extended): missing target_maker_id or relation documentId ${formatRecordContext(relationRow, ['target_maker_id', 'relation_id'])}`
+        );
         skipped += 1;
         continue;
       }
 
-      const makerDocumentIds = makerMap.get(String(targetMakerId));
-      if (!makerDocumentIds?.length) {
-        skipped += 1;
-        continue;
-      }
-
-      const makerDocumentId = makerDocumentIds[0];
       const makerExtendedDocumentIds = makerExtendedMap.get(String(targetMakerId));
-      const makerExtendedDocumentId = makerExtendedDocumentIds?.[0] ?? null;
+      const makerExtendedDocumentId = makerExtendedDocumentIds?.[0];
+
+      if (!makerExtendedDocumentId) {
+        logSkip(
+          `[skip] relations -> makers-extended (target_maker_extended): no maker-extended found for target_maker_id=${JSON.stringify(targetMakerId)} ${formatRecordContext(relationRow, ['target_maker_id', 'relation_id'])}`
+        );
+        skipped += 1;
+        continue;
+      }
 
       try {
         await updateEntry('relations', relationDocumentId, {
-          target_maker: {
-            connect: [makerDocumentId],
+          target_maker_extended: {
+            connect: [makerExtendedDocumentId],
           },
-          ...(makerExtendedDocumentId
-            ? {
-                target_maker_extended: {
-                  connect: [makerExtendedDocumentId],
-                },
-              }
-            : {}),
         });
         connected += 1;
       } catch (error) {
         failed += 1;
-        console.error(`[connect] relations.target_maker_id -> relations.target_maker failed: ${error.message}`);
+        console.error(`[connect] relations.target_maker_id -> relations.target_maker_extended failed: ${error.message}`);
       }
     }
 
     console.log(
-      `[connect] relations -> makers (target_maker): processed ${Math.min(start + batch.length, relationSourceRows.length)}/${relationSourceRows.length} source rows`
+      `[connect] relations -> makers-extended (target_maker_extended): processed ${Math.min(start + batch.length, relationSourceRows.length)}/${relationSourceRows.length} source rows`
     );
   }
 
   console.log(
-    `[connect] relations -> makers (target_maker): ${connected} connected, ${skipped} skipped, ${failed} failed`
+    `[connect] relations -> makers-extended (target_maker_extended): ${connected} connected, ${skipped} skipped, ${failed} failed`
+  );
+}
+
+async function backfillMissingTargetMakersExtended() {
+  const relationRows = await fetchAll('relations', {
+    fields: ['relation_id', 'target_maker_id'],
+    populate: ['target_maker_extended'],
+  });
+
+  const makerExtendedRows = await fetchAll('makers-extended', {
+    fields: ['Maker_ID'],
+  });
+  const makerExtendedMap = makeMapByField(makerExtendedRows, 'Maker_ID');
+
+  const candidates = relationRows.filter((row) => {
+    const targetMakerId = getFieldValue(row, 'target_maker_id');
+    const existingLink = getFieldValue(row, 'target_maker_extended');
+    return targetMakerId !== null && targetMakerId !== undefined && !existingLink;
+  });
+
+  let connected = 0;
+  let skipped = 0;
+  let failed = 0;
+
+  for (const relationRow of candidates) {
+    const relationDocumentId = getDocumentId(relationRow);
+    const targetMakerId = getFieldValue(relationRow, 'target_maker_id');
+
+    if (!relationDocumentId) {
+      skipped += 1;
+      continue;
+    }
+
+    const makerExtendedDocumentIds = makerExtendedMap.get(String(targetMakerId));
+    const makerExtendedDocumentId = makerExtendedDocumentIds?.[0];
+
+    if (!makerExtendedDocumentId) {
+      skipped += 1;
+      continue;
+    }
+
+    try {
+      await updateEntry('relations', relationDocumentId, {
+        target_maker_extended: {
+          connect: [makerExtendedDocumentId],
+        },
+      });
+      connected += 1;
+    } catch (error) {
+      failed += 1;
+      console.error(`[backfill] relations.target_maker_extended failed: ${error.message}`);
+    }
+  }
+
+  console.log(
+    `[backfill] relations.target_maker_extended: ${connected} connected, ${skipped} skipped, ${failed} failed (from ${candidates.length} candidates)`
   );
 }
 
@@ -800,6 +904,9 @@ async function run() {
   }
   if (options.dryRun) {
     console.log('Dry run enabled: no write operations will be sent.');
+  }
+  if (options.verboseSkips) {
+    console.log('Verbose skip logging: enabled');
   }
 
   const selectedCollections = options.collections
@@ -832,6 +939,7 @@ async function run() {
     }
 
     await connectTargetMakers();
+    await backfillMissingTargetMakersExtended();
   }
 
   console.log('CSV sync complete.');

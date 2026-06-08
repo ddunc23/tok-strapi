@@ -72,7 +72,7 @@ function normalizeBaseUrl(value) {
 }
 
 const ALL_COLLECTIONS = [
-  { endpoint: 'makers', keyFields: ['maker_id'] },
+  { endpoint: 'makers-extended', keyFields: ['Maker_ID'] },
   { endpoint: 'addresses', keyFields: ['address_id'] },
   { endpoint: 'town-locations', keyFields: ['town_location_id'] },
   { endpoint: 'guilds', keyFields: ['guild_id'] },

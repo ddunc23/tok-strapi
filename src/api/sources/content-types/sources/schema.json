@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "maker": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::maker.maker",
-      "inversedBy": "sources"
-    },
     "maker_extended": {
       "type": "relation",
       "relation": "manyToOne",

@@ -18,12 +18,6 @@
       "target": "api::guild.guild",
       "inversedBy": "memberships"
     },
-    "maker": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::maker.maker",
-      "inversedBy": "memberships"
-    },
     "maker_extended": {
       "type": "relation",
       "relation": "manyToOne",

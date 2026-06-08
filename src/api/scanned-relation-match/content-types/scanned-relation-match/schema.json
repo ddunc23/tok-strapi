@@ -18,10 +18,10 @@
       "target": "api::relation.relation",
       "inversedBy": "scanned_matches"
     },
-    "target_maker": {
+    "target_maker_extended": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::maker.maker"
+      "target": "api::maker-extended.maker-extended"
     }
   }
 }

@@ -12,12 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "maker": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::maker.maker",
-      "inversedBy": "relations"
-    },
     "maker_extended": {
       "type": "relation",
       "relation": "manyToOne",
@@ -68,12 +62,6 @@
     },
     "relation_type_id": {
       "type": "integer"
-    },
-    "target_maker": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::maker.maker",
-      "inversedBy": "relation_targets"
     },
     "target_maker_extended": {
       "type": "relation",

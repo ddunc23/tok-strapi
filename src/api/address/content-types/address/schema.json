@@ -35,12 +35,6 @@
     "town_location_id": {
       "type": "integer"
     },
-    "maker": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::maker.maker",
-      "inversedBy": "addresses"
-    },
     "maker_extended": {
       "type": "relation",
       "relation": "manyToOne",

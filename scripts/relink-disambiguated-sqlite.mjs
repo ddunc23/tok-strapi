@@ -55,8 +55,8 @@ try {
   const rows = db.prepare('SELECT id, relation_id, target_maker_id FROM disambiguated_relations').all();
 
   const findMakerId = db.prepare(`
-    SELECT id FROM makers
-    WHERE maker_id = ?
+    SELECT id FROM makers_extended
+    WHERE Maker_ID = ?
     ORDER BY created_at ASC, id ASC
     LIMIT 1
   `);
@@ -69,11 +69,11 @@ try {
   `);
 
   const clearMakerLink = db.prepare(
-    'DELETE FROM disambiguated_relations_target_maker_lnk WHERE disambiguated_relation_id = ?'
+    'DELETE FROM disambiguated_relations_target_maker_extended_lnk WHERE disambiguated_relation_id = ?'
   );
   const setMakerLink = db.prepare(`
-    INSERT OR IGNORE INTO disambiguated_relations_target_maker_lnk
-    (disambiguated_relation_id, maker_id, disambiguated_relation_ord)
+    INSERT OR IGNORE INTO disambiguated_relations_target_maker_extended_lnk
+    (disambiguated_relation_id, maker_extended_id, disambiguated_relation_ord)
     VALUES (?, ?, 1)
   `);
 
@@ -118,7 +118,7 @@ try {
   db.exec('COMMIT;');
 
   console.log(
-    `[sqlite-relink] linked target_maker=${makerLinked}, linked relation=${relationLinked}, missing makers=${missingMaker}, missing relations=${missingRelation}`
+    `[sqlite-relink] linked target_maker_extended=${makerLinked}, linked relation=${relationLinked}, missing makers-extended=${missingMaker}, missing relations=${missingRelation}`
   );
 } catch (error) {
   db.exec('ROLLBACK;');

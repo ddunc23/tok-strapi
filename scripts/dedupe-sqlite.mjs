@@ -65,7 +65,7 @@ function getArgValue(...flags) {
 }
 
 const ALL_COLLECTIONS = [
-  { table: 'makers', keyColumns: ['maker_id'] },
+  { table: 'makers_extended', keyColumns: ['Maker_ID'] },
   { table: 'addresses', keyColumns: ['address_id'] },
   { table: 'town_locations', keyColumns: ['town_location_id'] },
   { table: 'guilds', keyColumns: ['guild_id'] },
