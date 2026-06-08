@@ -36,11 +36,11 @@ export default {
 
       const relations = await strapi.db.query('api::relation.relation').findMany({
         where: {
-          maker_extended: {
+          /*maker_extended: {
             id: {
               $notNull: true,
             },
-          },
+          },*/
           target_maker_extended: {
             id: {
               $notNull: true,
