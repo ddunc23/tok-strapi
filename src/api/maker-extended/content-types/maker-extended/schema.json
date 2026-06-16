@@ -79,6 +79,66 @@
     "Misc_Info": {
       "type": "text"
     },
+    "Birth_Date": {
+      "type": "date"
+    },
+    "Birth_Date_Notes": {
+      "type": "string"
+    },
+    "Establishment_Date": {
+      "type": "date"
+    },
+    "Establishment_Date_Notes": {
+      "type": "string"
+    },
+    "Working_Start_Date": {
+      "type": "date"
+    },
+    "Working_Start_Type": {
+      "type": "string"
+    },
+    "Working_Start_Notes": {
+      "type": "string"
+    },
+    "Working_End_Date": {
+      "type": "date"
+    },
+    "Working_End_Type": {
+      "type": "string"
+    },
+    "Working_End_Notes": {
+      "type": "string"
+    },
+    "Flourishing_Start_Date": {
+      "type": "date"
+    },
+    "Flourishing_Start_Date_Notes": {
+      "type": "string"
+    },
+    "Flourishing_End_Date": {
+      "type": "date"
+    },
+    "Flourishing_End_Date_Notes": {
+      "type": "string"
+    },
+    "Retirement_Date": {
+      "type": "date"
+    },
+    "Retirement_Date_Notes": {
+      "type": "string"
+    },
+    "Death_Date": {
+      "type": "date"
+    },
+    "Death_Date_Notes": {
+      "type": "string"
+    },
+    "Date_1": {
+      "type": "date"
+    },
+    "Date_2": {
+      "type": "date"
+    },
     "addresses": {
       "type": "relation",
       "relation": "oneToMany",

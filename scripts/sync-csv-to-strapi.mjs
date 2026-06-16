@@ -107,8 +107,20 @@ const COLLECTIONS = [
   {
     name: 'makersExtended',
     endpoint: 'makers-extended',
-    csvFiles: ['maker-extended.csv', 'maker-extended-extract.csv'],
+    csvFiles: ['makers-extended-with-events.csv', 'maker-extended.csv', 'maker-extended-extract.csv'],
     integerFields: ['Maker_ID'],
+    dateFields: [
+      'Birth_Date',
+      'Establishment_Date',
+      'Working_Start_Date',
+      'Working_End_Date',
+      'Flourishing_Start_Date',
+      'Flourishing_End_Date',
+      'Retirement_Date',
+      'Death_Date',
+      'Date_1',
+      'Date_2',
+    ],
     fieldAliases: {
       Maker_ID: ['ID'],
     },
@@ -321,6 +333,42 @@ function castIntegerFields(record, integerFields = []) {
   return next;
 }
 
+function castDateFields(record, dateFields = []) {
+  const next = { ...record };
+
+  for (const field of dateFields) {
+    if (!(field in next)) continue;
+    const value = next[field];
+    if (value === null) {
+      next[field] = null;
+      continue;
+    }
+
+    const str = String(value).trim();
+    if (!str) {
+      next[field] = null;
+      continue;
+    }
+
+    // If it's a 4-digit year, convert to YYYY-01-01
+    if (/^\d{4}$/.test(str)) {
+      next[field] = `${str}-01-01`;
+      continue;
+    }
+
+    // If it's already in a date format (YYYY-MM-DD or similar), validate and keep it
+    if (/^\d{4}-\d{2}-\d{2}$/.test(str)) {
+      next[field] = str;
+      continue;
+    }
+
+    // Otherwise, treat as null
+    next[field] = null;
+  }
+
+  return next;
+}
+
 function removeExcludedFields(record, excludeFields = []) {
   const next = { ...record };
   for (const field of excludeFields) {
@@ -368,7 +416,8 @@ function normalizeRecord(row, config) {
   const withAliases = applyFieldAliases(withNulls, config.fieldAliases);
   const withTransforms = applyFieldTransforms(withAliases, config.fieldTransforms);
   const withIntegers = castIntegerFields(withTransforms, config.integerFields);
-  return removeExcludedFields(withIntegers, config.excludeFields);
+  const withDates = castDateFields(withIntegers, config.dateFields);
+  return removeExcludedFields(withDates, config.excludeFields);
 }
 
 function findCsvPath(csvDir, candidates) {

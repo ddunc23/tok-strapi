@@ -649,15 +649,27 @@ export interface ApiMakerExtendedMakerExtended
     Alt_name5: Schema.Attribute.String;
     Alt_name6: Schema.Attribute.String;
     Alt_name7: Schema.Attribute.String;
+    Birth_Date: Schema.Attribute.Date;
+    Birth_Date_Notes: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Date_1: Schema.Attribute.Date;
+    Date_2: Schema.Attribute.Date;
+    Death_Date: Schema.Attribute.Date;
+    Death_Date_Notes: Schema.Attribute.String;
     disambiguated_relations: Schema.Attribute.Relation<
       'oneToMany',
       'api::disambiguated-relation.disambiguated-relation'
     >;
     Disambiguation_Numeral: Schema.Attribute.String;
+    Establishment_Date: Schema.Attribute.Date;
+    Establishment_Date_Notes: Schema.Attribute.String;
     First_name: Schema.Attribute.String;
+    Flourishing_End_Date: Schema.Attribute.Date;
+    Flourishing_End_Date_Notes: Schema.Attribute.String;
+    Flourishing_Start_Date: Schema.Attribute.Date;
+    Flourishing_Start_Date_Notes: Schema.Attribute.String;
     guilds: Schema.Attribute.Relation<'oneToMany', 'api::guild.guild'>;
     Initials: Schema.Attribute.String;
     instruments_advertised: Schema.Attribute.Relation<
@@ -690,6 +702,8 @@ export interface ApiMakerExtendedMakerExtended
       'api::relation.relation'
     >;
     relations: Schema.Attribute.Relation<'oneToMany', 'api::relation.relation'>;
+    Retirement_Date: Schema.Attribute.Date;
+    Retirement_Date_Notes: Schema.Attribute.String;
     sources: Schema.Attribute.Relation<'oneToMany', 'api::sources.sources'>;
     Suffix: Schema.Attribute.String;
     Surname: Schema.Attribute.String;
@@ -699,6 +713,12 @@ export interface ApiMakerExtendedMakerExtended
       Schema.Attribute.Private;
     VIAF_URI: Schema.Attribute.String;
     Wikidata_URI: Schema.Attribute.String;
+    Working_End_Date: Schema.Attribute.Date;
+    Working_End_Notes: Schema.Attribute.String;
+    Working_End_Type: Schema.Attribute.String;
+    Working_Start_Date: Schema.Attribute.Date;
+    Working_Start_Notes: Schema.Attribute.String;
+    Working_Start_Type: Schema.Attribute.String;
   };
 }
 
