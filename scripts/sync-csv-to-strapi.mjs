@@ -597,17 +597,12 @@ async function updateEntry(endpoint, documentId, data) {
   });
 }
 
-async function deleteCsvRepresentedRecords(config) {
-  const csvRecords = readCsvRecords(config, options.csvDir);
-  const csvKeySet = new Set(csvRecords.map((row) => makeRecordKey(row, config.keyFields)));
+async function deleteAllRecords(config) {
   const strapiRows = await fetchAll(config.endpoint);
 
   let deleted = 0;
 
   for (const row of strapiRows) {
-    const rowKey = makeRecordKey(row, config.keyFields);
-    if (!csvKeySet.has(rowKey)) continue;
-
     const documentId = getDocumentId(row);
     if (!documentId) continue;
 
@@ -615,7 +610,7 @@ async function deleteCsvRepresentedRecords(config) {
     deleted += 1;
   }
 
-  console.log(`[delete] ${config.endpoint}: removed ${deleted} CSV-represented records`);
+  console.log(`[delete] ${config.endpoint}: removed ${deleted} existing records`);
 }
 
 async function uploadCollection(config) {
@@ -972,7 +967,7 @@ async function run() {
 
   if (!options.relationsOnly && (options.deleteExisting || options.deleteOnly)) {
     for (const config of selectedCollections) {
-      await deleteCsvRepresentedRecords(config);
+      await deleteAllRecords(config);
     }
   }
 
