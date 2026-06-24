@@ -82,6 +82,7 @@ const options = {
   dryRun: hasFlag('--dry-run'),
   relationsOnly: hasFlag('--relations-only'),
   skipRelations: hasFlag('--skip-relations'),
+  strictRelations: hasFlag('--strict-relations'),
   verboseSkips: hasFlag('--verbose-skips'),
   csvDir: process.env.CSV_DIR || path.join(process.cwd(), 'data', 'csv'),
   collections: (() => {
@@ -504,6 +505,82 @@ function logSkip(message) {
   }
 }
 
+const integrityReport = {
+  relationLinks: [],
+  targetMakerLink: null,
+  targetMakerBackfill: null,
+};
+
+function addRelationIntegrityEntry(entry) {
+  integrityReport.relationLinks.push(entry);
+}
+
+function setTargetMakerIntegrityEntry(entry) {
+  integrityReport.targetMakerLink = entry;
+}
+
+function setTargetMakerBackfillIntegrityEntry(entry) {
+  integrityReport.targetMakerBackfill = entry;
+}
+
+function printIntegrityReport() {
+  if (!integrityReport.relationLinks.length && !integrityReport.targetMakerLink && !integrityReport.targetMakerBackfill) {
+    console.log('[integrity] no relation linking steps executed.');
+    return {
+      totalConnected: 0,
+      totalSkipped: 0,
+      totalFailed: 0,
+      hasIssues: false,
+    };
+  }
+
+  console.log('[integrity] relation linking report:');
+
+  let totalConnected = 0;
+  let totalSkipped = 0;
+  let totalFailed = 0;
+
+  for (const entry of integrityReport.relationLinks) {
+    totalConnected += entry.connected;
+    totalSkipped += entry.skipped;
+    totalFailed += entry.failed;
+    console.log(
+      `[integrity] ${entry.name}: sourceRows=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped}, failed=${entry.failed}`
+    );
+  }
+
+  if (integrityReport.targetMakerLink) {
+    const entry = integrityReport.targetMakerLink;
+    totalConnected += entry.connected;
+    totalSkipped += entry.skipped;
+    totalFailed += entry.failed;
+    console.log(
+      `[integrity] ${entry.name}: sourceRows=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped}, failed=${entry.failed}`
+    );
+  }
+
+  if (integrityReport.targetMakerBackfill) {
+    const entry = integrityReport.targetMakerBackfill;
+    totalConnected += entry.connected;
+    totalSkipped += entry.skipped;
+    totalFailed += entry.failed;
+    console.log(
+      `[integrity] ${entry.name}: candidates=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped}, failed=${entry.failed}`
+    );
+  }
+
+  console.log(
+    `[integrity] totals: connected=${totalConnected}, skipped=${totalSkipped}, failed=${totalFailed}`
+  );
+
+  return {
+    totalConnected,
+    totalSkipped,
+    totalFailed,
+    hasIssues: totalSkipped > 0 || totalFailed > 0,
+  };
+}
+
 function collectDuplicateKeys(records, fields) {
   const counts = new Map();
 
@@ -791,6 +868,14 @@ async function connectRelation(linkConfig) {
   console.log(
     `[connect] ${linkConfig.sourceEndpoint} -> ${linkConfig.targetEndpoint}: ${connected} connected, ${skipped} skipped, ${failed} failed`
   );
+
+  addRelationIntegrityEntry({
+    name: `${linkConfig.sourceEndpoint} -> ${linkConfig.targetEndpoint} (${linkConfig.connectionField})`,
+    sourceRows: relationSourceRows.length,
+    connected,
+    skipped,
+    failed,
+  });
 }
 
 async function connectTargetMakers() {
@@ -865,6 +950,14 @@ async function connectTargetMakers() {
   console.log(
     `[connect] relations -> makers-extended (target_maker_extended): ${connected} connected, ${skipped} skipped, ${failed} failed`
   );
+
+  setTargetMakerIntegrityEntry({
+    name: 'relations -> makers-extended (target_maker_extended)',
+    sourceRows: relationSourceRows.length,
+    connected,
+    skipped,
+    failed,
+  });
 }
 
 async function backfillMissingTargetMakersExtended() {
@@ -921,6 +1014,14 @@ async function backfillMissingTargetMakersExtended() {
   console.log(
     `[backfill] relations.target_maker_extended: ${connected} connected, ${skipped} skipped, ${failed} failed (from ${candidates.length} candidates)`
   );
+
+  setTargetMakerBackfillIntegrityEntry({
+    name: 'relations.target_maker_extended backfill',
+    sourceRows: candidates.length,
+    connected,
+    skipped,
+    failed,
+  });
 }
 
 
@@ -952,6 +1053,9 @@ async function run() {
   if (options.verboseSkips) {
     console.log('Verbose skip logging: enabled');
   }
+  if (options.strictRelations) {
+    console.log('Strict relations mode: enabled');
+  }
 
   const selectedCollections = options.collections
     ? COLLECTIONS.filter(
@@ -963,6 +1067,10 @@ async function run() {
     throw new Error(
       `No matching collections for --collections=${[...options.collections].join(',')}`
     );
+  }
+
+  if (options.strictRelations && (options.skipRelations || options.deleteOnly)) {
+    throw new Error('--strict-relations requires relation linking to run (cannot be used with --skip-relations or --delete-only).');
   }
 
   if (!options.relationsOnly && (options.deleteExisting || options.deleteOnly)) {
@@ -984,6 +1092,13 @@ async function run() {
 
     await connectTargetMakers();
     await backfillMissingTargetMakersExtended();
+
+    const integritySummary = printIntegrityReport();
+    if (options.strictRelations && integritySummary.hasIssues) {
+      throw new Error(
+        `[strict-relations] integrity check failed: ${integritySummary.totalSkipped} skipped, ${integritySummary.totalFailed} failed relation links.`
+      );
+    }
   }
 
   console.log('CSV sync complete.');
