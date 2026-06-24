@@ -529,6 +529,8 @@ function printIntegrityReport() {
     return {
       totalConnected: 0,
       totalSkipped: 0,
+      totalExpectedSkipped: 0,
+      totalProblematicSkipped: 0,
       totalFailed: 0,
       hasIssues: false,
     };
@@ -538,46 +540,62 @@ function printIntegrityReport() {
 
   let totalConnected = 0;
   let totalSkipped = 0;
+  let totalExpectedSkipped = 0;
+  let totalProblematicSkipped = 0;
   let totalFailed = 0;
 
   for (const entry of integrityReport.relationLinks) {
+    const expectedSkipped = entry.expectedSkipped ?? 0;
+    const problematicSkipped = entry.problematicSkipped ?? entry.skipped ?? 0;
     totalConnected += entry.connected;
     totalSkipped += entry.skipped;
+    totalExpectedSkipped += expectedSkipped;
+    totalProblematicSkipped += problematicSkipped;
     totalFailed += entry.failed;
     console.log(
-      `[integrity] ${entry.name}: sourceRows=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped}, failed=${entry.failed}`
+      `[integrity] ${entry.name}: sourceRows=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped} (expected=${expectedSkipped}, problematic=${problematicSkipped}), failed=${entry.failed}`
     );
   }
 
   if (integrityReport.targetMakerLink) {
     const entry = integrityReport.targetMakerLink;
+    const expectedSkipped = entry.expectedSkipped ?? 0;
+    const problematicSkipped = entry.problematicSkipped ?? entry.skipped ?? 0;
     totalConnected += entry.connected;
     totalSkipped += entry.skipped;
+    totalExpectedSkipped += expectedSkipped;
+    totalProblematicSkipped += problematicSkipped;
     totalFailed += entry.failed;
     console.log(
-      `[integrity] ${entry.name}: sourceRows=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped}, failed=${entry.failed}`
+      `[integrity] ${entry.name}: sourceRows=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped} (expected=${expectedSkipped}, problematic=${problematicSkipped}), failed=${entry.failed}`
     );
   }
 
   if (integrityReport.targetMakerBackfill) {
     const entry = integrityReport.targetMakerBackfill;
+    const expectedSkipped = entry.expectedSkipped ?? 0;
+    const problematicSkipped = entry.problematicSkipped ?? entry.skipped ?? 0;
     totalConnected += entry.connected;
     totalSkipped += entry.skipped;
+    totalExpectedSkipped += expectedSkipped;
+    totalProblematicSkipped += problematicSkipped;
     totalFailed += entry.failed;
     console.log(
-      `[integrity] ${entry.name}: candidates=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped}, failed=${entry.failed}`
+      `[integrity] ${entry.name}: candidates=${entry.sourceRows}, connected=${entry.connected}, skipped=${entry.skipped} (expected=${expectedSkipped}, problematic=${problematicSkipped}), failed=${entry.failed}`
     );
   }
 
   console.log(
-    `[integrity] totals: connected=${totalConnected}, skipped=${totalSkipped}, failed=${totalFailed}`
+    `[integrity] totals: connected=${totalConnected}, skipped=${totalSkipped} (expected=${totalExpectedSkipped}, problematic=${totalProblematicSkipped}), failed=${totalFailed}`
   );
 
   return {
     totalConnected,
     totalSkipped,
+    totalExpectedSkipped,
+    totalProblematicSkipped,
     totalFailed,
-    hasIssues: totalSkipped > 0 || totalFailed > 0,
+    hasIssues: totalProblematicSkipped > 0 || totalFailed > 0,
   };
 }
 
@@ -818,6 +836,9 @@ async function connectRelation(linkConfig) {
   let connected = 0;
   let skipped = 0;
   let failed = 0;
+  let skippedMissingSourceDocumentId = 0;
+  let skippedMissingForeignKey = 0;
+  let skippedMissingTarget = 0;
 
   for (let start = 0; start < relationSourceRows.length; start += options.relationBatchSize) {
     const batch = relationSourceRows.slice(start, start + options.relationBatchSize);
@@ -826,11 +847,21 @@ async function connectRelation(linkConfig) {
       const sourceDocumentId = getDocumentId(sourceRow);
       const sourceForeignKey = getFieldValue(sourceRow, linkConfig.sourceIdField);
 
-      if (!sourceDocumentId || sourceForeignKey === null || sourceForeignKey === undefined) {
+      if (!sourceDocumentId) {
         logSkip(
           `[skip] ${linkConfig.sourceEndpoint} -> ${linkConfig.targetEndpoint}: missing source documentId or foreign key ${formatRecordContext(sourceRow, [linkConfig.sourceIdField])}`
         );
         skipped += 1;
+        skippedMissingSourceDocumentId += 1;
+        continue;
+      }
+
+      if (sourceForeignKey === null || sourceForeignKey === undefined) {
+        logSkip(
+          `[skip] ${linkConfig.sourceEndpoint} -> ${linkConfig.targetEndpoint}: missing source documentId or foreign key ${formatRecordContext(sourceRow, [linkConfig.sourceIdField])}`
+        );
+        skipped += 1;
+        skippedMissingForeignKey += 1;
         continue;
       }
 
@@ -840,6 +871,7 @@ async function connectRelation(linkConfig) {
           `[skip] ${linkConfig.sourceEndpoint} -> ${linkConfig.targetEndpoint}: no target found for ${JSON.stringify(linkConfig.sourceIdField)}=${JSON.stringify(sourceForeignKey)} ${formatRecordContext(sourceRow, [linkConfig.sourceIdField])}`
         );
         skipped += 1;
+        skippedMissingTarget += 1;
         continue;
       }
 
@@ -874,6 +906,13 @@ async function connectRelation(linkConfig) {
     sourceRows: relationSourceRows.length,
     connected,
     skipped,
+    expectedSkipped: skippedMissingForeignKey,
+    problematicSkipped: skippedMissingSourceDocumentId + skippedMissingTarget,
+    skipBreakdown: {
+      missingSourceDocumentId: skippedMissingSourceDocumentId,
+      missingForeignKey: skippedMissingForeignKey,
+      missingTarget: skippedMissingTarget,
+    },
     failed,
   });
 }
@@ -902,6 +941,9 @@ async function connectTargetMakers() {
   let connected = 0;
   let skipped = 0;
   let failed = 0;
+  let skippedMissingTargetMakerId = 0;
+  let skippedMissingRelationDocumentId = 0;
+  let skippedMissingMakerExtended = 0;
 
   for (let start = 0; start < relationSourceRows.length; start += options.relationBatchSize) {
     const batch = relationSourceRows.slice(start, start + options.relationBatchSize);
@@ -910,11 +952,21 @@ async function connectTargetMakers() {
       const targetMakerId = getFieldValue(relationRow, 'target_maker_id');
       const relationDocumentId = getDocumentId(relationRow);
 
-      if (targetMakerId === null || targetMakerId === undefined || !relationDocumentId) {
+      if (!relationDocumentId) {
         logSkip(
           `[skip] relations -> makers-extended (target_maker_extended): missing target_maker_id or relation documentId ${formatRecordContext(relationRow, ['target_maker_id', 'relation_id'])}`
         );
         skipped += 1;
+        skippedMissingRelationDocumentId += 1;
+        continue;
+      }
+
+      if (targetMakerId === null || targetMakerId === undefined) {
+        logSkip(
+          `[skip] relations -> makers-extended (target_maker_extended): missing target_maker_id or relation documentId ${formatRecordContext(relationRow, ['target_maker_id', 'relation_id'])}`
+        );
+        skipped += 1;
+        skippedMissingTargetMakerId += 1;
         continue;
       }
 
@@ -926,6 +978,7 @@ async function connectTargetMakers() {
           `[skip] relations -> makers-extended (target_maker_extended): no maker-extended found for target_maker_id=${JSON.stringify(targetMakerId)} ${formatRecordContext(relationRow, ['target_maker_id', 'relation_id'])}`
         );
         skipped += 1;
+        skippedMissingMakerExtended += 1;
         continue;
       }
 
@@ -956,6 +1009,13 @@ async function connectTargetMakers() {
     sourceRows: relationSourceRows.length,
     connected,
     skipped,
+    expectedSkipped: skippedMissingTargetMakerId,
+    problematicSkipped: skippedMissingRelationDocumentId + skippedMissingMakerExtended,
+    skipBreakdown: {
+      missingRelationDocumentId: skippedMissingRelationDocumentId,
+      missingTargetMakerId: skippedMissingTargetMakerId,
+      missingMakerExtended: skippedMissingMakerExtended,
+    },
     failed,
   });
 }
@@ -980,6 +1040,8 @@ async function backfillMissingTargetMakersExtended() {
   let connected = 0;
   let skipped = 0;
   let failed = 0;
+  let skippedMissingRelationDocumentId = 0;
+  let skippedMissingMakerExtended = 0;
 
   for (const relationRow of candidates) {
     const relationDocumentId = getDocumentId(relationRow);
@@ -987,6 +1049,7 @@ async function backfillMissingTargetMakersExtended() {
 
     if (!relationDocumentId) {
       skipped += 1;
+      skippedMissingRelationDocumentId += 1;
       continue;
     }
 
@@ -995,6 +1058,7 @@ async function backfillMissingTargetMakersExtended() {
 
     if (!makerExtendedDocumentId) {
       skipped += 1;
+      skippedMissingMakerExtended += 1;
       continue;
     }
 
@@ -1020,6 +1084,12 @@ async function backfillMissingTargetMakersExtended() {
     sourceRows: candidates.length,
     connected,
     skipped,
+    expectedSkipped: 0,
+    problematicSkipped: skippedMissingRelationDocumentId + skippedMissingMakerExtended,
+    skipBreakdown: {
+      missingRelationDocumentId: skippedMissingRelationDocumentId,
+      missingMakerExtended: skippedMissingMakerExtended,
+    },
     failed,
   });
 }
@@ -1096,7 +1166,7 @@ async function run() {
     const integritySummary = printIntegrityReport();
     if (options.strictRelations && integritySummary.hasIssues) {
       throw new Error(
-        `[strict-relations] integrity check failed: ${integritySummary.totalSkipped} skipped, ${integritySummary.totalFailed} failed relation links.`
+        `[strict-relations] integrity check failed: ${integritySummary.totalProblematicSkipped} problematic skipped, ${integritySummary.totalFailed} failed relation links.`
       );
     }
   }
