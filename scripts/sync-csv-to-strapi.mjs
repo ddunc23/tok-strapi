@@ -84,6 +84,7 @@ const options = {
   skipRelations: hasFlag('--skip-relations'),
   strictRelations: hasFlag('--strict-relations'),
   verboseSkips: hasFlag('--verbose-skips'),
+  reportMissingTargets: hasFlag('--report-missing-targets'),
   csvDir: process.env.CSV_DIR || path.join(process.cwd(), 'data', 'csv'),
   collections: (() => {
     const value = getArgValue('--collections');
@@ -511,6 +512,38 @@ const integrityReport = {
   targetMakerBackfill: null,
 };
 
+const missingTargetsReport = {
+  byEndpointAndField: {},
+};
+
+function trackMissingTarget(endpoint, fieldName, value) {
+  if (!options.reportMissingTargets) return;
+  const key = `${endpoint}::${fieldName}`;
+  if (!missingTargetsReport.byEndpointAndField[key]) {
+    missingTargetsReport.byEndpointAndField[key] = new Map();
+  }
+  const counts = missingTargetsReport.byEndpointAndField[key];
+  counts.set(value, (counts.get(value) || 0) + 1);
+}
+
+function printMissingTargetsReport() {
+  const entries = Object.entries(missingTargetsReport.byEndpointAndField);
+  if (!entries.length) {
+    console.log('[missing-targets] no missing targets reported.');
+    return;
+  }
+
+  console.log('[missing-targets] report:');
+  for (const [key, counts] of entries) {
+    const sorted = [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 50);
+    const ids = sorted.map(([id]) => id).join(', ');
+    const uniqueCount = counts.size;
+    console.log(`[missing-targets] ${key}: ${uniqueCount} unique missing, top 50: [${ids}]`);
+  }
+}
+
 function addRelationIntegrityEntry(entry) {
   integrityReport.relationLinks.push(entry);
 }
@@ -870,6 +903,7 @@ async function connectRelation(linkConfig) {
         logSkip(
           `[skip] ${linkConfig.sourceEndpoint} -> ${linkConfig.targetEndpoint}: no target found for ${JSON.stringify(linkConfig.sourceIdField)}=${JSON.stringify(sourceForeignKey)} ${formatRecordContext(sourceRow, [linkConfig.sourceIdField])}`
         );
+        trackMissingTarget(linkConfig.targetLookupEndpoint || linkConfig.targetEndpoint, linkConfig.targetIdField, sourceForeignKey);
         skipped += 1;
         skippedMissingTarget += 1;
         continue;
@@ -977,6 +1011,7 @@ async function connectTargetMakers() {
         logSkip(
           `[skip] relations -> makers-extended (target_maker_extended): no maker-extended found for target_maker_id=${JSON.stringify(targetMakerId)} ${formatRecordContext(relationRow, ['target_maker_id', 'relation_id'])}`
         );
+        trackMissingTarget('makers-extended', 'Maker_ID', targetMakerId);
         skipped += 1;
         skippedMissingMakerExtended += 1;
         continue;
@@ -1058,6 +1093,7 @@ async function backfillMissingTargetMakersExtended() {
 
     if (!makerExtendedDocumentId) {
       skipped += 1;
+      trackMissingTarget('makers-extended', 'Maker_ID', targetMakerId);
       skippedMissingMakerExtended += 1;
       continue;
     }
@@ -1126,6 +1162,9 @@ async function run() {
   if (options.strictRelations) {
     console.log('Strict relations mode: enabled');
   }
+  if (options.reportMissingTargets) {
+    console.log('Missing targets reporting: enabled');
+  }
 
   const selectedCollections = options.collections
     ? COLLECTIONS.filter(
@@ -1164,6 +1203,9 @@ async function run() {
     await backfillMissingTargetMakersExtended();
 
     const integritySummary = printIntegrityReport();
+    if (options.reportMissingTargets) {
+      printMissingTargetsReport();
+    }
     if (options.strictRelations && integritySummary.hasIssues) {
       throw new Error(
         `[strict-relations] integrity check failed: ${integritySummary.totalProblematicSkipped} problematic skipped, ${integritySummary.totalFailed} failed relation links.`
