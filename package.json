@@ -9,6 +9,7 @@
     "deploy": "strapi deploy",
     "dev": "strapi develop",
     "develop": "strapi develop",
+    "check:csv": "node scripts/check-csv-integrity.mjs",
     "dedupe:strapi": "node scripts/dedupe-strapi.mjs",
     "dedupe:strapi:dry": "node scripts/dedupe-strapi.mjs --dry-run",
     "dedupe:sqlite": "node scripts/dedupe-sqlite.mjs",
