@@ -85,6 +85,7 @@ const options = {
   strictRelations: hasFlag('--strict-relations'),
   verboseSkips: hasFlag('--verbose-skips'),
   reportMissingTargets: hasFlag('--report-missing-targets'),
+  clearRelationsOnly: hasFlag('--clear-relations-only'),
   csvDir: process.env.CSV_DIR || path.join(process.cwd(), 'data', 'csv'),
   collections: (() => {
     const value = getArgValue('--collections');
@@ -842,6 +843,48 @@ function makeMapByField(records, fieldName) {
   return map;
 }
 
+async function clearAllRelations() {
+  const relationFieldsToClear = {};
+  for (const linkConfig of RELATION_LINKS) {
+    const endpoint = linkConfig.sourceEndpoint;
+    const field = linkConfig.connectionField;
+    if (!relationFieldsToClear[endpoint]) {
+      relationFieldsToClear[endpoint] = [];
+    }
+    if (!relationFieldsToClear[endpoint].includes(field)) {
+      relationFieldsToClear[endpoint].push(field);
+    }
+  }
+
+  for (const [endpoint, fieldsToClean] of Object.entries(relationFieldsToClear)) {
+    const records = await fetchAll(endpoint);
+    let cleared = 0;
+    let failed = 0;
+
+    for (const record of records) {
+      const docId = getDocumentId(record);
+      if (!docId) continue;
+
+      const updateData = {};
+      for (const field of fieldsToClean) {
+        updateData[field] = { disconnect: [] };
+      }
+
+      try {
+        if (!options.dryRun) {
+          await updateEntry(endpoint, docId, updateData);
+        }
+        cleared += 1;
+      } catch (error) {
+        failed += 1;
+        console.error(`[clear] ${endpoint}::${docId} failed: ${error.message}`);
+      }
+    }
+
+    console.log(`[clear] ${endpoint}: cleared ${fieldsToClean.join(', ')} for ${cleared} records (${failed} failed)`);
+  }
+}
+
 async function connectRelation(linkConfig) {
   const sourceRows = await fetchAll(linkConfig.sourceEndpoint, {
     fields: [linkConfig.sourceIdField],
@@ -1165,6 +1208,9 @@ async function run() {
   if (options.reportMissingTargets) {
     console.log('Missing targets reporting: enabled');
   }
+  if (options.clearRelationsOnly) {
+    console.log('Clear relations: enabled (will disconnect all relation fields before linking)');
+  }
 
   const selectedCollections = options.collections
     ? COLLECTIONS.filter(
@@ -1195,6 +1241,10 @@ async function run() {
   }
 
   if (!options.deleteOnly && !options.skipRelations) {
+    if (options.clearRelationsOnly) {
+      await clearAllRelations();
+    }
+
     for (const linkConfig of RELATION_LINKS) {
       await connectRelation(linkConfig);
     }
