@@ -16,7 +16,7 @@
     "dedupe:sqlite:dry": "node scripts/dedupe-sqlite.mjs --dry-run",
     "relink:disambiguated:sqlite": "node scripts/relink-disambiguated-sqlite.mjs",
     "sync:csv": "node scripts/sync-csv-to-strapi.mjs",
-    "sync:csv:internal": "node scripts/sync-csv-internal.mjs",
+    "sync:csv:internal": "node --experimental-specifier-resolution=node scripts/sync-csv-internal.mjs",
     "sync:makers-extended": "node scripts/sync-csv-to-strapi.mjs --collections=makersExtended --skip-relations",
     "sync:csv:delete": "node scripts/sync-csv-to-strapi.mjs --delete-existing",
     "sync:csv:delete-only": "node scripts/sync-csv-to-strapi.mjs --delete-only",
