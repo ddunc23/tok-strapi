@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "points",
+  "info": {
+    "singularName": "point",
+    "pluralName": "points",
+    "displayName": "Point"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Latitude": {
+      "type": "float"
+    },
+    "Longitude": {
+      "type": "float"
+    },
+    "Makers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "Points"
+    },
+    "Point_ID": {
+      "type": "string"
+    }
+  }
+}

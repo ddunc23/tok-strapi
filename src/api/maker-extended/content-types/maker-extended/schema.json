@@ -192,6 +192,12 @@
       "relation": "oneToMany",
       "target": "api::relation.relation",
       "mappedBy": "target_maker_extended"
+    },
+    "Points": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::point.point",
+      "mappedBy": "Makers"
     }
   }
 }

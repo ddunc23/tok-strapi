@@ -267,6 +267,14 @@ const COLLECTIONS = [
     keyColumns: ['maker_id'],
   },
   {
+    name: 'points',
+    table: 'points',
+    csvFiles: ['point.csv'],
+    fieldAliases: { Point_ID: ['id'] },
+    excludeFields: ['id'],
+    keyColumns: ['point_id'],
+  },
+  {
     name: 'addresses',
     table: 'addresses',
     csvFiles: ['address.csv'],
@@ -320,6 +328,20 @@ const COLLECTIONS = [
     keyColumns: ['maker_id', 'inst_code', 'inst_name'],
   },
 ];
+
+const POINT_MAKER_LINK_SOURCE = {
+  name: 'pointMakerLinks',
+  csvFiles: ['maker-point-links.csv'],
+  fieldAliases: {
+    Simon_ID: ['Simon ID'],
+    Street_Address: ['Street Address'],
+    Point_ID: ['Point ID'],
+  },
+  fieldTransforms: { Simon_ID: coerceMakerId },
+  excludeFields: ['Street_Address'],
+};
+
+const POINT_MAKER_LINK_TABLE = 'points_makers_lnk';
 
 const RELATION_LINKS = [
   {
@@ -419,7 +441,7 @@ function getSelectedCollections() {
 }
 
 function getHandledLinkTables() {
-  return [...new Set(RELATION_LINKS.map((link) => link.linkTable))];
+  return [...new Set([...RELATION_LINKS.map((link) => link.linkTable), POINT_MAKER_LINK_TABLE])];
 }
 
 async function queryMapByKeys(client, table, keyColumns) {
@@ -614,6 +636,96 @@ async function linkRelations(client, link) {
   return { label: link.label, sourceRows, connected, expectedSkipped, problematicSkipped, failed: 0 };
 }
 
+async function linkPointsToMakers(client) {
+  const label = 'link points -> makers-extended';
+  logStepStart(label);
+
+  const csvRows = readCsvRecords(POINT_MAKER_LINK_SOURCE, options.csvDir).map(stripInternalFields);
+  const seenKeys = new Set();
+  const uniqueRows = [];
+  let expectedSkipped = 0;
+  let duplicate = 0;
+
+  for (const row of csvRows) {
+    const makerId = row.simon_id;
+    const pointId = row.point_id;
+    if (!makerId || !pointId) {
+      expectedSkipped += 1;
+      continue;
+    }
+
+    const key = `${makerId}::${pointId}`;
+    if (seenKeys.has(key)) {
+      duplicate += 1;
+      continue;
+    }
+
+    seenKeys.add(key);
+    uniqueRows.push({ makerId, pointId });
+  }
+
+  let connected = 0;
+  let problematicSkipped = 0;
+
+  if (uniqueRows.length) {
+    const values = uniqueRows.flatMap((row) => [row.makerId, row.pointId]);
+    const valuesSql = uniqueRows.map((_, index) => `($${index * 2 + 1}::integer, $${index * 2 + 2}::text)`).join(', ');
+
+    const connectedRes = await client.query(
+      `WITH source_rows(simon_id, point_id) AS (VALUES ${valuesSql})
+       SELECT COUNT(*) AS count
+       FROM (
+         SELECT DISTINCT p.id, m.id
+         FROM source_rows s
+         JOIN ${quoteIdent('points')} p ON p.point_id = s.point_id
+         JOIN ${quoteIdent('makers-extended')} m ON m.maker_id = s.simon_id
+       ) connected_rows`,
+      values
+    );
+    connected = Number(connectedRes.rows[0]?.count || 0);
+    problematicSkipped = uniqueRows.length - connected;
+
+    if (!options.dryRun) {
+      await client.query(
+        `WITH source_rows(simon_id, point_id) AS (VALUES ${valuesSql})
+         INSERT INTO ${quoteIdent(POINT_MAKER_LINK_TABLE)} (${quoteIdent('point_id')}, ${quoteIdent('maker_extended_id')}, ${quoteIdent('point_ord')})
+         SELECT DISTINCT p.id, m.id, 1
+         FROM source_rows s
+         JOIN ${quoteIdent('points')} p ON p.point_id = s.point_id
+         JOIN ${quoteIdent('makers-extended')} m ON m.maker_id = s.simon_id`,
+        values
+      );
+    }
+  }
+
+  if (options.reportMissingTargets && uniqueRows.length) {
+    const values = uniqueRows.flatMap((row) => [row.makerId, row.pointId]);
+    const valuesSql = uniqueRows.map((_, index) => `($${index * 2 + 1}::integer, $${index * 2 + 2}::text)`).join(', ');
+    const res = await client.query(
+      `WITH source_rows(simon_id, point_id) AS (VALUES ${valuesSql})
+       SELECT s.simon_id, s.point_id
+       FROM source_rows s
+       WHERE NOT EXISTS (
+         SELECT 1
+         FROM ${quoteIdent('points')} p
+         JOIN ${quoteIdent('makers-extended')} m ON m.maker_id = s.simon_id
+         WHERE p.point_id = s.point_id
+       )
+       ORDER BY s.simon_id, s.point_id
+       LIMIT 50`,
+      values
+    );
+    if (res.rows.length) {
+      console.log(`[missing-targets] points::makers-extended: ${res.rows.map((row) => `${row.simon_id}/${row.point_id}`).join(', ')}`);
+    }
+  }
+
+  console.log(`[integrity] ${label}: sourceRows=${csvRows.length}, connected=${connected}, skipped=${expectedSkipped + problematicSkipped} (expected=${expectedSkipped}, problematic=${problematicSkipped}), duplicate=${duplicate}, failed=0`);
+  logStepEnd(label);
+
+  return { label, sourceRows: csvRows.length, connected, expectedSkipped, problematicSkipped, failed: 0 };
+}
+
 async function run() {
   const client = new Client({
     host: process.env.DATABASE_HOST || 'localhost',
@@ -653,6 +765,7 @@ async function run() {
       for (const link of RELATION_LINKS) {
         summaries.push(await linkRelations(client, link));
       }
+      summaries.push(await linkPointsToMakers(client));
 
       const totals = summaries.reduce((acc, item) => {
         acc.connected += item.connected;

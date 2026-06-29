@@ -696,6 +696,7 @@ export interface ApiMakerExtendedMakerExtended
     Misc_Info: Schema.Attribute.Text;
     Organisation_Name: Schema.Attribute.String;
     Original_Data: Schema.Attribute.Text;
+    Points: Schema.Attribute.Relation<'manyToMany', 'api::point.point'>;
     publishedAt: Schema.Attribute.DateTime;
     relation_targets: Schema.Attribute.Relation<
       'oneToMany',
@@ -753,6 +754,37 @@ export interface ApiMembershipMembership extends Struct.CollectionTypeSchema {
     >;
     maker_id: Schema.Attribute.Integer;
     membership_id: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPointPoint extends Struct.CollectionTypeSchema {
+  collectionName: 'points';
+  info: {
+    displayName: 'Point';
+    pluralName: 'points';
+    singularName: 'point';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Latitude: Schema.Attribute.Float;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::point.point'> &
+      Schema.Attribute.Private;
+    Longitude: Schema.Attribute.Float;
+    Makers: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::maker-extended.maker-extended'
+    >;
+    Point_ID: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1581,6 +1613,7 @@ declare module '@strapi/strapi' {
       'api::instrument-known.instrument-known': ApiInstrumentKnownInstrumentKnown;
       'api::maker-extended.maker-extended': ApiMakerExtendedMakerExtended;
       'api::membership.membership': ApiMembershipMembership;
+      'api::point.point': ApiPointPoint;
       'api::relation-meta.relation-meta': ApiRelationMetaRelationMeta;
       'api::relation-type-meta.relation-type-meta': ApiRelationTypeMetaRelationTypeMeta;
       'api::relation-type.relation-type': ApiRelationTypeRelationType;
