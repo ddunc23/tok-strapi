@@ -327,6 +327,14 @@ const COLLECTIONS = [
     excludeFields: ['id'],
     keyColumns: ['maker_id', 'inst_code', 'inst_name'],
   },
+  {
+    name: 'sources',
+    table: 'sources',
+    csvFiles: ['sources.csv'],
+    integerFields: ['maker_id'],
+    excludeFields: ['maker_id'],
+    keyColumns: ['sources_key', 'manuscripts', 'directories', 'other'],
+  },
 ];
 
 const POINT_MAKER_LINK_SOURCE = {
@@ -340,6 +348,14 @@ const POINT_MAKER_LINK_SOURCE = {
   fieldTransforms: { Simon_ID: coerceMakerId },
   excludeFields: ['Street_Address'],
 };
+
+const SOURCES_LINK_SOURCE = {
+  name: 'sourcesLinkRows',
+  csvFiles: ['sources.csv'],
+  integerFields: ['maker_id'],
+};
+
+const SOURCES_KEY_COLUMNS = ['sources_key', 'manuscripts', 'directories', 'other'];
 
 const POINT_MAKER_LINK_TABLE = 'points_makers_lnk';
 
@@ -581,18 +597,175 @@ async function countScalar(client, sql, params = []) {
   return Number(res.rows[0]?.count || 0);
 }
 
-async function linkRelations(client, link) {
-  const label = `link ${link.label}`;
+async function getTableColumns(client, tableName) {
+  const res = await client.query(
+    `SELECT column_name
+     FROM information_schema.columns
+     WHERE table_schema = 'public'
+       AND table_name = $1
+     ORDER BY ordinal_position`,
+    [tableName]
+  );
+  return res.rows.map((row) => row.column_name);
+}
+
+async function hasColumn(client, tableName, columnName) {
+  const res = await client.query(
+    `SELECT 1
+     FROM information_schema.columns
+     WHERE table_schema = 'public'
+       AND table_name = $1
+       AND column_name = $2
+     LIMIT 1`,
+    [tableName, columnName]
+  );
+  return res.rows.length > 0;
+}
+
+async function linkSourcesToMakers(client) {
+  const label = 'link sources -> makers-extended';
   logStepStart(label);
 
-  const sourceTable = quoteIdent(link.sourceTable);
-  const targetTable = quoteIdent(link.targetTable);
-  const linkTable = quoteIdent(link.linkTable);
-  const sourceValueColumn = quoteIdent(link.sourceValueColumn);
-  const targetValueColumn = quoteIdent(link.targetValueColumn);
-  const sourceLinkColumn = quoteIdent(link.sourceLinkColumn);
-  const targetLinkColumn = quoteIdent(link.targetLinkColumn);
-  const ordColumn = quoteIdent(link.ordColumn);
+  const csvRows = readCsvRecords(SOURCES_LINK_SOURCE, options.csvDir).map(stripInternalFields);
+  const sourcesMap = await queryMapByKeys(client, 'sources', SOURCES_KEY_COLUMNS);
+
+  const makerRes = await client.query(`SELECT id, maker_id FROM ${quoteIdent('makers-extended')} WHERE maker_id IS NOT NULL`);
+  const makerMap = new Map();
+  for (const row of makerRes.rows) {
+    makerMap.set(Number(row.maker_id), row.id);
+  }
+
+  const seenKeys = new Set();
+  const assignments = [];
+  let expectedSkipped = 0;
+  let duplicate = 0;
+  let problematicSkipped = 0;
+
+  for (const row of csvRows) {
+    const makerId = row.maker_id;
+    const sourceKey = makeRecordKey(row, SOURCES_KEY_COLUMNS);
+    if (!makerId || !sourceKey) {
+      expectedSkipped += 1;
+      continue;
+    }
+
+    const dedupeKey = `${sourceKey}::${makerId}`;
+    if (seenKeys.has(dedupeKey)) {
+      duplicate += 1;
+      continue;
+    }
+    seenKeys.add(dedupeKey);
+
+    const sourceRow = sourcesMap.get(sourceKey);
+    const makerRowId = makerMap.get(Number(makerId));
+    if (!sourceRow || !makerRowId) {
+      problematicSkipped += 1;
+      continue;
+    }
+
+    assignments.push({ sourceId: sourceRow.id, makerExtendedId: makerRowId });
+  }
+
+  const dedupedAssignments = [];
+  const assignedSourceIds = new Set();
+  for (const item of assignments) {
+    if (assignedSourceIds.has(item.sourceId)) continue;
+    assignedSourceIds.add(item.sourceId);
+    dedupedAssignments.push(item);
+  }
+
+  const sourceRows = csvRows.length;
+  const connected = dedupedAssignments.length;
+
+  if (dedupedAssignments.length && !options.dryRun) {
+    const usesForeignKeyColumn = await hasColumn(client, 'sources', 'maker_extended_id');
+
+    if (usesForeignKeyColumn) {
+      const values = dedupedAssignments.flatMap((row) => [row.sourceId, row.makerExtendedId]);
+      const valuesSql = dedupedAssignments
+        .map((_, index) => `($${index * 2 + 1}::integer, $${index * 2 + 2}::integer)`)
+        .join(', ');
+
+      await client.query(
+        `WITH updates(source_id, maker_extended_id) AS (VALUES ${valuesSql})
+         UPDATE ${quoteIdent('sources')} s
+         SET ${quoteIdent('maker_extended_id')} = u.maker_extended_id
+         FROM updates u
+         WHERE s.id = u.source_id`,
+        values
+      );
+    } else {
+      const linkTable = 'sources_maker_extended_lnk';
+      const linkColumns = await getTableColumns(client, linkTable);
+      const targetLinkColumn = linkColumns.find((column) => column.includes('maker_extended') && column.endsWith('_id')) || 'maker_extended_id';
+      const sourceLinkColumn = linkColumns.find((column) => column.endsWith('_id') && column !== targetLinkColumn) || 'sources_id';
+      const ordColumn = linkColumns.find((column) => column.endsWith('_ord')) || 'sources_ord';
+
+      await client.query(`TRUNCATE TABLE ${quoteIdent(linkTable)} RESTART IDENTITY`);
+
+      const values = dedupedAssignments.flatMap((row) => [row.sourceId, row.makerExtendedId]);
+      const valuesSql = dedupedAssignments
+        .map((_, index) => `($${index * 2 + 1}::integer, $${index * 2 + 2}::integer)`)
+        .join(', ');
+
+      await client.query(
+        `WITH rows_to_link(source_id, maker_extended_id) AS (VALUES ${valuesSql})
+         INSERT INTO ${quoteIdent(linkTable)} (${quoteIdent(sourceLinkColumn)}, ${quoteIdent(targetLinkColumn)}, ${quoteIdent(ordColumn)})
+         SELECT source_id, maker_extended_id, 1
+         FROM rows_to_link`,
+        values
+      );
+    }
+  }
+
+  console.log(`[integrity] ${label}: sourceRows=${sourceRows}, connected=${connected}, skipped=${expectedSkipped + problematicSkipped} (expected=${expectedSkipped}, problematic=${problematicSkipped}), duplicate=${duplicate}, failed=0`);
+  logStepEnd(label);
+
+  return { label, sourceRows, connected, expectedSkipped, problematicSkipped, failed: 0 };
+}
+
+async function resolveDynamicLinkColumns(client, link) {
+  if (!link.dynamicLinkColumns) return link;
+
+  const res = await client.query(
+    `SELECT column_name
+     FROM information_schema.columns
+     WHERE table_schema = 'public'
+       AND table_name = $1
+     ORDER BY ordinal_position`,
+    [link.linkTable]
+  );
+
+  const columns = res.rows.map((row) => row.column_name);
+  const targetLinkColumn = columns.find((column) => column.includes('maker_extended') && column.endsWith('_id')) || link.targetLinkColumn;
+  const sourceLinkColumn = columns.find((column) => column.endsWith('_id') && column !== targetLinkColumn) || link.sourceLinkColumn;
+  const ordColumn = columns.find((column) => column.endsWith('_ord')) || link.ordColumn;
+
+  if (!sourceLinkColumn || !targetLinkColumn || !ordColumn) {
+    throw new Error(`Unable to resolve dynamic link columns for ${link.linkTable}. Found columns: ${columns.join(', ')}`);
+  }
+
+  return {
+    ...link,
+    sourceLinkColumn,
+    targetLinkColumn,
+    ordColumn,
+  };
+}
+
+async function linkRelations(client, link) {
+  const resolvedLink = await resolveDynamicLinkColumns(client, link);
+  const label = `link ${resolvedLink.label}`;
+  logStepStart(label);
+
+  const sourceTable = quoteIdent(resolvedLink.sourceTable);
+  const targetTable = quoteIdent(resolvedLink.targetTable);
+  const linkTable = quoteIdent(resolvedLink.linkTable);
+  const sourceValueColumn = quoteIdent(resolvedLink.sourceValueColumn);
+  const targetValueColumn = quoteIdent(resolvedLink.targetValueColumn);
+  const sourceLinkColumn = quoteIdent(resolvedLink.sourceLinkColumn);
+  const targetLinkColumn = quoteIdent(resolvedLink.targetLinkColumn);
+  const ordColumn = quoteIdent(resolvedLink.ordColumn);
 
   const sourceRows = await countScalar(client, `SELECT COUNT(*) FROM ${sourceTable}`);
   const expectedSkipped = await countScalar(client, `SELECT COUNT(*) FROM ${sourceTable} s WHERE s.${sourceValueColumn} IS NULL`);
@@ -616,7 +789,7 @@ async function linkRelations(client, link) {
        LIMIT 50`
     );
     if (res.rows.length) {
-      console.log(`[missing-targets] ${link.targetTable}::${link.targetValueColumn.replace(/"/g, '')}: ${res.rows.map((r) => r.missing_value).join(', ')}`);
+      console.log(`[missing-targets] ${resolvedLink.targetTable}::${resolvedLink.targetValueColumn.replace(/"/g, '')}: ${res.rows.map((r) => r.missing_value).join(', ')}`);
     }
   }
 
@@ -630,10 +803,10 @@ async function linkRelations(client, link) {
 
   if (!options.dryRun) await client.query(insertSql);
 
-  console.log(`[integrity] ${link.label}: sourceRows=${sourceRows}, connected=${connected}, skipped=${expectedSkipped + problematicSkipped} (expected=${expectedSkipped}, problematic=${problematicSkipped}), failed=0`);
+  console.log(`[integrity] ${resolvedLink.label}: sourceRows=${sourceRows}, connected=${connected}, skipped=${expectedSkipped + problematicSkipped} (expected=${expectedSkipped}, problematic=${problematicSkipped}), failed=0`);
   logStepEnd(label);
 
-  return { label: link.label, sourceRows, connected, expectedSkipped, problematicSkipped, failed: 0 };
+  return { label: resolvedLink.label, sourceRows, connected, expectedSkipped, problematicSkipped, failed: 0 };
 }
 
 async function linkPointsToMakers(client) {
@@ -765,6 +938,7 @@ async function run() {
       for (const link of RELATION_LINKS) {
         summaries.push(await linkRelations(client, link));
       }
+      summaries.push(await linkSourcesToMakers(client));
       summaries.push(await linkPointsToMakers(client));
 
       const totals = summaries.reduce((acc, item) => {
