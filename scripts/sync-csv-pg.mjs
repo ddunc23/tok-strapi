@@ -255,6 +255,48 @@ function logProgress(label, processed, total) {
   console.log(`[progress] ${label}: ${processed}${suffix}`);
 }
 
+const INSTRUMENT_TERM_SOURCE_HEADERS = [
+  'ID',
+  'Preferred_Label',
+  'Alternative_Label 1',
+  'Alternative_Label 2',
+  'Alternative_Label 3',
+  'Alternative_Label 4',
+  'Alternative_Label 5',
+  'Alternative_Label 6',
+  'Broader 1',
+  'Broader1_ID',
+  'Broader 2',
+  'Broader2_ID',
+  'Broader 3',
+  'Broader3_ID',
+  'Broader 4',
+  'Broader4_ID',
+  'Narrower',
+  'Related_1',
+  'Related1_ID',
+  'Related_2',
+  'Related2_ID',
+  'Related_3',
+  'Related3_ID',
+  'Related_4',
+  'Related4_ID',
+  'Related_5',
+  'Related5_ID',
+  'Related_6',
+  'Related6_ID',
+  'Related_7',
+  'Related7_ID',
+  'Related_8',
+  'Related8_ID',
+  'Wikidata_URI',
+  'AAT_URI',
+  'Additional_Information',
+];
+
+const INSTRUMENT_TERM_BROADER_ID_FIELDS = ['broader_1_id', 'broader_2_id', 'broader_3_id', 'broader_4_id'];
+const INSTRUMENT_TERM_RELATED_ID_FIELDS = ['related_1_id', 'related_2_id', 'related_3_id', 'related_4_id', 'related_5_id', 'related_6_id', 'related_7_id', 'related_8_id'];
+
 const COLLECTIONS = [
   {
     name: 'makersExtended',
@@ -334,6 +376,51 @@ const COLLECTIONS = [
     integerFields: ['maker_id'],
     excludeFields: ['maker_id'],
     keyColumns: ['sources_key', 'manuscripts', 'directories', 'other'],
+  },
+  {
+    name: 'instrumentTerms',
+    table: 'terms',
+    csvFiles: ['vocabularies/instruments.csv'],
+    fieldAliases: {
+      term_id: ['ID'],
+      preferred_label: ['Preferred_Label'],
+      alternative_label_1: ['Alternative_Label 1'],
+      alternative_label_2: ['Alternative_Label 2'],
+      alternative_label_3: ['Alternative_Label 3'],
+      alternative_label_4: ['Alternative_Label 4'],
+      alternative_label_5: ['Alternative_Label 5'],
+      alternative_label_6: ['Alternative_Label 6'],
+      broader_1: ['Broader 1'],
+      broader_1_id: ['Broader1_ID'],
+      broader_2: ['Broader 2'],
+      broader_2_id: ['Broader2_ID'],
+      broader_3: ['Broader 3'],
+      broader_3_id: ['Broader3_ID'],
+      broader_4: ['Broader 4'],
+      broader_4_id: ['Broader4_ID'],
+      narrower: ['Narrower'],
+      related_1: ['Related_1'],
+      related_1_id: ['Related1_ID'],
+      related_2: ['Related_2'],
+      related_2_id: ['Related2_ID'],
+      related_3: ['Related_3'],
+      related_3_id: ['Related3_ID'],
+      related_4: ['Related_4'],
+      related_4_id: ['Related4_ID'],
+      related_5: ['Related_5'],
+      related_5_id: ['Related5_ID'],
+      related_6: ['Related_6'],
+      related_6_id: ['Related6_ID'],
+      related_7: ['Related_7'],
+      related_7_id: ['Related7_ID'],
+      related_8: ['Related_8'],
+      related_8_id: ['Related8_ID'],
+      wikidata_uri: ['Wikidata_URI'],
+      aat_uri: ['AAT_URI'],
+      additional_information: ['Additional_Information'],
+    },
+    excludeFields: INSTRUMENT_TERM_SOURCE_HEADERS,
+    keyColumns: ['term_id'],
   },
 ];
 
@@ -451,8 +538,17 @@ const RELATION_LINKS = [
 ];
 
 function getSelectedCollections() {
+  const matchesCollectionToken = (config, token) => {
+    const variants = new Set([
+      config.name,
+      config.table,
+      String(config.table).replace(/_/g, '-'),
+    ]);
+    return variants.has(token);
+  };
+
   return options.collections
-    ? COLLECTIONS.filter((config) => options.collections.has(config.name) || options.collections.has(config.table))
+    ? COLLECTIONS.filter((config) => [...options.collections].some((token) => matchesCollectionToken(config, token)))
     : COLLECTIONS;
 }
 
@@ -620,6 +716,393 @@ async function hasColumn(client, tableName, columnName) {
     [tableName, columnName]
   );
   return res.rows.length > 0;
+}
+
+async function tableExists(client, tableName) {
+  const res = await client.query(
+    `SELECT 1
+     FROM information_schema.tables
+     WHERE table_schema = 'public'
+       AND table_name = $1
+     LIMIT 1`,
+    [tableName]
+  );
+  return res.rows.length > 0;
+}
+
+function normalizeTermId(value) {
+  if (value === undefined || value === null) return null;
+  const trimmed = String(value).trim();
+  return trimmed ? trimmed : null;
+}
+
+function normalizeText(value) {
+  if (value === undefined || value === null) return null;
+  const trimmed = String(value).trim();
+  return trimmed ? trimmed : null;
+}
+
+async function resolveGenericLinkColumns(client, linkTable, { targetHint, sourceFallback, targetFallback, ordFallback }) {
+  const columns = await getTableColumns(client, linkTable);
+  const idColumns = columns.filter((column) => column.endsWith('_id'));
+
+  const targetMatchers = [
+    `${targetHint}_id`,
+    `_${targetHint}_id`,
+    `${targetHint}_`,
+  ];
+
+  const target =
+    idColumns.find((column) => column === `${targetHint}_id`) ||
+    idColumns.find((column) => column.endsWith(`_${targetHint}_id`)) ||
+    idColumns.find((column) => column.startsWith(`${targetHint}_`)) ||
+    idColumns.find((column) => !column.includes('association') && targetMatchers.some((token) => column.includes(token))) ||
+    idColumns.find((column) => !column.includes('association') && column.includes(targetHint)) ||
+    targetFallback;
+
+  const source =
+    idColumns.find((column) => column !== target && column.includes('association')) ||
+    idColumns.find((column) => column !== target) ||
+    sourceFallback;
+  const ord = columns.find((column) => column.endsWith('_ord')) || ordFallback;
+
+  if (!source || !target || !ord) {
+    throw new Error(`Unable to resolve link columns for ${linkTable}. Found columns: ${columns.join(', ')}`);
+  }
+
+  return { source, target, ord };
+}
+
+async function ensureInstrumentsVocabulary(client) {
+  const vocabTable = quoteIdent('vocabularies');
+  const existing = await client.query(
+    `SELECT id, document_id
+     FROM ${vocabTable}
+     WHERE slug = 'instruments' OR LOWER(name) = 'instruments'
+     ORDER BY id
+     LIMIT 1`
+  );
+
+  if (existing.rows[0]) {
+    return existing.rows[0].id;
+  }
+
+  if (options.dryRun) {
+    console.log('[terms] dry-run: vocabulary "instruments" does not exist and will not be created.');
+    return null;
+  }
+
+  const now = new Date();
+  const inserted = await client.query(
+    `INSERT INTO ${vocabTable} (document_id, name, slug, created_at, updated_at, published_at)
+     VALUES ($1, $2, $3, $4, $4, $4)
+     RETURNING id`,
+    [makeDocumentId(), 'Instruments', 'instruments', now]
+  );
+
+  return inserted.rows[0]?.id ?? null;
+}
+
+async function enrichInstrumentTerms(client) {
+  const termsConfig = COLLECTIONS.find((config) => config.table === 'terms');
+  if (!termsConfig) return;
+
+  const label = 'enrich terms (instruments vocabulary)';
+  logStepStart(label);
+
+  const vocabularyId = await ensureInstrumentsVocabulary(client);
+  if (!vocabularyId) {
+    logStepEnd(label);
+    return;
+  }
+
+  const csvRows = readCsvRecords(termsConfig, options.csvDir).map(stripInternalFields);
+  const csvByTermId = new Map();
+  for (const row of csvRows) {
+    const termId = normalizeTermId(row.term_id);
+    if (!termId || csvByTermId.has(termId)) continue;
+    csvByTermId.set(termId, row);
+  }
+
+  const termRes = await client.query(`SELECT id, term_id FROM ${quoteIdent('terms')} WHERE term_id IS NOT NULL`);
+  const termRowIdByTermId = new Map();
+  for (const row of termRes.rows) {
+    const termId = normalizeTermId(row.term_id);
+    if (!termId || termRowIdByTermId.has(termId)) continue;
+    termRowIdByTermId.set(termId, row.id);
+  }
+
+  const termIds = [...csvByTermId.keys()]
+    .map((termId) => termRowIdByTermId.get(termId))
+    .filter((rowId) => Number.isInteger(rowId));
+
+  if (!termIds.length) {
+    console.log('[terms] instruments enrich: 0 matched terms found in table.');
+    logStepEnd(label);
+    return;
+  }
+
+  const now = new Date();
+
+  if (await hasColumn(client, 'terms', 'vocabulary_id')) {
+    if (!options.dryRun) {
+      await client.query(
+        `UPDATE ${quoteIdent('terms')}
+         SET ${quoteIdent('vocabulary_id')} = $1,
+             ${quoteIdent('updated_at')} = $2
+         WHERE id = ANY($3::int[])`,
+        [vocabularyId, now, termIds]
+      );
+    }
+  } else if (await tableExists(client, 'terms_vocabulary_lnk')) {
+    const linkColumns = await resolveGenericLinkColumns(client, 'terms_vocabulary_lnk', {
+      targetHint: 'vocabulary',
+      sourceFallback: 'term_id',
+      targetFallback: 'vocabulary_id',
+      ordFallback: 'term_ord',
+    });
+
+    if (!options.dryRun) {
+      await client.query(
+        `DELETE FROM ${quoteIdent('terms_vocabulary_lnk')} WHERE ${quoteIdent(linkColumns.source)} = ANY($1::int[])`,
+        [termIds]
+      );
+
+      await client.query(
+        `INSERT INTO ${quoteIdent('terms_vocabulary_lnk')} (${quoteIdent(linkColumns.source)}, ${quoteIdent(linkColumns.target)}, ${quoteIdent(linkColumns.ord)})
+         SELECT UNNEST($1::int[]), $2::int, 1`,
+        [termIds, vocabularyId]
+      );
+    }
+  }
+
+  const parentAssignments = [];
+  const relatedAssignments = [];
+  let missingParent = 0;
+
+  for (const [termId, row] of csvByTermId.entries()) {
+    const sourceRowId = termRowIdByTermId.get(termId);
+    if (!sourceRowId) continue;
+
+    const broaderCandidates = INSTRUMENT_TERM_BROADER_ID_FIELDS
+      .map((field) => normalizeTermId(row[field]))
+      .filter((value) => !!value);
+
+    const parentRowId = broaderCandidates
+      .map((candidate) => termRowIdByTermId.get(candidate))
+      .find((candidate) => Number.isInteger(candidate)) || null;
+
+    if (broaderCandidates.length > 0 && !parentRowId) {
+      missingParent += 1;
+    }
+
+    parentAssignments.push({ sourceRowId, parentRowId });
+
+    for (const relatedField of INSTRUMENT_TERM_RELATED_ID_FIELDS) {
+      const relatedTermId = normalizeTermId(row[relatedField]);
+      if (!relatedTermId) continue;
+      const relatedRowId = termRowIdByTermId.get(relatedTermId);
+      if (!relatedRowId || relatedRowId === sourceRowId) continue;
+      relatedAssignments.push({ sourceRowId, relatedRowId });
+    }
+  }
+
+  if (await hasColumn(client, 'terms', 'parent_id')) {
+    if (!options.dryRun) {
+      for (const assignment of parentAssignments) {
+        await client.query(
+          `UPDATE ${quoteIdent('terms')}
+           SET ${quoteIdent('parent_id')} = $1,
+               ${quoteIdent('updated_at')} = $2
+           WHERE id = $3`,
+          [assignment.parentRowId, now, assignment.sourceRowId]
+        );
+      }
+    }
+  } else if (await tableExists(client, 'terms_parent_lnk')) {
+    const columns = await getTableColumns(client, 'terms_parent_lnk');
+    const idColumns = columns.filter((column) => column.endsWith('_id'));
+    const targetColumn = idColumns.find((column) => column.startsWith('inv_') || column.includes('parent')) || idColumns[1];
+    const sourceColumn = idColumns.find((column) => column !== targetColumn) || idColumns[0];
+    const ordColumn = columns.find((column) => column.endsWith('_ord')) || 'term_ord';
+
+    if (!options.dryRun) {
+      await client.query(
+        `DELETE FROM ${quoteIdent('terms_parent_lnk')} WHERE ${quoteIdent(sourceColumn)} = ANY($1::int[])`,
+        [parentAssignments.map((assignment) => assignment.sourceRowId)]
+      );
+
+      for (const assignment of parentAssignments) {
+        if (!assignment.parentRowId) continue;
+        await client.query(
+          `INSERT INTO ${quoteIdent('terms_parent_lnk')} (${quoteIdent(sourceColumn)}, ${quoteIdent(targetColumn)}, ${quoteIdent(ordColumn)})
+           VALUES ($1, $2, 1)`,
+          [assignment.sourceRowId, assignment.parentRowId]
+        );
+      }
+    }
+  }
+
+  if (await tableExists(client, 'terms_related_terms_lnk')) {
+    const columns = await getTableColumns(client, 'terms_related_terms_lnk');
+    const idColumns = columns.filter((column) => column.endsWith('_id'));
+    const targetColumn = idColumns.find((column) => column.startsWith('inv_')) || idColumns[1];
+    const sourceColumn = idColumns.find((column) => column !== targetColumn) || idColumns[0];
+    const ordColumn = columns.find((column) => column.endsWith('_ord')) || 'term_ord';
+
+    const deduped = [];
+    const seen = new Set();
+    for (const row of relatedAssignments) {
+      const key = `${row.sourceRowId}::${row.relatedRowId}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      deduped.push(row);
+    }
+
+    if (!options.dryRun) {
+      await client.query(
+        `DELETE FROM ${quoteIdent('terms_related_terms_lnk')} WHERE ${quoteIdent(sourceColumn)} = ANY($1::int[])`,
+        [parentAssignments.map((assignment) => assignment.sourceRowId)]
+      );
+
+      for (const row of deduped) {
+        await client.query(
+          `INSERT INTO ${quoteIdent('terms_related_terms_lnk')} (${quoteIdent(sourceColumn)}, ${quoteIdent(targetColumn)}, ${quoteIdent(ordColumn)})
+           VALUES ($1, $2, 1)`,
+          [row.sourceRowId, row.relatedRowId]
+        );
+      }
+    }
+  }
+
+  console.log(`[terms] instruments enrich: ${termIds.length} matched terms, ${missingParent} missing parent links`);
+  logStepEnd(label);
+}
+
+async function syncInstrumentMakerTermAssociationsPg(client) {
+  const label = 'sync maker-term-associations (known/advertised instruments)';
+  logStepStart(label);
+
+  const desiredRes = await client.query(
+    `SELECT DISTINCT
+        m.id AS maker_row_id,
+        t.id AS term_row_id,
+        x.association_type,
+        NULLIF(BTRIM(x.inst_name), '') AS evidence_label
+     FROM (
+       SELECT maker_id, inst_code, inst_name, 'KNOWN'::text AS association_type
+       FROM ${quoteIdent('instruments_known')}
+       UNION ALL
+       SELECT maker_id, inst_code, inst_name, 'ADVERTISED'::text AS association_type
+       FROM ${quoteIdent('instruments_advertised')}
+     ) x
+     JOIN ${quoteIdent('makers-extended')} m ON m.maker_id = x.maker_id
+     JOIN ${quoteIdent('terms')} t ON t.term_id::text = x.inst_code::text
+     WHERE x.maker_id IS NOT NULL AND x.inst_code IS NOT NULL`
+  );
+
+  const associationTable = 'maker_term_associations';
+  const makerLinkTable = 'maker_term_associations_maker_extended_lnk';
+  const termLinkTable = 'maker_term_associations_term_lnk';
+
+  if (!(await tableExists(client, associationTable))) {
+    console.log('[associations] maker_term_associations table not found, skipping association sync.');
+    logStepEnd(label);
+    return;
+  }
+
+  const makerLinkColumns = await resolveGenericLinkColumns(client, makerLinkTable, {
+    targetHint: 'maker_extended',
+    sourceFallback: 'maker_term_association_id',
+    targetFallback: 'maker_extended_id',
+    ordFallback: 'maker_term_association_ord',
+  });
+
+  const termLinkColumns = await resolveGenericLinkColumns(client, termLinkTable, {
+    targetHint: 'term',
+    sourceFallback: 'maker_term_association_id',
+    targetFallback: 'term_id',
+    ordFallback: 'maker_term_association_ord',
+  });
+
+  const existingRes = await client.query(
+    `SELECT
+        a.id AS association_id,
+        a.association_type,
+        a.evidence_label,
+        mk.${quoteIdent(makerLinkColumns.target)} AS maker_row_id,
+        tk.${quoteIdent(termLinkColumns.target)} AS term_row_id
+     FROM ${quoteIdent(associationTable)} a
+     JOIN ${quoteIdent(makerLinkTable)} mk ON mk.${quoteIdent(makerLinkColumns.source)} = a.id
+     JOIN ${quoteIdent(termLinkTable)} tk ON tk.${quoteIdent(termLinkColumns.source)} = a.id`
+  );
+
+  const existingByKey = new Map();
+  for (const row of existingRes.rows) {
+    const key = `${row.maker_row_id}::${row.term_row_id}::${row.association_type}`;
+    if (!existingByKey.has(key)) {
+      existingByKey.set(key, {
+        associationId: row.association_id,
+        evidenceLabel: normalizeText(row.evidence_label),
+      });
+    }
+  }
+
+  const now = new Date();
+  let created = 0;
+  let updated = 0;
+  let processed = 0;
+
+  for (const row of desiredRes.rows) {
+    const key = `${row.maker_row_id}::${row.term_row_id}::${row.association_type}`;
+    const existing = existingByKey.get(key);
+    const evidenceLabel = normalizeText(row.evidence_label);
+
+    if (existing) {
+      if (existing.evidenceLabel !== evidenceLabel && !options.dryRun) {
+        await client.query(
+          `UPDATE ${quoteIdent(associationTable)}
+           SET evidence_label = $1,
+               updated_at = $2
+           WHERE id = $3`,
+          [evidenceLabel, now, existing.associationId]
+        );
+        updated += 1;
+      }
+    } else {
+      if (!options.dryRun) {
+        const insertRes = await client.query(
+          `INSERT INTO ${quoteIdent(associationTable)}
+             (document_id, association_type, evidence_label, created_at, updated_at, published_at)
+           VALUES ($1, $2, $3, $4, $4, $4)
+           RETURNING id`,
+          [makeDocumentId(), row.association_type, evidenceLabel, now]
+        );
+        const associationId = insertRes.rows[0]?.id;
+
+        await client.query(
+          `INSERT INTO ${quoteIdent(makerLinkTable)} (${quoteIdent(makerLinkColumns.source)}, ${quoteIdent(makerLinkColumns.target)}, ${quoteIdent(makerLinkColumns.ord)})
+           VALUES ($1, $2, 1)`,
+          [associationId, row.maker_row_id]
+        );
+
+        await client.query(
+          `INSERT INTO ${quoteIdent(termLinkTable)} (${quoteIdent(termLinkColumns.source)}, ${quoteIdent(termLinkColumns.target)}, ${quoteIdent(termLinkColumns.ord)})
+           VALUES ($1, $2, 1)`,
+          [associationId, row.term_row_id]
+        );
+      }
+      created += 1;
+    }
+
+    processed += 1;
+    if (processed % options.insertBatchSize === 0 || processed === desiredRes.rows.length) {
+      logProgress(label, processed, desiredRes.rows.length);
+    }
+  }
+
+  console.log(`[associations] maker-term-associations: ${created} created, ${updated} updated, desired=${desiredRes.rows.length}`);
+  logStepEnd(label);
 }
 
 async function linkSourcesToMakers(client) {
@@ -910,6 +1393,7 @@ async function run() {
   });
 
   const selectedCollections = getSelectedCollections();
+  const selectedTables = new Set(selectedCollections.map((config) => config.table));
   if (options.collections?.size && !selectedCollections.length) {
     throw new Error(`No matching collections for --collections=${[...options.collections].join(',')}`);
   }
@@ -930,6 +1414,19 @@ async function run() {
       for (const config of selectedCollections) {
         await uploadCollection(client, config);
       }
+    }
+
+    const shouldProcessTerms = selectedTables.has('terms');
+    if (!options.deleteOnly && shouldProcessTerms) {
+      await enrichInstrumentTerms(client);
+    }
+
+    const shouldProcessInstrumentAssociations =
+      selectedTables.has('terms') ||
+      selectedTables.has('instruments_known') ||
+      selectedTables.has('instruments_advertised');
+    if (!options.deleteOnly && shouldProcessInstrumentAssociations) {
+      await syncInstrumentMakerTermAssociationsPg(client);
     }
 
     if (!options.deleteOnly && !options.skipRelations) {

@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "maker_term_associations",
+  "info": {
+    "singularName": "maker-term-association",
+    "pluralName": "maker-term-associations",
+    "displayName": "Maker Term Association",
+    "description": "Contextual link between a maker and a controlled term"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "maker_extended": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::maker-extended.maker-extended",
+      "inversedBy": "term_associations",
+      "required": true
+    },
+    "term": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::term.term",
+      "inversedBy": "maker_associations",
+      "required": true
+    },
+    "association_type": {
+      "type": "enumeration",
+      "enum": [
+        "KNOWN",
+        "ADVERTISED"
+      ],
+      "required": true
+    },
+    "notes": {
+      "type": "text"
+    },
+    "evidence_label": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "source": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sources.sources"
+    }
+  }
+}

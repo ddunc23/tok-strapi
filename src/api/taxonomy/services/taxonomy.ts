@@ -1,0 +1,5 @@
+/**
+ * taxonomy service
+ */
+
+export default () => ({});

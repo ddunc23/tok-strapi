@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vocabularies",
+  "info": {
+    "singularName": "vocabulary",
+    "pluralName": "vocabularies",
+    "displayName": "Vocabulary",
+    "description": "A controlled vocabulary used to organise related terms"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 255
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "terms": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::term.term",
+      "mappedBy": "vocabulary"
+    }
+  }
+}

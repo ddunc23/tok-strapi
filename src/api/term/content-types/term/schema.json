@@ -1,0 +1,194 @@
+{
+  "kind": "collectionType",
+  "collectionName": "terms",
+  "info": {
+    "singularName": "term",
+    "pluralName": "terms",
+    "displayName": "Term",
+    "description": "A term within a controlled vocabulary"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "term_id": {
+      "type": "string",
+      "unique": true,
+      "maxLength": 64
+    },
+    "preferred_label": {
+      "type": "string",
+      "required": true,
+      "maxLength": 510
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "preferred_label",
+      "required": true
+    },
+    "alternative_label_1": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "alternative_label_2": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "alternative_label_3": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "alternative_label_4": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "alternative_label_5": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "alternative_label_6": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "broader_1": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "broader_1_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "broader_2": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "broader_2_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "broader_3": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "broader_3_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "broader_4": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "broader_4_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "narrower": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_1": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_1_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "related_2": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_2_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "related_3": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_3_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "related_4": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_4_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "related_5": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_5_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "related_6": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_6_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "related_7": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_7_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "related_8": {
+      "type": "string",
+      "maxLength": 510
+    },
+    "related_8_id": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "wikidata_uri": {
+      "type": "string"
+    },
+    "aat_uri": {
+      "type": "string"
+    },
+    "additional_information": {
+      "type": "text"
+    },
+    "vocabulary": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vocabulary.vocabulary",
+      "inversedBy": "terms"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::term.term",
+      "inversedBy": "children"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::term.term",
+      "mappedBy": "parent"
+    },
+    "maker_associations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::maker-term-association.maker-term-association",
+      "mappedBy": "term"
+    },
+    "related_terms": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::term.term",
+      "mappedBy": "related_terms"
+    }
+  }
+}

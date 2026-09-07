@@ -708,6 +708,10 @@ export interface ApiMakerExtendedMakerExtended
     sources: Schema.Attribute.Relation<'oneToMany', 'api::sources.sources'>;
     Suffix: Schema.Attribute.String;
     Surname: Schema.Attribute.String;
+    term_associations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::maker-term-association.maker-term-association'
+    >;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -720,6 +724,50 @@ export interface ApiMakerExtendedMakerExtended
     Working_Start_Date: Schema.Attribute.Date;
     Working_Start_Notes: Schema.Attribute.String;
     Working_Start_Type: Schema.Attribute.String;
+  };
+}
+
+export interface ApiMakerTermAssociationMakerTermAssociation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'maker_term_associations';
+  info: {
+    description: 'Contextual link between a maker and a controlled term';
+    displayName: 'Maker Term Association';
+    pluralName: 'maker-term-associations';
+    singularName: 'maker-term-association';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    association_type: Schema.Attribute.Enumeration<['KNOWN', 'ADVERTISED']> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    evidence_label: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::maker-term-association.maker-term-association'
+    > &
+      Schema.Attribute.Private;
+    maker_extended: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::maker-extended.maker-extended'
+    > &
+      Schema.Attribute.Required;
+    notes: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    source: Schema.Attribute.Relation<'manyToOne', 'api::sources.sources'>;
+    term: Schema.Attribute.Relation<'manyToOne', 'api::term.term'> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1064,6 +1112,180 @@ export interface ApiSourcesSources extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTermTerm extends Struct.CollectionTypeSchema {
+  collectionName: 'terms';
+  info: {
+    description: 'A term within a controlled vocabulary';
+    displayName: 'Term';
+    pluralName: 'terms';
+    singularName: 'term';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    aat_uri: Schema.Attribute.String;
+    additional_information: Schema.Attribute.Text;
+    alternative_label_1: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    alternative_label_2: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    alternative_label_3: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    alternative_label_4: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    alternative_label_5: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    alternative_label_6: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    broader_1: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    broader_1_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    broader_2: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    broader_2_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    broader_3: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    broader_3_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    broader_4: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    broader_4_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    children: Schema.Attribute.Relation<'oneToMany', 'api::term.term'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::term.term'> &
+      Schema.Attribute.Private;
+    maker_associations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::maker-term-association.maker-term-association'
+    >;
+    narrower: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    parent: Schema.Attribute.Relation<'manyToOne', 'api::term.term'>;
+    preferred_label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    related_1: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    related_1_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    related_2: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    related_2_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    related_3: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    related_3_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    related_4: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    related_4_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    related_5: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    related_5_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    related_6: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    related_6_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    related_7: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    related_7_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    related_8: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    related_8_id: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    related_terms: Schema.Attribute.Relation<'manyToMany', 'api::term.term'>;
+    slug: Schema.Attribute.UID<'preferred_label'> & Schema.Attribute.Required;
+    term_id: Schema.Attribute.String &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 64;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    vocabulary: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::vocabulary.vocabulary'
+    >;
+    wikidata_uri: Schema.Attribute.String;
+  };
+}
+
 export interface ApiTownLocationTownLocation
   extends Struct.CollectionTypeSchema {
   collectionName: 'town_locations';
@@ -1090,6 +1312,43 @@ export interface ApiTownLocationTownLocation
     publishedAt: Schema.Attribute.DateTime;
     town: Schema.Attribute.String;
     town_location_id: Schema.Attribute.Integer;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiVocabularyVocabulary extends Struct.CollectionTypeSchema {
+  collectionName: 'vocabularies';
+  info: {
+    description: 'A controlled vocabulary used to organise related terms';
+    displayName: 'Vocabulary';
+    pluralName: 'vocabularies';
+    singularName: 'vocabulary';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::vocabulary.vocabulary'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    terms: Schema.Attribute.Relation<'oneToMany', 'api::term.term'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1612,6 +1871,7 @@ declare module '@strapi/strapi' {
       'api::instrument-advertised.instrument-advertised': ApiInstrumentAdvertisedInstrumentAdvertised;
       'api::instrument-known.instrument-known': ApiInstrumentKnownInstrumentKnown;
       'api::maker-extended.maker-extended': ApiMakerExtendedMakerExtended;
+      'api::maker-term-association.maker-term-association': ApiMakerTermAssociationMakerTermAssociation;
       'api::membership.membership': ApiMembershipMembership;
       'api::point.point': ApiPointPoint;
       'api::relation-meta.relation-meta': ApiRelationMetaRelationMeta;
@@ -1620,7 +1880,9 @@ declare module '@strapi/strapi' {
       'api::relation.relation': ApiRelationRelation;
       'api::scanned-relation-match.scanned-relation-match': ApiScannedRelationMatchScannedRelationMatch;
       'api::sources.sources': ApiSourcesSources;
+      'api::term.term': ApiTermTerm;
       'api::town-location.town-location': ApiTownLocationTownLocation;
+      'api::vocabulary.vocabulary': ApiVocabularyVocabulary;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

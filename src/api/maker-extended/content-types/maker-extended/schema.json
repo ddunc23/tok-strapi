@@ -187,6 +187,12 @@
       "target": "api::instrument-known.instrument-known",
       "mappedBy": "maker_extended"
     },
+    "term_associations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::maker-term-association.maker-term-association",
+      "mappedBy": "maker_extended"
+    },
     "relation_targets": {
       "type": "relation",
       "relation": "oneToMany",

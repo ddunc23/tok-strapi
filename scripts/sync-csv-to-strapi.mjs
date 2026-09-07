@@ -106,6 +106,48 @@ const options = {
   ),
 };
 
+const INSTRUMENT_TERM_SOURCE_HEADERS = [
+  'ID',
+  'Preferred_Label',
+  'Alternative_Label 1',
+  'Alternative_Label 2',
+  'Alternative_Label 3',
+  'Alternative_Label 4',
+  'Alternative_Label 5',
+  'Alternative_Label 6',
+  'Broader 1',
+  'Broader1_ID',
+  'Broader 2',
+  'Broader2_ID',
+  'Broader 3',
+  'Broader3_ID',
+  'Broader 4',
+  'Broader4_ID',
+  'Narrower',
+  'Related_1',
+  'Related1_ID',
+  'Related_2',
+  'Related2_ID',
+  'Related_3',
+  'Related3_ID',
+  'Related_4',
+  'Related4_ID',
+  'Related_5',
+  'Related5_ID',
+  'Related_6',
+  'Related6_ID',
+  'Related_7',
+  'Related7_ID',
+  'Related_8',
+  'Related8_ID',
+  'Wikidata_URI',
+  'AAT_URI',
+  'Additional_Information',
+];
+
+const INSTRUMENT_TERM_BROADER_ID_FIELDS = ['broader_1_id', 'broader_2_id', 'broader_3_id', 'broader_4_id'];
+const INSTRUMENT_TERM_RELATED_ID_FIELDS = ['related_1_id', 'related_2_id', 'related_3_id', 'related_4_id', 'related_5_id', 'related_6_id', 'related_7_id', 'related_8_id'];
+
 const COLLECTIONS = [
   {
     name: 'makersExtended',
@@ -192,6 +234,51 @@ const COLLECTIONS = [
     integerFields: ['maker_id', 'inst_code', 'id'],
     excludeFields: ['id'],
     keyFields: ['maker_id', 'inst_code', 'inst_name'],
+  },
+  {
+    name: 'instrumentTerms',
+    endpoint: 'terms',
+    csvFiles: ['vocabularies/instruments.csv'],
+    fieldAliases: {
+      term_id: ['ID'],
+      preferred_label: ['Preferred_Label'],
+      alternative_label_1: ['Alternative_Label 1'],
+      alternative_label_2: ['Alternative_Label 2'],
+      alternative_label_3: ['Alternative_Label 3'],
+      alternative_label_4: ['Alternative_Label 4'],
+      alternative_label_5: ['Alternative_Label 5'],
+      alternative_label_6: ['Alternative_Label 6'],
+      broader_1: ['Broader 1'],
+      broader_1_id: ['Broader1_ID'],
+      broader_2: ['Broader 2'],
+      broader_2_id: ['Broader2_ID'],
+      broader_3: ['Broader 3'],
+      broader_3_id: ['Broader3_ID'],
+      broader_4: ['Broader 4'],
+      broader_4_id: ['Broader4_ID'],
+      narrower: ['Narrower'],
+      related_1: ['Related_1'],
+      related_1_id: ['Related1_ID'],
+      related_2: ['Related_2'],
+      related_2_id: ['Related2_ID'],
+      related_3: ['Related_3'],
+      related_3_id: ['Related3_ID'],
+      related_4: ['Related_4'],
+      related_4_id: ['Related4_ID'],
+      related_5: ['Related_5'],
+      related_5_id: ['Related5_ID'],
+      related_6: ['Related_6'],
+      related_6_id: ['Related6_ID'],
+      related_7: ['Related_7'],
+      related_7_id: ['Related7_ID'],
+      related_8: ['Related_8'],
+      related_8_id: ['Related8_ID'],
+      wikidata_uri: ['Wikidata_URI'],
+      aat_uri: ['AAT_URI'],
+      additional_information: ['Additional_Information'],
+    },
+    excludeFields: INSTRUMENT_TERM_SOURCE_HEADERS,
+    keyFields: ['term_id'],
   },
 ];
 
@@ -824,6 +911,247 @@ async function uploadCollection(config) {
   );
 }
 
+function normalizeTermId(value) {
+  if (value === undefined || value === null) return null;
+  const trimmed = String(value).trim();
+  return trimmed ? trimmed : null;
+}
+
+function normalizeCsvText(value) {
+  if (value === undefined || value === null) return null;
+  const trimmed = String(value).trim();
+  return trimmed ? trimmed : null;
+}
+
+function getRelationDocumentId(value) {
+  if (!value) return null;
+  if (typeof value === 'string') return value;
+  if (Array.isArray(value)) return null;
+  if (value.documentId) return value.documentId;
+  if (value.data?.documentId) return value.data.documentId;
+  return null;
+}
+
+async function ensureInstrumentsVocabulary() {
+  const vocabularies = await fetchAll('vocabularies');
+  const existing = vocabularies.find((row) => {
+    const slug = getFieldValue(row, 'slug');
+    const name = String(getFieldValue(row, 'name') || '').trim().toLowerCase();
+    return slug === 'instruments' || name === 'instruments';
+  });
+
+  const existingDocumentId = getDocumentId(existing);
+  if (existingDocumentId) return existingDocumentId;
+
+  if (options.dryRun) {
+    console.log('[terms] dry-run: vocabulary "instruments" does not exist and will not be created.');
+    return null;
+  }
+
+  await createEntry('vocabularies', { name: 'Instruments', slug: 'instruments' });
+
+  const reloaded = await fetchAll('vocabularies');
+  const created = reloaded.find((row) => getFieldValue(row, 'slug') === 'instruments');
+  return getDocumentId(created);
+}
+
+async function enrichInstrumentTerms() {
+  const termsConfig = COLLECTIONS.find((config) => config.endpoint === 'terms');
+  if (!termsConfig) return;
+
+  const vocabularyDocumentId = await ensureInstrumentsVocabulary();
+  if (!vocabularyDocumentId) return;
+
+  const rows = readCsvRecords(termsConfig, options.csvDir);
+  const csvByTermId = new Map();
+  for (const row of rows) {
+    const termId = normalizeTermId(row.term_id);
+    if (!termId || csvByTermId.has(termId)) continue;
+    csvByTermId.set(termId, row);
+  }
+
+  const termRows = await fetchAll('terms');
+  const termDocumentIdByTermId = new Map();
+  for (const row of termRows) {
+    const termId = normalizeTermId(getFieldValue(row, 'term_id'));
+    const documentId = getDocumentId(row);
+    if (!termId || !documentId || termDocumentIdByTermId.has(termId)) continue;
+    termDocumentIdByTermId.set(termId, documentId);
+  }
+
+  let updated = 0;
+  let missingDocument = 0;
+  let missingParent = 0;
+
+  for (const [termId, row] of csvByTermId.entries()) {
+    const termDocumentId = termDocumentIdByTermId.get(termId);
+    if (!termDocumentId) {
+      missingDocument += 1;
+      continue;
+    }
+
+    const broaderCandidates = INSTRUMENT_TERM_BROADER_ID_FIELDS
+      .map((field) => normalizeTermId(row[field]))
+      .filter(Boolean);
+    const parentDocumentId = broaderCandidates
+      .map((candidate) => termDocumentIdByTermId.get(candidate))
+      .find(Boolean);
+    if (broaderCandidates.length > 0 && !parentDocumentId) {
+      missingParent += 1;
+    }
+
+    const relatedDocumentIds = [...new Set(
+      INSTRUMENT_TERM_RELATED_ID_FIELDS
+        .map((field) => normalizeTermId(row[field]))
+        .filter(Boolean)
+        .map((value) => termDocumentIdByTermId.get(value))
+        .filter(Boolean)
+        .filter((value) => value !== termDocumentId)
+    )];
+
+    const data = {
+      vocabulary: { connect: [vocabularyDocumentId] },
+      related_terms: { set: relatedDocumentIds },
+    };
+
+    if (parentDocumentId) {
+      data.parent = { connect: [parentDocumentId] };
+    } else if (broaderCandidates.length === 0) {
+      data.parent = null;
+    }
+
+    await updateEntry('terms', termDocumentId, data);
+    updated += 1;
+  }
+
+  console.log(`[terms] instruments enrich: ${updated} updated, ${missingDocument} missing term documents, ${missingParent} missing parent links`);
+}
+
+async function syncInstrumentMakerTermAssociations() {
+  const knownConfig = COLLECTIONS.find((config) => config.endpoint === 'instruments-known');
+  const advertisedConfig = COLLECTIONS.find((config) => config.endpoint === 'instruments-advertised');
+  if (!knownConfig || !advertisedConfig) return;
+
+  const makerRows = await fetchAll('makers-extended', { fields: ['Maker_ID'] });
+  const termRows = await fetchAll('terms', { fields: ['term_id'] });
+
+  const makerDocumentIdByMakerId = new Map();
+  for (const maker of makerRows) {
+    const makerId = normalizeTermId(getFieldValue(maker, 'Maker_ID'));
+    const documentId = getDocumentId(maker);
+    if (!makerId || !documentId || makerDocumentIdByMakerId.has(makerId)) continue;
+    makerDocumentIdByMakerId.set(makerId, documentId);
+  }
+
+  const termDocumentIdByTermId = new Map();
+  for (const term of termRows) {
+    const termId = normalizeTermId(getFieldValue(term, 'term_id'));
+    const documentId = getDocumentId(term);
+    if (!termId || !documentId || termDocumentIdByTermId.has(termId)) continue;
+    termDocumentIdByTermId.set(termId, documentId);
+  }
+
+  const desiredByKey = new Map();
+  const missingStats = {
+    missingMakerId: 0,
+    missingTermId: 0,
+    makerNotFound: 0,
+    termNotFound: 0,
+  };
+
+  const collectDesired = (rows, associationType) => {
+    for (const row of rows) {
+      const makerId = normalizeTermId(row.maker_id);
+      const termId = normalizeTermId(row.inst_code);
+      if (!makerId) {
+        missingStats.missingMakerId += 1;
+        continue;
+      }
+      if (!termId) {
+        missingStats.missingTermId += 1;
+        continue;
+      }
+
+      const makerDocumentId = makerDocumentIdByMakerId.get(makerId);
+      if (!makerDocumentId) {
+        missingStats.makerNotFound += 1;
+        continue;
+      }
+
+      const termDocumentId = termDocumentIdByTermId.get(termId);
+      if (!termDocumentId) {
+        missingStats.termNotFound += 1;
+        continue;
+      }
+
+      const key = `${makerDocumentId}::${termDocumentId}::${associationType}`;
+      if (!desiredByKey.has(key)) {
+        desiredByKey.set(key, {
+          makerDocumentId,
+          termDocumentId,
+          associationType,
+          evidenceLabel: normalizeCsvText(row.inst_name),
+        });
+      }
+    }
+  };
+
+  collectDesired(readCsvRecords(knownConfig, options.csvDir), 'KNOWN');
+  collectDesired(readCsvRecords(advertisedConfig, options.csvDir), 'ADVERTISED');
+
+  const associationRows = await fetchAll('maker-term-associations', {
+    'fields[0]': 'association_type',
+    'fields[1]': 'evidence_label',
+    'populate[maker_extended][fields][0]': 'documentId',
+    'populate[term][fields][0]': 'documentId',
+  });
+
+  const existingByKey = new Map();
+  for (const row of associationRows) {
+    const associationDocumentId = getDocumentId(row);
+    const makerDocumentId = getRelationDocumentId(getFieldValue(row, 'maker_extended') ?? row?.maker_extended);
+    const termDocumentId = getRelationDocumentId(getFieldValue(row, 'term') ?? row?.term);
+    const associationType = normalizeCsvText(getFieldValue(row, 'association_type'));
+    if (!associationDocumentId || !makerDocumentId || !termDocumentId || !associationType) continue;
+
+    const key = `${makerDocumentId}::${termDocumentId}::${associationType}`;
+    if (!existingByKey.has(key)) {
+      existingByKey.set(key, {
+        documentId: associationDocumentId,
+        evidenceLabel: normalizeCsvText(getFieldValue(row, 'evidence_label')),
+      });
+    }
+  }
+
+  let created = 0;
+  let updated = 0;
+
+  for (const [key, desired] of desiredByKey.entries()) {
+    const existing = existingByKey.get(key);
+    if (existing) {
+      if (existing.evidenceLabel !== desired.evidenceLabel) {
+        await updateEntry('maker-term-associations', existing.documentId, {
+          evidence_label: desired.evidenceLabel,
+        });
+        updated += 1;
+      }
+      continue;
+    }
+
+    await createEntry('maker-term-associations', {
+      maker_extended: { connect: [desired.makerDocumentId] },
+      term: { connect: [desired.termDocumentId] },
+      association_type: desired.associationType,
+      evidence_label: desired.evidenceLabel,
+    });
+    created += 1;
+  }
+
+  console.log(
+    `[associations] maker-term-associations: ${created} created, ${updated} updated, skipped missing maker_id=${missingStats.missingMakerId}, missing inst_code=${missingStats.missingTermId}, maker not found=${missingStats.makerNotFound}, term not found=${missingStats.termNotFound}`
+  );
+}
+
 function makeMapByField(records, fieldName) {
   const map = new Map();
 
@@ -843,9 +1171,13 @@ function makeMapByField(records, fieldName) {
   return map;
 }
 
-async function clearAllRelations() {
+async function clearAllRelations(selectedEndpoints = null) {
   const relationFieldsToClear = {};
   for (const linkConfig of RELATION_LINKS) {
+    if (selectedEndpoints && !selectedEndpoints.has(linkConfig.sourceEndpoint)) {
+      continue;
+    }
+
     const endpoint = linkConfig.sourceEndpoint;
     const field = linkConfig.connectionField;
     if (!relationFieldsToClear[endpoint]) {
@@ -854,6 +1186,13 @@ async function clearAllRelations() {
     if (!relationFieldsToClear[endpoint].includes(field)) {
       relationFieldsToClear[endpoint].push(field);
     }
+  }
+
+  if ((!selectedEndpoints || selectedEndpoints.has('relations')) && !relationFieldsToClear.relations) {
+    relationFieldsToClear.relations = [];
+  }
+  if ((!selectedEndpoints || selectedEndpoints.has('relations')) && !relationFieldsToClear.relations.includes('target_maker_extended')) {
+    relationFieldsToClear.relations.push('target_maker_extended');
   }
 
   for (const [endpoint, fieldsToClean] of Object.entries(relationFieldsToClear)) {
@@ -1217,6 +1556,7 @@ async function run() {
         (config) => options.collections.has(config.name) || options.collections.has(config.endpoint)
       )
     : COLLECTIONS;
+  const selectedEndpoints = new Set(selectedCollections.map((config) => config.endpoint));
 
   if (options.collections?.size && !selectedCollections.length) {
     throw new Error(
@@ -1240,17 +1580,38 @@ async function run() {
     }
   }
 
+  const shouldProcessTerms = selectedCollections.some((config) => config.endpoint === 'terms');
+  if (!options.deleteOnly && shouldProcessTerms) {
+    await enrichInstrumentTerms();
+  }
+
+  const shouldProcessInstrumentAssociations = selectedCollections.some(
+    (config) => config.endpoint === 'instruments-known' || config.endpoint === 'instruments-advertised' || config.endpoint === 'terms'
+  );
+  if (!options.deleteOnly && shouldProcessInstrumentAssociations) {
+    await syncInstrumentMakerTermAssociations();
+  }
+
   if (!options.deleteOnly && !options.skipRelations) {
     if (options.clearRelationsOnly) {
-      await clearAllRelations();
+      await clearAllRelations(options.collections?.size ? selectedEndpoints : null);
     }
 
-    for (const linkConfig of RELATION_LINKS) {
+    const relationLinksToRun = options.collections?.size
+      ? RELATION_LINKS.filter((linkConfig) => selectedEndpoints.has(linkConfig.sourceEndpoint))
+      : RELATION_LINKS;
+
+    for (const linkConfig of relationLinksToRun) {
       await connectRelation(linkConfig);
     }
 
-    await connectTargetMakers();
-    await backfillMissingTargetMakersExtended();
+    const shouldRunTargetMakerSteps = !options.collections?.size || selectedEndpoints.has('relations');
+    if (shouldRunTargetMakerSteps) {
+      await connectTargetMakers();
+      await backfillMissingTargetMakersExtended();
+    } else {
+      console.log('[connect] relations -> makers-extended (target_maker_extended): skipped (relations not selected)');
+    }
 
     const integritySummary = printIntegrityReport();
     if (options.reportMissingTargets) {

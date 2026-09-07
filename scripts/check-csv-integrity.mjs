@@ -67,6 +67,26 @@ const CSV_CONFIGS = [
     integerFields: ['maker_id', 'inst_code'],
     foreignKeys: { maker_id: 'makers-extended::Maker_ID' },
   },
+  {
+    name: 'terms',
+    csvFiles: ['vocabularies/instruments.csv'],
+    keyFields: ['ID'],
+    requiredFields: ['ID', 'Preferred_Label'],
+    foreignKeys: {
+      Broader1_ID: 'terms::ID',
+      Broader2_ID: 'terms::ID',
+      Broader3_ID: 'terms::ID',
+      Broader4_ID: 'terms::ID',
+      Related1_ID: 'terms::ID',
+      Related2_ID: 'terms::ID',
+      Related3_ID: 'terms::ID',
+      Related4_ID: 'terms::ID',
+      Related5_ID: 'terms::ID',
+      Related6_ID: 'terms::ID',
+      Related7_ID: 'terms::ID',
+      Related8_ID: 'terms::ID',
+    },
+  },
 ];
 
 function findCsvPath(candidates) {
@@ -191,7 +211,7 @@ async function checkIntegrity() {
   console.log(`[integrity] checking CSV data in: ${CSV_DIR}\n`);
 
   const allData = {};
-  const loadOrder = ['makers-extended', 'town-locations', 'guilds', 'addresses', 'memberships', 'relations', 'instruments-known', 'instruments-advertised'];
+  const loadOrder = ['makers-extended', 'town-locations', 'guilds', 'addresses', 'memberships', 'relations', 'instruments-known', 'instruments-advertised', 'terms'];
 
   // Load and validate each collection
   for (const collectionName of loadOrder) {
