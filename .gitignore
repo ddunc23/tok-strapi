@@ -132,3 +132,4 @@ build
 
 # Allow
 !data/csv/*
+!data/csv/vocabularies/*
