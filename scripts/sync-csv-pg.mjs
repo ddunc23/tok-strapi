@@ -157,6 +157,7 @@ function applyFieldAliases(record, fieldAliases = {}) {
     for (const alias of aliases) {
       if (next[alias] !== null && next[alias] !== undefined && next[alias] !== '') {
         next[canonicalField] = next[alias];
+        if (alias !== canonicalField) delete next[alias];
         break;
       }
     }
@@ -356,17 +357,29 @@ const COLLECTIONS = [
   {
     name: 'instrumentsKnown',
     table: 'instruments_known',
-    csvFiles: ['instrument-known.csv', 'instrument_known.csv'],
-    integerFields: ['maker_id', 'inst_code', 'id'],
+    csvFiles: ['known-instruments.csv', 'instrument-known.csv', 'instrument_known.csv'],
+    integerFields: ['maker_id', 'inst_code', 'id', '__term_id'],
     excludeFields: ['id'],
+    fieldAliases: {
+      maker_id: ['Maker_ID'],
+      inst_code: ['Inst_code'],
+      inst_name: ['Inst_name'],
+      __term_id: ['Inst_ID', 'id'],
+    },
     keyColumns: ['maker_id', 'inst_code', 'inst_name'],
   },
   {
     name: 'instrumentsAdvertised',
     table: 'instruments_advertised',
-    csvFiles: ['instrument-advertised.csv'],
-    integerFields: ['maker_id', 'inst_code', 'id'],
+    csvFiles: ['advertised-instruments.csv', 'instrument-advertised.csv'],
+    integerFields: ['maker_id', 'inst_code', 'id', '__term_id'],
     excludeFields: ['id'],
+    fieldAliases: {
+      maker_id: ['Maker_ID'],
+      inst_code: ['Inst_code'],
+      inst_name: ['Inst_name'],
+      __term_id: ['Inst_ID', 'id'],
+    },
     keyColumns: ['maker_id', 'inst_code', 'inst_name'],
   },
   {
@@ -611,7 +624,30 @@ async function uploadCollection(client, config) {
   const label = `upload ${config.table}`;
   logStepStart(label);
   const csvRows = readCsvRecords(config, options.csvDir).map(stripInternalFields);
+  const tableColumns = await getTableColumns(client, config.table);
+  const tableColumnSet = new Set(tableColumns);
   const now = new Date();
+
+  const missingKeyColumns = config.keyColumns.filter((column) => !tableColumnSet.has(column));
+  if (missingKeyColumns.length) {
+    throw new Error(
+      `[upload] ${config.table} is missing required key column(s): ${missingKeyColumns.join(', ')}`
+    );
+  }
+
+  const droppedColumnsByConfig = new Map();
+  const sanitizeRowForTable = (row) => {
+    const sanitized = {};
+    for (const [column, value] of Object.entries(row)) {
+      if (tableColumnSet.has(column)) {
+        sanitized[column] = value;
+      } else {
+        const count = droppedColumnsByConfig.get(column) ?? 0;
+        droppedColumnsByConfig.set(column, count + 1);
+      }
+    }
+    return sanitized;
+  };
 
   const existingMap = options.deleteExisting || options.deleteOnly || options.relationsOnly
     ? new Map()
@@ -626,7 +662,8 @@ async function uploadCollection(client, config) {
   const seenKeys = new Set();
   let processed = 0;
 
-  for (const row of csvRows) {
+  for (const rawRow of csvRows) {
+    const row = sanitizeRowForTable(rawRow);
     const key = makeRecordKey(row, config.keyColumns);
     if (!key) {
       skipped += 1;
@@ -672,6 +709,14 @@ async function uploadCollection(client, config) {
 
   if (inserts.length && !options.dryRun) {
     await insertBatch(client, config.table, inserts);
+  }
+
+  if (droppedColumnsByConfig.size) {
+    const droppedSummary = [...droppedColumnsByConfig.entries()]
+      .sort((a, b) => a[0].localeCompare(b[0]))
+      .map(([column, count]) => `${column}(${count})`)
+      .join(', ');
+    console.log(`[upload] ${config.table}: ignored non-table columns from CSV payload: ${droppedSummary}`);
   }
 
   console.log(`[upload] ${config.table}: ${created} created, ${updated} updated, ${skipped} skipped, ${duplicate} duplicate, ${failed} failed`);
@@ -983,23 +1028,12 @@ async function syncInstrumentMakerTermAssociationsPg(client) {
   const label = 'sync maker-term-associations (known/advertised instruments)';
   logStepStart(label);
 
-  const desiredRes = await client.query(
-    `SELECT DISTINCT
-        m.id AS maker_row_id,
-        t.id AS term_row_id,
-        x.association_type,
-        NULLIF(BTRIM(x.inst_name), '') AS evidence_label
-     FROM (
-       SELECT maker_id, inst_code, inst_name, 'KNOWN'::text AS association_type
-       FROM ${quoteIdent('instruments_known')}
-       UNION ALL
-       SELECT maker_id, inst_code, inst_name, 'ADVERTISED'::text AS association_type
-       FROM ${quoteIdent('instruments_advertised')}
-     ) x
-     JOIN ${quoteIdent('makers-extended')} m ON m.maker_id = x.maker_id
-     JOIN ${quoteIdent('terms')} t ON t.term_id::text = x.inst_code::text
-     WHERE x.maker_id IS NOT NULL AND x.inst_code IS NOT NULL`
-  );
+  const knownConfig = COLLECTIONS.find((config) => config.table === 'instruments_known');
+  const advertisedConfig = COLLECTIONS.find((config) => config.table === 'instruments_advertised');
+  if (!knownConfig || !advertisedConfig) {
+    logStepEnd(label);
+    return;
+  }
 
   const associationTable = 'maker_term_associations';
   const makerLinkTable = 'maker_term_associations_maker_extended_lnk';
@@ -1024,6 +1058,75 @@ async function syncInstrumentMakerTermAssociationsPg(client) {
     targetFallback: 'term_id',
     ordFallback: 'maker_term_association_ord',
   });
+
+  const makerRes = await client.query(
+    `SELECT id, maker_id FROM ${quoteIdent('makers-extended')} WHERE maker_id IS NOT NULL`
+  );
+  const termRes = await client.query(
+    `SELECT id, term_id FROM ${quoteIdent('terms')} WHERE term_id IS NOT NULL`
+  );
+
+  const makerRowIdByMakerId = new Map();
+  for (const row of makerRes.rows) {
+    const makerId = normalizeTermId(row.maker_id);
+    if (!makerId || makerRowIdByMakerId.has(makerId)) continue;
+    makerRowIdByMakerId.set(makerId, row.id);
+  }
+
+  const termRowIdByTermId = new Map();
+  for (const row of termRes.rows) {
+    const termId = normalizeTermId(row.term_id);
+    if (!termId || termRowIdByTermId.has(termId)) continue;
+    termRowIdByTermId.set(termId, row.id);
+  }
+
+  const desiredByKey = new Map();
+  const missingStats = {
+    missingMakerId: 0,
+    missingTermId: 0,
+    makerNotFound: 0,
+    termNotFound: 0,
+  };
+
+  const collectDesired = (rows, associationType) => {
+    for (const row of rows) {
+      const makerId = normalizeTermId(row.maker_id);
+      const termId = normalizeTermId(row.__term_id ?? row.inst_code);
+      if (!makerId) {
+        missingStats.missingMakerId += 1;
+        continue;
+      }
+      if (!termId) {
+        missingStats.missingTermId += 1;
+        continue;
+      }
+
+      const makerRowId = makerRowIdByMakerId.get(makerId);
+      if (!makerRowId) {
+        missingStats.makerNotFound += 1;
+        continue;
+      }
+
+      const termRowId = termRowIdByTermId.get(termId);
+      if (!termRowId) {
+        missingStats.termNotFound += 1;
+        continue;
+      }
+
+      const key = `${makerRowId}::${termRowId}::${associationType}`;
+      if (!desiredByKey.has(key)) {
+        desiredByKey.set(key, {
+          maker_row_id: makerRowId,
+          term_row_id: termRowId,
+          association_type: associationType,
+          evidence_label: normalizeText(row.inst_name),
+        });
+      }
+    }
+  };
+
+  collectDesired(readCsvRecords(knownConfig, options.csvDir), 'KNOWN');
+  collectDesired(readCsvRecords(advertisedConfig, options.csvDir), 'ADVERTISED');
 
   const existingRes = await client.query(
     `SELECT
@@ -1051,9 +1154,10 @@ async function syncInstrumentMakerTermAssociationsPg(client) {
   const now = new Date();
   let created = 0;
   let updated = 0;
+  let deleted = 0;
   let processed = 0;
 
-  for (const row of desiredRes.rows) {
+  for (const row of desiredByKey.values()) {
     const key = `${row.maker_row_id}::${row.term_row_id}::${row.association_type}`;
     const existing = existingByKey.get(key);
     const evidenceLabel = normalizeText(row.evidence_label);
@@ -1096,12 +1200,32 @@ async function syncInstrumentMakerTermAssociationsPg(client) {
     }
 
     processed += 1;
-    if (processed % options.insertBatchSize === 0 || processed === desiredRes.rows.length) {
-      logProgress(label, processed, desiredRes.rows.length);
+    if (processed % options.insertBatchSize === 0 || processed === desiredByKey.size) {
+      logProgress(label, processed, desiredByKey.size);
     }
   }
 
-  console.log(`[associations] maker-term-associations: ${created} created, ${updated} updated, desired=${desiredRes.rows.length}`);
+  for (const [key, existing] of existingByKey.entries()) {
+    if (desiredByKey.has(key)) continue;
+
+    if (!options.dryRun) {
+      await client.query(
+        `DELETE FROM ${quoteIdent(makerLinkTable)} WHERE ${quoteIdent(makerLinkColumns.source)} = $1`,
+        [existing.associationId]
+      );
+      await client.query(
+        `DELETE FROM ${quoteIdent(termLinkTable)} WHERE ${quoteIdent(termLinkColumns.source)} = $1`,
+        [existing.associationId]
+      );
+      await client.query(`DELETE FROM ${quoteIdent(associationTable)} WHERE id = $1`, [existing.associationId]);
+    }
+
+    deleted += 1;
+  }
+
+  console.log(
+    `[associations] maker-term-associations: ${created} created, ${updated} updated, ${deleted} deleted, desired=${desiredByKey.size}, skipped missing maker_id=${missingStats.missingMakerId}, missing term id=${missingStats.missingTermId}, maker not found=${missingStats.makerNotFound}, term not found=${missingStats.termNotFound}`
+  );
   logStepEnd(label);
 }
 

@@ -473,43 +473,6 @@ export interface ApiAddressAddress extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiDisambiguatedRelationDisambiguatedRelation
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'disambiguated_relations';
-  info: {
-    description: 'Disambiguated relationships linking to specific makers';
-    displayName: 'Disambiguated Relation';
-    pluralName: 'disambiguated-relations';
-    singularName: 'disambiguated-relation';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    is_auto_disambiguation: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::disambiguated-relation.disambiguated-relation'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    relation_id: Schema.Attribute.Integer;
-    target_maker_extended: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::maker-extended.maker-extended'
-    >;
-    target_maker_id: Schema.Attribute.Integer;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiGuildGuild extends Struct.CollectionTypeSchema {
   collectionName: 'guilds';
   info: {
@@ -562,11 +525,16 @@ export interface ApiInstrumentAdvertisedInstrumentAdvertised
     draftAndPublish: false;
   };
   attributes: {
+    advertised_instrument_notes: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     inst_code: Schema.Attribute.Integer;
     inst_name: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    inst_name_original: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 510;
       }>;
@@ -609,6 +577,11 @@ export interface ApiInstrumentKnownInstrumentKnown
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 510;
       }>;
+    inst_name_original: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 510;
+      }>;
+    known_instrument_notes: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -658,10 +631,6 @@ export interface ApiMakerExtendedMakerExtended
     Date_2: Schema.Attribute.Date;
     Death_Date: Schema.Attribute.Date;
     Death_Date_Notes: Schema.Attribute.String;
-    disambiguated_relations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::disambiguated-relation.disambiguated-relation'
-    >;
     Disambiguation_Numeral: Schema.Attribute.String;
     Establishment_Date: Schema.Attribute.Date;
     Establishment_Date_Notes: Schema.Attribute.String;
@@ -840,131 +809,6 @@ export interface ApiPointPoint extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiRelationMetaRelationMeta
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'relation_metas';
-  info: {
-    description: 'Metadata about relations for review tracking';
-    displayName: 'Relation Metadata';
-    pluralName: 'relation-metas';
-    singularName: 'relation-meta';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    is_marked_for_review: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::relation-meta.relation-meta'
-    > &
-      Schema.Attribute.Private;
-    notes: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 256;
-      }>;
-    publishedAt: Schema.Attribute.DateTime;
-    relation: Schema.Attribute.Relation<'oneToOne', 'api::relation.relation'>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiRelationTypeMetaRelationTypeMeta
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'relation_type_metas';
-  info: {
-    description: 'Additional metadata for relation types';
-    displayName: 'Relation Type Metadata';
-    pluralName: 'relation-type-metas';
-    singularName: 'relation-type-meta';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    activity_for: Schema.Attribute.Enumeration<['MAP_MAKING']>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    gender_anchor: Schema.Attribute.Enumeration<['M', 'F']>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::relation-type-meta.relation-type-meta'
-    > &
-      Schema.Attribute.Private;
-    no_in_sequence: Schema.Attribute.Integer;
-    publishedAt: Schema.Attribute.DateTime;
-    relation_qualifier: Schema.Attribute.Enumeration<
-      [
-        'MARRIAGE',
-        'TAKEN_OVER',
-        'AMALGAMATED',
-        'INCORPORATED',
-        'SOLD',
-        'ASSETS_BOUGHT',
-        'ABSORBED',
-        'BOUGHT',
-        'PARTIAL',
-        'BOUGHT_ASSETS',
-      ]
-    >;
-    relations: Schema.Attribute.Relation<'oneToMany', 'api::relation.relation'>;
-    role: Schema.Attribute.Enumeration<
-      ['DIRECTOR', 'FOREMAN', 'MANAGER', 'AGENT']
-    >;
-    uncertainty: Schema.Attribute.Enumeration<
-      ['PROBABLY', 'SAID', 'QUERY?', 'POSSIBLY', 'ASSUMED', 'ADDRESS']
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiRelationTypeRelationType
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'relation_types';
-  info: {
-    description: 'Types of relationships between makers';
-    displayName: 'Relation Type';
-    pluralName: 'relation-types';
-    singularName: 'relation-type';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::relation-type.relation-type'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    relation_code: Schema.Attribute.Integer;
-    relation_description: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 64;
-      }>;
-    relations: Schema.Attribute.Relation<'oneToMany', 'api::relation.relation'>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiRelationRelation extends Struct.CollectionTypeSchema {
   collectionName: 'relations';
   info: {
@@ -1002,62 +846,12 @@ export interface ApiRelationRelation extends Struct.CollectionTypeSchema {
         maxLength: 510;
       }>;
     relation_id: Schema.Attribute.Integer & Schema.Attribute.Unique;
-    relation_meta: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::relation-meta.relation-meta'
-    >;
-    relation_type: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::relation-type.relation-type'
-    >;
     relation_type_id: Schema.Attribute.Integer;
-    relation_type_meta: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::relation-type-meta.relation-type-meta'
-    >;
-    scanned_matches: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::scanned-relation-match.scanned-relation-match'
-    >;
     target_maker_extended: Schema.Attribute.Relation<
       'manyToOne',
       'api::maker-extended.maker-extended'
     >;
     target_maker_id: Schema.Attribute.Integer;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiScannedRelationMatchScannedRelationMatch
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'scanned_relation_matches';
-  info: {
-    description: 'Automatically scanned potential matches for relations';
-    displayName: 'Scanned Relation Match';
-    pluralName: 'scanned-relation-matches';
-    singularName: 'scanned-relation-match';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::scanned-relation-match.scanned-relation-match'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    relation: Schema.Attribute.Relation<'manyToOne', 'api::relation.relation'>;
-    target_maker_extended: Schema.Attribute.Relation<
-      'manyToOne',
-      'api::maker-extended.maker-extended'
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1866,7 +1660,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::address.address': ApiAddressAddress;
-      'api::disambiguated-relation.disambiguated-relation': ApiDisambiguatedRelationDisambiguatedRelation;
       'api::guild.guild': ApiGuildGuild;
       'api::instrument-advertised.instrument-advertised': ApiInstrumentAdvertisedInstrumentAdvertised;
       'api::instrument-known.instrument-known': ApiInstrumentKnownInstrumentKnown;
@@ -1874,11 +1667,7 @@ declare module '@strapi/strapi' {
       'api::maker-term-association.maker-term-association': ApiMakerTermAssociationMakerTermAssociation;
       'api::membership.membership': ApiMembershipMembership;
       'api::point.point': ApiPointPoint;
-      'api::relation-meta.relation-meta': ApiRelationMetaRelationMeta;
-      'api::relation-type-meta.relation-type-meta': ApiRelationTypeMetaRelationTypeMeta;
-      'api::relation-type.relation-type': ApiRelationTypeRelationType;
       'api::relation.relation': ApiRelationRelation;
-      'api::scanned-relation-match.scanned-relation-match': ApiScannedRelationMatchScannedRelationMatch;
       'api::sources.sources': ApiSourcesSources;
       'api::term.term': ApiTermTerm;
       'api::town-location.town-location': ApiTownLocationTownLocation;

@@ -222,17 +222,29 @@ const COLLECTIONS = [
   {
     name: 'instrumentsKnown',
     endpoint: 'instruments-known',
-    csvFiles: ['instrument-known.csv', 'instrument_known.csv'],
-    integerFields: ['maker_id', 'inst_code', 'id'],
+    csvFiles: ['known-instruments.csv', 'instrument-known.csv', 'instrument_known.csv'],
+    integerFields: ['maker_id', 'inst_code', 'id', '__term_id'],
     excludeFields: ['id'],
+    fieldAliases: {
+      maker_id: ['Maker_ID'],
+      inst_code: ['Inst_code'],
+      inst_name: ['Inst_name'],
+      __term_id: ['Inst_ID', 'id'],
+    },
     keyFields: ['maker_id', 'inst_code', 'inst_name'],
   },
   {
     name: 'instrumentsAdvertised',
     endpoint: 'instruments-advertised',
-    csvFiles: ['instrument-advertised.csv'],
-    integerFields: ['maker_id', 'inst_code', 'id'],
+    csvFiles: ['advertised-instruments.csv', 'instrument-advertised.csv'],
+    integerFields: ['maker_id', 'inst_code', 'id', '__term_id'],
     excludeFields: ['id'],
+    fieldAliases: {
+      maker_id: ['Maker_ID'],
+      inst_code: ['Inst_code'],
+      inst_name: ['Inst_name'],
+      __term_id: ['Inst_ID', 'id'],
+    },
     keyFields: ['maker_id', 'inst_code', 'inst_name'],
   },
   {
@@ -480,6 +492,7 @@ function applyFieldAliases(record, fieldAliases = {}) {
     for (const alias of aliases) {
       if (next[alias] !== null && next[alias] !== undefined && next[alias] !== '') {
         next[canonicalField] = next[alias];
+        if (alias !== canonicalField) delete next[alias];
         break;
       }
     }
@@ -1051,6 +1064,8 @@ async function syncInstrumentMakerTermAssociations() {
     termDocumentIdByTermId.set(termId, documentId);
   }
 
+  const instrumentTermDocumentIds = new Set(termDocumentIdByTermId.values());
+
   const desiredByKey = new Map();
   const missingStats = {
     missingMakerId: 0,
@@ -1062,7 +1077,7 @@ async function syncInstrumentMakerTermAssociations() {
   const collectDesired = (rows, associationType) => {
     for (const row of rows) {
       const makerId = normalizeTermId(row.maker_id);
-      const termId = normalizeTermId(row.inst_code);
+      const termId = normalizeTermId(row.__term_id ?? row.inst_code);
       if (!makerId) {
         missingStats.missingMakerId += 1;
         continue;
@@ -1113,6 +1128,8 @@ async function syncInstrumentMakerTermAssociations() {
     const termDocumentId = getRelationDocumentId(getFieldValue(row, 'term') ?? row?.term);
     const associationType = normalizeCsvText(getFieldValue(row, 'association_type'));
     if (!associationDocumentId || !makerDocumentId || !termDocumentId || !associationType) continue;
+    if (!instrumentTermDocumentIds.has(termDocumentId)) continue;
+    if (associationType !== 'KNOWN' && associationType !== 'ADVERTISED') continue;
 
     const key = `${makerDocumentId}::${termDocumentId}::${associationType}`;
     if (!existingByKey.has(key)) {
@@ -1125,6 +1142,7 @@ async function syncInstrumentMakerTermAssociations() {
 
   let created = 0;
   let updated = 0;
+  let deleted = 0;
 
   for (const [key, desired] of desiredByKey.entries()) {
     const existing = existingByKey.get(key);
@@ -1147,8 +1165,14 @@ async function syncInstrumentMakerTermAssociations() {
     created += 1;
   }
 
+  for (const [key, existing] of existingByKey.entries()) {
+    if (desiredByKey.has(key)) continue;
+    await deleteEntry('maker-term-associations', existing.documentId);
+    deleted += 1;
+  }
+
   console.log(
-    `[associations] maker-term-associations: ${created} created, ${updated} updated, skipped missing maker_id=${missingStats.missingMakerId}, missing inst_code=${missingStats.missingTermId}, maker not found=${missingStats.makerNotFound}, term not found=${missingStats.termNotFound}`
+    `[associations] maker-term-associations: ${created} created, ${updated} updated, ${deleted} deleted, skipped missing maker_id=${missingStats.missingMakerId}, missing term id=${missingStats.missingTermId}, maker not found=${missingStats.makerNotFound}, term not found=${missingStats.termNotFound}`
   );
 }
 

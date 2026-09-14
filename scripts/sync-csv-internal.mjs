@@ -226,18 +226,30 @@ const COLLECTIONS = [
     name: 'instrumentsKnown',
     endpoint: 'instruments-known',
     uid: 'api::instrument-known.instrument-known',
-    csvFiles: ['instrument-known.csv', 'instrument_known.csv'],
-    integerFields: ['maker_id', 'inst_code', 'id'],
+    csvFiles: ['known-instruments.csv', 'instrument-known.csv', 'instrument_known.csv'],
+    integerFields: ['maker_id', 'inst_code', 'id', '__term_id'],
     excludeFields: ['id'],
+    fieldAliases: {
+      maker_id: ['Maker_ID'],
+      inst_code: ['Inst_code'],
+      inst_name: ['Inst_name'],
+      __term_id: ['Inst_ID', 'id'],
+    },
     keyFields: ['maker_id', 'inst_code', 'inst_name'],
   },
   {
     name: 'instrumentsAdvertised',
     endpoint: 'instruments-advertised',
     uid: 'api::instrument-advertised.instrument-advertised',
-    csvFiles: ['instrument-advertised.csv'],
-    integerFields: ['maker_id', 'inst_code', 'id'],
+    csvFiles: ['advertised-instruments.csv', 'instrument-advertised.csv'],
+    integerFields: ['maker_id', 'inst_code', 'id', '__term_id'],
     excludeFields: ['id'],
+    fieldAliases: {
+      maker_id: ['Maker_ID'],
+      inst_code: ['Inst_code'],
+      inst_name: ['Inst_name'],
+      __term_id: ['Inst_ID', 'id'],
+    },
     keyFields: ['maker_id', 'inst_code', 'inst_name'],
   },
   {
@@ -448,6 +460,7 @@ function applyFieldAliases(record, fieldAliases = {}) {
     for (const alias of aliases) {
       if (next[alias] !== null && next[alias] !== undefined && next[alias] !== '') {
         next[canonicalField] = next[alias];
+        if (alias !== canonicalField) delete next[alias];
         break;
       }
     }
@@ -938,6 +951,8 @@ async function syncInstrumentMakerTermAssociations(strapi) {
     }
   });
 
+  const instrumentTermDocumentIds = new Set(termDocumentIdByTermId.values());
+
   const desiredByKey = new Map();
   const missingStats = {
     missingMakerId: 0,
@@ -949,7 +964,7 @@ async function syncInstrumentMakerTermAssociations(strapi) {
   const collectDesired = (rows, associationType) => {
     for (const row of rows) {
       const makerId = normalizeTermId(row.maker_id);
-      const termId = normalizeTermId(row.inst_code);
+      const termId = normalizeTermId(row.__term_id ?? row.inst_code);
       if (!makerId) {
         missingStats.missingMakerId += 1;
         continue;
@@ -1004,6 +1019,8 @@ async function syncInstrumentMakerTermAssociations(strapi) {
         const termDocumentId = getRelationDocumentId(row?.term);
         const associationType = normalizeCsvText(row?.association_type);
         if (!documentId || !makerDocumentId || !termDocumentId || !associationType) continue;
+        if (!instrumentTermDocumentIds.has(termDocumentId)) continue;
+        if (associationType !== 'KNOWN' && associationType !== 'ADVERTISED') continue;
 
         const key = `${makerDocumentId}::${termDocumentId}::${associationType}`;
         if (!existingByKey.has(key)) {
@@ -1018,6 +1035,7 @@ async function syncInstrumentMakerTermAssociations(strapi) {
 
   let created = 0;
   let updated = 0;
+  let deleted = 0;
 
   for (const [key, desired] of desiredByKey.entries()) {
     const existing = existingByKey.get(key);
@@ -1045,8 +1063,16 @@ async function syncInstrumentMakerTermAssociations(strapi) {
     created += 1;
   }
 
+  for (const [key, existing] of existingByKey.entries()) {
+    if (desiredByKey.has(key)) continue;
+    if (!options.dryRun) {
+      await strapi.documents(associationUid).delete({ documentId: existing.documentId });
+    }
+    deleted += 1;
+  }
+
   console.log(
-    `[associations] maker-term-associations: ${created} created, ${updated} updated, skipped missing maker_id=${missingStats.missingMakerId}, missing inst_code=${missingStats.missingTermId}, maker not found=${missingStats.makerNotFound}, term not found=${missingStats.termNotFound}`
+    `[associations] maker-term-associations: ${created} created, ${updated} updated, ${deleted} deleted, skipped missing maker_id=${missingStats.missingMakerId}, missing term id=${missingStats.missingTermId}, maker not found=${missingStats.makerNotFound}, term not found=${missingStats.termNotFound}`
   );
 }
 

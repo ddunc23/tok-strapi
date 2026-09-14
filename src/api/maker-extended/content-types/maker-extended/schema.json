@@ -169,12 +169,6 @@
       "target": "api::sources.sources",
       "mappedBy": "maker_extended"
     },
-    "disambiguated_relations": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::disambiguated-relation.disambiguated-relation",
-      "mappedBy": "target_maker_extended"
-    },
     "instruments_advertised": {
       "type": "relation",
       "relation": "oneToMany",

@@ -187,8 +187,7 @@
     "related_terms": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::term.term",
-      "mappedBy": "related_terms"
+      "target": "api::term.term"
     }
   }
 }

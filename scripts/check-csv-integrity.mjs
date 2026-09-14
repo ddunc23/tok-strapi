@@ -53,18 +53,28 @@ const CSV_CONFIGS = [
   },
   {
     name: 'instruments-known',
-    csvFiles: ['instrument-known.csv', 'instrument_known.csv'],
+    csvFiles: ['known-instruments.csv', 'instrument-known.csv', 'instrument_known.csv'],
     keyFields: ['maker_id', 'inst_code', 'inst_name'],
     requiredFields: ['maker_id'],
     integerFields: ['maker_id', 'inst_code'],
+    fieldAliases: {
+      maker_id: ['Maker_ID'],
+      inst_code: ['Inst_code'],
+      inst_name: ['Inst_name'],
+    },
     foreignKeys: { maker_id: 'makers-extended::Maker_ID' },
   },
   {
     name: 'instruments-advertised',
-    csvFiles: ['instrument-advertised.csv'],
+    csvFiles: ['advertised-instruments.csv', 'instrument-advertised.csv'],
     keyFields: ['maker_id', 'inst_code', 'inst_name'],
     requiredFields: ['maker_id'],
     integerFields: ['maker_id', 'inst_code'],
+    fieldAliases: {
+      maker_id: ['Maker_ID'],
+      inst_code: ['Inst_code'],
+      inst_name: ['Inst_name'],
+    },
     foreignKeys: { maker_id: 'makers-extended::Maker_ID' },
   },
   {
@@ -109,12 +119,31 @@ function loadCsv(csvPath) {
   });
 }
 
+function getFieldValue(row, field, fieldAliases = {}) {
+  const value = row[field];
+  if (value !== undefined && value !== null && (!(typeof value === 'string') || value.trim() !== '')) {
+    return value;
+  }
+
+  const aliases = fieldAliases[field];
+  if (!aliases) return value;
+
+  for (const alias of Array.isArray(aliases) ? aliases : [aliases]) {
+    const aliasValue = row[alias];
+    if (aliasValue !== undefined && aliasValue !== null && (!(typeof aliasValue === 'string') || aliasValue.trim() !== '')) {
+      return aliasValue;
+    }
+  }
+
+  return value;
+}
+
 function validateRow(row, config, rowNumber) {
   const errors = [];
 
   // Check required fields
   for (const field of config.requiredFields || []) {
-    const value = row[field];
+    const value = getFieldValue(row, field, config.fieldAliases);
     if (value === undefined || value === null || (typeof value === 'string' && value.trim() === '')) {
       errors.push(`missing required field: ${field}`);
     }
@@ -122,7 +151,7 @@ function validateRow(row, config, rowNumber) {
 
   // Check integer fields
   for (const field of config.integerFields || []) {
-    const value = row[field];
+    const value = getFieldValue(row, field, config.fieldAliases);
     if (value === undefined || value === null || (typeof value === 'string' && value.trim() === '')) {
       continue; // null is ok
     }
@@ -147,12 +176,12 @@ function validateRow(row, config, rowNumber) {
   return errors;
 }
 
-function checkDuplicateKeys(rows, keyFields) {
+function checkDuplicateKeys(rows, keyFields, fieldAliases = {}) {
   const seen = new Map();
   const duplicates = [];
 
   for (const row of rows) {
-    const key = keyFields.map((f) => row[f] ?? '').join('::');
+    const key = keyFields.map((field) => getFieldValue(row, field, fieldAliases) ?? '').join('::');
     if (key && seen.has(key)) {
       duplicates.push(key);
     }
@@ -164,10 +193,10 @@ function checkDuplicateKeys(rows, keyFields) {
   return [...new Set(duplicates)];
 }
 
-function buildLookupMap(rows, keyField) {
+function buildLookupMap(rows, keyField, fieldAliases = {}) {
   const map = new Set();
   for (const row of rows) {
-    const value = row[keyField];
+    const value = getFieldValue(row, keyField, fieldAliases);
     if (value !== undefined && value !== null && value !== '') {
       map.add(String(value));
     }
@@ -180,7 +209,7 @@ function checkForeignKeys(rows, config, lookupMaps) {
 
   for (const row of rows) {
     for (const [fkField, fkRef] of Object.entries(config.foreignKeys || {})) {
-      const fkValue = row[fkField];
+      const fkValue = getFieldValue(row, fkField, config.fieldAliases);
       if (fkValue === undefined || fkValue === null || (typeof fkValue === 'string' && fkValue.trim() === '')) {
         continue; // null is ok
       }
@@ -250,7 +279,7 @@ async function checkIntegrity() {
     }
 
     // Check duplicate keys
-    const duplicateKeys = checkDuplicateKeys(rows, config.keyFields);
+    const duplicateKeys = checkDuplicateKeys(rows, config.keyFields, config.fieldAliases);
     if (duplicateKeys.length) {
       console.log(`[duplicates] ${collectionName}: ${duplicateKeys.length} duplicate keys`);
       for (const key of duplicateKeys.slice(0, 20)) {
@@ -275,7 +304,7 @@ async function checkIntegrity() {
     const { rows, config } = data;
     for (const keyField of config.keyFields) {
       const lookupKey = `${collectionName}::${keyField}`;
-      lookupMaps[lookupKey] = buildLookupMap(rows, keyField);
+      lookupMaps[lookupKey] = buildLookupMap(rows, keyField, config.fieldAliases);
     }
   }
 

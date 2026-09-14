@@ -5,6 +5,7 @@ export default {
       path: '/taxonomy/makers',
       handler: 'taxonomy.makers',
       config: {
+        auth: false,
         policies: [],
         middlewares: [],
       },
@@ -14,6 +15,7 @@ export default {
       path: '/taxonomy/facets',
       handler: 'taxonomy.facets',
       config: {
+        auth: false,
         policies: [],
         middlewares: [],
       },

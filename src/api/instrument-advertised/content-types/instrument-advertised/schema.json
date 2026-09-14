@@ -27,6 +27,13 @@
     },
     "maker_id": {
       "type": "integer"
+    },
+    "advertised_instrument_notes": {
+      "type": "text"
+    },
+    "inst_name_original": {
+      "type": "string",
+      "maxLength": 510
     }
   }
 }

@@ -29,30 +29,6 @@
       "type": "string",
       "maxLength": 510
     },
-    "relation_type": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::relation-type.relation-type",
-      "inversedBy": "relations"
-    },
-    "relation_type_meta": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::relation-type-meta.relation-type-meta",
-      "inversedBy": "relations"
-    },
-    "relation_meta": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::relation-meta.relation-meta",
-      "mappedBy": "relation"
-    },
-    "scanned_matches": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::scanned-relation-match.scanned-relation-match",
-      "mappedBy": "relation"
-    },
     "relation_id": {
       "type": "integer",
       "unique": true
