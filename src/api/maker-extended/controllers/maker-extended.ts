@@ -144,7 +144,7 @@ function isObject(value: unknown): value is Record<string, any> {
 
 function isInstrumentClause(clause: any): boolean {
   if (!isObject(clause)) return false;
-  if (clause.term_associations || clause.instruments_known || clause.instruments_advertised) return true;
+  if (clause.term_associations) return true;
 
   if (Array.isArray(clause.$or)) {
     return clause.$or.some((nested: any) => isInstrumentClause(nested));
