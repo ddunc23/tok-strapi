@@ -20,10 +20,12 @@
       "type": "text"
     },
     "Maker_Type": {
-      "type": "string"
+      "type": "enumeration",
+      "enum": ["Person", "Organisation"]
     },
     "Actor_Type": {
-      "type": "string"
+      "type": "enumeration",
+      "enum": ["Maker"]
     },
     "Organisation_Name": {
       "type": "string"

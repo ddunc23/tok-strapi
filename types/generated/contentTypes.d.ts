@@ -613,7 +613,7 @@ export interface ApiMakerExtendedMakerExtended
     draftAndPublish: false;
   };
   attributes: {
-    Actor_Type: Schema.Attribute.String;
+    Actor_Type: Schema.Attribute.Enumeration<['Maker']>;
     addresses: Schema.Attribute.Relation<'oneToMany', 'api::address.address'>;
     Alt_name1: Schema.Attribute.String;
     Alt_name2: Schema.Attribute.String;
@@ -657,7 +657,7 @@ export interface ApiMakerExtendedMakerExtended
     > &
       Schema.Attribute.Private;
     Maker_ID: Schema.Attribute.Integer & Schema.Attribute.Unique;
-    Maker_Type: Schema.Attribute.String;
+    Maker_Type: Schema.Attribute.Enumeration<['Person', 'Organisation']>;
     memberships: Schema.Attribute.Relation<
       'oneToMany',
       'api::membership.membership'
